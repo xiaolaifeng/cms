@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=<?php echo $cfg_soft_lang; ?>">
+<title>支付宝同步登录</title>
+<?php
+if(is_file(DEDEINC.'/js/jquery/jquery.js'))
+{
+?>
+<script language="javascript" src="../include/js/jquery/jquery.js"></script>
+<?php
+} else {
+?>
+<script language="javascript" src="../images/js/j.js"></script>
+<?php
+}
+?>
+<?php
+if(is_file(dirname(__file__).'/../img/base.css'))
+{
+?>
+<link href="img/base.css" rel="stylesheet" type="text/css" />
+<?php
+} else {
+?>
+<link href="css/base.css" rel="stylesheet" type="text/css" />
+<?php
+}
+?>
+</head>
+<body background="images/allbg.gif" leftmargin="8" topmargin="8">
+<div class="bodytitle">
+  <div class="bodytitleleft"></div>
+  <div class="bodytitletxt" style="padding-left:10px;">辅助插件 <a href="http://bbs.dedecms.com/read.php?tid=381990" title="帮助" target="_blank" style="color:#06F">帮助？</a></div>
+</div>
+<table width="98%" border="0" align="center" cellpadding="4" cellspacing="1" class="tbtitle" style="background:#CFCFCF;">
+  <tr>
+    <td bgcolor="#EDF9D5" colspan="2" background='images/tbg.gif' style="padding-left:10px;"><strong>支付宝同步登录</strong> </td>
+  </tr>
+  <form id="form2" name="form2" method="post" action="?do=save" target="_self" onsubmit="return CheckSubmit();">
+  <input name="submode" type="hidden" value="0" id="submode"/>
+    <tr>
+      <td colspan="2" align="left" bgcolor="#FFFFFF">海量支付宝用户只要登录支付宝账号，即可在您网站下单购物。快捷登录简化用户购物流程，提升网站下单率。<a href="http://act.life.alipay.com/systembiz/desdev/kuaijie/index.html?src=dede_kj" target="_blank"><img src="images/open_alipay.gif" width="81" height="20" border="0" /></a></td>
+    </tr>
+    <tr>
+      <td width="30%" align="right" bgcolor="#FFFFFF">&nbsp;<b>是否开启支付宝同步登录：</b></td>
+      <td width="80%" bgcolor="#FFFFFF">
+      	<input name="alipay_open" type="radio"  value= "Y" <?php if($cfg_alipay_open =='Y') echo 'checked="checked"'; ?> class="bindtype"/>是
+      	<input name="alipay_open" type="radio"  value="N" <?php if($cfg_alipay_open =='N') echo 'checked="checked"'; ?> class="bindtype"/>否
+	  </td>
+    </tr>
+
+    <tr>
+      <td width="30%" align="right" bgcolor="#FFFFFF"><b>合作者身份（PartnerID）：</b></td>
+      <td width="80%" bgcolor="#FFFFFF">
+        <input name="alipay_partner" type="text" id="user" size="30" class='alltxt' value ='<?php echo $cfg_alipay_partner?>' /> 
+        （点击上面开通按钮去支付宝获取）</td>
+    </tr>
+    <tr>
+      <td align="right" bgcolor="#FFFFFF"><b>交易安全检验码（key）：</b></td>
+      <td bgcolor="#FFFFFF">
+        <input name="alipay_key" type="text" id="pwd" size="30" class='alltxt' value ='<?php echo $cfg_alipay_key?>' /></td>
+    </tr>
+    <tr>
+      <td colspan="2" align="center" bgcolor="#FFFFFF">
+      <input name="button" type="submit" class="np coolbg" id="button" value="保存参数" /></td>
+    </tr>
+  </form>
+  <tr>
+    <td bgcolor="#F9FCEF" colspan="2">&nbsp;</td>
+  </tr>
+</table>
+</body>
+</html>
