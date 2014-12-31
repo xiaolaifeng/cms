@@ -1,0 +1,2 @@
+0.0.0.0||/member/reg_qq.php||INSERT INTO `dede_member_model_auth` (`mid`,`model_type`,`openid`,`accesstoken`,`uname`,`face`) VALUES ('584','qq','','')','test'),'');||unusual character
+0.0.0.0||/member/reg_qq.php||INSERT INTO `dede_member_model_auth` (`mid`,`model_type`,`openid`,`accesstoken`,`uname`,`face`) VALUES ('585','qq','','')','test'),'');||unusual character
