@@ -1,0 +1,170 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset={dede:global.cfg_soft_lang/}" />
+<title>{dede:global.cfg_webname/}</title>
+<meta name="description" content="{dede:global.cfg_description/}" />
+<meta name="keywords" content="{dede:global.cfg_keywords/}" />
+<meta property="qc:admins" content="230157644475536157636" />
+{dede:include filename="v2/css.htm"/}
+
+</head>
+<body >
+ <!-- 导航 -->
+{dede:include filename="v2/head.htm"/}
+  <!-- 登录框 -->
+{dede:include filename="v2/login.htm"/}
+<!-- 内容 -->
+<div class="container page-content">
+<div class="row">
+  <!-- 文章预览 -->
+  <div class="col-md-8 col-sm-8 col-xs-12">
+   {dede:arclist typeid='2'   orderby=pubdate   tagid='index' pagesize='10' }
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="dashboard-card-img">
+		 
+          <!-- Article Img -->
+		 [field:array runphp='yes']@me = (empty(@me['litpic']) ? "" : "<a href='{@me['arcurl']}' class='article-img'  target='_blank'><img src='{@me['litpic']}'/></a>"); [/field:array]
+		 
+        </div>
+        <div class="view-card-header">
+           <a  href="[field:arcurl/]" ><p>[field:title  function=' ( strlen("@me")>60 ? cn_substr("@me",60)."..." : "@me" ) '/]</p></a>
+          <p class="date">[field:pubdate function="GetDateMk(@me)"/]</p>
+        </div>
+        <div class="view-card-text">
+          <p>
+         [field:description runphp='yes']
+				if(@me<>'' )@me = ' <div class="intro">'.@me.'</div> ';
+		[/field:description]
+          
+          </p>
+        </div>
+        <div class="view-card-status">
+          <div class="pr-sm pull-left">
+            <i class="fa fa-heart-o"></i>[field:goodpost/]
+          </div>
+          <div class="pr-sm pull-left">
+            <i class="fa fa-comments"></i>[field:click/]
+          </div>
+          
+          <div class="pull-right">
+            <span><a href="/member/index.php?uid=[field:mid function=GetMemberInfos('userid',@me)/]&action=article">[field:writer/]</a></span>
+            <span>极客</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    {/dede:arclist}
+	<!-- Footer -->
+	<footer>
+		<div class="page-direct">
+		{dede:arcpagelist tagid='index'/}
+		 {dede:pagelist listitem="info,index,end,pre,next,pageno,option" listsize="10"/}
+		</div>
+		
+	</footer> 
+  </div>
+  <!-- 文章预览END -->
+  <!-- 分类 -->
+  <div class="col-md-4 col-sm-4 hidden-xs">
+    <div class="row">
+      <div class="col-md-12">
+        <center>
+          <a href="{dede:global.cfg_cmsurl/}/member/qq_bind_auth.php" class="circular-social-btn-lg qq mr"><i
+          class="fa fa-qq"></i></a>
+          <a href="https://api.weibo.com/oauth2/authorize?client_id=3608508910&amp;redirect_uri=http%3A%2F%2Fwww.geekview.cn%2Fplus%2Fsina-weibologin%2Fcallback.php&amp;response_type=code"
+            class="circular-social-btn-lg weibo mr"><i
+          class="fa fa-weibo"></i></a>
+          <a href="/plus/xiaomi-login/getCode.php"
+            class="circular-social-btn-lg xiaomi mr"><i
+          class="fa icon-xiaomi"></i></a>
+          <a href="#"
+            class="circular-social-btn-lg douban"><i
+          class="fa icon-douban"></i></a>
+        </center>
+      </div>
+    </div>
+    <div class="row pt">
+     {dede:arclist    channelid='-1'  addfields='total,templet,note' titlelen=42 row=6}
+      <div class="col-md-12">
+        <div class="dashboard-card-img">
+          <a href="[field:arcurl/]"><img height="300" width="360" src="[field:litpic/]" alt=""></img></a>
+        </div>
+        <div class="view-card-header">
+        	 <a  href="[field:arcurl/]" >
+         		 <p>[field:title/]</p>
+			</a>
+        </div>
+        <div class="view-card-status">
+          <div class="pr-sm pull-left">
+            <i class="fa fa-heart-o"></i>[field:goodpost/]
+          </div>
+          <div class="pull-right">
+            <span>共[field:total/]篇智见</span>
+          </div>
+        </div>
+      </div>
+      {/dede:arclist}
+						
+      <div class="col-md-12 pt">
+        <div class="tiles white p">
+          <h4>极客玩</h4>
+         
+	      {dede:arclist row='10' channelid='3' titlelen='24' orderby='pubdate' idlist='' addfields='softrank' col='1'}
+          <div class="row app-card-in">
+            <div class="col-xs-3 app-icon">
+              <a href="[field:arcurl/]"><img width="68" height="68" src="[field:litpic/]" alt=""></img></a>
+              
+            </div>
+            <div class="col-xs-9 app-content">
+              <div class="row">
+                <div class="app-title pull-left">
+                </div>
+                <a  href="[field:arcurl/]" >
+                  <h4>[field:title/]</h4>
+				</a>
+                <div class="app-device-logo pull-left">
+                  <div class="android-logo active pull-left">
+                    <em class="fa fa-android"></em>
+                  </div>
+                  <div class="ios-logo active pull-left">
+                    <em class="fa fa-apple"></em>
+					
+                  </div>
+                </div>
+                <div class="pull-right">
+                	 [field:softlinks /]
+                  <a class="btn btn-info" href=" [field:softlinks /]">
+                  <li class="fa fa-download"></li>下载
+                  </a>
+                </div>
+              </div>
+              <div class="row">
+                [field:softrank  function='GetRankStar(@me)'/]
+				[field:softrank/]
+              </div>
+            </div>
+          </div>
+	      {/dede:arclist}	
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- 分类END -->
+</div>
+</div>
+<!-- 内容END -->
+
+
+<!-- article begin -->
+
+
+<!-- /content -->
+</div>
+
+{dede:include filename="v2/js.htm"/}
+{dede:include filename="footer.htm"/}
+<!-- /footer -->
+</body>
+</html>

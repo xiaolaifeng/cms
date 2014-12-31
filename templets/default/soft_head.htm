@@ -1,0 +1,34 @@
+<!-- 子导航 -->
+        
+        
+        <div class="row">
+         {dede:channelartlist typeid='1'  currentstyle="<li><a href='~typelink~' class='thisclass'>~typename~</a></li>"}
+          <div class="dropdown pull-left app-category">
+            <button data-toggle="dropdown" id="dropdownMenu1" type="button" class="btn btn-default dropdown-toggle" href="{dede:field.typeurl/}">
+            {dede:field name='typename'/} <span class="caret"></span>
+            </button>
+            <ul aria-labelledby="dropdownMenu1" role="menu" class="dropdown-menu">
+             {dede:sql sql='Select * from dede_arctype where reid =~id~'}  
+              <li role="presentation"><a href="[field:typeurl/]" tabindex="-1" role="menuitem" class="type[field:id/]">[field:typename /]</a></li>
+               {/dede:sql}   
+              <li role="presentation"><a href="[field:typeurl/]" tabindex="-1" role="menuitem" class="type">专题</a></li>
+            </ul>
+          </div>
+		{/dede:channelartlist}
+          <div class="  ">
+           <a data-toggle=" " id=" " type="button" class="btn btn-default dropdown-toggle" href="/special-soft/index.html ">
+          		 专题 
+            </a>
+          </div>
+          <div class="form-group pull-right">
+            <div>
+              <select class="form-control">
+                <option>更新</option>
+                <option>下载</option>
+                <option>评分</option>
+                <option>分类</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <!-- 子导航END -->

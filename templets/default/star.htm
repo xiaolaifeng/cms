@@ -1,0 +1,152 @@
+<div class="row">
+	<div class="col-xs-6">
+		<div class="row first-row">
+			<div class="col-md-4 col-xs-7">
+				<em class="fa fa-star"></em> <em class="fa fa-star"></em> <em
+					class="fa fa-star"></em> <em class="fa fa-star"></em> <em
+					class="fa fa-star"></em>
+			</div>
+			<div class="col-md-8 col-xs-5">
+				<div class="progress progress-striped active ">
+					<div data-percentage="0%" style="width: 90%;" id="startLevel5"
+						class="progress-bar progress-bar-success"></div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-4 col-xs-7">
+				<em class="fa fa-star"></em> <em class="fa fa-star"></em> <em
+					class="fa fa-star"></em> <em class="fa fa-star"></em> <em
+					class="fa fa-star-o"></em>
+			</div>
+			<div class="col-md-8 col-xs-5">
+				<div class="progress progress-striped active ">
+					<div data-percentage="0%" style="width: 10%;" id="startLevel4"
+						class="progress-bar progress-bar-danger"></div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-4 col-xs-7">
+				<em class="fa fa-star"></em> <em class="fa fa-star"></em> <em
+					class="fa fa-star"></em> <em class="fa fa-star-o"></em> <em
+					class="fa fa-star-o"></em>
+			</div>
+			<div class="col-md-8 col-xs-5">
+				<div class="progress progress-striped active ">
+					<div data-percentage="0%" style="width: 0%;" id="startLevel3"
+						class="progress-bar progress-bar-danger"></div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-4 col-xs-7">
+				<em class="fa fa-star"></em> <em class="fa fa-star"></em> <em
+					class="fa fa-star-o"></em> <em class="fa fa-star-o"></em> <em
+					class="fa fa-star-o"></em>
+			</div>
+			<div class="col-md-8 col-xs-5">
+				<div class="progress progress-striped active ">
+					<div data-percentage="0%" style="width: 0%;" id="startLevel2"
+						class="progress-bar progress-bar-danger"></div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-4 col-xs-7">
+				<em class="fa fa-star"></em> <em class="fa fa-star-o"></em> <em
+					class="fa fa-star-o"></em> <em class="fa fa-star-o"></em> <em
+					class="fa fa-star-o"></em>
+			</div>
+			<div class="col-md-8 col-xs-5">
+				<div class="progress progress-striped active ">
+					<div data-percentage="0%" style="width: 0%;" id="startLevel1"
+						class="progress-bar progress-bar-danger"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="col-xs-6">
+		<center>
+			<div class="row">
+				<h1 id="starScore">
+						0<i>.0</i>
+					<!--评分值 -->
+				</h1>
+			</div>
+			<div class="row" id="starLevelDefault">
+				{dede:field.softrank function='GetRankStar(@me)'/}
+				<!-- 星样式参考
+				<em class="fa fa-star"></em> 
+				 -->
+			</div>
+			<div class="row" id="totalVotes">
+				<!-- 评分次数 -->
+				
+			</div>
+		</center>
+	</div>
+</div>
+<!-- 原始的评分样式
+<div class="star-rating rating-xs rating-active">
+	<div class="clear-rating clear-rating-active" title="Clear">
+		<i class="glyphicon glyphicon-minus-sign"></i>
+	</div>
+	<div data-content="" class="rating-container rating-gly-star">
+		<div style="width: 0%;" data-content="" class="rating-stars"></div>
+		
+	</div>
+	<div class="caption">
+		<span class="label label-default">未评分</span>
+	</div>
+</div>
+ -->
+
+
+<div class="score">
+	<span class="pfen">
+		<div class="starscore">
+			<input type="hidden" id="MARK_B1" name="MARK_B1" value="0" /> <input
+				type="hidden" id="MARK_B2" name="MARK_B2" value="0" /> <input
+				type="hidden" id="MARK_B3" name="MARK_B3" value="0" />
+			<div class="starA fl" id="filmStar">
+				<div class="starB s0" id="start"></div>
+				<div class="starC" id="starTC">
+					<a href="javascript:;" onclick="OnStar({dede:field.id/},1)"
+						onmouseout="kaifach()" onmousemove="startm(1)"></a> <a
+						href="javascript:;" onclick="OnStar({dede:field.id/},2)"
+						onmouseout="kaifach()" onmousemove="startm(2)"></a> <a
+						href="javascript:;" onclick="OnStar({dede:field.id/},3)"
+						onmouseout="kaifach()" onmousemove="startm(3)"></a> <a
+						href="javascript:;" onclick="OnStar({dede:field.id/},4)"
+						onmouseout="kaifach()" onmousemove="startm(4)"></a> <a
+						href="javascript:;" onclick="OnStar({dede:field.id/},5)"
+						onmouseout="kaifach()" onmousemove="startm(5)"></a> <a
+						href="javascript:;" onclick="OnStar({dede:field.id/},6)"
+						onmouseout="kaifach()" onmousemove="startm(6)"></a> <a
+						href="javascript:;" onclick="OnStar({dede:field.id/},7)"
+						onmouseout="kaifach()" onmousemove="startm(7)"></a> <a
+						href="javascript:;" onclick="OnStar({dede:field.id/},8)"
+						onmouseout="kaifach()" onmousemove="startm(8)"></a> <a
+						href="javascript:;" onclick="OnStar({dede:field.id/},9)"
+						onmouseout="kaifach()" onmousemove="startm(9)"></a> <a
+						href="javascript:;" onclick="OnStar({dede:field.id/},10)"
+						onmouseout="kaifach()" onmousemove="startm(10)"></a>
+				</div>
+			</div>
+			
+			<em>分</em>
+		</div>
+		<p id="filmStarScoreTip"></p>
+	</span>
+	
+</div>
+
+<link href="/resource/ajax/ajax.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="/resource/plugins/jquery-1.8.3.min.js">
+</script>
+<script type="text/javascript" src="/resource/ajax/ajax_function.js"></script>
+<script type="text/javascript">
+markVideo({dede:field.id/});
+</script>
+

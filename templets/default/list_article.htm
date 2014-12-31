@@ -1,0 +1,138 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset={dede:global.cfg_soft_lang/}" />
+<title>{dede:field.title/}_{dede:global.cfg_webname/}</title>
+<meta name="keywords" content="{dede:field name='keywords'/}" />
+<meta name="description" content="{dede:field name='description' function='html2text(@me)'/}" />
+<link href="{dede:global.cfg_templets_skin/}/style/dedecms.css" rel="stylesheet" media="screen" type="text/css" />
+
+<link type="image/x-icon" rel="icon" href="/templets/default/v1/Home/image/favicon.ico"/>
+<link href="/templets/default/v1//Home/css/panel.css" rel="stylesheet" media="screen" type="text/css" />
+<link href="/templets/default/v1//Home/css/normalize.css" rel="stylesheet" media="screen" type="text/css" />
+<link href="/templets/default/v1//Home/css/base.css" rel="stylesheet" media="screen" type="text/css" />
+<link href="/templets/default/v1//Home/css/responsive.css" rel="stylesheet" media="screen" type="text/css" />
+<link href="/templets/default/v1//Home/css/listPage.css" rel="stylesheet" media="screen" type="text/css" />
+<link href="/templets/default/v1//Home/css/login.css" rel="stylesheet" media="screen" type="text/css" />
+{dede:include filename="/v1/cssscript.htm"/}
+
+</head>
+<body class="js articlelist">
+
+<div class="viewblock animation">
+
+{dede:include filename="head3.htm"/}
+
+<!-- /header -->
+
+<!-- content -->
+
+<div id="content_wrapper" class="container">
+		<!-- Left side Cards -->
+		
+		<div class="left-side">
+			<article>
+			 {dede:list pagesize='10'}
+				<section>
+						<div class="content-card-wrapper">
+							<div class="content-card">
+								<!-- Article Title -->
+								<div class="article-title">
+									<a data="2465" target="_blank" href="[field:arcurl/]" class="app-title">
+										<h1>
+											[field:title/]										</h1>
+									</a>
+									<div style="padding-top: 10px;" class="pub-time-and-version">
+										<span class="pub-time">[field:pubdate function="MyDate('Y-m-d',@me)"/]</span>
+									</div>
+								</div>
+								<a target="_blank" href="" class="detail-icon" title="进入应用详情页面"></a>
+								<!-- Article Img -->
+								 [field:array runphp='yes']@me = (empty(@me['litpic']) ? "" : "<a href='{@me['arcurl']}' class='article-img'  target='_blank'><img src='{@me['litpic']}'/></a>"); [/field:array]
+							</div>
+							<!-- Quote Area -->
+							<div class="quote-area">
+								<div class="quote-words">
+									<a target="_blank" href="[field:arcurl/]" class="quote-text">[field:description/]</a>
+								</div>
+								    <p>
+									<a href="/member/index.php?uid={dede:field.mid function="GetMemberInfos('userid',@me)"/}&action=article"><span class="user-title"></span>
+									<span style="float:right" class="user-name">[field:writer/].</span></a>
+									<span class="newsimagenice">
+										<i></i><span>[field:goodpost/]</span>
+									</span>
+								    </p>
+							    </div>
+						    </div>
+			</section>
+				 {/dede:list}	
+
+
+				<!-- Footer -->
+				<footer>
+					<ul class="page-direct">
+					 {dede:pagelist listitem="info,index,end,pre,next,pageno,option" listsize="5"/}
+					</ul>
+					
+				</footer> 
+			</article>
+
+
+
+		</div>
+
+		<!-- Right side Card -->
+		<div class="right-side">
+		<!-- publishing area -->
+            <div class="side-card">
+            	<div id="new_publish">
+					<a href='{dede:global.cfg_memberurl/}/article_add.php' class="new-publish-words">我要分享</a>
+
+				</div>
+			</div>
+					<!--首页登陆界面-->
+<!--附件有css和app页-->
+			
+				<!-- sortting area -->
+			<div class="side-card">
+                <ul class="web-tag">
+					<li class="web-tag-list active-tag"><a style="padding-right: 220px;" id="allTag"   href="/a/c-article.html" class="web-tag-list-item">精选</a></li>
+					<li class="web-tag-list "><a style="padding-right: 220px;" id="hotTag"   href="/a/hot-article.html" class="web-tag-list-item">热门</a></li>
+					<li class="web-tag-list "><a style="padding-right: 220px;" id="hotTag"  href="/" class="web-tag-list-item">全部</a></li>
+				</ul>  
+            </div>
+			<!-- tag area -->
+			<div class="side-card">
+				<ul class="web-tag">
+				    {dede:keywords row='10' getall='1' sort='month'}
+			            <li class="web-tag-list" ><a href='[field:link/]' class="web-tag-list-item">[field:keyword /]</a></li>
+			          {/dede:keywords}
+	        	</ul> 
+			</div>
+			
+
+			<!-- 分享 -->
+			<div style="background-color: rgb(240,240,240);" class="side-card">
+				<h5 class="bottom1">关注我们</h5>
+				<!-- JiaThis Button BEGIN -->
+				<div class="jiathis_style_32x32">
+					<a href="http://weibo.com/geekview" target="_blank" class="link_button_tsina external">新浪微博</a> 
+					<a href="http://www.douban.com/people/geekview/" target="_blank" class="link_button_douban external">豆瓣</a>
+					 <a href="http://zhan.renren.com/geekview/" target="_blank" class="link_button_renren external">人人</a> 
+					 <a href="http://t.qq.com/geekview/" target="_blank" class="link_button_tqq external">腾讯微博</a>
+					 <a href="https://plus.google.com/108385600415800739993/" target="_blank" class="link_button_google external">Google+</a>
+				</div>
+				<!-- JiaThis Button END -->
+			</div>
+		</div>
+	</div>
+
+<!-- /content -->
+
+
+</div>
+{dede:include filename="footer3.htm"/}
+
+<!-- /footer -->
+</body>
+</html>

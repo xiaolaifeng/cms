@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset={dede:global.cfg_soft_lang/}" />
+<title>{dede:global.cfg_webname/}</title>
+<meta name="description" content="{dede:global.cfg_description/}" />
+<meta name="keywords" content="{dede:global.cfg_keywords/}" />
+
+{dede:include filename="v1/cssscript.htm"/}
+
+<link href="{dede:global.cfg_templets_skin/}/style/dedecms.css" rel="stylesheet" media="screen" type="text/css" />
+<script language="javascript" type="text/javascript" src="{dede:global.cfg_cmsurl/}/include/dedeajax2.js"></script>
+<script language="javascript" type="text/javascript" src="{dede:global.cfg_cmspath/}/images/js/j.js" ></script>
+<script language="javascript" type="text/javascript" src="{dede:global.cfg_templets_skin/}/js/pic_scroll.js"></script>
+<script language="javascript" type="text/javascript">
+<!--
+	$(function(){
+		$("a[_for]").mouseover(function(){
+			$(this).parents().children("a[_for]").removeClass("thisclass").parents().children("dd").hide();
+			$(this).addClass("thisclass").blur();
+			$("#"+$(this).attr("_for")).show();
+		});
+		$("a[_for=uc_member]").mouseover();
+		$("a[_for=flink_1]").mouseover();
+	});
+-->
+</script>
+</head>
+<body class=" js">
+<div class="viewblock animation">
+{dede:include filename="head3.htm"/}
+<!-- head nav end -->
+
+<!-- article begin -->
+<div class="container" id="content_wrapper">
+		<div class="left-side">
+			<article>
+					<ul class="community-app-list-wrapper">
+				           {dede:arclist sort='hot' subday='30' titlelen=42 row=6}
+      						<li class="community-app-wrapper">
+								<div class="community-app-info-wrapper">
+									<img alt="" class="community-app-cover" src="[field:litpic/]" width="100%;" height="181">
+									<div class="caption" style="bottom: -191px;">
+										<a href="[field:arcurl/]" target="_blank">
+											<span>&nbsp;&nbsp;&nbsp;&nbsp;[field:description/]</span>
+										</a>
+									</div>
+								</div>
+								<div class="totpic_title">
+									<span class="lSpan">
+										<a href="[field:arcurl/]" target="_blank">
+											[field:title/]										</a>
+									</span>
+									<span class="rSpan">文章(<a href="[field:arcurl/]" target="_blank">3</a>)</span>
+								</div>
+							</li>
+     				 {/dede:arclist}
+				</ul>
+
+				<!-- Back to top -->
+				<a class="back-to-top" href="#top"></a>
+			</article>
+		</div>
+	</div>
+
+
+<!-- /content -->
+</div>
+
+{dede:include filename="footer3.htm"/}
+<!-- /footer -->
+</body>
+</html>

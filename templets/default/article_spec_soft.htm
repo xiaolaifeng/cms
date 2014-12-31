@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset={dede:global.cfg_soft_lang/}" />
+<title>{dede:field.title/}_{dede:global.cfg_webname/}</title>
+<meta name="keywords" content="{dede:field.keywords/}" />
+<meta name="description" content="{dede:field.description function='html2text(@me)'/}" />
+{dede:include filename="v1/cssscript.htm"/}
+
+</head>
+<body class=" js">
+<div class="viewblock animation">
+{dede:include filename="head3.htm"/}
+
+<div class="container" id="content_wrapper">
+		<!-- 		<div class="fixed-ad web">
+			<img alt="" class="fixed-ad-img" src="/Public/Home/image/yingyongbao_lottery.png" />
+			<div class="close-fixed-ad">关闭</div>
+		</div> -->
+		<!-- Left side Cards -->
+		<div class="left-side">
+			<article>
+				<section>
+					<!-- Web Article -->
+					<div class="content-card article-style">
+						<img id="article_cover" alt="{dede:field name="title"/}" src="{dede:field name='litpic'/}" data-original="{dede:field name='litpic'/}">
+						<input type="hidden" value="21">
+						<div id="web-article-header">
+							<div class="article-title" style="margin-bottom: 0px;">
+								<div class="app-title">
+									<h1 style="margin-top:0px;float: left;width: auto;">
+										{dede:field name="title"/}									</h1>
+									<h4 style="margin:0px 0px 0px 30px;float: left;padding: 10px 0px 0px;">
+										{dede:field.pubdate function="MyDate('Y-m-d H:i',@me)"/}								</h4>
+								</div>
+							</div>
+							<div class="short-des" id="summary">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{dede:field name='description'/}</div>
+						</div>
+					</div>
+				</section>
+				<!-- Comment App Area -->
+
+				<div style="margin-bottom: 0px;margin-top: 20px;border: 1px solid #D9DADC;border-bottom: 0px;color: #66;background: #fff;text-align: left;padding-left: 10px; ">
+					<h1 style="color: #3091F2;">专题相关文章 &gt;&gt;</h1>
+				</div>
+				<div style="margin: 0px;height: 3px;border-bottom: 5px solid #3091F2;background: #3091F2;"></div>
+					 {dede:field.note/}
+				<footer>
+				<a class="back-to-top" href="#top"></a>
+			</footer>
+		</article>
+		</div>
+		
+		<div class="right-side">
+			<!-- Platform Infomation -->
+			<div class="side-card" style="padding: 10px 10px 10px 10px;">
+				<h5>最新专题</h5>
+				<ul style="margin-top: 10px;">
+						  {dede:arclist    channelid='-1' titlelen=42 row=6}
+					<li style="border-top: solid 1px #ddd;height: 75px;">
+				  			<div style="clear:both;margin: 5px 0px 5px 0px;width:65%; float: left; font-size: 12px">
+				  				<a href="[field:arcurl/]" class="all-want-txt-a">[field:title/]</a>
+				  				<p style="margin: 5px 0px 5px 0px;font-size: 10px;"><strong style="color: #ddd">&nbsp;&nbsp;[field:pubdate function="MyDate('Y-m-d H:i',@me)"/]</strong></p>
+				  			</div>
+			  				<a href="[field:arcurl/]" style="line-height: 70px;" target="_blank"><img alt="[field:title/]" src="[field:litpic/]" style="padding: 5px 0px 0px 0px" width="35%" height="60px"></a>
+						</li>				
+				           {/dede:arclist}
+						</ul>
+			</div>
+		</div>
+	</div>
+	
+	<div class="clear"></div>
+
+</div>
+{dede:include filename="footer3.htm"/}
+
+
+</body>
+</html>

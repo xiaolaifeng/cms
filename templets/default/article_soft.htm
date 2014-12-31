@@ -1,0 +1,396 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type"
+	content="text/html; charset={dede:global.cfg_soft_lang/}" />
+<title>{dede:field.title/}_{dede:global.cfg_webname/}</title>
+<meta name="keywords" content="{dede:field.keywords/}" />
+<meta name="description"
+	content="{dede:field.description function='html2text(@me)'/}" />
+<link href="/resource/plugins/boostrapv3/css/bootstrap.min.css"
+	rel="stylesheet" type="text/css" />
+<link href="/resource/plugins/boostrapv3/css/bootstrap-theme.min.css"
+	rel="stylesheet" type="text/css" />
+<link href="/resource/plugins/font-awesome/css/font-awesome.css"
+	rel="stylesheet" type="text/css" />
+<link href="/resource/css/style.css" rel="stylesheet" type="text/css" />
+<link href="/resource/css/app-screenshot.css" rel="stylesheet"
+	type="text/css" />
+<link href="/resource/css/star-rating.css" rel="stylesheet"
+	type="text/css" />
+	 <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+  <script src="/resource/plugins/boostrapv3/js/bootstrap.min.js"></script>
+  <script src="/resource/js/app-screenshot.js"></script>
+  <script src="/resource/js/star-rating.js"></script>
+  <script src="/resource/js/accordians.js" type="text/javascript"></script>
+<!-- 兼容IE8,IE9 -->
+<script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+<script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+<script language="javascript" type="text/javascript"	src="{dede:global.cfg_cmsurl/}/include/dedeajax2.js"></script>
+<style>
+.label-warning0{background-color:#D1DADE;color:#fff}
+.label-warning1{background-color:#0AA699;color:#fff}
+.label-warning2{background-color:#FDD01C;color:#fff}
+.label-warning3{background-color:#F35958;color:#fff}
+.label-warning4{background-color:#0090D9;color:#fff}
+.label-warning5{background-color:#1F3853;color:#fff}
+.label-warning6{background-color:#FDD01C;color:#fff}
+.label-warning7{background-color:#FDD01C;color:#fff}
+.label-warning8{background-color:#FDD01C;color:#fff}
+</style>
+<script language="javascript" type="text/javascript">
+<!--
+function CheckLogin()
+{
+	var taget_obj = document.getElementById('_ajax_feedback');
+	myajax = new DedeAjax(taget_obj,false,false,'','','');
+	myajax.SendGet2("{dede:global.cfg_cmsurl/}/member/ajax_feedback.php");
+	DedeXHTTP = null;
+}
+-->
+</script>
+</head>
+<body class="downlist js">
+	{dede:include filename="head.htm"/}
+	<!-- /header -->
+
+	<!-- 内容 begin -->
+	<div class="  container page-content">
+		<!--应用分类导航  -->
+		{dede:include filename="soft_head.htm"/}
+		<!--应用分类导航  end  -->
+		<!-- 正文 -->
+		<!-- 应用标题 -->
+		<div class="row first-row">
+			<div class="col-xs-12 size-fix">
+				<div class="row app-card">
+					<div class="col-md-1 col-sm-2 col-xs-3 app-icon">
+					<style>.app-card img{width:68px;height:68px;}</style>
+						 {dede:field name='image'/}
+					</div>
+					<div class="col-md-11 col-sm-10 col-xs-9 app-content">
+						<div class="row">
+							<div class="app-title pull-left">
+								<h4>{dede:field.title /}</h4>
+							</div>
+							<div class="app-device-logo pull-left">
+								<div class="android-logo active pull-left">
+									<em class="fa fa-android"></em>
+								</div>
+								<div class="ios-logo active pull-left">
+									<em class="fa fa-apple"></em>
+								</div>
+								<div class="windows-logo pull-left unsupport">
+									<em class="fa fa-windows"></em>
+								</div>
+							</div>
+							
+							 <!-- 分享begin -->
+							<div class="pull-right app-card-btn hidden-xs hidden-sm">
+								<a class="btn btn-info">
+									<li class="fa fa-share-square"></li>分享到
+									
+								</a>
+							</div>
+							<!-- 样式待处理 
+							<div class="pull-right bsync-custom icon-medium-blue">
+								<a title="一键分享到各大微博和社交网络" class="bshare-bsync" onclick="javascript:bSync.share(event, 'bsharesync', {url:'http://www.bshare.cn', title:'test', summary:'summary'})"></a>	
+								<span class="BSHARE_COUNT bshare-share-count">0</span>
+							</div>
+							<script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/bsync.js#uuid=<您的uuid>"></script>
+							 -->
+							<!-- 分享end --> 
+							<div class="pull-right app-card-btn">
+								<a  class="btn btn-info" href="{dede:global name='cfg_phpurl'/}/stow.php?aid={dede:field.id/}" target="_blank">
+									<li class="fa fa-plus-square"></li>收藏
+								</a>
+							</div>
+							<div class="pull-right app-card-btn  app-download-btn" >
+									 {dede:field.softlinks /}
+							</div>
+						</div>
+						<!-- 软件等级 -->
+						<div class="row" id="softrank">
+							{dede:field.softrank
+							function='GetRankStar(@me)'/}
+						</div>
+						<div class="row app-security">
+							<div class="pull-left">
+								<em class="fa fa-check-square"></em>安全
+							</div>
+							<div class="pull-left">
+								<em class="fa fa-exclamation-circle"></em>有广告
+							</div>
+							<div class="pull-left">
+								<em class="fa fa-exclamation-circle"></em>内付费
+							</div>
+							<div class="pull-left">
+								<em class="fa fa-exclamation-circle"></em>高危权限
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- 应用标题END -->
+		<!-- 应用明细 -->
+		<div class="row">
+			<div class="col-md-8 col-xs-12 size-fix">
+				<div class="row app-card">
+					<div class="col-xs-12 app-screenshot">
+						<div id="app-ss-div" style="display:none">
+							<ul class="app-ss-ul">
+							{dede:field.id function="getArtImg(@me)"/}
+								<li class="div-ss-05"><img	src="/resource/img/screenshot/5.jpeg" alt="" /></li>
+								<li><img src="/resource/img/screenshot/5.jpeg"></li>
+								<li><img src="/resource/img/screenshot/5.jpeg"></li>
+								<li><img src="/resource/img/screenshot/5.jpeg"></li>
+								<li><img src="/resource/img/screenshot/5.jpeg"></li>
+								<li><img src="/resource/img/screenshot/5.jpeg"></li>
+							</ul>
+							<ul class="app-ss-menu">
+							</ul>
+							<p class="app-ss-prev">
+								<img src="/resource/css/img/prev.png" alt="">
+							</p>
+							<p class="app-ss-next">
+								<img src="/resource/css/img/next.png" alt="">
+							</p>
+						</div>
+						<div class="panel-group" id="accordion" data-toggle="collapse">
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h3 class="panel-title">
+										<a class="" data-toggle="collapse" data-parent="#accordion"
+											href="#collapseOne"> 简介 </a>
+									</h3>
+								</div>
+								<div id="collapseOne" class="panel-collapse collapse in">
+									<div class="panel-body">
+										{dede:field.app_desc/}
+									</div>
+								</div>
+							</div>
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h3 class="panel-title">
+										<a class="collapsed" data-toggle="collapse"
+											data-parent="#accordion" href="#collapseTwo">更新内容</a>
+									</h3>
+								</div>
+								<div id="collapseTwo" class="panel-collapse collapse">
+									<div class="panel-body">
+									{dede:field.update_content/}
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row app-card">
+					<h3>评价</h3>
+					<div class="col-xs-12 app-rating">
+						<!-- 评分 -->
+						{dede:include filename="star.htm"/}
+						<!-- 评分END -->
+						<!-- 留言表单 
+						<div class="row app-element">
+							<form>
+								<div class="form-group">
+									<textarea id="app-comments" placeholder="" class="form-control"
+										rows="10"></textarea>
+									<input id="app-rating" type="number" class="rating" min="0"
+										max="5" step="0.5" data-stars=5
+										data-default-caption="{rating}" data-star-captions="{}"
+										data-size="xs"></input>
+									<div>
+										评论数（100） <a type="submit" class="btn btn-info pull-right">评论</a>
+									</div>
+								</div>
+							</form>
+						</div>
+						-->
+						
+						<div class="">
+
+							<!-- //AJAX评论区 -->
+							{dede:include file='ajaxfeedback.htm' /}
+				
+						</div>
+						<!-- 留言表单END -->
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4 col-xs-12 size-fix">
+				<div class="row app-card">
+					<h3>详情</h3>
+					<div class="col-xs-12">
+						<div class="row">
+							<div class="col-xs-3">大小</div>
+							<div class="col-xs-9">{dede:field.softsize/}MB</div>
+						</div>
+						<div class="row">
+							<div class="col-xs-3">语言</div>
+							<div class="col-xs-9 flags">{dede:field.language/}
+							<!-- 
+								<img src="/resource/img/flags/China.png" alt="" /> <img
+									src="/resource/img/flags/USA.png" alt="" /> <img
+									src="/resource/img/flags/Japan.png" alt="" />
+							 -->
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-xs-3">版本</div>
+							<div class="col-xs-9">4.0.1</div>
+						</div>
+						<div class="row">
+							<div class="col-xs-3">开发者</div>
+							<div class="col-xs-9">{dede:field.developer/}</div>
+						</div>
+						<div class="row">
+							<div class="col-xs-3">平台</div>
+							<div class="col-xs-9">{dede:field.os/}</div>
+						</div>
+						<div class="row">
+							<div class="col-xs-3">来源</div>
+							<div class="col-xs-9">Play</div>
+						</div>
+						<div class="row">
+							<div class="col-xs-3">分类</div>
+							<div class="col-xs-9">
+								 {dede:stag row='10' getall='1' sort='month'}
+					          	<a href='[field:link/]'  class="label label-warning[field:index/]">[field:tag /]</a>
+					          {/dede:stag}
+							</div>
+						</div>
+					</div>
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h3 class="panel-title">
+								<a class="collapsed" data-toggle="collapse"
+									data-parent="#accordion" href="#collapseThree">查看权限要求</a>
+							</h3>
+						</div>
+						<div id="collapseThree" class="panel-collapse collapse">
+							<div class="panel-body">
+								{dede:field.app_auth/}
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row app-card">
+					<h3>该开发者的其他应用</h3>
+               
+					<div class="col-xs-12">
+					{dede:sql sql='Select a.*,s.softrank,s.softlinks from dede_addonsoft s left join  dede_archives a on  s.aid=a.id where s.developer =~developer~  and s.aid!=~id~'}  
+						<div class="row">
+							<div class="row app-card-in">
+								<div class="col-xs-3 app-icon">
+									<img width="68" height="68" src="[field:litpic /]"
+										alt="" />
+								</div>
+								<div class="col-xs-9 app-content">
+									<div class="row">
+										<div class="app-title pull-left">
+											<h4>[field:title /]</h4>
+										</div>
+										<div class="app-device-logo pull-left">
+											<div class="android-logo active pull-left">
+												<em class="fa fa-android"></em>
+											</div>
+											<div class="ios-logo active pull-left">
+												<em class="fa fa-apple"></em>
+											</div>
+											<div class="windows-logo pull-left unsupport">
+												<em class="fa fa-windows"></em>
+											</div>
+										</div>
+										<div class="pull-right">
+											<button class="btn btn-info">
+												<li class="fa fa-download"></li>
+												下载
+											</button>
+										</div>
+									</div>
+									<div class="row">
+									[field:softrank  function='GetRankStar(@me)'/]
+									[field:softrank/]
+									
+									</div>
+									<div class="row">
+										<p>[field:description/]</p>
+									</div>
+								</div>
+							</div>
+						</div>
+               {/dede:sql} 
+					</div>
+				</div>
+				<div class="row app-card">
+					<h3>相关应用</h3>
+					<div class="col-xs-12">
+					{dede:arclist row='10' channelid='3' titlelen='24' orderby='pubdate' idlist='' col='1'}
+						<div class="row">
+							<div class="row app-card-in">
+								<div class="col-xs-3 app-icon">
+									<img width="68" height="68" src="[field:litpic /]"
+										alt="" />
+								</div>
+								<div class="col-xs-9 app-content">
+									<div class="row">
+										<div class="app-title pull-left">
+											<h4>[field:title /]</h4>
+										</div>
+										<div class="app-device-logo pull-left">
+											<div class="android-logo active pull-left">
+												<em class="fa fa-android"></em>
+											</div>
+											<div class="ios-logo active pull-left">
+												<em class="fa fa-apple"></em>
+											</div>
+											<div class="windows-logo pull-left unsupport">
+												<em class="fa fa-windows"></em>
+											</div>
+										</div>
+										<div class="pull-right">
+											<button class="btn btn-info">
+												<li class="fa fa-download"></li>下载
+											</button>
+										</div>
+									</div>
+									<div class="row">
+										[field:softrank  function='GetRankStar(@me)'/]
+									[field:softrank/]
+									</div>
+									<div class="row">
+										<p>[field:description/]</p>
+									</div>
+								</div>
+							</div>
+						</div>
+						{/dede:arclist}	
+						
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- 应用明细END -->
+		<!-- 正文END -->
+
+
+
+
+
+
+		
+
+	</div>
+	{dede:include filename="footer.htm"/}
+	<!-- /footer -->
+	<script
+		src="{dede:global name='cfg_phpurl'/}/count.php?aid={dede:field name='id'/}&mid={dede:field name='mid'/}"
+		language="javascript"></script>
+</body>
+</html>
+
+
