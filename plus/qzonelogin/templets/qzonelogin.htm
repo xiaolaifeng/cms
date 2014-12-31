@@ -1,0 +1,158 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title><?php echo $cfg_webname; ?>- 会员注册</title>
+<link href="<?php echo $cfg_memberurl; ?>/templets/style/login.css" rel="stylesheet" type="text/css" />
+<script src="<?php echo $cfg_memberurl; ?>/templets/js/j.js" language="javascript" type="text/javascript"></script>
+<script src="<?php echo $cfg_memberurl; ?>/templets/js/base.js" language="javascript" type="text/javascript"></script>
+<script src='<?php echo $cfg_memberurl; ?>/templets/js/CheckPassStrength.js' type="text/javascript" language="javascript"></script>
+<script type="text/javascript" language="javascript">
+<!--
+function registerSwtichTab() {
+	$(".tab-nav a").unbind("click");
+	$(".tab-nav a").click(function() {
+		$(".tab-nav a").removeClass("on");
+		$(this).addClass("on");
+		var wid = $(this).attr("wid");
+		if(wid == 'reg'){
+			$("#bind").hide();
+			$("#reg").show();
+		}else{
+			$("#bind").show();
+			$("#reg").hide();		
+		}		
+	});
+}
+-->
+</script>
+<style>
+.tab-nav {
+  border-bottom: 2px solid #E2F1F8;
+  height: 33px;
+  margin: 30px 20px 20px;
+}
+.tab-nav a.on {
+  background: none repeat scroll 0 0 #FFFFFF;
+  border-color: #E2F1F8;
+  border-style: solid solid none;
+  border-width: 2px 2px medium;
+  padding: 0;
+}
+.tab-nav a {
+  -moz-border-radius-topleft: 3px;
+  -moz-border-radius-topright: 3px;
+  color: #535353;
+  float: left;
+  font-weight: bold;
+  height: 33px;
+  line-height: 33px;
+  margin: 0 0 0 8px;
+  position: relative;
+  text-align: center;
+  top: 0;
+  width: 120px;
+}
+</style>
+</head>
+<body>
+<div class="header">
+	<div class="auto960">
+		<ul class="userMenu fRight">
+			<li> <a title="网站主页" href="<?php echo $cfg_cmsurl;?>">网站主页</a> </li>
+			<li> <a title="注册" href="<?php echo $cfg_memberurl; ?>/index_do.php?fmdo=user&dopost=regnew">注册</a> </li>
+			<li> <a title="登录" href="<?php echo $cfg_memberurl; ?>/login.php">登录</a> </li>
+			<li class="help"> <a title="DEDECMS 帮助中心" href="http://help.dedecms.com">帮助</a> </li>
+		</ul>
+		<span>
+<script type="text/javascript">
+var now=(new Date()).getHours();
+if(now>0&&now<=6){
+	document.write("午夜好，");
+}else if(now>6&&now<=11){
+	document.write("早上好，");
+}else if(now>11&&now<=14){
+	document.write("中午好，");
+}else if(now>14&&now<=18){
+	document.write("下午好，");
+}else{
+	document.write("晚上好，");
+}
+</script>
+		<i class="green">游客</i> 你可以选择到 </span>
+	</div>
+</div>
+
+<div class="wrapper">
+	<div class="logo fLeft"> <a href="/"> <img  style="margin:8px 0 0 25px;"alt="会员中心" src="<?php echo $cfg_memberurl; ?>/templets/images/login_logo.gif"/></a></div>
+	<div class="banner fRight"> <script src='/plus/ad_js.php?aid=32' language='javascript'></script></div>
+</div>
+
+<div id="login" class="bor" >
+	<div class="tab-nav"><a hidefocus="true" wid="reg" class="on" href="javascript:void(0);" onclick="registerSwtichTab();">完善帐号信息</a><a hidefocus="true" wid="bind" href="javascript:void(0);" onclick="registerSwtichTab();">绑定已有帐号</a></div>
+	
+	<!-- 会员完善信息注册 -->
+	<div class="theme fLeft" id="reg">
+		<form method="post" action="<?php echo $cfg_phpurl;?>/qzonelogin/recall.php">
+		<input type="hidden" value="reg" name="action"/>
+		<input type="hidden" value="<?php echo $openid;?>" name="openid"/>
+		<input type="hidden" value="<?php echo $token;?>" name="token"/>
+		<input type="hidden" value="<?php echo $secret;?>" name="secret"/>
+		<input type="hidden" value="<?php echo $Face50;?>" name="facepic"/>
+		<input type="hidden" value="<?php echo $gourl;?>" name="gourl" />
+		<p style="text-align: right;" class="mB10"/>
+			<ul>
+				<li class="mL68"><img src="<?php echo $cfg_phpurl;?>/qzonelogin/img/connect_qq.gif" align="absmiddle"/> 您将使用QQ账号注册本站，<a href="<?php echo $cfg_phpurl;?>/qzonelogin/redirect.php">更换QQ账号？ </a></li>        <li><span>用户名：</span>
+					<input type="text" class="intxt w200" id="txtUsername" name="userid"/><i class="red">*</i> <em id="_userid">(可以使用中文，但禁止除[@][.]以外的特殊符号)</em> </li>
+				<li><span id="uwname">用户笔名：</span><input type="text" class="intxt w200" size="20" id="uname" name="uname" value="<?php echo $NickName;?>"/><i class="red">*</i> <em id="_uname"/> </li>
+				<li><span>电子邮箱：</span>
+					<input type="text" class="intxt w200" id="email" name="email"/><i class="red">*</i> <em id="_email">(找回密码的唯一途径，请认真填写)</em> </li>
+			</ul>
+			<div><span style="height: 110px; width: 15%;" class="fLeft">个人头像：</span>
+				<div class="contract2"><img src="<?php echo $Face50;?>"/>
+				<p><label for="use_qzone_avatar"><input type="checkbox" name="use_qzone_avatar" id="use_qzone_avatar" class="pc" value="1" checked="checked" tabindex="1" /> 使用QQ空间头像</label></p></div>
+			</div>
+			<br />
+			<ul><li><span>&nbsp;</span><button type="submit" class="buttonGreen142">确 认 注 册</button></li></ul>
+		</p>
+		</form>
+	</div>
+	
+	<!-- 会员帐号绑定 -->
+	<div class="theme fLeft" id="bind" style='display:none;'>
+		<form method="post" action="<?php echo $cfg_phpurl;?>/qzonelogin/recall.php">
+		<input type="hidden" value="bind" name="action"/>
+		<input type="hidden" value="<?php echo $openid;?>" name="openid"/>
+		<input type="hidden" value="<?php echo $token;?>" name="token"/>
+		<input type="hidden" value="<?php echo $secret;?>" name="secret"/>
+		<input type="hidden" value="<?php echo $Face50;?>" name="facepic"/>
+		<input type="hidden" value="<?php echo $gourl;?>" name="gourl" />
+		<p style="text-align: right;" class="mB10"/>
+			<ul>
+				<li class="mL68" id='ctips'><img src="<?php echo $cfg_phpurl;?>/qzonelogin/img/connect_qq.gif" align="absmiddle"/> 您将使用QQ账号绑定本站账号，<a href="<?php echo $cfg_phpurl;?>/qzonelogin/redirect.php">更换QQ账号？ </a></li>        <li><span>用户名：</span>
+					<input type="text" class="intxt w200" name="userid"/><i class="red">*</i> <em id="_userid"></em> </li>
+				<li><span id="uwname">密 码：</span><input type="password" class="intxt w200" size="20" name="pwd" value=""/><i class="red">*</i> <em id="_uname"/> </li>
+			</ul>
+			<div><span style="height: 110px; width: 15%;" class="fLeft">更新头像</span>
+				<div class="contract2"><img src="<?php echo $Face50;?>"/>
+				<p><label for="use_qzone_avatar"><input type="checkbox" name="use_qzone_avatar" id="use_qzone_avatar" class="pc" value="1" checked="checked" tabindex="1" /> 使用QQ空间头像</label></p></div>
+			</div>
+			<br />
+			<ul><li><span>&nbsp;</span><button type="submit" class="buttonGreen142">绑 定 帐 号</button></li></ul>
+		</p>
+		</form>
+	</div>	
+	
+  <br class="clear"/>
+</div>
+<script language="javascript" type="text/javascript">
+	window.onload=function (){
+		setInterval("document.getElementById('time').innerHTML=new Date().toLocaleString()+' 星期'+'日一二三四五六'.charAt(new Date().getDay());",1000);
+	}
+</script>
+<div class="footer bor">
+  <div class="fLeft mL10">Copyright &copy; 2006-2012 <a href="http://www.chuxiong.cc/"></a></div>
+  <div class="fRight mR10" id="time">  </div>
+</div>
+</body>
+</html>

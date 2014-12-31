@@ -1,0 +1,163 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+微博登录按钮
+第三方与微博进行连接登录的按钮，可实现登录与退出功能。
+示例
+HTML
+1
+	
+<div id="wb_connect_btn"></div>
+Javascript
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+	
+WB2.anyWhere(function (W) {
+    W.widget.connectButton({
+        id: "wb_connect_btn",
+        type: '3,2',
+        callback: {
+            login: function (o) { //登录后的回调函数
+                alert("login: " + o.screen_name)
+            },
+            logout: function () { //退出后的回调函数
+                alert('logout');
+            }
+        }
+    });
+});
+WBML
+1
+	
+<wb:login-button type="3,2" onlogin="login" onlogout="logout"></wb:login-button>
+微博登录按钮 - 详细代码示例与参数说明
+
+
+微博关注按钮
+关注按钮可以部署在任何支持HTML的网页。用户在这些网页点击关注按钮，就可以快速成为你的微博粉丝; 关注按钮会自动判断与用户的关系，对于已关注用户，将显示其微博动态。
+示例
+HTML
+1
+	
+<div id="wb_follow_btn"></div>
+Javascript
+1
+2
+3
+4
+5
+6
+7
+8
+9
+	
+WB2.anyWhere(function(W){
+    W.widget.followButton({
+        'nick_name': '姚晨',  //用户昵称
+        'id': "wb_follow_btn",
+        'show_head' : true, //是否显示头像
+        'show_name' : true, //是否显示名称
+        'show_cancel': true //是否显示取消关注按钮
+    });
+});
+WBML
+1
+	
+<wb:follow-button uid="1052981072" type="red_4">关注按钮</wb:follow-button>
+微博关注按钮 - 详细代码示例与参数说明
+
+
+微博名片
+微博名片组件可在一段纯文本中，自动识别@用户名，添加用户名片功能。鼠标移动到"@用户名"上时，浮出一个展示用户信息的名片，名片中同时带有微博关注按钮功能。支持单独处理及批量处理两种方式。
+示例
+HTML
+1
+	
+<a id="wb_card_alone" wb_screen_name="woiweb" href="#">woiweb</a>
+Javascript
+1
+2
+3
+4
+5
+	
+WB2.anyWhere(function(W){
+    W.widget.hoverCard({
+        id : "wb_card_alone"
+    });
+});
+微博名片 - 详细代码示例与参数说明
+
+
+微博发布器
+在您的博客、网站或其他支持HTML的位置嵌入一段微博发布器对应的代码，不仅能让用户直接发微博，您还可以在发布器中预制文案及图片。
+示例
+HTML
+1
+	
+<button type="button" id="wb_publish"></wb:button>
+Javascript
+1
+2
+3
+4
+5
+6
+7
+8
+9
+	
+WB2.anyWhere(function(W){
+    W.widget.publish({
+        'id' : 'wb_publish',
+        'default_text' : '预置方案　& \r\n我可以换行.',
+        'callback' : function(o) {
+            //do something...
+        }
+    });
+});
+WBML
+1
+	
+<wb:publish></wb:publish>
+微博发布器 - 详细代码示例与参数说明
+
+
+微博好友选择器
+包括相互关注、我的粉丝、我关注的人三个标签，标签可配，支持@联想输入功能，可快速选择所需好友，选择后点击确定即可得到已选择的好友的信息。
+示例
+HTML
+1
+	
+<button id="wb_selector" type="button"></button>
+Javascript
+1
+2
+3
+4
+5
+	
+WB2.anyWhere(function(W){
+    W.widget.selector({
+        id : "wb_selector"
+    });
+});
+微博好友选择器 - 详细代码示例与参数说明
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns:wb="http://open.weibo.com/wb">
+<!--step1 在您页面的HTML标签中增加XML命名空间。  -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+<!-- step2	调试模式			在你的页面部署wb.js，同时，如果你的页面编码不是UTF-8，请添加charset="utf-8"属性。  -->
+  <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+
+<script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js?appkey=3608508910&debug=true" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+
+<br>
+<!-- api -->
+1	登录
+<button id="wb_login" type="button" class="btn btn-info">登录微博</button>
+<wb:login-button type="3,2" onlogin="login" onlogout="logout" >登录回调</wb:login-button>
+<br>
+<button id="wb_logout" type="button" class="btn btn-info">退出微博</button>
+<br>
+<button id="show_user" type="button" class="btn btn-info">查看个人信息</button>
+<br>
+<button id="login_check" type="button" class="btn btn-info">检测登录状态</button>
+<script type="text/javascript">
+/*
+* *************************API*******************************/
+/*
+* 登录WB2.login();
+*/
+$('#wb_login').click(function() {
+WB2.login(function(o) {
+alert('您已经登录'+o.screen_name);
+});
+}); 
+function login(o) {
+    alert(o.screen_name)
+}
+/*
+* 检测登录状态
+*/
+$('#login_check').click(function() {
+	var status = WB2.checkLogin();
+	alert(status);
+});
+/*
+* 退出WB2.login();
+*/
+$('#wb_logout').click(function() {
+	WB2.logout(function() {
+	    //callback function
+	});
+}); 
+/*
+* 查看个人信息
+*/
+$('#show_user').click(function() {
+	WB2.anyWhere(function(W){
+	    //数据交互
+	    W.parseCMD('/users/show.json', function(oResult, bStatus) {
+	        if(bStatus) {
+	        	 var jsonStr = JSON.stringify(oResult, null, '\t');
+	            alert(jsonStr);
+	        }
+	    }, {
+	        screen_name : '姚晨'
+	    }, {
+	        method : 'get',
+	        cache_time : 30
+	    });
+	});
+}); 
+
+</script>
+</body>
+</html>
