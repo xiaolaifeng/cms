@@ -1,0 +1,185 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>会员中心 -<?php echo $cfg_webname; ?></title>
+<meta http-equiv="Content-Type" content="text/html; charset=<?php echo $cfg_soft_lang; ?>" />
+<link href="templets/style/index.css" rel="stylesheet" type="text/css" />
+<link href="templets/style/boxy.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="templets/js/j.js"></script>
+<script type="text/javascript" src="templets/js/jquery.boxy.js"></script>
+<script type="text/javascript" src="templets/js/load_index.js"></script>
+<script type="text/javascript" src="templets/js/leftmenu.js"></script>
+<script type="text/javascript" src="templets/js/face.js"></script>
+<script type="text/javascript" src="templets/js/Dialog.js"></script>
+<script type="text/javascript" src="templets/js/jquery.js"></script>
+<script type="text/javascript" src="templets/js/feed.js"></script>
+
+
+<?php include(DEDEMEMBER."/templets/v1/cssscript.htm"); ?>
+<script language='javascript'>
+	function msgSubmit(form) {
+		//var id=form.id.value;
+		var content = form.share_textarea.value;
+		if( content == '来,说点啥吧...' ) content = '';
+		if ( content == '' ) {
+			alert('请输入内容'); return false;
+		}
+		$.ajax({
+			type:'POST',
+			url:'index_do.php?fmdo=moodmsg&dopost=sendmsg',
+			cache:false,
+			data:'&content='+encodeURIComponent(content),
+			dataType:'json',
+			success:function(message){
+				if ( message.type == 'success' ) {
+					$('#share_textarea').val('');
+					$('#moodcontent').html(message.data);
+				} else {
+					alert(message.data);
+				}
+			}
+		});
+	}
+</script>
+</head>
+<body class="js"  >
+
+<div class="viewblock animation"  >
+
+<?php include(DEDEMEMBER."/templets/v1/head3.htm"); ?>
+
+<div id="content_wrapper" class="container">
+		<!--  个人信息 -->
+		<div style="height:60px;width: 100%">
+			<div style="float: left; padding:0px 10px 0px 10px;" id="left-image">
+				<a class="display-user-profile"><img src="<?php 
+				$facepic = !empty($cfg_ml->M_Face)? $cfg_ml->M_Face : $cfg_memberurl.'/templets/images/dfboy.png';
+				echo $facepic;
+				?>" alt=""></a>
+			</div>
+			<div style="float: left;" id="right-short-introduce">
+				<div style="clear:both;width: 100%;">
+					<span style="font-size: 16px;color: black;font-style: BOLD;float:left;margin-top: 5px;" id="username">
+						<b><?php echo $cfg_ml->M_UserName; ?></b>
+					</span>
+									</div>
+				<div style="clear:both;padding-top:10px;;width: 100%;">
+					<span style="float:left" id="self-desc"></span>
+					<span style="float:left;margin-left: 5px;"><img onclick="changeMyDesc()" src="" id="modify-pen"></span>				</div>
+			</div>
+		</div>
+
+		<!-- middle -->
+		<div style="clear:both;margin-left: 40%;margin-top:10px">
+			<ul id="web_tag1" style="text-align: center; float: center" class="community-selection web">
+				 <li id="love_li" class="community-selection-list "><a onclick="showLove()" class="community-selection-list-item">喜欢</a></li>
+				 <li id="recommend_li" class="community-selection-list active"><a onclick="showRecommend()" class="community-selection-list-item">推荐</a></li>
+				
+				
+			</ul>
+		</div>
+		<!-- Left side Cards -->
+		<div class="left-side">
+			<article>
+				<ul id="love_ul" class="community-app-list-wrapper">
+					<li class="community-app-wrapper">
+							<div onclick="javascript:self.location='<?php  echo  $cfg_memberurl.'/article_add.php';?>'" class="community-app-info-wrapper" style="border: dashed 5px RGB(204,204,204);" id="addDiv">
+								<img src="<?php echo $cfg_templets_skin;?>/v1/Home/image/icons/20140704120710463_easyicon_net_128.png" style="width: 50%;height: 50%;margin: 25% 0px 0px 25%;" alt="">
+							</div>
+						</li>					<li class="community-app-wrapper">
+							<div class="community-app-info-wrapper">
+																	<a target="_blank" href="/index/article/preview/id/2630" class="upper-wrapper">
+										<h2 style="height: 40px;font-weight: bold;font-size: 20px;" class="community-app-name">test</h2>
+									</a> 
+									<a target="_blank" href="/index/article/preview/id/2630" class="community-app-cover-wrapper">
+										<img src="/Uploads/UserFiles/Image/2014-10-19/54438051200b1.jpg" class="community-app-cover" alt="">
+									</a>								<div class="lower-wrapper">
+									<div class="lower-inner-wrapper">
+										<p class="community-app-des">test...</p>
+										<div class="community-article-info">
+											<div style="width: 50%;" class="community-article-comment-wrapper-left">
+														<span style="float: left;width:30px;margin:4px 2px 2px 40%;">
+															<a target="_blank" href="/index/article/pubnews/id/2630">
+															<img src="/Public/Home/image/icons/20140704120811150_easyicon_net_64.ico" alt="修改" style="height: 30;width: 30px;">
+															</a>
+														</span>
+													</div>
+													<div style="width: 50%;" class="community-article-comment-wrapper-right">
+														<span style="float: left;width:30px;margin:4px 2px 2px 40%;">
+															<a onclick="removeArticle('2630')">
+																<img src="/Public/Home/image/icons/20140704120858944_easyicon_net_64.ico" alt="删除" style="height: 30;width: 30px;">
+															</a>
+														</span>
+													</div>
+																																		
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>				</ul>
+				<!--分页 -->
+				<div class="page-direct">
+					    				</div> 
+				<!-- Back to top -->
+				<a href="#top" class="back-to-top"></a>
+			</article>
+		</div>
+	</div>
+
+
+<div id="content" class="w960 clearfix">
+  <?php include(DEDEMEMBER."/templets/menu.php"); ?>
+  <div class="755">
+    <div class="main-wrap">
+      <dl class="sns-avatar">
+        <dt>
+          <div class="s120"> <a href="<?php echo $cfg_cmsurl;?>/member/index.php?uid=<?php echo $cfg_ml->M_LoginID; ?>"><img src="<?php echo $cfg_ml->fields['face']; ?>" width="100" height="100" alt="您的形象"/></a> </div>
+        </dt>
+        <dd class="av-index">
+          <ul>
+            <li class="name"><?php echo $cfg_ml->M_LoginID; ?><span><?php echo $cfg_ml->M_MbType; ?>用户</span></li>
+            <?php
+             if(is_array($moodmsg)){
+            ?>
+            <li class="other" id="moodcontent"><?php echo $moodmsg['msg'];?></li>
+            <?php
+              } else {
+            ?>
+             <li class="other" id="moodcontent">还没有个性签名，试试在下面输入框中填写</li>
+             <?php
+             }
+             ?>
+            <li class="sign"><?php echo $cfg_ml->GetSta($dsql); ?></li>
+          </ul>
+          <div class="msg">
+            <p>短消息: <em> <a href="pm.php?TB_iframe=true&height=600&width=700" title="我的短信息" target="_blank"> <?php echo $pms['nums'];?></a> </em> 评论: <em> <a href="caicai.php" title="发出的评论"><?php echo $minfos['feedback']; ?></a> </em> 收藏: <em> <a href="mystow.php" title="收藏夹"><?php echo $minfos['stow']; ?></a> </em> 其它: <em><a href="javascript:;"><?php echo $minfos['archives']; ?></a> </em> 文章:<em> <a href="content_list.php?channelid=1" title="已发布的文章"><?php echo $minfos['article']; ?></a> </em>图集: <em> <a href="content_list.php?channelid=2" title="管理图集"><?php echo $minfos['album']; ?></a> </em> 软件: <em> <a href="content_list.php?channelid=3" title="已发布的软件"><?php echo $minfos['soft']; ?></a> </em> 商品:</a> <em> <a href="shops_products.php" title="购买的商品"><?php echo $minfos['shop']; ?></a> </em> </p>
+          </div>
+        </dd>
+      </dl>
+      <div class="share">
+        <div class="share01"> </div>
+        <div class="share02">
+          <form target="hidden_frame" method="post" enctype="multipart/form-data" name="msgmood" action="#">
+            <input id="share_textarea" type="text" value="来,说点啥吧..." onclick="showFace()"/>
+            <button id="btn_submit" type="button" onclick="msgSubmit(this.form)">发表</button>
+          </form>
+        </div>
+      </div>
+      <div id="sns-feeds">
+          <div class="indexTab">
+            <ul>
+              <li id="arcticle"><a href="javascript:void(0)">最新文档</a></li>
+              <li class="thisTab" id="myfeed"><a href="javascript:void(0)">我的动态</a></li>
+              <li id="allfeed"><a href="javascript:void(0)">全站动态</a></li>
+            </ul>
+          </div>
+        <div class="sns-box" id="FeedText"></div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<?php include(DEDEMEMBER."/templets/v2/footer.htm"); ?>
+
+</body>
+</html>

@@ -1,0 +1,369 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=<?php echo $cfg_soft_lang; ?>" />
+<title>更改帐号基本资料 - 会员中心 - <?php echo $cfg_webname; ?></title>
+<?php include(DEDEMEMBER."/templets/v2/css.htm"); ?>
+<style type="text/css">
+input.editinput, input.editinput[type="text"] {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    border-color: -moz-use-text-color -moz-use-text-color #C1C1C1;
+    border-image: none;
+    border-style: none none solid;
+    border-width: medium medium 1px;
+    color: #666666;
+    width: auto;
+}
+</style>
+<script type="text/javascript">  
+  function checkSubmit()
+{
+}
+  var childWindow;
+  function toQqBind()
+  {
+  	window.location.href ="/member/qq_bind_auth.php";
+      //childWindow = window.localtion("oauth/index.php","TencentLogin","width=450,height=320,menubar=0,scrollbars=1, resizable=1,status=1,titlebar=0,toolbar=0,location=1");
+  } 
+  
+  function closeChildWindow()
+  {
+      childWindow.close();
+  }
+</script>
+</head>
+<body>
+<body >
+
+<?php include(DEDEMEMBER."/templets/v2/head.htm"); ?>
+<!-- 内容 -->
+<div class="container page-content">
+<div class="row">
+  <div class="col-md-6 col-md-offset-3 col-xs-12">
+    <div class="grid simple">
+    <form action="edit_auth_baseinfo.php" method="post" name="form1" onsubmit="return checkSubmit();" >
+    <input name="dopost" value="mod_extend1" type="hidden"/>
+    
+      <div class="grid-title no-border user-profile-header row-sep-4">
+        <center>
+        <img width="70" height="70" class="img-thumbnail img-circle" src="<?php $facepic =!empty($cfg_ml->M_Face)? $cfg_ml->M_Face :$cfg_memberurl.'/templets/images/dfboy.png'; echo $facepic; ?>"    alt="" />
+        </center>
+      </div>
+      <div class="grid-body no-border row-sep-4">
+        <br/>
+        <div class="row row-sep p">
+          <div class="col-md-8 col-sm-8 col-xs-8">
+            <h4><input name="uname" value="<?php echo $row['uname']; ?>" class="editinput" type="text"  placeholder="昵称" ></h4>
+          </div>
+          <div class="col-md-4 col-sm-4 col-xs-4">
+            <a class="btn btn-info pull-right">
+              更换头像
+            </a>
+          </div>
+        </div>
+        <div class="row p">
+          <div class="col-md-8 col-sm-8 col-xs-8">
+            <div>
+             <?php echo $row['email']; ?>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-4 col-xs-4">
+            <a href="#updateEmailModal" data-toggle="modal" class="btn btn-info pull-right">
+              更改邮箱
+            </a>
+          </div>
+        </div>
+        <div class="row p hidden-xs">
+          <div class="col-md-2 col-sm-2 col-xs-2">
+            <div>
+              性别
+            </div>
+          </div>
+          <div class="col-md-8 col-sm-8 col-xs-8">
+            <input id="male" type="radio" name="sex" value="男" <?php if($row['sex']=='男') echo " checked='checked' "; ?>>
+            <label for="male">男</label>
+            <input id="female" type="radio" name="sex" value="女" <?php if($row['sex']=='女') echo " checked='checked' "; ?>>
+            <label for="female">女</label>
+            <input id="secrecy" type="radio" name="sex" value="secrecy" <?php if($row['sex']=='保密') echo " checked='checked' "; ?>>
+            <label for="secrecy">保密</label>
+          </div>
+        </div>
+        <div class="row row-sep p">
+          <div class="col-md-8 col-sm-8 col-xs-8"> 
+            <input name="signature" value="<?php echo $row['signature']; ?>" id="signature" class="mod-cus-input mod-cus-input-4 editinput"  placeholder="个性签名" > 
+          </div>
+        </div>
+        <div class="row p">
+          <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="row">
+              <div class="weibo-sm pull-left mr-sm pl">
+                <a href="#" class="text-center">
+                  <i class="fa fa-weibo"></i>
+                  <span>微博</span>
+                </a>
+              </div>
+              <div class="pull-right mr-sm">
+                <input id="qq-syn" type="checkbox" value="1" checked="checked">
+                <label for="qq-syn">同步</label>
+                <input id="qq-display" type="checkbox" value="1" checked="checked">
+                <label for="qq-display">展示</label>
+              </div>
+              <div class="pull-right mr-sm">
+                绑定
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="row">
+              <div class="qq-sm pull-left mr-sm pl">
+                <a href="#" class="text-center">
+                  <i class="fa fa-qq"></i>
+                  <span>QQ</span>
+                </a>
+                 <div class="accountdiv">
+						<?php include(DEDEMEMBER."/templets/qqlist.php"); ?>
+				  </div>
+              </div>
+              <div class="pull-right mr-sm">
+                <input id="qq-syn" type="checkbox" value="1" checked="checked">
+                <label for="qq-syn">同步</label>
+                <input id="qq-display" type="checkbox" value="1" checked="checked">
+                <label for="qq-display">展示</label>
+              </div>
+              <div class="pull-right mr-sm">
+                绑定
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="row">
+              <div class="xiaomi-sm pull-left mr-sm pl">
+                <a href="#" class="text-center">
+                  <i class="fa icon-xiaomi"></i>
+                  <span>小米</span>
+                </a>
+              </div>
+              <div class="pull-right mr-sm">
+                <input id="qq-syn" type="checkbox" value="1" checked="checked">
+                <label for="qq-syn">同步</label>
+                <input id="qq-display" type="checkbox" value="1" checked="checked">
+                <label for="qq-display">展示</label>
+              </div>
+              <div class="pull-right mr-sm">
+                绑定
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="row">
+              <div class="douban-sm pull-left mr-sm pl">
+                <a href="#" class="text-center">
+                  <i class="fa icon-douban"></i>
+                  <span>豆瓣</span>
+                </a>
+              </div>
+              <div class="pull-right mr-sm">
+                <input id="qq-syn" type="checkbox" value="1" checked="checked">
+                <label for="qq-syn">同步</label>
+                <input id="qq-display" type="checkbox" value="1" checked="checked">
+                <label for="qq-display">展示</label>
+              </div>
+              <div class="pull-right mr-sm">
+                绑定
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="grid-body no-border row-sep-4 pt-lg">
+        <div class="row">
+          <div class="col-md-6 col-sm-6 col-xs-6">
+            提醒新私信
+          </div>
+          <div class="col-md-6 col-sm-6 col-xs-6">
+            <input id="msg-notice" type="checkbox" value="1" checked="checked" class="pull-right">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6 col-sm-6 col-xs-6">
+            提醒新动态
+          </div>
+          <div class="col-md-6 col-sm-6 col-xs-6">
+            <input id="dyn-notice" type="checkbox" value="1" checked="checked" class="pull-right">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6 col-sm-6 col-xs-6">
+            提醒新评论
+          </div>
+          <div class="col-md-6 col-sm-6 col-xs-6">
+            <input id="comments-notice" type="checkbox" value="1" checked="checked" class="pull-right">
+          </div>
+        </div>
+      </div>
+      <div class="grid-body no-border pt-lg">
+        <div class="row">
+          <div class="col-md-12 col-sm-12 col-xs-12">
+            <a id="blacklistLink">
+              <span>屏蔽用户</span>
+              <i class="fa fa-caret-square-o-down"></i>
+            </a>
+          </div>
+          <div id="blacklistBox" class="col-md-12 col-sm-12 col-xs-12" style="display: none;">
+            <div class="pull-left">
+              <a>
+                Vincent
+              </a>
+            </div>
+            <div class="pull-right">
+              <a class="btn btn-info pull-right">
+                恢复
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 col-sm-12 col-xs-12">
+          	<a href="#changePwBox" data-toggle="modal" >
+              <span>修改密码</span>
+            </a>
+          </div>
+         
+        </div>
+      </div>
+      <div>
+        <div class="tiles grey p">
+          <center>
+          <button class="btn btn-info" type="submit">保存</button>
+          <button class="btn btn-info" type="button" onclick="history.go(-1)">取消</button>
+          </center>
+          <div class="clearfix"></div>
+        </div>
+      </div>
+      </form>
+    </div>
+  </div>
+</div>
+</div>
+<!-- 内容END -->
+
+ <div id="changePwBox" class="modal fade col-md-12 col-sm-12 col-xs-12" style="display: none;">
+ 	<div class="modal-dialog">
+	    <div class="modal-content">
+	      <div class="modal-header b0">
+	        <button type="button" class="close" data-dismiss="modal">
+	        <span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+	        </button>
+	      </div>
+	      <div class="modal-body">
+	        <!-- 登录框内容 -->
+	        <div class="row">
+			   <form role="form" class="p" action="edit_auth_baseinfo.php" method="post" name="form3" onsubmit="return checkSubmit();" >
+			     <input name="dopost" type="hidden" value="mod3"/>
+			     <div class="form-group has-feedback">
+			       <input name="oldpwd" id="originalPassword" type="password" placeholder="原密码" class="form-control"> 
+			       <span   class="fa fa-lock form-control-feedback text-muted"></span>
+			     </div>
+			     <div class="form-group has-feedback">
+			       <input name="userpwd" id="newPassword" type="password"   placeholder="新密码" class="form-control"> <span
+			       class="fa fa-lock form-control-feedback text-muted"></span>
+			     </div>
+			     <div class="form-group has-feedback">
+			       <input  name="userpwdok" id="confirmNewPassword" type="password"    placeholder="确认新密码" class="form-control"> 
+			       <span class="fa fa-lock form-control-feedback text-muted"></span>
+			     </div>
+			     <div class="form-group has-feedback">
+	                     <button type="submit" class="btn btn-block btn-primary">保存密码</button>
+			     </div>
+			   </form>
+			   <span class="save-ok" style="display:none" id="passwordSaveOkMsg"> 你的设置保存成功！ </span>
+	   
+	 		</div>
+	 	</div>
+	  </div>
+    </div>
+  </div>
+<!-- 更改邮箱 -->
+<div class="modal fade" id="updateEmailModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header b0">
+        <button type="button" class="close" data-dismiss="modal">
+        <span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <!-- 登录框内容 -->
+        <div class="row">
+          <div class="col-md-8 col-md-offset-2 col-xs-12">
+            <div class="login-desc">
+              <h4>修改邮箱</h4>
+            </div>
+            <div class="panel panel-default panel-flat login-panel">
+              <div class="panel-body">
+                
+                <div class="form-group has-feedback">
+                  <input id="registerEmail" type="email" placeholder="常用邮箱"
+                  class="form-control"> <span
+                  class="fa fa-envelope form-control-feedback text-muted"></span>
+                </div>
+                <button type="submit" class="btn btn-block btn-primary">发送邮件</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 更改邮箱END -->
+<?php include(DEDEMEMBER."/templets/v2/js.htm"); ?>
+<?php include(DEDEMEMBER."/templets/v2/footer.htm"); ?>
+<script type="text/javascript">  
+$('#changePwLink').click(function () {
+	$('#changePwBox').toggle();
+	});
+
+function showHeadInfo() {
+	checkhavebindemail();
+	$("#headInfoLI").addClass("on");
+	$("#baseInfoLI,#passwordLI,#bindUserLI").removeClass("on");
+	$("#1000001,#mod-portrait-password,#mod-portrait-binduser").slideUp('slow');
+	$("#mod-portrait-avatar").slideDown('slow')
+	hideImageCut();
+}
+function showBaseInfo(){
+checkhavebindemail();
+$("#baseInfoLI").addClass("on");
+$("#headInfoLI,#passwordLI,#bindUserLI").removeClass("on");
+$("#mod-portrait-avatar,#mod-portrait-password,#mod-portrait-binduser").slideUp('slow');
+$("#1000001").slideDown('slow')
+hideImageCut();
+}
+function showPassword(){
+checkhavebindemail();
+$("#passwordLI").addClass("on");
+$("#headInfoLI,#baseInfoLI,#bindUserLI").removeClass("on");
+$("#1000001,#mod-portrait-avatar,#mod-portrait-binduser").slideUp('slow')
+$("#mod-portrait-password").slideDown('slow');
+hideImageCut();
+}
+function checkhavebindemail(){
+}
+function bindUser(){
+	checkhavebindemail();
+	$("#bindUserLI").addClass("on");
+	$("#headInfoLI,#baseInfoLI,#passwordLI").removeClass("on");
+	$("#1000001,#mod-portrait-avatar,#mod-portrait-password").slideUp('slow')
+	$("#mod-portrait-binduser").slideDown('slow');
+	hideImageCut();
+}
+</script>
+</body>
+</html>

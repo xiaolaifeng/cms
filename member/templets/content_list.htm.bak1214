@@ -1,0 +1,196 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=<?php echo $cfg_soft_lang; ?>" />
+<title>文档管理 - 会员中心 - <?php echo $cfg_webname; ?></title>
+<link href="templets/style/base.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="templets/js/j.js"></script>
+<script type="text/javascript" src="templets/js/load.js"></script>
+<script type="text/javascript" src="templets/js/leftmenu.js"></script>
+
+
+<link href="<?php echo $cfg_templets_skin;?>/v1/Home/css/community_list.css" rel="stylesheet" type="text/css" />
+<?php include(DEDEMEMBER."/templets/v1/cssscript.htm"); ?>
+<script type="text/javascript">
+  function viewArc(aid){
+	  window.open("{dede:global.cfg_phpurl /}/view.php?aid="+aid);
+  }
+  function editArc(aid,channelid){
+	  location = "archives_do.php?dopost=edit&channelid="+channelid+"&aid="+aid;
+  }
+  function delArc(aid){
+	  if(window.confirm('你确定要删除这篇文档吗?')) location="archives_do.php?aid="+aid+"&dopost=delArc";
+  }
+</script>
+</head>
+<body class="js"  id="main">
+
+<div class="viewblock animation"  >
+
+<?php include(DEDEMEMBER."/templets/v1/head3.htm"); ?>
+  <div id="content_wrapper" class="container"  >
+    
+    <!--  个人信息 -->
+		<div style="height:60px;width: 100%">
+			<div style="float: left; padding:0px 10px 0px 10px;" id="left-image">
+				<a class="display-user-profile"><img src="<?php 
+				$facepic = !empty($cfg_ml->M_Face)? $cfg_ml->M_Face : $cfg_memberurl.'/templets/images/dfboy.png';
+				echo $facepic;
+				?>" alt=""></a>
+			</div>
+			<div style="float: left;" id="right-short-introduce">
+				<div style="clear:both;width: 100%;">
+					<span style="font-size: 16px;color: black;font-style: BOLD;float:left;margin-top: 5px;" id="username">
+						<b><?php echo $cfg_ml->M_UserName; ?></b>
+					</span>
+									</div>
+				<div style="clear:both;padding-top:10px;;width: 100%;">
+					<span style="float:left" id="self-desc"></span>
+					<span style="float:left;margin-left: 5px;"><img onclick="changeMyDesc()" src="" id="modify-pen"></span>				</div>
+			</div>
+		</div>
+
+		<!-- middle -->
+		<div style="clear:both;margin-left: 40%;margin-top:10px">
+			<ul id="web_tag1" style="text-align: center; float: center" class="community-selection web">
+				 <li id="love_li" class="community-selection-list "><a onclick="showLove()" class="community-selection-list-item">喜欢</a></li>
+				 <li id="recommend_li" class="community-selection-list active"><a onclick="showRecommend()" class="community-selection-list-item">推荐</a></li>
+				
+				
+			</ul>
+		</div>
+    <!-- Left side Cards -->
+		<div class="left-side">
+			<article>
+				<ul id="love_ul" class="community-app-list-wrapper">
+					<li class="community-app-wrapper">
+							<div onclick="javascript:self.location='<?php echo $cfg_memberurl;?>/article_add.php'" class="community-app-info-wrapper" style="border: dashed 5px RGB(204,204,204);" id="addDiv">
+								<img src="<?php echo $cfg_templets_skin;?>/v1/Home/image/icons/20140704120710463_easyicon_net_128.png" style="width: 50%;height: 50%;margin: 25% 0px 0px 25%;" alt="">
+							</div>
+						</li>	
+					 {dede:datalist}				
+					<li class="community-app-wrapper">
+							<div class="community-app-info-wrapper">
+								<a target="_blank" href="<?php echo $cfg_phpurl; ?>/view.php?aid=<?php echo $fields['id']; ?>" class="upper-wrapper">
+									<h2 style="height: 40px;font-weight: bold;font-size: 20px;" class="community-app-name"><?php echo $fields['title']; ?></h2>
+									</a> 
+									<a target="_blank" href="<?php echo $cfg_phpurl; ?>/view.php?aid=<?php echo $fields['id']; ?>" class="community-app-cover-wrapper">
+										
+										<img src="<?php echo $fields['litpic']; ?>" class="community-app-cover" alt="">
+									</a>								<div class="lower-wrapper">
+									<div class="lower-inner-wrapper">
+										<p class="community-app-des"></p>
+										<div class="community-article-info">
+										
+										
+											<div style="width: 50%;" class="community-article-comment-wrapper-left">
+														<span style="float: left;width:30px;margin:4px 2px 2px 40%;">
+															<a  href="javascript:editArc(<?php echo $fields['id']?>,<?php echo $fields['channel']?>);">
+															<img src="<?php echo $cfg_templets_skin;?>/v1/Home/image/icons/20140704120811150_easyicon_net_64.ico" alt="修改" style="height: 30;width: 30px;">
+															</a>
+														</span>
+													</div>
+													<div style="width: 50%;" class="community-article-comment-wrapper-right">
+														<span style="float: left;width:30px;margin:4px 2px 2px 40%;">
+															<a href="javascript:delArc(<?php echo $fields['id']?>);">
+																<img src="<?php echo $cfg_templets_skin;?>/v1/Home/image/icons/20140704120858944_easyicon_net_64.ico" alt="删除" style="height: 30;width: 30px;">
+															</a>
+														</span>
+													</div>
+																																		
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>		
+		         {/dede:datalist}
+						
+				</ul>
+				<!--分页 -->
+				<div class="page-direct">
+					    				</div> 
+				<!-- Back to top -->
+				<a href="#top" class="back-to-top"></a>
+			</article>
+		</div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div id="mcpmain" style="width:100%!important;display:none;">
+      <div id="appTab">
+        <ul>
+          <li class="thisTab"><a href="#"><span><?php echo $positionname; ?></span></a></li>
+          <li style="float:right"><a class="btn btn-success" href="<?php  echo $cfg_memberurl.'/article_add.php'?>">发表</a></li>
+        </ul>
+      </div>
+      <ul class="tabSub">
+        <li <?php echo ($arcrank=='')? "class='thisTab'" : "";?>><a href="content_list.php?channelid=<?php echo $channelid;?>"><span>全部</span></a></li>
+        <li <?php echo ($arcrank=='1')? "class='thisTab'" : "";?>><a href="content_list.php?channelid=<?php echo $channelid;?>&arcrank=1"><span>已审核</span></a></li>
+        <li <?php echo ($arcrank=='-1')? "class='thisTab'" : "";?>><a href="content_list.php?channelid=<?php echo $channelid;?>&arcrank=-1"><span>未审核</span></a></li>
+        <li <?php echo ($arcrank=='-2')? "class='thisTab'" : "";?>><a href="content_list.php?channelid=<?php echo $channelid;?>&arcrank=-2"><span>被退回</span></a></li>
+      </ul>
+      <div id="mainCp">
+        <!--内容消息提示 -->
+        <h3 class="meTitle">已发布<?php echo $positionname; ?><small>(曾经发布的所有<?php echo $positionname; ?>)</small></h3>
+        <table width="100%" border="0" cellpadding="0" cellspacing="0" class="list">
+          <thead>
+            <tr>
+              <th width="40%">文章标题</th>
+              <th width="15%">类目 </th>
+              <th width="10%">状态 </th>
+              <th width="10%">点击 </th>
+              <th width="11%">发布时间 </th>
+              <th width="25%">操作</th>
+            </tr>
+          </thead>
+          <tbody>
+          {dede:datalist}
+            <tr>
+              <td class="tabTitle"><a href='<?php echo $cfg_phpurl; ?>/view.php?aid=<?php echo $fields['id']; ?>' target='_blank'><?php echo $fields['title']; ?><?php echo IsPicArchives($fields['litpic']); ?></a></td>
+              <td align="center"><?php echo $fields['typename']; ?></td>
+              <td align="center"><?php
+if($fields['arcrank']>=0) echo "已审核";
+else if($fields['arcrank']==-2) echo "<font color='blue'>被退回</font>";
+else echo "<font color='red'>未审核</font>";
+?></td>
+              <td align="center"><?php echo $fields['click']; ?></td>
+              <td><?php echo GetDateMk($fields['senddate']); ?></td>
+              <td align="center" class="doPost"><?php
+if($fields['arcrank']<0 || $dtime - $fields['senddate'] < $maxtime)
+{
+?>
+                <a href="javascript:editArc(<?php echo $fields['id']?>,<?php echo $fields['channel']?>);">修改</a> | <a href="javascript:delArc(<?php echo $fields['id']?>);">删除</a> |
+                <?php
+}
+else
+{
+	echo "<span class='gray'>改 | 删 | </span>";
+}
+?>  <a href="javascript:viewArc(<?php echo $fields['id']; ?>);">预览</a></td>
+            </tr>
+         {/dede:datalist}
+          </tbody>
+          <tfoot>
+            <tr>
+              <td colspan="6"><div class="pageList">{dede:pagelist listsize=5/}</div></td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+      <!--主操作区域 --> 
+    </div>
+  </div>
+</div>
+<?php include(DEDEMEMBER."/templets/v1/footer3.htm"); ?>
+
+</body>
+</html>

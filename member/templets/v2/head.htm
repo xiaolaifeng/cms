@@ -1,0 +1,129 @@
+<style type="text/css">
+<!--
+.navbar-right{margin:8px 0 8px 0;}
+.login-user-profile {
+    float: left;
+    margin-left: 10px;
+}
+.login-user-profile img {
+    border-radius: 35px;
+    display: block;
+    height: 35px;
+    width: 35px;
+}
+
+.triangle-up {
+    border-color: rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) #191919;
+    border-style: solid;
+    border-width: 8px;
+    display: block;
+    height: 0;
+    margin: 0 0 0 90px;
+    transform: rotate(0deg);
+    width: 0;
+}
+.manage-list {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 55px;
+    width: 120px;
+    z-index: 99999;
+}
+.manage-list ul {
+    background-color: #FFFFFF;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+}
+.manage-list ul li{
+list-style-type:none;
+}
+#user_edit {
+    display: block;
+    float: left;
+}
+.manage-list-item {
+    -moz-box-sizing: border-box;
+    background-color: #191919;
+    border-bottom: 1px solid #0C0C0C;
+    border-top: 1px solid #202020;
+    clear: both;
+    display: block;
+}
+.user-manage-list-text {
+    color: #BCBCBC;
+    display: block;
+    float: left;
+    line-height: 30px;
+    padding: 4px 20px;
+    width: 120px;
+}
+-->
+</style>
+ 
+ <!-- 导航 -->
+ <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed"   data-toggle="collapse" data-target="#navbar" aria-expanded="false"          aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span> 
+          <span class="icon-bar"></span> <span class="icon-bar"></span> 
+          <span    class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand"><img
+          src="/resource/img/logo/logo_large.png" alt="" /></a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li><a>首页</a></li>
+            <li class="active"><a  href="/a/zhijian/">智见</a></li>
+            <li class="dropdown">
+           	 <a  href="##"     data-toggle="dropdown" class="dropdown-toggle">极客玩<span      class="caret"></span></a>
+	            <ul class="dropdown-menu">
+	              <li><a href="/app/">应用</a></li>
+	              <li><a href="/app/">游戏</a></li>
+	              <li class="dropdown-submenu"><a tabindex="-1"   href="javascript:;">专题</a>
+	              <ul class="dropdown-menu">
+	                <li><a tabindex="-1" href="javascript:;">社交</a></li>
+	                <li><a tabindex="-1" href="javascript:;">通讯</a></li>
+	              </ul></li>
+	            </ul>
+	         </li>
+          	</ul>
+          	<div id="_userlogin">
+		        <a href="#loginModal" data-toggle="modal" class="btn btn-default navbar-right" >登陆</a>
+		     
+		        <div class="manage-list navbar-right"   >
+					<span class="triangle-up"></span>
+					<ul>
+						<!--<LI class="manage-list-item"><A id="user_center" href="/index/member/personalization/inittype/BASEINFO"> <I class="icon-user-center"></I> <SPAN class="user-manage-list-text">个人中心</SPAN>-->
+						<li><a href="/index/member/personalization"
+							id="user_center" class="manage-list-item"> <span
+								class="user-manage-list-text">个人中心</span>
+						</a></li>
+						<li><a href="/index/message/viewmessage" id="user_edit"
+							class="manage-list-item"> <span
+								class="user-manage-list-text">最新消息 <font size="2px"
+									color="red"><sup></sup></font></span>
+						</a></li>
+						<li><a href="/index/member/modifyinfo" id="user_edit"
+							class="manage-list-item"> <span
+								class="user-manage-list-text">个人设置</span>
+						</a></li>
+	
+						<li><a href="/index/member/logout" id="logout"
+							class="manage-list-item"> <span
+								class="user-manage-list-text">退出登录</span>
+						</a></li>
+					</ul>
+					
+				</div>
+			</div>
+			 <form action="##" class="navbar-form navbar-right" rol="search">
+	        <div class="form-group">
+	          <input type="text" class="form-control" placeholder="请输入关键词" />
+	        </div>
+	      </form>
+	    </div>
+  </div>
+</div>
+<!-- 导航END -->

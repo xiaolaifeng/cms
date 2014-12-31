@@ -1,0 +1,297 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=<?php echo $cfg_soft_lang; ?>" />
+<title>更改帐号基本资料 - 会员中心 - <?php echo $cfg_webname; ?></title>
+<script type="text/javascript" src="templets/js/j.js"></script>
+<script type="text/javascript" language='javascript'src='templets/js/main.js'></script>
+<script type="text/javascript" src="templets/js/load.js"></script>
+<script type="text/javascript" src="templets/js/leftmenu.js"></script>
+<link href="<?php echo $cfg_templets_skin;?>/v1/Home/css/userinfo.css" rel="stylesheet" media="screen" type="text/css" />
+<?php include(DEDEMEMBER."/templets/v1/cssscript.htm"); ?>
+<script type="text/javascript">  
+  function checkSubmit()
+{
+}
+  var childWindow;
+  function toQqBind()
+  {
+  	window.location.href ="/member/qq_bind_auth.php";
+      //childWindow = window.localtion("oauth/index.php","TencentLogin","width=450,height=320,menubar=0,scrollbars=1, resizable=1,status=1,titlebar=0,toolbar=0,location=1");
+  } 
+  
+  function closeChildWindow()
+  {
+      childWindow.close();
+  }
+</script>
+</head>
+<body>
+<body class="js"  >
+
+<div class="viewblock animation"  >
+<?php include(DEDEMEMBER."/templets/v1/head3.htm"); ?>
+<div id="content">
+		<div class="mod-setting clearfix">
+			<div class="setting-title yahei">个人设置</div>
+			<div class="setting-content clearfix">
+				<div class="setting-menu">
+					<div class="menu-title menu-profile-current active">
+						<h3>个人资料</h3>
+					</div>
+					<ul class="menu-list">
+						<li class="menu-item basic-link on" id="baseInfoLI"><a onclick="showBaseInfo()">基本资料</a></li>
+						<li class="menu-split"></li>
+						<li class="menu-item portrait-link" id="headInfoLI"><a onclick="showHeadInfo()">头像设置</a></li>
+						<li class="menu-split"></li>
+						<li class="menu-item portrait-link" id="passwordLI"><a onclick="showPassword()">修改密码</a></li>
+						<li class="menu-split"></li>
+						<li class="menu-item portrait-link" id="bindUserLI"><a onclick="bindUser()">绑定互联网用户</a></li>
+						
+					</ul>
+				</div>
+				<div class="setting-detail" id="stthld" style="display: block;">
+					<div class="detail-bg"></div>
+					<div class="plzhld clearfix">
+						<div class="mod-setting-profile" id="1000001" style="display: block;">
+							<div class="setting-profile-title yahei">基本资料</div>
+						     <form action="edit_auth_baseinfo.php" method="post" enctype="multipart/form-data" name="form1" onsubmit="return checkSubmit();" class="setting-profile-form" >
+								<input name="dopost" value="mod1" type="hidden"/>
+								<table class="setting-profile-table">
+									<tbody>
+										<tr>
+											<th>昵称:</th>
+											<td class="line30">
+												<input name="uname" value="<?php echo $row['uname']; ?>" size="30px" maxlength="100" style="border:1px solid rgb(216, 216, 216)" id="nickname" type="text" ><span id="nicknameInfo"></span> 
+											</td>
+											
+										</tr>
+										<tr>
+											<th>邮箱:</th>
+											<td class="line30">
+												<input name="email" type="text" id="email" value="<?php echo $row['email']; ?>"  size="30px" maxlength="100" style="border:1px solid rgb(216, 216, 216)"   type="text" > <span id="emailInfo"></span> 
+											</td>
+										</tr>
+										<tr>
+											<th>性别:</th>
+											<td class="line30">
+												<input name="sex" id="passport-sex-1" type="radio" value="男" <?php if($row['sex']=='男') echo " checked='checked' "; ?>> 
+												<span class="profile-gender">男</span> 
+												<input name="sex" id="passport-sex-2" type="radio" value="女" <?php if($row['sex']=='女') echo " checked='checked' "; ?> 
+												<span class="profile-gender">女</span>
+									            <input name="sex"  type="radio"  value="保密'" <?php if($row['sex']=='保密') echo " checked='checked' "; ?>/>
+												<span class="profile-gender">保密</span>
+												
+											</td>
+										</tr>
+										
+										<tr>
+											<th class="personal-detail-th">个人签名:</th>
+											<td class="personal-detail-td"><input name="signature" value="<?php echo $row['signature']; ?>" id="signature" class="mod-cus-input mod-cus-input-4"> <span class="mod-cus-input-tip"></span></td>
+										</tr>
+									</tbody>
+								</table>
+								<input type="submit" class="setting-submit-btn setting-submit-ml100"  value="保存">
+								<span class="save-ok" id="baseInfoOk"> 你的设置保存成功！ </span>
+							</form>
+						</div>
+					<!-- 设置头像 -->
+						<div class="mod-setting-profile" id="mod-portrait-avatar" style="display: none;">
+						<form action="edit_face.php" method="post" enctype="multipart/form-data" name="form1">
+						
+							<div class="setting-profile-title yahei">头像设置</div>
+							  <input type="hidden" name="dopost" value="save" />
+							 <?php
+						          if(defined('UC_API') && @include_once DEDEROOT.'/uc_client/client.php')
+         						 {
+         						   $data = uc_get_user($cfg_ml->M_LoginID);
+          							  echo uc_avatar($data[0]);
+          						}
+          						else
+         						 {
+          						?>
+							<div class="avatar-nav clearfix">
+								<p class="avatar-nav-current" style="float:left">当前头像</p>
+										<img id="showimage" src="<?php 
+										    $face = $cfg_ml->fields['face'] == '' ? '/member/templets/images/nopic.gif' : $cfg_ml->fields['face'];
+										
+										echo $face; ?>" style="border-radius: 300px; width: 64px; height: 64px; display: block; -webkit-border-radius: 300px;">
+								<p class="avatar-nav-setting">设置新头像</p>
+								<div class="clear"></div>
+								<div style="width: 100%;clear: both;">
+									 <div class="cellBg">
+							            <label style="width:90px">网址：</label>
+							            <input name='oldface' type='hidden' id='oldface' value='<?php echo $face; ?>' />
+							            <input name='faceurl' type='text' id='faceurl' size='35' class='intxt' style='width:250px' value='<?php echo $face; ?>' />
+							          </div>
+								
+									<div style="width: 25%;float: left;">
+						           		 <input name="face" type="file" id="face" size="45" /> 
+						           		 <p style="font-size:18px;adding-left:0.1em;">
+													大小180x180像
+													</p>
+									</div>
+									<div id="showimagediv" style="width: 73%;float: left;margin-left: 3px;display: none;">
+										<div>
+											<div style="float:left; width:310px;">
+												<div style="margin:0 0.3em; width:300px;height:300px; overflow: hidden;border:1px solid #ccc;" id="imgOrgBox">
+													<img id="cutphoto" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
+												</div>
+											</div>
+											<div style="float:left; width:210px;margin-left: 10px">
+													<p style="font-size:18px;adding-left:0.1em;">
+														实时图片预览区
+													</p>
+													<div id="preview" style="width:200px; height:200px; overflow:hidden;border:1px dotted #ccc;">
+														<img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
+													</div>
+													<p style="font-size:18px;adding-left:0.1em;">
+														<input type="button" class="setting-submit-btn setting-submit-ml100" id="cutButton" value="保存裁剪">
+													</p>
+											</div>
+										</div>
+									</div>
+									 <div class="cellBg" style="display:none">
+							            <label style="width:90px"><b>原来的头像：</b><br />
+							                	<a href="edit_face.php?dopost=delold&oldface=<?php echo urlencode($face); ?>">[删除旧头像]</a></label>
+							            <div id='faceview' class='overflow mTB10 litPic' style="width:180px;height:180px;text-align:center;vertical-align:middle;line-height:180px;display:table-cell;">
+							                 <?php
+							       					if($face!='') echo " <img class='' src='$face' style='_margin-top:expression(( 180 - this.height ) / 2);' />\r\n";
+       												?>
+							              </div>
+							          </div>
+								</div>
+							</div>
+<!-- 							<div id="showimage" class="profile-new-portrait"> -->
+						
+<!-- 							</div> -->
+
+							<div style="margin-top:100px;margin-left:200px;display:none" id="headdesc"> 你的设置保存成功！ </div> 
+						
+						
+						<?php } ?>
+									<input type="submit" class="setting-submit-btn setting-submit-ml100"  style="width: 25%;float: left;clear:both" value="保存"/>
+						
+						</form>
+						</div>
+						<!--  修改密码 -->
+						<div class="mod-setting-profile" id="mod-portrait-password" style="display: none;">
+						<form action="edit_auth_baseinfo.php" method="post" enctype="multipart/form-data" name="form3" onsubmit="return checkSubmit();" class="setting-profile-form" >
+								<input name="dopost" value="mod3" type="hidden"/>
+							<div class="setting-profile-title yahei">修改密码</div>
+							<div style="height:20px"></div>
+							<table class="setting-profile-table">
+							
+							
+									<tbody>
+										<tr>
+											<th style="padding:10px;text-align: right">原密码：</th>
+											<td class="line30">
+												<input name="oldpwd"  type="password" value="" id="oldpwd" size="30px" maxlength="100" style="border:1px solid rgb(216, 216, 216)">  <span id="oldpasswordInfo"></span>
+											</td>
+											
+										</tr>
+										<tr>
+											<th style="padding:10px;text-align: right">新密码：</th>
+											<td class="line30">
+												<input name="userpwd" id="newpassword" type="password" value="" size="30px" maxlength="100" style="border:1px solid rgb(216, 216, 216)"  <span id="newpasswordInfo"></span>
+											</td>
+										</tr>
+										<tr>
+											<th style="padding:10px;text-align: right">再次输入新密码：</th>
+											<td class="line30">
+												<input name="userpwdok" id="userpwdok" type="password" value=""size="30px" maxlength="100" style="border:1px solid rgb(216, 216, 216)" > <span id="repasswordInfo"></span>
+											</td>
+										</tr>
+										
+									</tbody>
+								</table>
+									<input type="submit" class="setting-submit-btn setting-submit-ml100"   value="保存"/>
+							</form>
+									<span class="save-ok" id="passwordSaveOkMsg"> 你的设置保存成功！ </span>
+									
+						</div>
+						
+						
+							<!--  互联网账号绑定 -->
+							 <div class="mod-setting-profile" id="mod-portrait-binduser" style="display: none;">
+								<div class="setting-profile-title yahei">绑定账号</div>
+								<div style="height: 20px"></div>
+								
+								  <div class="accountdiv">
+										<?php include(DEDEMEMBER."/templets/qqlist.php"); ?>
+								  </div>
+								  
+								   <div class="accountdiv">
+									<a href="http://weibo.com/" class="login-social__weibo external" target="_blank">	<i class="icon-social-weibo"></i>微博</a> <span id="WEIBO_nickname" style="display:none"> @</span>
+									<span class="accountspan">
+									 <a onclick="bind('WEIBO')" style="float:right" class="">绑定</a> 
+									 </span> 
+								  </div>
+
+								  <div class="accountdiv"> 
+									  <a href="http://www.douban.com" class="login-social__douban external" target="_blank"><i class="icon-social-douban"></i>豆瓣</a><span id="DOUBAN_nickname" style="display:none">@</span>
+									 <span class="accountspan">  
+									 	<a onclick="bind('DOUBAN')" style="float:right" class="">绑定</a>									 </span>
+								  </div>
+								  
+								  <div class="accountdiv"> 
+									  <a href="http://www.xiaomi.com" class="login-social__xiaomi external" style="margin-left:2px;" target="_blank"><img class="icon-social-xiaomi" src="<?php echo $cfg_templets_skin;?>/v1/Home/image/xiaomi/xiaomi-black.png" style="width:12px;margin:4px 0px 0px 10px;float:left;">小米</a><span id="XIAOMI_nickname" style="display:none">@</span>
+									<span class="accountspan">
+									 	<a onclick="bind('XIAOMI')" style="float:right" class="">绑定</a>									</span>
+								  </div>
+								  
+								   
+								  <div id="processresult" style="width:100%;text-align: center;display:none;"></div>
+							</div> 
+						</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+
+
+
+ </div>
+<?php include(DEDEMEMBER."/templets/v1/footer3.htm"); ?>
+<script>
+function showHeadInfo() {
+	checkhavebindemail();
+	$("#headInfoLI").addClass("on");
+	$("#baseInfoLI,#passwordLI,#bindUserLI").removeClass("on");
+	$("#1000001,#mod-portrait-password,#mod-portrait-binduser").slideUp('slow');
+	$("#mod-portrait-avatar").slideDown('slow')
+	hideImageCut();
+}
+function showBaseInfo(){
+checkhavebindemail();
+$("#baseInfoLI").addClass("on");
+$("#headInfoLI,#passwordLI,#bindUserLI").removeClass("on");
+$("#mod-portrait-avatar,#mod-portrait-password,#mod-portrait-binduser").slideUp('slow');
+$("#1000001").slideDown('slow')
+hideImageCut();
+}
+function showPassword(){
+checkhavebindemail();
+$("#passwordLI").addClass("on");
+$("#headInfoLI,#baseInfoLI,#bindUserLI").removeClass("on");
+$("#1000001,#mod-portrait-avatar,#mod-portrait-binduser").slideUp('slow')
+$("#mod-portrait-password").slideDown('slow');
+hideImageCut();
+}
+function checkhavebindemail(){
+}
+function bindUser(){
+	checkhavebindemail();
+	$("#bindUserLI").addClass("on");
+	$("#headInfoLI,#baseInfoLI,#passwordLI").removeClass("on");
+	$("#1000001,#mod-portrait-avatar,#mod-portrait-password").slideUp('slow')
+	$("#mod-portrait-binduser").slideDown('slow');
+	hideImageCut();
+}
+</script>
+</body>
+</html>
