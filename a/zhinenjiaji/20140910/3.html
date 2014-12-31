@@ -1,0 +1,386 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>test_极客</title>
+<meta name="keywords" content="est" />
+<meta name="description" content="颇具人气的社交应用，随时沟通附近的人，数以万计就在你周围的群总有几个能吸引你。" />
+<link href="/templets/default/style/dedecms.css" rel="stylesheet" media="screen" type="text/css" />
+
+<link type="image/x-icon" rel="icon" href="http://www.geekview.cn/Public/Home/image/favicon.ico"/>
+<link href="http://www.geekview.cn/Public/Home/css/panel.css" rel="stylesheet" media="screen" type="text/css" />
+<link href="http://www.geekview.cn/Public/Home/css/normalize.css" rel="stylesheet" media="screen" type="text/css" />
+<link href="http://www.geekview.cn/Public/Home/css/base.css" rel="stylesheet" media="screen" type="text/css" />
+<link href="http://www.geekview.cn/Public/Home/css/responsive.css" rel="stylesheet" media="screen" type="text/css" />
+<link href="http://www.geekview.cn/Public/Home/css/listPage.css" rel="stylesheet" media="screen" type="text/css" />
+<link href="http://www.geekview.cn/Public/Home/css/login.css" rel="stylesheet" media="screen" type="text/css" />
+
+<script language="javascript" type="text/javascript" src="/include/dedeajax2.js"></script>
+<script language="javascript" type="text/javascript">
+<!--
+function CheckLogin(){
+	  var taget_obj = document.getElementById('_ajax_feedback');
+	  myajax = new DedeAjax(taget_obj,false,false,'','','');
+	  myajax.SendGet2("/member/ajax_feedback.php");
+	  DedeXHTTP = null;
+}
+function postBadGood(ftype,fid)
+{
+	var taget_obj = document.getElementById(ftype+fid);
+	var saveid = GetCookie('badgoodid');
+	if(saveid != null)
+	{
+		var saveids = saveid.split(',');
+		var hasid = false;
+		saveid = '';
+		j = 1;
+		for(i=saveids.length-1;i>=0;i--)
+		{
+			if(saveids[i]==fid && hasid) continue;
+			else {
+				if(saveids[i]==fid && !hasid) hasid = true;
+				saveid += (saveid=='' ? saveids[i] : ','+saveids[i]);
+				j++;
+				if(j==10 && hasid) break;
+				if(j==9 && !hasid) break;
+			}
+		}
+		if(hasid) { alert('您刚才已表决过了喔！'); return false;}
+		else saveid += ','+fid;
+		SetCookie('badgoodid',saveid,1);
+	}
+	else
+	{
+		SetCookie('badgoodid',fid,1);
+	}
+	myajax = new DedeAjax(taget_obj,false,false,'','','');
+	myajax.SendGet2("/plus/feedback.php?aid="+fid+"&action="+ftype+"&fid="+fid);
+}
+function postDigg(ftype,aid)
+{
+	var taget_obj = document.getElementById('newdigg');
+	var saveid = GetCookie('diggid');
+	if(saveid != null)
+	{
+		var saveids = saveid.split(',');
+		var hasid = false;
+		saveid = '';
+		j = 1;
+		for(i=saveids.length-1;i>=0;i--)
+		{
+			if(saveids[i]==aid && hasid) continue;
+			else {
+				if(saveids[i]==aid && !hasid) hasid = true;
+				saveid += (saveid=='' ? saveids[i] : ','+saveids[i]);
+				j++;
+				if(j==20 && hasid) break;
+				if(j==19 && !hasid) break;
+			}
+		}
+		if(hasid) { alert("您已经顶过该帖，请不要重复顶帖 ！"); return; }
+		else saveid += ','+aid;
+		SetCookie('diggid',saveid,1);
+	}
+	else
+	{
+		SetCookie('diggid',aid,1);
+	}
+	myajax = new DedeAjax(taget_obj,false,false,'','','');
+	var url = "/plus/digg_ajax.php?action="+ftype+"&id="+aid;
+	myajax.SendGet2(url);
+}
+function getDigg(aid)
+{
+	var taget_obj = document.getElementById('newdigg');
+	myajax = new DedeAjax(taget_obj,false,false,'','','');
+	myajax.SendGet2("/plus/digg_ajax.php?id="+aid);
+	DedeXHTTP = null;
+}
+-->
+</script>
+</head>
+<body class="js articleview">
+
+<div class="viewblock animation">
+
+<div id="wrapper">
+	<header id="site_header">
+		<div style="height: 85px" class="navbar">
+			<div id="nav_container" class="container visible">
+				<a href="/" class="logo"><img
+					src="/templets/default/v1/Home/image/new_logo.png" alt="极客视界" class="logo-img"></a>
+				<nav>
+					<ul id="nav">
+						<li><a class="nav-item" rel="dropmenu2" href="/a/zhijian/">智见</a></li>
+						<li><a class="nav-item" rel="dropmenu1" href="/app/">极客玩</a></li>
+						<!-- 
+						<li><a href="/index/topic/index" class="nav-item ">专题</a></li>
+						<LI><A class="nav-item nav-item-discover " href="/index/gk_discover/discover">极客发现</A></LI> -->
+					</ul>
+				</nav>
+				<div id="_userlogin">
+				
+				<div style="margin-top: 22px; float: right; width: 100px;"  >
+					
+					<div style="height: 36px; float: right;">
+						<div class="user-account-info"
+							style="float: right; margin-top: 3px;">
+							<a onclick="showLoginDialog();" href="javascript:void(0)"
+								class="log">登录</a>
+						</div>
+						   <script language="javascript" type="text/javascript">CheckLogin();</script>
+						<div class="manage-list">
+							<span class="triangle-up"></span>
+							<ul>
+								<!--<LI class="manage-list-item"><A id="user_center" href="/index/member/personalization/inittype/BASEINFO"> <I class="icon-user-center"></I> <SPAN class="user-manage-list-text">个人中心</SPAN>-->
+								<li><a href="/index/member/personalization"
+									id="user_center" class="manage-list-item"> <span
+										class="user-manage-list-text">个人中心</span>
+								</a></li>
+								<li><a href="/index/message/viewmessage" id="user_edit"
+									class="manage-list-item"> <span
+										class="user-manage-list-text">最新消息 <font size="2px"
+											color="red"><sup></sup></font></span>
+								</a></li>
+								<li><a href="/index/member/modifyinfo" id="user_edit"
+									class="manage-list-item"> <span
+										class="user-manage-list-text">个人设置</span>
+								</a></li>
+
+								<li><a href="/index/member/logout" id="logout"
+									class="manage-list-item"> <span
+										class="user-manage-list-text">退出登录</span>
+								</a></li>
+							</ul>
+							
+						</div>
+						
+						
+					</div>
+				</div>
+				</div>
+				<div style="margin-top: 22px; float: right; width: 200px;">
+
+					<div style="height: 36px; margin-top: 3px; float: right;">
+						<form method="POST" action="">
+
+							<!-- <div style="width:200px;"> -->
+
+							<span style="float: left;"> <input type="text"
+								autocomplete="off" value="" placeholder="搜索设备"
+								class="default-search" name="keyword">
+
+							</span> <span style="position: absolute; margin: 9px -25px"> <input
+								type="submit" value="提交查询内容" class="search-icon">
+
+							</span>
+
+						</form>
+
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
+
+		<div class="clear"></div>
+
+
+
+	</header>
+
+</div>
+
+
+
+</div>
+<!-- /header -->
+<ul id="tool-bar" style="margin-left: 100px; position: fixed; background: none repeat scroll 0% 0% rgb(255, 255, 255); z-index: 2;"> 
+    <li class="li-first">
+    	<a id="tb-comment" title="评论" href="#comment_app_area"><span class="tool-bar-icon tool-comment"></span><label></label></a>
+    </li> 
+    <li id="lovediv" class="li-middle">
+    	<a id="loveA" title="喜欢" href="javascript:void(0);"><span class="tool-bar-icon tool-like">
+    </span>
+	<label id="lovenums" class="">
+     	 0					</label></a>
+     </li> 
+    <li class="li-last">
+    	<a id="vertical-toolbar" title="分享" href="#"><span class="tool-bar-icon tool-share"></span></a>
+    </li>
+   <a id="weixin_link" style="display:none" class="jiathis_button_weixin" title="分享到微信">
+   	<span class="jiathis_txt jiathis_separator jtico jtico_weixin">微信</span>
+   </a>
+</ul>
+
+
+
+<div class="container" id="content_wrapper">
+<div class="left-side">
+	<article>
+				<section>
+					<!-- Web Article -->
+					<div class="content-card article-style">
+						<a style="background-image: url(/Uploads/UserFiles/Image/2014-09-10/540ff6215fd86.jpg)" alt="test -- Nimble" id="article_cover">
+						</a>
+						<input type="hidden" value="2465">
+						<div id="web-article-header">
+							<div class="article-title">
+								<div class="app-title">
+									<h1>
+										test -- Nimble									</h1>
+								</div>
+							</div>	
+							
+							<div class="article-info-and-tag-area">
+								<div>
+											<div class="pub-time-and-version">
+												<ul class="pub-time-and-version-list">
+												  
+												  <a href="/index/member/personalization/tagetuser/285"> 
+												  <li class="pub-author">
+												   admin.												   </li>
+												  
+												  <li class="pub-time">2014-09-11												  </li>
+												   </a>
+												 </ul>
+											</div>
+								</div>
+								<div>
+											<a href="/index/index/index/querytype/lables/lableid/2af157069e542e091d75038c083de9cb"><span class="tag-span">智能穿戴</span></a><a href="/index/index/index/querytype/lables/lableid/30dde26f5fa1fd501c8e84c3d1b8757e"><span class="tag-span">奇趣设备</span></a>								</div>
+							</div>
+							<div id="summary" class="short-des"> 
+								  <div class="intro">颇具人气的社交应用，随时沟通附近的人，数以万计就在你周围的群总有几个能吸引你。</div>
+								  
+							</div>
+						</div>
+						<div id="article_content">
+							 test
+						</div>
+						<!-- 分享 -->
+					</div>
+				</section>
+				<!-- Already Commented -->
+				<section class="quote-card">
+					<div id="user_comments" class="content-card">
+						
+					</div>
+				</section>
+				<!-- Comment App Area -->
+				<section id="comment_app_area">
+					<div class="comment-area">
+						<input type="hidden" value="2465" id="comment_articleid" name="comment_articleid">
+						<input type="hidden" value="285" id="comment_pubuid" name="comment_pubuid">
+						<h5 class="unregistered-title">评论</h5>
+						<textarea cols="87" rows="8" placeholder="写下你的评论吧…" id="comment_content" name="comment_content"></textarea>
+						<span class="comment-length-tip"><input type="text" id="reply_nickname" placeholder="输入昵称…" class="reply-quote-nick-input" maxlength="30"></span>
+						<button onclick="postReply();" class="button-submit">提交评论</button>
+					</div>
+					
+					 <!-- //AJAX评论区 -->
+ 					<!-- 
+ <div class='_DEDECY' style=''><div id='SOHUCS' sid='3'></div></div><script>(function(){var doc = document,s = doc.createElement('script'),h = doc.getElementsByTagName('head')[0] || doc.head || doc.documentElement;s.type = 'text/javascript';s.charset = 'utf-8';s.src='http://assets.changyan.sohu.com/upload/changyan.js?conf=prod_6d4b7e17e66a3883e0acda697bdfcb0c&appid=cyrmNqJCm';h.insertBefore(s,h.firstChild);window.SCS_NO_IFRAME = true;})()</script>
+ -->
+
+<!--兼容版，可保证页面完全兼容-->
+<div id="SOHUCS"></div>
+<script>
+  (function(){
+    var appid = 'cyrpbrFrK',
+    conf = 'prod_6467eecac294bf28a5a7a4809767ab2b';
+    var doc = document,
+    s = doc.createElement('script'),
+    h = doc.getElementsByTagName('head')[0] || doc.head || doc.documentElement;
+    s.type = 'text/javascript';
+    s.charset = 'utf-8';
+    s.src =  'http://assets.changyan.sohu.com/upload/changyan.js?conf='+ conf +'&appid=' + appid;
+    h.insertBefore(s,h.firstChild);
+  })()
+</script>
+ 
+ 					
+ 					
+ 					 <!-- //顶踩 -->
+  <div class="newdigg" id="newdigg">
+   <div class="diggbox digg_good" onmousemove="this.style.backgroundPosition='left bottom';" onmouseout="this.style.backgroundPosition='left top';" onclick="javascript:postDigg('good',3)">
+    <div class="digg_act">顶一下</div>
+    <div class="digg_num">(1)</div>
+    <div class="digg_percent">
+     <div class="digg_percent_bar"><span style="width:100%"></span></div>
+     <div class="digg_percent_num">100%</div>
+    </div>
+   </div>
+   <div class="diggbox digg_bad" onmousemove="this.style.backgroundPosition='right bottom';" onmouseout="this.style.backgroundPosition='right top';" onclick="javascript:postDigg('bad',3)">
+    <div class="digg_act">踩一下</div>
+    <div class="digg_num">(0)</div>
+    <div class="digg_percent">
+     <div class="digg_percent_bar"><span style="width:0%"></span></div>
+     <div class="digg_percent_num">0%</div>
+    </div>
+   </div>
+  </div>
+  <script language="javascript" type="text/javascript">getDigg(3);</script>
+  <!-- //顶踩部份的源码结束 -->
+  
+  
+				</section>
+			<footer>
+				<a href="#top" class="back-to-top"></a>
+			</footer>
+		</article>
+</div>
+<div class="right-side">
+			<!-- Platform Infomation -->
+			<div style="padding: 10px 10px 10px 10px;height:130px" class="side-card">
+				
+				<div style="float: left; padding:12px 10px 0px 0px;" id="left-image">
+					<a href="/index/member/personalization/tagetuser/285" class="display-user-profile"><img src="/Uploads/UserFiles/Image/2014-09-02/540595c273cbf.jpg" alt=""></a>
+				</div>
+				<div style="float: left;" id="right-short-introduce">
+					<div style="clear:both;width: 100%;">
+						<span style="font-size: 16px;color: black;font-style: BOLD;width:100%;float:left;margin-top: 5px;" id="username">
+							<a href="/index/member/personalization/tagetuser/285" class="user-name-a">Mint.</a>
+						</span>
+					</div>
+					<div style="clear:both;padding-top:10px;;width: 100%;">
+						<span style="float:left" id="self-desc"></span>
+					</div>
+									</div>
+				<div style="clear: both;padding-top: 8px">
+					<a class="login-social__weibo external" href="http://weibo.com/u/2488657122" target="_blank">
+					<i class="right_icon-social-sinaweibo-auth"></i></a>																														
+					<a class="login-social__xiaomi external" href="http://me.mi.com/414482630" target="_blank"><i class="right_icon-social-xiaomi-auth"></i></a>					
+					<a href="/index/member/personalization/tagetuser/285">
+						<i style="color: #797979;text-align: right;font: inherit;white-space: nowrap;position: absolute;right: 10px;width: 132px;height: 14px;float: left;margin: 0 5px 0 0;text-decoration: none;text-shadow: none;">查看我的13篇文章</i>
+					</a>	
+				</div>
+			</div>
+			
+			<!-- All Wants -->
+			<div style="padding: 10px 10px 10px 10px;" class="side-card">
+				<h5>大家还喜欢</h5>
+				<ul style="margin-top: 10px;">
+				 	
+						
+				</ul>
+			</div>
+		</div>
+		<div class="clear"></div>
+</div>
+ <!-- 内容END -->
+    <footer class="page-footer">
+      <center>
+      <a href="#">关于我们</a>
+      <a href="#">使用帮助</a>
+      <a href="#">联系我们</a>
+      <a href="#">加入我们</a>
+      </center>
+    </footer>
+
+
+<!-- /footer -->
+</div>
+</body>
+</html>
