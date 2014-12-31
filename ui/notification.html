@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>极客玩</title>
+    <link href="/resource/plugins/boostrapv3/css/bootstrap.min.css"
+      rel="stylesheet" type="text/css" />
+      <link href="/resource/plugins/boostrapv3/css/bootstrap-theme.min.css"
+        rel="stylesheet" type="text/css" />
+        <link href="/resource/plugins/font-awesome/css/font-awesome.css"
+          rel="stylesheet" type="text/css" />
+          <link href="/resource/css/icomoon.css" rel="stylesheet" type="text/css" />
+          <link href="/resource/css/style.css" rel="stylesheet" type="text/css" />
+          <link href="/resource/css/app-screenshot.css" rel="stylesheet"
+            type="text/css" />
+            <link href="/resource/css/star-rating.css" rel="stylesheet"
+              type="text/css" />
+              <!-- 兼容IE8,IE9 -->
+              <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+              <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+            </head>
+            <body>
+              <!-- 导航 -->
+              <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+                <div class="container">
+                  <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed"
+                    data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+                    aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span> <span
+                    class="icon-bar"></span> <span class="icon-bar"></span> <span
+                    class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand"><img
+                    src="/resource/img/logo/logo_large.png" alt="" /></a>
+                  </div>
+                  <div id="navbar" class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav">
+                      <li><a>首页</a></li>
+                      <li><a>智见</a></li>
+                      <li class="dropdown active"><a href="##"
+                        data-toggle="dropdown" class="dropdown-toggle">极客玩<span
+                      class="caret"></span></a>
+                      <ul class="dropdown-menu">
+                        <li><a href="##">应用</a></li>
+                        <li><a href="##">游戏</a></li>
+                        <li class="dropdown-submenu"><a tabindex="-1"
+                        href="javascript:;">专题</a>
+                        <ul class="dropdown-menu">
+                          <li><a tabindex="-1" href="javascript:;">社交</a></li>
+                          <li><a tabindex="-1" href="javascript:;">通讯</a></li>
+                        </ul></li>
+                      </ul></li>
+                    </ul>
+                  </li>
+                </ul>
+                <form action="##" class="navbar-form navbar-right" rol="search">
+                  <div class="form-group">
+                    <input type="text" class="form-control" placeholder="请输入关键词" />
+                  </div>
+                  <a href="#loginModal" data-toggle="modal" class="btn btn-default">登陆</a>
+                </form>
+              </div>
+            </div>
+          </div>
+          <!-- 导航END -->
+          <!-- 登录框 -->
+          <div class="modal fade" id="loginModal">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header b0">
+                  <button type="button" class="close" data-dismiss="modal">
+                  <span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <!-- 登录框内容 -->
+                  <div class="row">
+                    <div class="col-md-8 col-md-offset-2 col-xs-12">
+                      <div class="panel panel-default panel-flat login-panel">
+                        <ul id="loginTab" class="nav nav-tabs nav-justified">
+                          <li class="active"><a href="#login" data-toggle="tab">登录</a>
+                        </li>
+                        <li class=""><a href="#register" data-toggle="tab">注册</a>
+                      </li>
+                    </ul>
+                    <div class="tab-content">
+                      <div class="tab-pane fade active in" id="login">
+                        <div class="panel-body">
+                          <div class="login-desc">
+                            <strong>使用第三方帐号登录</strong> <br></br>
+                          </div>
+                          <div class="text-center">
+                            <a href="#" class="circular-social-btn qq mr"><i
+                            class="fa fa-qq"></i></a> <a href="#"
+                            class="circular-social-btn weibo mr"><i
+                          class="fa fa-weibo"></i></a> <a href="#"
+                          class="circular-social-btn xiaomi mr"><i
+                        class="fa icon-xiaomi"></i></a> <a href="#"
+                        class="circular-social-btn douban"><i
+                      class="fa icon-douban"></i></a>
+                    </div>
+                    <div class="seperator login-desc">
+                      <strong>使用邮箱登陆</strong>
+                      <hr>
+                    </div>
+                    <form role="form" class="mb-lg">
+                      <div class="form-group has-feedback">
+                        <input id="loginEmail" type="email" placeholder="常用邮箱"
+                        class="form-control"> <span
+                        class="fa fa-envelope form-control-feedback text-muted"></span>
+                      </div>
+                      <div class="form-group has-feedback">
+                        <input id="loginPassword" type="password"
+                        placeholder="请输入密码" class="form-control"> <span
+                        class="fa fa-lock form-control-feedback text-muted"></span>
+                      </div>
+                      <div class="clearfix">
+                        <div class="checkbox c-checkbox pull-left mt0">
+                          <label> <input type="checkbox" value=""> <span
+                          class="fa fa-check"></span>记住我
+                        </label>
+                      </div>
+                      <div class="pull-right">
+                        <a href="#" class="text-muted">忘记密码?</a>
+                      </div>
+                    </div>
+                    <button type="submit" class="btn btn-block btn-primary">登录</button>
+                  </form>
+                </div>
+              </div>
+              <div class="tab-pane fade" id="register">
+                <div class="panel-body">
+                  <form role="form" class="mb-lg">
+                    <div class="form-group has-feedback">
+                      <input id="registerUserName" type="text"
+                      placeholder="昵称，4～30字符" class="form-control"> <span
+                      class="fa fa-user form-control-feedback text-muted"></span>
+                    </div>
+                    <div class="form-group has-feedback">
+                      <input id="registerEmail" type="email" placeholder="常用邮箱"
+                      class="form-control"> <span
+                      class="fa fa-envelope form-control-feedback text-muted"></span>
+                    </div>
+                    <div class="form-group has-feedback">
+                      <input id="registerPassword" type="password"
+                      placeholder="密码" class="form-control"> <span
+                      class="fa fa-lock form-control-feedback text-muted"></span>
+                    </div>
+                    <div class="clearfix"></div>
+                    <button type="submit" class="btn btn-block btn-primary">注册</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- 登录框内容END -->
+    </div>
+  </div>
+</div>
+</div>
+<!-- 登录框END -->
+<!-- 内容 -->
+<div class="container page-content">
+<div class="col-md-12">
+  <ul class="nav nav-tabs" id="notificationTab">
+    <li class="active"><a href="#message">私信</a></li>
+    <li><a href="#news">动态</a></li>
+    <li><a href="#comments">评论</a></li>
+  </ul>
+  <div class="tools"> <a href="javascript:;" class="collapse"></a> <a href="#grid-config" data-toggle="modal" class="config"></a> <a href="javascript:;" class="reload"></a> <a href="javascript:;" class="remove"></a> </div>
+  <div class="tab-content">
+    <div class="tab-pane active" id="message">
+      <div class="row column-seperation">
+        <div class="col-md-12 noti-msg-box">
+          <div class="row noti-msg-item mb-lg">
+            <div class="user-icon">
+              <img width="40" height="40" class="img-thumbnail img-circle" src="/resource/img/icon/icon.png"
+              alt="" />
+            </div>
+            <div  class="user-msg mb">
+              <div>
+                <a><span class="dark-text">Vincent</span></a>
+                <span class="text-error">2000-01-01</span>
+                <span class="dark-text">对你说</span>
+              </div>
+              <div>
+                hi
+              </div>
+            </div>
+            <div class="user-btn">
+              <a class="btn btn-info pull-right">
+                <li class="fa fa-ban"></li>
+                拒收
+              </a>
+            </div>
+          </div>
+          <div class="row noti-msg-item mb-lg">
+            <div class="user-icon">
+              <img width="40" height="40" class="img-thumbnail img-circle" src="/resource/img/icon/icon.png"
+              alt="" />
+            </div>
+            <div  class="user-msg mb">
+              <div>
+                <a><span class="dark-text">Vincent</span></a>
+                <span class="text-error">2000-01-01</span>
+                <span class="dark-text">对你说</span>
+              </div>
+              <div>
+                hi
+              </div>
+            </div>
+            <div class="user-btn">
+              <a class="btn btn-info pull-right">
+                <li class="fa fa-ban"></li>
+                拒收
+              </a>
+            </div>
+          </div>
+          <div class="row noti-msg-item mb-lg">
+            <div class="user-icon">
+              <img width="40" height="40" class="img-thumbnail img-circle" src="/resource/img/icon/icon.png"
+              alt="" />
+            </div>
+            <div  class="user-msg mb">
+              <div>
+                <a><span class="dark-text">Vincent</span></a>
+                <span class="text-error">2000-01-01</span>
+                <span class="dark-text">对你说</span>
+              </div>
+              <div>
+                hi
+              </div>
+            </div>
+            <div class="user-btn">
+              <a class="btn btn-info pull-right">
+                <li class="fa fa-ban"></li>
+                拒收
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="tab-pane" id="news">
+      <div class="row">
+        <div class="col-md-12 noti-msg-box">
+           <div class="row noti-msg-item mb-lg">
+            <div class="user-icon">
+              <img width="40" height="40" class="img-thumbnail img-circle" src="/resource/img/icon/icon.png"
+              alt="" />
+            </div>
+            <div  class="user-msg mb">
+              <div>
+                <a><span class="dark-text">Vincent</span></a>
+                <span class="text-error">2000-01-01</span>
+                <span class="dark-text">喜欢你的智见</span>
+                <a><span class="dark-text">智见</span></a>
+              </div>
+            </div>
+          </div>
+           <div class="row noti-msg-item mb-lg">
+            
+            <div  class="user-msg mb">
+              <div>
+                <span class="dark-text">你与</span>
+                <span class="text-error">2000-01-01</span>
+                <span class="dark-text">分享的智见</span>
+                <a><span class="dark-text">智见</span></a>
+                <span class="dark-text">通过了审核</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="tab-pane" id="comments">
+      <div class="row">
+        <div class="col-md-12 noti-msg-box">
+          <div class="row noti-msg-item mb-lg">
+          <div class="user-icon">
+              <img width="40" height="40" class="img-thumbnail img-circle" src="/resource/img/icon/icon.png"
+              alt="" />
+            </div>
+            <div  class="user-msg mb">
+              <div>
+                <a><span class="dark-text">Vincent</span></a>
+                <span class="text-error">2000-01-01</span>
+                <span class="dark-text">评论了你的智见</span>
+                <a><span class="dark-text">智见</span></a>
+              </div>
+            </div>
+            <div class="user-btn">
+              <a class="btn btn-info pull-right">
+                <li class="fa fa-ellipsis-h"></li>
+                点击查看详情
+              </a>
+            </div>
+          </div>
+          <div class="row noti-msg-item mb-lg">
+          <div class="user-icon">
+              <img width="40" height="40" class="img-thumbnail img-circle" src="/resource/img/icon/icon.png"
+              alt="" />
+            </div>
+            <div  class="user-msg mb">
+              <div>
+                <a><span class="dark-text">Vincent</span></a>
+                <span class="text-error">2000-01-01</span>
+                <span class="dark-text">回复了你的评论</span>
+                <a><span class="dark-text">评论</span></a>
+              </div>
+              <div>
+                很好
+              </div>
+            </div>
+            <div class="user-btn">
+              <a class="btn btn-info pull-right">
+                <li class="fa fa-ellipsis-h"></li>
+                点击查看详情
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<!-- 内容END -->
+<footer class="page-footer">
+<center>
+<a href="#">关于我们</a> <a href="#">使用帮助</a> <a href="#">联系我们</a> <a
+href="#">加入我们</a>
+</center>
+</footer>
+<script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+<script src="/resource/plugins/boostrapv3/js/bootstrap.min.js"></script>
+<script src="/resource/js/scroller.js"></script>
+<script src="/resource/js/star-rating.js"></script>
+<script src="/resource/js/app.js"></script>
+</body>
+</html>

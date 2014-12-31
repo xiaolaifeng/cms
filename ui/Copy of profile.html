@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>极客玩</title>
+    <link href="/resource/plugins/boostrapv3/css/bootstrap.min.css"
+      rel="stylesheet" type="text/css" />
+      <link href="/resource/plugins/boostrapv3/css/bootstrap-theme.min.css"
+        rel="stylesheet" type="text/css" />
+        <link href="/resource/plugins/font-awesome/css/font-awesome.css"
+          rel="stylesheet" type="text/css" />
+          <link href="/resource/css/icomoon.css" rel="stylesheet" type="text/css" />
+          <link href="/resource/css/style.css" rel="stylesheet" type="text/css" />
+          <link href="/resource/css/app-screenshot.css" rel="stylesheet"
+            type="text/css" />
+            <link href="/resource/css/star-rating.css" rel="stylesheet"
+              type="text/css" />
+              <!-- 兼容IE8,IE9 -->
+              <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+              <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+            </head>
+            <body>
+              <!-- 导航 -->
+              <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+                <div class="container">
+                  <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed"
+                    data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+                    aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span> <span
+                    class="icon-bar"></span> <span class="icon-bar"></span> <span
+                    class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand"><img
+                    src="/resource/img/logo/logo_large.png" alt="" /></a>
+                  </div>
+                  <div id="navbar" class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav">
+                      <li><a>首页</a></li>
+                      <li><a>智见</a></li>
+                      <li class="dropdown active"><a href="##"
+                        data-toggle="dropdown" class="dropdown-toggle">极客玩<span
+                      class="caret"></span></a>
+                      <ul class="dropdown-menu">
+                        <li><a href="##">应用</a></li>
+                        <li><a href="##">游戏</a></li>
+                        <li class="dropdown-submenu"><a tabindex="-1"
+                        href="javascript:;">专题</a>
+                        <ul class="dropdown-menu">
+                          <li><a tabindex="-1" href="javascript:;">社交</a></li>
+                          <li><a tabindex="-1" href="javascript:;">通讯</a></li>
+                        </ul></li>
+                      </ul></li>
+                    </ul>
+                  </li>
+                </ul>
+                <form action="##" class="navbar-form navbar-right" rol="search">
+                  <div class="form-group">
+                    <input type="text" class="form-control" placeholder="请输入关键词" />
+                  </div>
+                  <a href="#loginModal" data-toggle="modal" class="btn btn-default">登陆</a>
+                </form>
+              </div>
+            </div>
+          </div>
+          <!-- 导航END -->
+          <!-- 登录框 -->
+          <div class="modal fade" id="loginModal">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header b0">
+                  <button type="button" class="close" data-dismiss="modal">
+                  <span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <!-- 登录框内容 -->
+                  <div class="row">
+                    <div class="col-md-8 col-md-offset-2 col-xs-12">
+                      <div class="panel panel-default panel-flat login-panel">
+                        <ul id="loginTab" class="nav nav-tabs nav-justified">
+                          <li class="active"><a href="#login" data-toggle="tab">登录</a>
+                        </li>
+                        <li class=""><a href="#register" data-toggle="tab">注册</a>
+                      </li>
+                    </ul>
+                    <div class="tab-content">
+                      <div class="tab-pane fade active in" id="login">
+                        <div class="panel-body">
+                          <div class="login-desc">
+                            <strong>使用第三方帐号登录</strong> <br></br>
+                          </div>
+                          <div class="text-center">
+                            <a href="#" class="circular-social-btn qq mr"><i
+                            class="fa fa-qq"></i></a> <a href="#"
+                            class="circular-social-btn weibo mr"><i
+                          class="fa fa-weibo"></i></a> <a href="#"
+                          class="circular-social-btn xiaomi mr"><i
+                        class="fa icon-xiaomi"></i></a> <a href="#"
+                        class="circular-social-btn douban"><i
+                      class="fa icon-douban"></i></a>
+                    </div>
+                    <div class="seperator login-desc">
+                      <strong>使用邮箱登陆</strong>
+                      <hr>
+                    </div>
+                    <form role="form" class="mb-lg">
+                      <div class="form-group has-feedback">
+                        <input id="loginEmail" type="email" placeholder="常用邮箱"
+                        class="form-control"> <span
+                        class="fa fa-envelope form-control-feedback text-muted"></span>
+                      </div>
+                      <div class="form-group has-feedback">
+                        <input id="loginPassword" type="password"
+                        placeholder="请输入密码" class="form-control"> <span
+                        class="fa fa-lock form-control-feedback text-muted"></span>
+                      </div>
+                      <div class="clearfix">
+                        <div class="checkbox c-checkbox pull-left mt0">
+                          <label> <input type="checkbox" value=""> <span
+                          class="fa fa-check"></span>记住我
+                        </label>
+                      </div>
+                      <div class="pull-right">
+                        <a href="#" class="text-muted">忘记密码?</a>
+                      </div>
+                    </div>
+                    <button type="submit" class="btn btn-block btn-primary">登录</button>
+                  </form>
+                </div>
+              </div>
+              <div class="tab-pane fade" id="register">
+                <div class="panel-body">
+                  <form role="form" class="mb-lg">
+                    <div class="form-group has-feedback">
+                      <input id="registerUserName" type="text"
+                      placeholder="昵称，4～30字符" class="form-control"> <span
+                      class="fa fa-user form-control-feedback text-muted"></span>
+                    </div>
+                    <div class="form-group has-feedback">
+                      <input id="registerEmail" type="email" placeholder="常用邮箱"
+                      class="form-control"> <span
+                      class="fa fa-envelope form-control-feedback text-muted"></span>
+                    </div>
+                    <div class="form-group has-feedback">
+                      <input id="registerPassword" type="password"
+                      placeholder="密码" class="form-control"> <span
+                      class="fa fa-lock form-control-feedback text-muted"></span>
+                    </div>
+                    <div class="clearfix"></div>
+                    <button type="submit" class="btn btn-block btn-primary">注册</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- 登录框内容END -->
+    </div>
+  </div>
+</div>
+</div>
+<!-- 登录框END -->
+<!-- 更改邮箱 -->
+<div class="modal fade" id="updateEmailModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header b0">
+        <button type="button" class="close" data-dismiss="modal">
+        <span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <!-- 登录框内容 -->
+        <div class="row">
+          <div class="col-md-8 col-md-offset-2 col-xs-12">
+            <div class="login-desc">
+              <h4>修改邮箱</h4>
+            </div>
+            <div class="panel panel-default panel-flat login-panel">
+              <div class="panel-body">
+                
+                <div class="form-group has-feedback">
+                  <input id="registerEmail" type="email" placeholder="常用邮箱"
+                  class="form-control"> <span
+                  class="fa fa-envelope form-control-feedback text-muted"></span>
+                </div>
+                <button type="submit" class="btn btn-block btn-primary">发送邮件</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 更改邮箱END -->
+<!-- 内容 -->
+<div class="container page-content">
+<div class="row">
+  <div class="col-md-6 col-md-offset-3 col-xs-12">
+    <div class="grid simple">
+      <div class="grid-title no-border user-profile-header row-sep-4">
+        <center>
+        <img width="70" height="70" class="img-thumbnail img-circle" src="<?php $facepic =!empty($cfg_ml->M_Face)? $cfg_ml->M_Face :$cfg_memberurl.'/templets/images/dfboy.png'; echo $facepic; ?>"    alt="" />
+        </center>
+      </div>
+      <div class="grid-body no-border row-sep-4">
+        <br/>
+        <div class="row row-sep p">
+          <div class="col-md-8 col-sm-8 col-xs-8">
+            <h4>Vincent</h4>
+          </div>
+          <div class="col-md-4 col-sm-4 col-xs-4">
+            <a class="btn btn-info pull-right">
+              更换头像
+            </a>
+          </div>
+        </div>
+        <div class="row p">
+          <div class="col-md-8 col-sm-8 col-xs-8">
+            <div>
+              <?php echo $row['email']; ?>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-4 col-xs-4">
+            <a href="#updateEmailModal" data-toggle="modal" class="btn btn-info pull-right">
+              更改邮箱
+            </a>
+          </div>
+        </div>
+        <div class="row p hidden-xs">
+          <div class="col-md-2 col-sm-2 col-xs-2">
+            <div>
+              性别
+            </div>
+          </div>
+          <div class="col-md-8 col-sm-8 col-xs-8">
+            <input id="male" type="radio" name="sex" value="男" <?php if($row['sex']=='男') echo " checked='checked' "; ?>>
+            <label for="male">男</label>
+            <input id="female" type="radio" name="sex" value="女" <?php if($row['sex']=='女') echo " checked='checked' "; ?>>
+            <label for="female">女</label>
+            <input id="secrecy" type="radio" name="sex" value="secrecy" <?php if($row['sex']=='保密') echo " checked='checked' "; ?>>
+            <label for="secrecy">保密</label>
+          </div>
+        </div>
+        <div class="row row-sep p">
+          <div class="col-md-8 col-sm-8 col-xs-8">
+            <input name="signature" value="<?php echo $row['signature']; ?>" id="signature" class="mod-cus-input mod-cus-input-4"> 
+          </div>
+        </div>
+        <div class="row p">
+          <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="row">
+              <div class="weibo-sm pull-left mr-sm pl">
+                <a href="#" class="text-center">
+                  <i class="fa fa-weibo"></i>
+                  <span>微博</span>
+                </a>
+	              <div class="accountdiv">
+						<?php include(DEDEMEMBER."/templets/qqlist.php"); ?>
+				  </div>
+              </div>
+              <div class="pull-right mr-sm">
+                <input id="qq-syn" type="checkbox" value="1" checked="checked">
+                <label for="qq-syn">同步</label>
+                <input id="qq-display" type="checkbox" value="1" checked="checked">
+                <label for="qq-display">展示</label>
+              </div>
+              <div class="pull-right mr-sm">
+                绑定
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="row">
+              <div class="qq-sm pull-left mr-sm pl">
+                <a href="#" class="text-center">
+                  <i class="fa fa-qq"></i>
+                  <span>QQ</span>
+                </a>
+              </div>
+              <div class="pull-right mr-sm">
+                <input id="qq-syn" type="checkbox" value="1" checked="checked">
+                <label for="qq-syn">同步</label>
+                <input id="qq-display" type="checkbox" value="1" checked="checked">
+                <label for="qq-display">展示</label>
+              </div>
+              <div class="pull-right mr-sm">
+                绑定
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="row">
+              <div class="xiaomi-sm pull-left mr-sm pl">
+                <a href="#" class="text-center">
+                  <i class="fa icon-xiaomi"></i>
+                  <span>小米</span>
+                </a>
+              </div>
+              <div class="pull-right mr-sm">
+                <input id="qq-syn" type="checkbox" value="1" checked="checked">
+                <label for="qq-syn">同步</label>
+                <input id="qq-display" type="checkbox" value="1" checked="checked">
+                <label for="qq-display">展示</label>
+              </div>
+              <div class="pull-right mr-sm">
+                绑定
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="row">
+              <div class="douban-sm pull-left mr-sm pl">
+                <a href="#" class="text-center">
+                  <i class="fa icon-douban"></i>
+                  <span>豆瓣</span>
+                </a>
+              </div>
+              <div class="pull-right mr-sm">
+                <input id="qq-syn" type="checkbox" value="1" checked="checked">
+                <label for="qq-syn">同步</label>
+                <input id="qq-display" type="checkbox" value="1" checked="checked">
+                <label for="qq-display">展示</label>
+              </div>
+              <div class="pull-right mr-sm">
+                绑定
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="grid-body no-border row-sep-4 pt-lg">
+        <div class="row">
+          <div class="col-md-6 col-sm-6 col-xs-6">
+            提醒新私信
+          </div>
+          <div class="col-md-6 col-sm-6 col-xs-6">
+            <input id="msg-notice" type="checkbox" value="1" checked="checked" class="pull-right">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6 col-sm-6 col-xs-6">
+            提醒新动态
+          </div>
+          <div class="col-md-6 col-sm-6 col-xs-6">
+            <input id="dyn-notice" type="checkbox" value="1" checked="checked" class="pull-right">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6 col-sm-6 col-xs-6">
+            提醒新评论
+          </div>
+          <div class="col-md-6 col-sm-6 col-xs-6">
+            <input id="comments-notice" type="checkbox" value="1" checked="checked" class="pull-right">
+          </div>
+        </div>
+      </div>
+      <div class="grid-body no-border pt-lg">
+        <div class="row">
+          <div class="col-md-12 col-sm-12 col-xs-12">
+            <a id="blacklistLink">
+              <span>屏蔽用户</span>
+              <i class="fa fa-caret-square-o-down"></i>
+            </a>
+          </div>
+          <div id="blacklistBox" class="col-md-12 col-sm-12 col-xs-12" style="display: none;">
+            <div class="pull-left">
+              <a>
+                Vincent
+              </a>
+            </div>
+            <div class="pull-right">
+              <a class="btn btn-info pull-right">
+                恢复
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 col-sm-12 col-xs-12">
+            <a id="changePwLink">
+              <span>修改密码</span>
+              <i class="fa fa-caret-square-o-down"></i>
+            </a>
+          </div>
+          <div id="changePwBox" class="col-md-12 col-sm-12 col-xs-12" style="display: none;">
+            <form role="form" class="p" action="edit_auth_baseinfo.php" method="post" name="form3" onsubmit="return checkSubmit();" >
+              <div class="form-group has-feedback">
+                <input name="oldpwd" id="originalPassword" type="password" placeholder="原密码" class="form-control"> 
+                <span   class="fa fa-lock form-control-feedback text-muted"></span>
+              </div>
+              <div class="form-group has-feedback">
+                <input name="userpwd" id="newPassword" type="password"   placeholder="新密码" class="form-control"> <span
+                class="fa fa-lock form-control-feedback text-muted"></span>
+              </div>
+              <div class="form-group has-feedback">
+                <input  name="userpwdok" id="confirmNewPassword" type="password"    placeholder="确认新密码" class="form-control"> 
+                <span class="fa fa-lock form-control-feedback text-muted"></span>
+              </div>
+              <div class="form-group has-feedback">
+              		<input type="submit" class="setting-submit-btn setting-submit-ml100"   value="保存密码"/>
+              </div>
+            </form>
+            <span class="save-ok" style="display:none" id="passwordSaveOkMsg"> 你的设置保存成功！ </span>
+            
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="tiles grey p">
+          <center>
+          <button class="btn btn-info" type="button">确定</button>
+          <button class="btn btn-info" type="button">取消</button>
+          </center>
+          <div class="clearfix"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<!-- 内容END -->
+<footer class="page-footer">
+<center>
+<a href="#">关于我们</a> <a href="#">使用帮助</a> <a href="#">联系我们</a> <a
+href="#">加入我们</a>
+</center>
+</footer>
+<script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+<script src="/resource/plugins/boostrapv3/js/bootstrap.min.js"></script>
+<script src="/resource/js/scroller.js"></script>
+<script src="/resource/js/star-rating.js"></script>
+<script src="/resource/js/app.js"></script>
+</body>
+</html>

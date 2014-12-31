@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>极客玩</title>
+<link href="/resource/plugins/boostrapv3/css/bootstrap.min.css"
+  rel="stylesheet" type="text/css" />
+<link href="/resource/plugins/boostrapv3/css/bootstrap-theme.min.css"
+  rel="stylesheet" type="text/css" />
+<link href="/resource/plugins/font-awesome/css/font-awesome.css"
+  rel="stylesheet" type="text/css" />
+<link href="/resource/css/icomoon.css" rel="stylesheet" type="text/css" />
+<link href="/resource/css/style.css" rel="stylesheet" type="text/css" />
+<link href="/resource/css/app-screenshot.css" rel="stylesheet"
+  type="text/css" />
+<link href="/resource/css/star-rating.css" rel="stylesheet"
+  type="text/css" />
+<!-- 兼容IE8,IE9 -->
+<script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+<script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+</head>
+<body>
+  <!-- 导航 -->
+  <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed"
+          data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+          aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span> <span
+            class="icon-bar"></span> <span class="icon-bar"></span> <span
+            class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand"><img
+          src="/resource/img/logo/logo_large.png" alt="" /></a>
+      </div>
+      <div id="navbar" class="collapse navbar-collapse">
+        <ul class="nav navbar-nav">
+          <li><a>首页</a></li>
+          <li><a>智见</a></li>
+          <li class="dropdown active"><a href="##"
+            data-toggle="dropdown" class="dropdown-toggle">极客玩<span
+              class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="##">应用</a></li>
+              <li><a href="##">游戏</a></li>
+              <li class="dropdown-submenu"><a tabindex="-1"
+                href="javascript:;">专题</a>
+                <ul class="dropdown-menu">
+                  <li><a tabindex="-1" href="javascript:;">社交</a></li>
+                  <li><a tabindex="-1" href="javascript:;">通讯</a></li>
+                </ul></li>
+            </ul></li>
+        </ul>
+        </li>
+        </ul>
+        <form action="##" class="navbar-form navbar-right" rol="search">
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="请输入关键词" />
+          </div>
+          <a href="#loginModal" data-toggle="modal" class="btn btn-default">登陆</a>
+        </form>
+      </div>
+    </div>
+  </div>
+  <!-- 导航END -->
+  <!-- 登录框 -->
+  <div class="modal fade" id="loginModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header b0">
+          <button type="button" class="close" data-dismiss="modal">
+            <span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <!-- 登录框内容 -->
+          <div class="row">
+            <div class="col-md-8 col-md-offset-2 col-xs-12">
+              <div class="panel panel-default panel-flat login-panel">
+                <ul id="loginTab" class="nav nav-tabs nav-justified">
+                  <li class="active"><a href="#login" data-toggle="tab">登录</a>
+                  </li>
+                  <li class=""><a href="#register" data-toggle="tab">注册</a>
+                  </li>
+                </ul>
+                <div class="tab-content">
+                  <div class="tab-pane fade active in" id="login">
+                    <div class="panel-body">
+                      <div class="login-desc">
+                        <strong>使用第三方帐号登录</strong> <br></br>
+                      </div>
+                      <div class="text-center">
+                        <a href="#" class="circular-social-btn qq mr"><i
+                          class="fa fa-qq"></i></a> <a href="#"
+                          class="circular-social-btn weibo mr"><i
+                          class="fa fa-weibo"></i></a> <a href="#"
+                          class="circular-social-btn xiaomi mr"><i
+                          class="fa icon-xiaomi"></i></a> <a href="#"
+                          class="circular-social-btn douban"><i
+                          class="fa icon-douban"></i></a>
+                      </div>
+                      <div class="seperator login-desc">
+                        <strong>使用邮箱登陆</strong>
+                        <hr>
+                      </div>
+                      <form role="form" class="mb-lg">
+                        <div class="form-group has-feedback">
+                          <input id="loginEmail" type="email" placeholder="常用邮箱"
+                            class="form-control"> <span
+                            class="fa fa-envelope form-control-feedback text-muted"></span>
+                        </div>
+                        <div class="form-group has-feedback">
+                          <input id="loginPassword" type="password"
+                            placeholder="请输入密码" class="form-control"> <span
+                            class="fa fa-lock form-control-feedback text-muted"></span>
+                        </div>
+                        <div class="clearfix">
+                          <div class="checkbox c-checkbox pull-left mt0">
+                            <label> <input type="checkbox" value=""> <span
+                              class="fa fa-check"></span>记住我
+                            </label>
+                          </div>
+                          <div class="pull-right">
+                            <a href="#" class="text-muted">忘记密码?</a>
+                          </div>
+                        </div>
+                        <button type="submit" class="btn btn-block btn-primary">登录</button>
+                      </form>
+                    </div>
+                  </div>
+                  <div class="tab-pane fade" id="register">
+                    <div class="panel-body">
+                      <form role="form" class="mb-lg">
+                        <div class="form-group has-feedback">
+                          <input id="registerUserName" type="text"
+                            placeholder="昵称，4～30字符" class="form-control"> <span
+                            class="fa fa-user form-control-feedback text-muted"></span>
+                        </div>
+                        <div class="form-group has-feedback">
+                          <input id="registerEmail" type="email" placeholder="常用邮箱"
+                            class="form-control"> <span
+                            class="fa fa-envelope form-control-feedback text-muted"></span>
+                        </div>
+                        <div class="form-group has-feedback">
+                          <input id="registerPassword" type="password"
+                            placeholder="密码" class="form-control"> <span
+                            class="fa fa-lock form-control-feedback text-muted"></span>
+                        </div>
+                        <div class="clearfix"></div>
+                        <button type="submit" class="btn btn-block btn-primary">注册</button>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- 登录框内容END -->
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <!-- 登录框END -->
+  <!-- 内容 -->
+  <div class="container page-content">
+    <!-- 子导航 -->
+    <div class="row">
+      <div class="dropdown pull-left app-category">
+        <button class="btn btn-default dropdown-toggle" type="button"
+          id="dropdownMenu1" data-toggle="dropdown">
+          应用 <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" role="menu"
+          aria-labelledby="dropdownMenu1">
+          <li role="presentation"><a role="menuitem" tabindex="-1"
+            href="#">社交</a></li>
+          <li role="presentation"><a role="menuitem" tabindex="-1"
+            href="#">通讯</a></li>
+        </ul>
+      </div>
+      <div class="dropdown pull-left app-category">
+        <button class="btn btn-default dropdown-toggle" type="button"
+          id="dropdownMenu1" data-toggle="dropdown">
+          游戏<span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" role="menu"
+          aria-labelledby="dropdownMenu1">
+          <li role="presentation"><a role="menuitem" tabindex="-1"
+            href="#">社交</a></li>
+          <li role="presentation"><a role="menuitem" tabindex="-1"
+            href="#">通讯</a></li>
+        </ul>
+      </div>
+      <div class="dropdown pull-left app-category">
+        <button class="btn btn-default dropdown-toggle" type="button"
+          id="dropdownMenu1" data-toggle="dropdown">
+          专题 <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" role="menu"
+          aria-labelledby="dropdownMenu1">
+          <li role="presentation"><a role="menuitem" tabindex="-1"
+            href="#">社交</a></li>
+          <li role="presentation"><a role="menuitem" tabindex="-1"
+            href="#">通讯</a></li>
+        </ul>
+      </div>
+    </div>
+    <!-- 子导航END -->
+    <!-- 正文 -->
+    <!-- 应用标题 -->
+    <div class="row first-row">
+      <div class="col-xs-12 size-fix">
+        <div class="row app-card">
+          <div class="col-md-1 col-sm-2 col-xs-3 app-icon">
+            <img width="68" height="68" src="/resource/img/icon/icon.png"
+              alt="" />
+          </div>
+          <div class="col-md-11 col-sm-10 col-xs-9 app-content">
+            <div class="row">
+              <div class="app-title pull-left">
+                <h4>陌陌</h4>
+              </div>
+              <div class="app-device-logo pull-left">
+                <div class="android-logo active pull-left">
+                  <em class="fa fa-android"></em>
+                </div>
+                <div class="ios-logo active pull-left">
+                  <em class="fa fa-apple"></em>
+                </div>
+                <div class="windows-logo pull-left unsupport">
+                  <em class="fa fa-windows"></em>
+                </div>
+              </div>
+              <div class="pull-right app-card-btn hidden-xs hidden-sm">
+                <a class="btn btn-info">
+                  <li class="fa fa-share-square"></li>分享到
+                </a>
+              </div>
+              <div class="pull-right app-card-btn">
+                <a class="btn btn-info">
+                  <li class="fa fa-plus-square"></li>收藏(50)
+                </a>
+              </div>
+              <div class="pull-right app-card-btn">
+                <a class="btn btn-info">
+                  <li class="fa fa-download"></li>下载
+                </a>
+              </div>
+            </div>
+            <div class="row">
+              <em class="fa fa-star"></em> <em class="fa fa-star"></em> <em
+                class="fa fa-star"></em> <em class="fa fa-star"></em> <em
+                class="fa fa-star-half-o"></em> 4.5
+            </div>
+            <div class="row app-security">
+             
+              
+              <div class="pull-left">
+                <em class="fa fa-exclamation-circle"></em>有广告
+              </div>
+              <div class="pull-left">
+                <em class="fa fa-exclamation-circle"></em>内付费
+              </div>
+              <div class="pull-left">
+                <em class="fa fa-exclamation-circle"></em>高危权限
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 应用标题END -->
+    <!-- 应用明细 -->
+    <div class="row">
+      <div class="col-md-8 col-xs-12 size-fix">
+        <div class="row app-card">
+          <div class="col-xs-12 app-screenshot pb">
+            <ul id="appScreenshotOuter">
+              <li id="appScreenshotInner">
+                <ul id="appScreenshotImg">
+                  
+                  <li><img src="/resource/img/screenshot/2.jpeg" alt=""
+                    width="160" /></li>
+                  <li><img src="/resource/img/screenshot/3.jpeg" alt=""
+                    width="160" /></li>
+                  <li><img src="/resource/img/screenshot/4.jpeg" alt=""
+                    width="160" /></li>
+                  <li><img src="/resource/img/screenshot/5.jpeg" alt=""
+                    width="160" /></li>
+                  <li><img src="/resource/img/screenshot/5.jpeg" width="160" />
+                  </li>
+                  <li><img src="/resource/img/screenshot/5.jpeg" width="160" />
+                  </li>
+                  <li><img src="/resource/img/screenshot/5.jpeg" width="160" />
+                  </li>
+                  <li><img src="/resource/img/screenshot/5.jpeg" width="160" />
+                  </li>
+                  <li><img src="/resource/img/screenshot/5.jpeg" width="160" /></li>
+                </ul>
+              </li>
+            </ul>
+            <div id="scrollbar">
+              <div id="track">
+                <div id="dragbar"></div>
+              </div>
+            </div>
+          </div>
+          <div class="panel-group" id="accordion" data-toggle="collapse">
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h3 class="panel-title">
+                  <a class="" data-toggle="collapse" data-parent="#accordion"
+                    href="#collapseOne"> 简介 </a>
+                </h3>
+              </div>
+              <div id="collapseOne" class="panel-collapse collapse in">
+                <div class="panel-body">
+                  <p>全球150多个国家超过1亿人使用的社交产品。</p>
+                  <p>陌陌是国内领先的移动社交产品。你可以随时随地发现身边有意思的人；创建或加入附近的群组；向附近的人和好友发布动态；查看和参加附近的活动；创建或加入自己感兴趣的陌陌吧。你还可以免费发送信息，语音，图片和位置，以全新的方式实现人与人之间的交流。</p>
+                  <p>当你在家的时候，通过陌陌就可以认识身边的邻居，还可以建立小区业主群方便大家保持联系</p>
+                </div>
+              </div>
+            </div>
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h3 class="panel-title">
+                  <a class="collapsed" data-toggle="collapse"
+                    data-parent="#accordion" href="#collapseTwo">更新内容</a>
+                </h3>
+              </div>
+              <div id="collapseTwo" class="panel-collapse collapse">
+                <div class="panel-body">
+                  <p>版本:5.2 大小:13.9m</p>
+                  <p>更新时间:2014-09-25</p>
+                  <p>更新内容：</p>
+                  <p>新增账号安全与保护，可修改手机号</p>
+                  <p>个人资料页展示游戏成就</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+        <div class="row app-card">
+          <h3>评价</h3>
+          <div class="col-xs-12 app-rating">
+            <!-- 评分 -->
+            <div class="row">
+              <div class="col-xs-6">
+                <div class="row first-row">
+                  <div class="col-md-4 col-xs-7">
+                    <em class="fa fa-star"></em> <em class="fa fa-star"></em> <em
+                      class="fa fa-star"></em> <em class="fa fa-star"></em> <em
+                      class="fa fa-star"></em>
+                  </div>
+                  <div class="col-md-8 col-xs-5">
+                    <div class="progress progress-striped active ">
+                      <div data-percentage="0%" style="width: 90%;"
+                        class="progress-bar progress-bar-success"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-4 col-xs-7">
+                    <em class="fa fa-star"></em> <em class="fa fa-star"></em> <em
+                      class="fa fa-star"></em> <em class="fa fa-star"></em> <em
+                      class="fa fa-star-o"></em>
+                  </div>
+                  <div class="col-md-8 col-xs-5">
+                    <div class="progress progress-striped active ">
+                      <div data-percentage="0%" style="width: 10%;"
+                        class="progress-bar progress-bar-danger"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-4 col-xs-7">
+                    <em class="fa fa-star"></em> <em class="fa fa-star"></em> <em
+                      class="fa fa-star"></em> <em class="fa fa-star-o"></em> <em
+                      class="fa fa-star-o"></em>
+                  </div>
+                  <div class="col-md-8 col-xs-5">
+                    <div class="progress progress-striped active ">
+                      <div data-percentage="0%" style="width: 0%;"
+                        class="progress-bar progress-bar-danger"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-4 col-xs-7">
+                    <em class="fa fa-star"></em> <em class="fa fa-star"></em> <em
+                      class="fa fa-star-o"></em> <em class="fa fa-star-o"></em> <em
+                      class="fa fa-star-o"></em>
+                  </div>
+                  <div class="col-md-8 col-xs-5">
+                    <div class="progress progress-striped active ">
+                      <div data-percentage="0%" style="width: 0%;"
+                        class="progress-bar progress-bar-danger"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-4 col-xs-7">
+                    <em class="fa fa-star"></em> <em class="fa fa-star-o"></em> <em
+                      class="fa fa-star-o"></em> <em class="fa fa-star-o"></em> <em
+                      class="fa fa-star-o"></em>
+                  </div>
+                  <div class="col-md-8 col-xs-5">
+                    <div class="progress progress-striped active ">
+                      <div data-percentage="0%" style="width: 0%;"
+                        class="progress-bar progress-bar-danger"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xs-6">
+                <center>
+                  <div class="row">
+                    <h1>4.9</h1>
+                  </div>
+                  <div class="row">
+                    <em class="fa fa-star"></em> <em class="fa fa-star"></em> <em
+                      class="fa fa-star"></em> <em class="fa fa-star"></em> <em
+                      class="fa fa-star-half-o"></em>
+                  </div>
+                  <div class="row">2人评分</div>
+                </center>
+              </div>
+            </div>
+            <!-- 评分END -->
+            <!-- 留言表单 -->
+            <div class="row app-element">
+              <form>
+                <div class="form-group">
+                  <textarea id="app-comments" placeholder="" class="form-control"
+                    rows="10"></textarea>
+                  <input id="app-rating" type="number" class="rating" min="0"
+                    max="5" step="0.5" data-stars=5
+                    data-default-caption="{rating}" data-star-captions="{}"
+                    data-size="xs"></input>
+                  <div>
+                    评论数（100） <a type="submit" class="btn btn-info pull-right">评论</a>
+                  </div>
+                </div>
+              </form>
+            </div>
+            <!-- 留言表单END -->
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 col-xs-12 size-fix">
+        <div class="row app-card">
+          <h3>详情</h3>
+          <div class="col-xs-12">
+            <div class="row">
+              <div class="col-xs-3">大小</div>
+              <div class="col-xs-9">16.00MB</div>
+            </div>
+            <div class="row">
+              <div class="col-xs-3">语言</div>
+              <div class="col-xs-9 flags">
+                <img src="/resource/img/flags/China.png" alt="" /> <img
+                  src="/resource/img/flags/USA.png" alt="" /> <img
+                  src="/resource/img/flags/Japan.png" alt="" />
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-3">版本</div>
+              <div class="col-xs-9">4.0.1</div>
+            </div>
+            <div class="row">
+              <div class="col-xs-3">开发者</div>
+              <div class="col-xs-9">steven colbert</div>
+            </div>
+            <div class="row">
+              <div class="col-xs-3">平台</div>
+              <div class="col-xs-9">Android2.1+</div>
+            </div>
+            <div class="row">
+              <div class="col-xs-3">来源</div>
+              <div class="col-xs-9">Play</div>
+            </div>
+            <div class="row">
+              <div class="col-xs-3">分类</div>
+              <div class="col-xs-9">
+                <span class="label">社交</span> <span class="label label-success">通讯</span>
+                <span class="label label-warning">通讯</span> <span
+                  class="label label-important">通讯</span> <span
+                  class="label label-info">通讯</span> <span
+                  class="label label-inverse">通讯</span> <br></br>
+              </div>
+            </div>
+          </div>
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">
+                <a class="collapsed" data-toggle="collapse"
+                  data-parent="#accordion" href="#collapseThree">查看权限要求</a>
+              </h3>
+            </div>
+            <div id="collapseThree" class="panel-collapse collapse">
+              <div class="panel-body">
+                <p>显示系统级警报</p>
+                <p>查看 Wi-Fi 状态</p>
+                <p>发送短信</p>
+                <p>拍照</p>
+                <p>控制振动器</p>
+                <p>防止手机休眠</p>
+                <p>录音</p>
+                <p>读取基于网络的粗略位置</p>
+                <p>创建蓝牙连接</p>
+                <p>查看网络状态</p>
+                <p>读取精准的 GPS 位置</p>
+                <p>访问联系人数据</p>
+                <p>修改全局系统设置</p>
+                <p>发现已知帐户</p>
+                <p>读取手机状态和身份</p>
+                <p>更改 Wi-Fi 状态</p>
+                <p>更改您的音频设置</p>
+                <p>接收短信</p>
+                <p>检索当前运行的应用程序</p>
+                <p>网络通信</p>
+                <p>开机时自动启动</p>
+                <p>读取短信或彩信</p>
+                <p>停用键盘锁</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row app-card">
+          <h3>该开发者的其他应用</h3>
+          <div class="col-xs-12">
+            <div class="row">
+              <div class="row app-card-in">
+                <div class="col-xs-3 app-icon">
+                  <img width="68" height="68" src="/resource/img/icon/icon.png"
+                    alt="" />
+                </div>
+                <div class="col-xs-9 app-content">
+                  <div class="row">
+                    <div class="app-title pull-left">
+                      <h4>陌陌</h4>
+                    </div>
+                    <div class="app-device-logo pull-left">
+                      <div class="android-logo active pull-left">
+                        <em class="fa fa-android"></em>
+                      </div>
+                      <div class="ios-logo active pull-left">
+                        <em class="fa fa-apple"></em>
+                      </div>
+                      <div class="windows-logo pull-left unsupport">
+                        <em class="fa fa-windows"></em>
+                      </div>
+                    </div>
+                    <div class="pull-right">
+                      <button class="btn btn-info">
+                        <li class="fa fa-download"></li>下载
+                      </button>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <em class="fa fa-star"></em> <em class="fa fa-star"></em> <em
+                      class="fa fa-star"></em> <em class="fa fa-star"></em> <em
+                      class="fa fa-star-half-o"></em> 4.5
+                  </div>
+                  <div class="row">
+                    <p>颇具人气的社交应用，随时沟通附近的人，数以万计就在你周围的群总有几个能吸引你。</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="row app-card-in">
+                <div class="col-xs-3 app-icon">
+                  <img width="68" height="68" src="/resource/img/icon/icon.png"
+                    alt="" />
+                </div>
+                <div class="col-xs-9 app-content">
+                  <div class="row">
+                    <div class="app-title pull-left">
+                      <h4>陌陌</h4>
+                    </div>
+                    <div class="app-device-logo pull-left">
+                      <div class="android-logo active pull-left">
+                        <em class="fa fa-android"></em>
+                      </div>
+                      <div class="ios-logo active pull-left">
+                        <em class="fa fa-apple"></em>
+                      </div>
+                      <div class="windows-logo pull-left unsupport">
+                        <em class="fa fa-windows"></em>
+                      </div>
+                    </div>
+                    <div class="pull-right">
+                      <button class="btn btn-info">
+                        <li class="fa fa-download"></li>下载
+                      </button>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <em class="fa fa-star"></em> <em class="fa fa-star"></em> <em
+                      class="fa fa-star"></em> <em class="fa fa-star"></em> <em
+                      class="fa fa-star-half-o"></em> 4.5
+                  </div>
+                  <div class="row">
+                    <p>颇具人气的社交应用，随时沟通附近的人，数以万计就在你周围的群总有几个能吸引你。</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row app-card">
+          <h3>相关应用</h3>
+          <div class="col-xs-12">
+            <div class="row">
+              <div class="row app-card-in">
+                <div class="col-xs-3 app-icon">
+                  <img width="68" height="68" src="/resource/img/icon/icon.png"
+                    alt="" />
+                </div>
+                <div class="col-xs-9 app-content">
+                  <div class="row">
+                    <div class="app-title pull-left">
+                      <h4>陌陌</h4>
+                    </div>
+                    <div class="app-device-logo pull-left">
+                      <div class="android-logo active pull-left">
+                        <em class="fa fa-android"></em>
+                      </div>
+                      <div class="ios-logo active pull-left">
+                        <em class="fa fa-apple"></em>
+                      </div>
+                      <div class="windows-logo pull-left unsupport">
+                        <em class="fa fa-windows"></em>
+                      </div>
+                    </div>
+                    <div class="pull-right">
+                      <button class="btn btn-info">
+                        <li class="fa fa-download"></li>下载
+                      </button>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <em class="fa fa-star"></em> <em class="fa fa-star"></em> <em
+                      class="fa fa-star"></em> <em class="fa fa-star"></em> <em
+                      class="fa fa-star-half-o"></em> 4.5
+                  </div>
+                  <div class="row">
+                    <p>颇具人气的社交应用，随时沟通附近的人，数以万计就在你周围的群总有几个能吸引你。</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="row app-card-in">
+                <div class="col-xs-3 app-icon">
+                  <img width="68" height="68" src="/resource/img/icon/icon.png"
+                    alt="" />
+                </div>
+                <div class="col-xs-9 app-content">
+                  <div class="row">
+                    <div class="app-title pull-left">
+                      <h4>陌陌</h4>
+                    </div>
+                    <div class="app-device-logo pull-left">
+                      <div class="android-logo active pull-left">
+                        <em class="fa fa-android"></em>
+                      </div>
+                      <div class="ios-logo active pull-left">
+                        <em class="fa fa-apple"></em>
+                      </div>
+                      <div class="windows-logo pull-left unsupport">
+                        <em class="fa fa-windows"></em>
+                      </div>
+                    </div>
+                    <div class="pull-right">
+                      <button class="btn btn-info">
+                        <li class="fa fa-download"></li>下载
+                      </button>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <em class="fa fa-star"></em> <em class="fa fa-star"></em> <em
+                      class="fa fa-star"></em> <em class="fa fa-star"></em> <em
+                      class="fa fa-star-half-o"></em> 4.5
+                  </div>
+                  <div class="row">
+                    <p>颇具人气的社交应用，随时沟通附近的人，数以万计就在你周围的群总有几个能吸引你。</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 应用明细END -->
+    <!-- 正文END -->
+  </div>
+  <!-- 内容END -->
+  <footer class="page-footer">
+    <center>
+      <a href="#">关于我们</a> <a href="#">使用帮助</a> <a href="#">联系我们</a> <a
+        href="#">加入我们</a>
+    </center>
+  </footer>
+  <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+  <script src="/resource/plugins/boostrapv3/js/bootstrap.min.js"></script>
+  <script src="/resource/js/scroller.js"></script>
+  <script src="/resource/js/star-rating.js"></script>
+  <script src="/resource/js/app.js"></script>
+</body>
+</html>
