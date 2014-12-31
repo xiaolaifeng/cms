@@ -1,0 +1,241 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>智见  /  健康医疗_极客</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link href="/templets/default/style/dedecms.css" rel="stylesheet" media="screen" type="text/css" />
+
+<link type="image/x-icon" rel="icon" href="http://www.geekview.cn/Public/Home/image/favicon.ico"/>
+<link href="http://www.geekview.cn/Public/Home/css/panel.css" rel="stylesheet" media="screen" type="text/css" />
+<link href="http://www.geekview.cn/Public/Home/css/normalize.css" rel="stylesheet" media="screen" type="text/css" />
+<link href="http://www.geekview.cn/Public/Home/css/base.css" rel="stylesheet" media="screen" type="text/css" />
+<link href="http://www.geekview.cn/Public/Home/css/responsive.css" rel="stylesheet" media="screen" type="text/css" />
+<link href="http://www.geekview.cn/Public/Home/css/listPage.css" rel="stylesheet" media="screen" type="text/css" />
+<link href="http://www.geekview.cn/Public/Home/css/login.css" rel="stylesheet" media="screen" type="text/css" />
+
+</head>
+<body class="js articlelist">
+
+<div class="viewblock animation">
+
+<div id="wrapper">
+	<header id="site_header">
+		<div style="height: 85px" class="navbar">
+			<div id="nav_container" class="container visible">
+				<a href="/" class="logo"><img
+					src="/templets/default/v1/Home/image/new_logo.png" alt="极客视界" class="logo-img"></a>
+				<nav>
+					<ul id="nav">
+						<li><a class="nav-item" rel="dropmenu2" href="/a/zhijian/">智见</a></li>
+						<li><a class="nav-item" rel="dropmenu1" href="/app/">极客玩</a></li>
+						<!-- 
+						<li><a href="/index/topic/index" class="nav-item ">专题</a></li>
+						<LI><A class="nav-item nav-item-discover " href="/index/gk_discover/discover">极客发现</A></LI> -->
+					</ul>
+				</nav>
+				<div id="_userlogin">
+				
+				<div style="margin-top: 22px; float: right; width: 100px;"  >
+					
+					<div style="height: 36px; float: right;">
+						<div class="user-account-info"
+							style="float: right; margin-top: 3px;">
+							<a onclick="showLoginDialog();" href="javascript:void(0)"
+								class="log">登录</a>
+						</div>
+						   <script language="javascript" type="text/javascript">CheckLogin();</script>
+						<div class="manage-list">
+							<span class="triangle-up"></span>
+							<ul>
+								<!--<LI class="manage-list-item"><A id="user_center" href="/index/member/personalization/inittype/BASEINFO"> <I class="icon-user-center"></I> <SPAN class="user-manage-list-text">个人中心</SPAN>-->
+								<li><a href="/index/member/personalization"
+									id="user_center" class="manage-list-item"> <span
+										class="user-manage-list-text">个人中心</span>
+								</a></li>
+								<li><a href="/index/message/viewmessage" id="user_edit"
+									class="manage-list-item"> <span
+										class="user-manage-list-text">最新消息 <font size="2px"
+											color="red"><sup></sup></font></span>
+								</a></li>
+								<li><a href="/index/member/modifyinfo" id="user_edit"
+									class="manage-list-item"> <span
+										class="user-manage-list-text">个人设置</span>
+								</a></li>
+
+								<li><a href="/index/member/logout" id="logout"
+									class="manage-list-item"> <span
+										class="user-manage-list-text">退出登录</span>
+								</a></li>
+							</ul>
+							
+						</div>
+						
+						
+					</div>
+				</div>
+				</div>
+				<div style="margin-top: 22px; float: right; width: 200px;">
+
+					<div style="height: 36px; margin-top: 3px; float: right;">
+						<form method="POST" action="">
+
+							<!-- <div style="width:200px;"> -->
+
+							<span style="float: left;"> <input type="text"
+								autocomplete="off" value="" placeholder="搜索设备"
+								class="default-search" name="keyword">
+
+							</span> <span style="position: absolute; margin: 9px -25px"> <input
+								type="submit" value="提交查询内容" class="search-icon">
+
+							</span>
+
+						</form>
+
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
+
+		<div class="clear"></div>
+
+
+
+	</header>
+
+</div>
+
+
+
+
+<!-- /header -->
+
+<!-- content -->
+
+<div id="content_wrapper" class="container">
+		<!-- Left side Cards -->
+		
+		<div class="left-side">
+			<article>
+			 	
+
+
+				<!-- Footer -->
+				<footer>
+					<div class="page-direct">
+					 <li><span class="pageinfo">共 <strong>0</strong>页<strong>0</strong>条记录</span></li>
+
+						  <a href="/index/index/index/p/2" class="next-one">下一页</a>  						
+					</div>
+					
+				</footer> 
+			</article>
+
+
+
+		</div>
+
+		<!-- Right side Card -->
+		<div class="right-side">
+		<!-- publishing area -->
+            <div class="side-card">
+            	<div id="new_publish">
+					<div onclick="recommendme();" class="new-publish-words">我要分享</div>
+
+				</div>
+			</div>
+					<!--首页登陆界面-->
+<!--附件有css和app页-->
+			
+				<!-- sortting area -->
+			<div class="side-card">
+                <ul class="web-tag">
+					<li class="web-tag-list active-tag"><a style="padding-right: 220px;" id="allTag" onclick="findBest()" href="javascript:void(0);" class="web-tag-list-item">精选</a></li>
+					<li class="web-tag-list "><a style="padding-right: 220px;" id="hotTag" onclick="findHotest()" href="javascript:void(0);" class="web-tag-list-item">热门</a></li>
+					<li class="web-tag-list "><a style="padding-right: 220px;" id="hotTag" onclick="findLatest()" href="javascript:void(0);" class="web-tag-list-item">全部</a></li>
+				</ul>  
+            </div>
+			<!-- tag area -->
+			<div class="side-card">
+				<ul class="web-tag">
+				   
+				    <li class='web-tag-list' ><a href='/a/zhinenjiaji/' class='web-tag-list-item'>智能家居</a></li>
+				      
+				    <li class='web-tag-list' ><a href='/a/zhinenchuandai/' class='web-tag-list-item'>智能穿戴</a></li>
+				      
+				    <li class='web-tag-list' ><a href='/a/zhinenjiaotong/' class='web-tag-list-item'>智能交通</a></li>
+				      
+				    <li class='web-tag-list' ><a href='/a/zhinenanfang/' class='web-tag-list-item'>智能安防</a></li>
+				      
+				    <li class='web-tag-list' ><a href='/a/jiankangyiliao/' class='web-tag-list-item'>健康医疗</a></li>
+				      <li class='web-tag-list' ><a href='/a/jiankangyiliao/' class='web-tag-list-item'>健康医疗</a></li>
+				    <li class='web-tag-list' ><a href='/a/chongwushebei/' class='web-tag-list-item'>宠物设备</a></li>
+				      
+				    <li class='web-tag-list' ><a href='/a/youxiyule/' class='web-tag-list-item'>游戏娱乐</a></li>
+				      
+				    <li class='web-tag-list' ><a href='/a/xiaolvgongju/' class='web-tag-list-item'>效率工具</a></li>
+				      
+				    <li class='web-tag-list' ><a href='/a/qiqushebei/' class='web-tag-list-item'>奇趣设备</a></li>
+				      
+				    <li class="web-tag-list  ">
+	        	</ul> 
+			</div>
+			
+			<!-- All Wants -->
+			<div class="side-card">
+				
+					<button class="GC__tit-mod__btn--qrcode">微信扫一扫</button>
+					<div id="GC__tit-mod__btn_hover_img" class="GC__tit-mod__btn-hover-img--qrcode">
+						<span class="arrow"></span>
+						<img width="160px" src="http://www.geekview.cn/Public/Home/image/icons/s1s-l.jpg">
+					</div>
+				
+				    <div style="width:100%; float: right;">
+	  				<a style="background-image: url(http://www.geekview.cn/Public/Home/image/weixin/54101fbdf3c86.jpg)" target="_blank" href="http://mp.weixin.qq.com/s?__biz=MzA4ODY4MDEzOQ==&amp;mid=200913979&amp;idx=1&amp;sn=24e33e4c8aef736ef2ab8ea1246b81ba#rd" class="wx_img external"></a>
+	  			    </div>
+	  			    <div style="width:100%; float: right;font-size: 14px;padding: 20px 12px 12px 12px; line-height:20px; border-left:1px solid #d9dadc; border-right:1px solid #d9dadc; border-bottom:1px solid #d9dadc;">
+	  				<a target="_blank" href="http://mp.weixin.qq.com/s?__biz=MzA4ODY4MDEzOQ==&amp;mid=200913979&amp;idx=1&amp;sn=24e33e4c8aef736ef2ab8ea1246b81ba#rd" class="external"><h5 style="font-weight:bold; font-size:18px; margin-bottom:12px;">One more thing -- Apple Watch #智能穿戴</h5></a>
+	  				<a target="_blank" href="http://mp.weixin.qq.com/s?__biz=MzA4ODY4MDEzOQ==&amp;mid=200913979&amp;idx=1&amp;sn=24e33e4c8aef736ef2ab8ea1246b81ba#rd" style="font-size:14px; line-height:20px;" class="external">今天凌晨的iPhone6发布会俨然成为了一场吐槽会，iPhone6有多不如人意在这里就不说了，现在说说库克说的“one more thing”吧，就是这款Apple Watch。是的，它就叫这名，不是iWatch。</a>
+	  			    </div>
+			    
+			</div>
+
+			<!-- 分享 -->
+			<div style="background-color: rgb(240,240,240);" class="side-card">
+				<h5 class="bottom1">关注我们</h5>
+				<!-- JiaThis Button BEGIN -->
+				<div class="jiathis_style_32x32">
+					<a href="http://weibo.com/geekview" target="_blank" class="link_button_tsina external">新浪微博</a> 
+					<a href="http://www.douban.com/people/geekview/" target="_blank" class="link_button_douban external">豆瓣</a>
+					 <a href="http://zhan.renren.com/geekview/" target="_blank" class="link_button_renren external">人人</a> 
+					 <a href="http://t.qq.com/geekview/" target="_blank" class="link_button_tqq external">腾讯微博</a>
+					 <a href="https://plus.google.com/108385600415800739993/" target="_blank" class="link_button_google external">Google+</a>
+				</div>
+				<!-- JiaThis Button END -->
+			</div>
+		</div>
+	</div>
+
+<!-- /content -->
+
+
+</div>
+ <!-- 内容END -->
+    <footer class="page-footer">
+      <center>
+      <a href="#">关于我们</a>
+      <a href="#">使用帮助</a>
+      <a href="#">联系我们</a>
+      <a href="#">加入我们</a>
+      </center>
+    </footer>
+
+
+<!-- /footer -->
+</body>
+</html>
