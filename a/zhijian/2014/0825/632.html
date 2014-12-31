@@ -1,0 +1,546 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type"
+	content="text/html; charset=utf-8" />
+<title>最有人性的灯泡 -- Easybulb Plus_极客</title>
+<meta name="keywords" content="智能家居" />
+<meta name="description" content="出门后觉得家里灯没关？睡觉觉得灯太亮关了又没安全感？或许你还会想要个能听懂人话的灯，那没错了，你应该选择Easybulb Plus。" />
+
+<link type="image/x-icon" rel="icon"
+	href="/templets/default/v1/Home/image/favicon.ico" />
+
+<link rel=”alternate” type=”application/rss+xml” title=”最有人性的灯泡 -- Easybulb Plus” href=”/rss.php“/> 
+
+<link href="/templets/default/v1/Home/image/favicon.ico" type="image/x-icon" rel="icon" />
+<link href="/templets/default/v1/Home/css/panel.css" rel="stylesheet" media="screen" type="text/css" />
+<link href="/templets/default/v1/Home/css/normalize.css" rel="stylesheet" media="screen" type="text/css" />
+<link href="/templets/default/v1/Home/css/base.css" rel="stylesheet" media="screen" type="text/css" />
+<link href="/templets/default/v1/Home/css/responsive.css" rel="stylesheet" media="screen" type="text/css" />
+<link href="/templets/default/v1/Home/css/listPage.css" rel="stylesheet" media="screen" type="text/css" />
+<link href="/templets/default/v1/Home/css/login.css" rel="stylesheet" media="screen" type="text/css" />
+<link href="/templets/default/v1/css/pubnews.css" rel="stylesheet" media="screen" type="text/css" />
+<link href="/templets/default/v1/Home/css/toobar.css?2014" rel="stylesheet" media="screen" type="text/css" />
+
+<script src="/templets/default/v1/Home/js/jquery.min.js" language="javascript" type="text/javascript"></script>
+<script src="/templets/default/v1/Home/js/jquery.lazyload.min.js" language="javascript" type="text/javascript"></script>
+<script src="/templets/default/v1/Home/js/androidApp.js" language="javascript" type="text/javascript"></script>
+<script src="/templets/default/v1/Home/js/global.js" language="javascript" type="text/javascript"></script>
+<script src="/templets/default/v1/Home/js/placeholders.min.js" language="javascript" type="text/javascript"></script>
+<script src="/templets/default/v1/Home/js/ga.js" language="javascript" type="text/javascript"></script>
+<script src="/templets/default/v1/Home/js/main-2.js" language="javascript" type="text/javascript"></script>
+<script src="/templets/default/v1/Home/js/nr-100.js" language="javascript" type="text/javascript"></script>
+<script src="/templets/default/v1/Home/js/topics-x.js" language="javascript" type="text/javascript"></script>
+<script src="/templets/default/v1/Home/js/jquery.toolbar.min.js" language="javascript" type="text/javascript"></script>
+<script src="/templets/default/v1/Home/js/jquery.easing.1.3.js" language="javascript" type="text/javascript"></script>
+
+<script src="/include/dedeajax2.js" language="javascript" type="text/javascript" ></script>
+
+<script type="text/javascript">
+function CheckLogin(){
+  var taget_obj = document.getElementById('_userlogin');
+  myajax = new DedeAjax(taget_obj,false,false,'','','');
+  myajax.SendGet2("/member/ajax_loginsta.php");
+  $('.login-user-name').click( function()  {
+	    $('.manage-list ').toggle();
+	});
+  $('.loginForm').hide(0);
+  DedeXHTTP = null;
+}
+</script>
+
+
+<script language="javascript" type="text/javascript">
+<!--
+function postBadGood(ftype,fid)
+{
+	var taget_obj = document.getElementById(ftype+fid);
+	var saveid = GetCookie('badgoodid');
+	if(saveid != null)
+	{
+		var saveids = saveid.split(',');
+		var hasid = false;
+		saveid = '';
+		j = 1;
+		for(i=saveids.length-1;i>=0;i--)
+		{
+			if(saveids[i]==fid && hasid) continue;
+			else {
+				if(saveids[i]==fid && !hasid) hasid = true;
+				saveid += (saveid=='' ? saveids[i] : ','+saveids[i]);
+				j++;
+				if(j==10 && hasid) break;
+				if(j==9 && !hasid) break;
+			}
+		}
+		if(hasid) { alert('您刚才已表决过了喔！'); return false;}
+		else saveid += ','+fid;
+		SetCookie('badgoodid',saveid,1);
+	}
+	else
+	{
+		SetCookie('badgoodid',fid,1);
+	}
+	myajax = new DedeAjax(taget_obj,false,false,'','','');
+	myajax.SendGet2("/plus/feedback.php?aid="+fid+"&action="+ftype+"&fid="+fid);
+}
+function postDigg(ftype,aid)
+{
+	var taget_obj = document.getElementById('newdigg');
+	var saveid = GetCookie('diggid');
+	if(saveid != null)
+	{
+		var saveids = saveid.split(',');
+		var hasid = false;
+		saveid = '';
+		j = 1;
+		for(i=saveids.length-1;i>=0;i--)
+		{
+			if(saveids[i]==aid && hasid) continue;
+			else {
+				if(saveids[i]==aid && !hasid) hasid = true;
+				saveid += (saveid=='' ? saveids[i] : ','+saveids[i]);
+				j++;
+				if(j==20 && hasid) break;
+				if(j==19 && !hasid) break;
+			}
+		}
+		if(hasid) { alert("您已经顶过该帖，请不要重复顶帖 ！"); return; }
+		else saveid += ','+aid;
+		SetCookie('diggid',saveid,1);
+	}
+	else
+	{
+		SetCookie('diggid',aid,1);
+	}
+	myajax = new DedeAjax(taget_obj,false,false,'','','');
+	var url = "/plus/digg_ajax.php?action="+ftype+"&id="+aid;
+	myajax.SendGet2(url);
+}
+function getDigg(aid)
+{
+	var taget_obj = document.getElementById('newdigg');
+	myajax = new DedeAjax(taget_obj,false,false,'','','');
+	myajax.SendGet2("/plus/digg_ajax.php?id="+aid);
+	DedeXHTTP = null;
+}
+
+$(function(){
+	$("#lovediv").bind("mouseover",function(){
+		clicknum=$("#lovenums").text();
+		$("#lovenums").html('').addClass('activelove');
+	}).bind("mouseout",function(){
+		$("#lovenums").removeClass('activelove');
+		$("#lovenums").html(clicknum);
+	}).bind("click",function(){
+		
+		//todu  默认的顶踩逻辑
+		postDigg('good',632);
+		//todu
+				clicknum++;
+				try{
+				if(clicknum>999){
+					clicknum='999+';
+				}
+				$("#lovenums").html(clicknum).removeClass("activelove").css("color","#fff");
+				$("span","#loveA").css("color","#fff");
+				$("#loveA").css({"background-color":"#3091f2","color":"#fff"});
+				$(this).unbind("mouseover").unbind("mouseout").unbind("click");
+				postLoveArt();
+				}catch(e){};
+		
+		//取最新的nice_num数
+		//var articleid = $("#comment_articleid").val();
+	
+	});
+	$('#vertical-toolbar').toolbar({
+		content: '#user-toolbar-options',
+		position: 'left'
+	});
+	$(window.document).scroll(function () {
+		$("#tool-bar").css("position","fixed");
+		if($("#vertical-toolbar").hasClass("pressed")){
+			$(".tool-container,.gradient tool-left,.tool-rounded").hide();
+			$("#vertical-toolbar").removeClass("pressed");
+		}
+	});
+	$("#vertical-toolbar").click(function(){alert(1);
+		  $("#vertical-toolbar").toggleClass("pressed");
+		});
+});
+-->
+</script>
+</head>
+<body class="js articleview">
+
+	<div class="viewblock animation"><div id="wrapper">
+	<header id="site_header">
+		<div style="height: 85px" class="navbar">
+			<div id="nav_container" class="container visible">
+				<a href="/" class="logo"><img
+					src="/templets/default/v1/Home/image/new_logo.png" alt="极客视界" class="logo-img"></a>
+				<nav>
+					<ul id="nav">
+						<li><a class="nav-item" rel="dropmenu2" href="/a/zhijian/">智见</a></li>
+						<li><a class="nav-item" rel="dropmenu1" href="/special/index.html">专题</a></li>
+						<li><a class="nav-item" rel="dropmenu1" href="/app/">极客玩</a></li>
+						<!-- 
+						<li><a href="/index/topic/index" class="nav-item ">专题</a></li>
+						<LI><A class="nav-item nav-item-discover " href="/index/gk_discover/discover">极客发现</A></LI> -->
+					</ul>
+				</nav>
+				<div id="_userlogin">
+				
+				<div style="margin-top: 22px; float: right; width: 100px;"  >
+					
+					<div style="height: 36px; float: right;">
+						<div class="user-account-info"
+							style="float: right; margin-top: 3px;">
+							<!-- 
+							<a onclick="showLoginDialog();" href="javascript:void(0)"	class="log">登录</a>
+							 -->
+							<a   href="/member/index.php"	class="log">登录</a>
+						</div>
+						  
+						<div class="manage-list">
+							<span class="triangle-up"></span>
+							<ul>
+								<!--<LI class="manage-list-item"><A id="user_center" href="/index/member/personalization/inittype/BASEINFO"> <I class="icon-user-center"></I> <SPAN class="user-manage-list-text">个人中心</SPAN>-->
+								<li><a href="/index/member/personalization"
+									id="user_center" class="manage-list-item"> <span
+										class="user-manage-list-text">个人中心</span>
+								</a></li>
+								<li><a href="/index/message/viewmessage" id="user_edit"
+									class="manage-list-item"> <span
+										class="user-manage-list-text">最新消息 <font size="2px"
+											color="red"><sup></sup></font></span>
+								</a></li>
+								<li><a href="/index/member/modifyinfo" id="user_edit"
+									class="manage-list-item"> <span
+										class="user-manage-list-text">个人设置</span>
+								</a></li>
+
+								<li><a href="/index/member/logout" id="logout"
+									class="manage-list-item"> <span
+										class="user-manage-list-text">退出登录</span>
+								</a></li>
+							</ul>
+							
+						</div>
+						
+						
+					</div>
+				</div>
+				</div>
+				<div style="margin-top: 22px; float: right; width: 200px;">
+
+					<div style="height: 36px; margin-top: 3px; float: right;">
+						<form method="POST" action="">
+
+							<!-- <div style="width:200px;"> -->
+
+							<span style="float: left;"> <input type="text"
+								autocomplete="off" value="" placeholder="搜索设备"
+								class="default-search" name="keyword">
+
+							</span> <span style="position: absolute; margin: 9px -25px"> <input
+								type="submit" value="提交查询内容" class="search-icon">
+
+							</span>
+
+						</form>
+
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
+
+		<div class="clear"></div>
+
+
+
+	</header>
+
+</div>
+
+
+</div>
+	<!-- /header -->
+	<ul id="tool-bar"
+		style="margin-left: 100px; position: fixed; background: none repeat scroll 0% 0% rgb(255, 255, 255); z-index: 2;">
+		<li class="li-first"><a id="tb-comment" title="评论"
+			href="#comment_app_area"><span class="tool-bar-icon tool-comment"></span><label></label></a>
+		</li>
+		
+		
+		<li id="lovediv" class="li-middle"><a id="loveA" title="喜欢"
+			href="javascript:void(0);"><span class="tool-bar-icon tool-like">
+			</span> <div id="lovenums" class=""> 1 </div></a></li>
+		<!-- 
+		<li class="li-last"><a id="vertical-toolbar" title="分享" href="#"><span
+				class="tool-bar-icon tool-share"></span></a></li>
+		 -->
+		<a id="weixin_link" style="display: none"
+			class="jiathis_button_weixin" title="分享到微信"> <span
+			class="jiathis_txt jiathis_separator jtico jtico_weixin">微信</span>
+		</a>
+	</ul>
+
+
+
+	<div class="container" id="content_wrapper">
+		<div class="left-side">
+			<article> <section> <!-- Web Article -->
+			<div class="content-card article-style">
+							
+				<a
+					style="background-image: url(/uploads/UserFiles/Image/2014-08-25/53fad040437d5.jpg " id="article_cover"> </a> <input
+					type="hidden" value="2465">
+					<div id="web-article-header">
+						<div class="article-title">
+							<div class="app-title">
+								<h1>最有人性的灯泡 -- Easybulb Plus</h1>
+							</div>
+						</div>
+
+						<div class="article-info-and-tag-area">
+							<div>
+								<div class="pub-time-and-version">
+									<ul class="pub-time-and-version-list">
+
+										<a href="/member/index.php?uid=liujie8403@foxmail.c&action=article">
+											<li class="pub-author">brown_liu.</li>
+
+											<li class="pub-time">2014-08-25</li>
+										</a>
+									</ul>
+								</div>
+							</div>
+							<div>
+								<a	href="/tags.php?/智能家居"><span	class="tag-span">智能家居</span></a>
+								
+							</div>
+						</div>
+						<div id="summary" class="short-des">
+							
+							<div class="intro">出门后觉得家里灯没关？睡觉觉得灯太亮关了又没安全感？或许你还会想要个能听懂人话的灯，那没错了，你应该选择Easybulb Plus。</div>
+							
+						</div>
+					</div>
+					<div id="article_content"><blockquote><p>Easybulb&nbsp;Plus引领你来到未来世界</p></blockquote><p>Easybulb&nbsp;Plub是一款可以用手机或者电脑来控制开关的灯泡，让电量掌握在你自己手中。Easybulb&nbsp;Plub功能人性化，通过APP上的颜色轮你可以将灯光的颜色转换成你想要的，甚至是白色光。你可以设置灯光来配合您的心情，可以控制家中个别的灯或灯组，使用定时器功能和睡眠模式让你的灯光在一段时间内逐渐变暗，让人更有安全感。</p><p>在推崇节能环保的时代，Easybulb&nbsp;Plub也绝对不会背离主流的。<img title="1408945475307939.jpg" alt="20140805224157-kickstarted-orange-1.jpg" src="/ueditor/php/upload/image/20140825/1408945475307939.jpg"/></p><blockquote><p>Easybulb&nbsp;Plus的关键特性</p></blockquote><p>选择任何颜色，灯光的颜色往往能让人产生不同的心理反应。</p><p>你可以选择适合你心情的灯光（如果今天心情大好啊，调个明亮的颜色吧~），或者选择特定的灯光来调试你的心情。无论哪种方式，你都会惊讶地看到人们对灯光的不同反应。就像红色往往会激发人们的热情，而蓝色和绿色则镇静作用。不够白色是中性的，它不会影响你的心情一样。</p><p>尝试下在你的办公室或家中调不同颜色的灯，看看它是如何影响你的情绪和气质的。或许它还会在你们的二人世界中制造不同的浪漫哦~</p><p><img title="1408945525602613.jpg" src="/ueditor/php/upload/image/20140825/1408945525602613.jpg"/></p><p><img title="1408945526761199.jpg" src="/ueditor/php/upload/image/20140825/1408945526761199.jpg"/></p><p><img title="1408945528942733.jpg" src="/ueditor/php/upload/image/20140825/1408945528942733.jpg"/></p><p><strong>在世界上的任何地方都能轻易控制你的灯。<img title="1408945563193914.jpg" alt="20140805225551-33.jpg" src="/ueditor/php/upload/image/20140825/1408945563193914.jpg"/></strong>通过3G或4G网络，你可以实现在世界上任何一个地方都可以控制家中的灯了，防止盗贼入室。全家出国度假游玩，很多人会担心家中许久无动静会被小偷盯上，这时Easyblub&nbsp;Puls就可以发挥作用了。用手机设定家中的灯在规定时间内打开或关闭，这种“家中现在有人在”的障眼法还是可以帮你守住你家的，安心度假游玩吧！</p><p><strong>跟你的灯说说话吧</strong></p><p>Easybulb&nbsp;Plus在手机APP中内置了一个语音控制模块，对着手机喊一喊，你的灯就会“听懂人话”而作出改变。<img title="1408945585325351.jpg" alt="20140805225815-26.jpg" src="/ueditor/php/upload/image/20140825/1408945585325351.jpg"/>不管是控制灯的灯光颜色、灯光的亮度还是开关灯，只要你对着智能手机喊，语音模块都能识别。</p><p><strong>设置定时器</strong></p><p>这个是不管你在家还是在外都可以随意设置灯开关时间的功能，只要有手机，三下五除二就可以搞定的。<img title="1408945913859731.jpg" alt="untitled.jpg" src="/ueditor/php/upload/image/20140825/1408945913859731.jpg"/></p><p><strong>单个控制或多个控制</strong></p><p>您可以选择只控制一个灯泡或者一组灯泡。Easybulb&nbsp;Plus采用最新技术，可以使公共企业的灯系统实现无缝自动化规划，包括餐馆、酒吧、商店、办公室、医院、DJ等。<img title="1408945629192004.jpg" alt="20140805230742-individual_lights.jpg" src="/ueditor/php/upload/image/20140825/1408945629192004.jpg"/></p><blockquote><p>Easyblub&nbsp;Plus只有更多的人性化</p></blockquote><ul class=" list-paddingleft-2" style="list-style-type: disc;"><li><p>嗅出“人气”---当你快回到你的家时，通过一个敏感通知功能，你的灯可以自行打开，当你出门时它也可以自动关闭。这一切都只要通过简单的设置就可以的。</p></li><li><p>孩子的夜灯&nbsp;---如果一些小孩子害怕黑暗，将Easyblub&nbsp;Plus安置在孩子的房间，设定一个时间，灯光会在一定时间段内慢慢变暗直到熄灭，这样可以保障小孩子有舒适的睡眠。<img title="1408946097846441.jpg" alt="20140805231139-DSC_0020.jpg" src="/ueditor/php/upload/image/20140825/1408946097846441.jpg"/></p></li><li><p>同步你的iTunes和其他音乐&nbsp;---&nbsp;音乐同步功能是让你的音乐收藏与你的灯的连接上。这个酷炫的技术让你的灯光和音乐无缝结合，让你的party更加high！</p></li><li><p>电话、短信通知&nbsp;---&nbsp;不想错过手机上任何的消息？你可以在APP上设置Easybulb&nbsp;Plus通话和短信通知功能的光，灯如果闪烁相应的颜色，你便可以去回消息了。不想这么张扬也可以关闭这个功能，或许它只想做个安安静静的美灯。</p></li><li><p>记忆功能&nbsp;---&nbsp;Easybulb&nbsp;Plus具有记忆功能，突然断电后它会恢复之前的设置，不用重头再来。</p></li><li><p>节能灯&nbsp;---&nbsp;Easyblub&nbsp;Plus相当节能环保。它使用一个9瓦的LED灯泡和5瓦特射灯GU10，一个寿命约50000小时，这相当于25年的平均使用。Easybulb&nbsp;Plus上也无任何有害的化学物质，如汞和其他物质，它发出的光不伤害任何人，任何物。它的环保体现在有效的“调光”功能，当对比的标准60-100w灯泡时，9瓦的Easyblus&nbsp;Plus和比他们少得多的功率输出呢？</p></li><li><p>支持怀旧的方式&nbsp;---&nbsp;对于那些喜欢传统方式的人，Easybulb&nbsp;Plus也配有常见的用手指按的光开关。“哒哒”那种开关声音确实让人有种莫名的满足感啊（小编也觉得奇怪哈~）！</p><p><img title="1408945992744851.jpg" alt="20140805231311-47.jpg" src="/ueditor/php/upload/image/20140825/1408945992744851.jpg"/></p></li><li><p>相当相当简单的安装方式&nbsp;---&nbsp;跟一般灯泡一样！！难以想象有这么多功能的灯泡安装方式居然不逼格一点？！！</p></li><li><p>Easyblub&nbsp;Plus的APP支持ios和安卓系统，界面也易操作。</p></li></ul><blockquote><p>关于团队</p></blockquote><p>我们的公司---gigateq有限公司成立于2012年，我们在欧洲开发的第一个LED灯就是由WiFi和智能设备控制的，这份激情和创新支持着我们走到今天这一步。我们走过了漫长的道路，现在我们借此向全球市场。</p><fieldset style="margin: 10px 0px 15px; padding: 5px 10px; border: 1px solid rgb(204, 204, 204); color: rgb(166, 166, 166); line-height: 24px; font-family: " open="" helvetica="" hiragino="" sans="" microsoft="" wenquanyi="" micro="" font-size:="" white-space:="" box-sizing:="" background-color:="" -webkit-font-smoothing:="" text-rendering:=""><legend style="margin: 0px; padding: 0px; border: 0px currentColor; color: rgb(0, 0, 0); font-weight: bold; box-sizing: border-box; border-image-source: none;"><span style="margin: 0px; padding: 4px 10px; color: rgb(255, 255, 255); font-weight: normal; box-sizing: border-box; background-color: rgb(191, 191, 191); -webkit-font-smoothing: antialiased; text-rendering: optimizelegibility;"><strong style="margin: 0px; padding: 0px; color: rgb(0, 0, 0); box-sizing: border-box; -webkit-font-smoothing: antialiased; text-rendering: optimizelegibility;">设备信息</strong></span><strong style="margin: 0px; padding: 0px; box-sizing: border-box; -webkit-font-smoothing: antialiased; text-rendering: optimizelegibility;"></strong></legend><strong style="margin: 0px; padding: 0px; color: rgb(0, 0, 0); box-sizing: border-box; -webkit-font-smoothing: antialiased; text-rendering: optimizelegibility;"><p style="padding: 0px; text-align: justify; color: rgb(51, 51, 51); line-height: 2em; letter-spacing: 0.06em; overflow: hidden; clear: both; font-family: " microsoft="" font-size:="" font-weight:="" margin-top:="" margin-bottom:="" position:="" box-sizing:="" -webkit-font-smoothing:="" text-rendering:="">Easybulb Plus</p><p style="padding: 0px; text-align: justify; color: rgb(51, 51, 51); line-height: 2em; letter-spacing: 0.06em; overflow: hidden; clear: both; font-family: " microsoft="" font-size:="" font-weight:="" margin-top:="" margin-bottom:="" position:="" box-sizing:="" -webkit-font-smoothing:="" text-rendering:="">厂商：Gigateq Limited | 开发进度：研发中</p><p style="padding: 0px; text-align: justify; color: rgb(51, 51, 51); line-height: 2em; letter-spacing: 0.06em; overflow: hidden; clear: both; font-family: " microsoft="" font-size:="" font-weight:="" margin-top:="" margin-bottom:="" position:="" box-sizing:="" -webkit-font-smoothing:="" text-rendering:="">尺寸：未知 | 重量：未知</p><p style="padding: 0px; text-align: justify; color: rgb(51, 51, 51); line-height: 2em; letter-spacing: 0.06em; overflow: hidden; clear: both; font-family: " microsoft="" font-size:="" font-weight:="" margin-top:="" margin-bottom:="" position:="" box-sizing:="" -webkit-font-smoothing:="" text-rendering:="">官网：http://easybulb.com</p></strong></fieldset><blockquote><p>Geeker&nbsp; 说</p></blockquote><p>Easyblub&nbsp;Plus这款智能灯虽然外表一般，但是功能都很人性化，完胜外表，在indiegogo众筹平台上以62美元的价格出售，性价比不低，应该能赢得很多人的芳心。</p><p>&nbsp;</p><p><br/></p><p>					</p></div> <!-- 分享 -->
+			</div>
+			</section> <!-- Already Commented --> <section class="quote-card">
+			<div id="user_comments" class="content-card"></div>
+			</section> <!-- Comment App Area --> <section id="comment_app_area">
+
+			<!-- //AJAX评论区 --> <!-- 
+ <div class='_DEDECY' style=''><div id='SOHUCS' sid='632'></div></div><script>(function(){var doc = document,s = doc.createElement('script'),h = doc.getElementsByTagName('head')[0] || doc.head || doc.documentElement;s.type = 'text/javascript';s.charset = 'utf-8';s.src='http://assets.changyan.sohu.com/upload/changyan.js?conf=prod_6d4b7e17e66a3883e0acda697bdfcb0c&appid=cyrmNqJCm';h.insertBefore(s,h.firstChild);window.SCS_NO_IFRAME = true;})()</script>
+ -->
+
+<!--兼容版，可保证页面完全兼容-->
+<div id="SOHUCS"></div>
+<script>
+  (function(){
+    var appid = 'cyrpbrFrK',
+    conf = 'prod_6467eecac294bf28a5a7a4809767ab2b';
+    var doc = document,
+    s = doc.createElement('script'),
+    h = doc.getElementsByTagName('head')[0] || doc.head || doc.documentElement;
+    s.type = 'text/javascript';
+    s.charset = 'utf-8';
+    s.src =  'http://assets.changyan.sohu.com/upload/changyan.js?conf='+ conf +'&appid=' + appid;
+    h.insertBefore(s,h.firstChild);
+  })()
+</script>
+ <!-- //顶踩 -->
+			<!-- //顶踩部份的源码结束 --> </section> <footer> <a href="#top"
+				class="back-to-top"></a> </footer> </article>
+		</div>
+		<div class="right-side">
+			<!-- Platform Infomation -->
+			<div style="padding: 10px 10px 10px 10px; height: 130px"
+				class="side-card">
+
+				<div style="float: left; padding: 12px 10px 0px 0px;"
+					id="left-image">
+					<a href="/index.php?uid=632"
+						class="display-user-profile">
+						<img src="/member/templets/images/dfboy.png"/>
+				</div>
+				<div style="float: left;" id="right-short-introduce">
+					<div style="clear: both; width: 100%;">
+						<span
+							style="font-size: 16px; color: black; font-style: BOLD; width: 100%; float: left; margin-top: 5px;"
+							id="username"> <a
+							href="/member/index.php?uid=liujie8403@foxmail.c"
+							class="user-name-a">brown_liu.</a>
+						</span>
+					</div>
+					<div style="clear: both; padding-top: 10px;; width: 100%;">
+						<span style="float: left" id="self-desc"></span>
+					</div>
+				</div>
+				<div style="clear: both; padding-top: 8px">
+					<a class="login-social__weibo external"		href="http://weibo.com/u/2488657122" target="_blank"> <i
+						class="right_icon-social-sinaweibo-auth"></i></a> 
+						<a			class="login-social__xiaomi external"			href="http://me.mi.com/414482630" target="_blank"><i
+						class="right_icon-social-xiaomi-auth"></i></a>
+						
+						526
+						 <a	href="/member/index.php?uid=liujie8403@foxmail.c&action=article"> <i
+						style="color: #797979; text-align: right; font: inherit; white-space: nowrap; position: absolute; right: 10px; width: 132px; height: 14px; float: left; margin: 0 5px 0 0; text-decoration: none; text-shadow: none;">
+						查看我的文章</i>
+					</a>
+				</div>
+			</div>
+
+			<!-- All Wants -->
+			<div style="padding: 10px 10px 10px 10px;" class="side-card">
+				<h5>大家还喜欢</h5>
+				<ul style="margin-top: 10px;">
+					<li style="border-top: solid 1px #ddd; height: 75px;">
+						<div		style="clear: both; margin: 5px 0px 5px 0px; width: 65%; float: left; font-size: 12px">
+							<a class="all-want-txt-a" href="/a/zhijian/2014/0707/532.html">再刷你就裸了 -- X.pose	</a>
+							<p style="margin: 5px 0px 5px 0px; font-size: 10px;">
+								<strong style="color: #ddd">
+								<a			href="/member/index.php?uid=brown.liu@geekview.c" class="all-want-txt-a-10">
+								 从此清纯是路人</a>
+								 &nbsp;&nbsp;2014-07-07</strong>
+							</p>
+						</div> <a target="_blank" style="line-height: 70px;"	href="/a/zhijian/2014/0707/532.html"> 
+						<img   style='width:98px;height:43px;padding: 5px 0px 0px 0px' alt='title' src='/uploads/UserFiles/Image/2014-07-26/53d384dc92358.jpg'/>
+							
+							
+							</a>
+					</li>
+<li style="border-top: solid 1px #ddd; height: 75px;">
+						<div		style="clear: both; margin: 5px 0px 5px 0px; width: 65%; float: left; font-size: 12px">
+							<a class="all-want-txt-a" href="/a/zhijian/2014/0704/525.html">让你的空调智能起来——Sensibo	</a>
+							<p style="margin: 5px 0px 5px 0px; font-size: 10px;">
+								<strong style="color: #ddd">
+								<a			href="/member/index.php?uid=brian.lee@geekview.c" class="all-want-txt-a-10">
+								 Brian</a>
+								 &nbsp;&nbsp;2014-07-04</strong>
+							</p>
+						</div> <a target="_blank" style="line-height: 70px;"	href="/a/zhijian/2014/0704/525.html"> 
+						<img   style='width:98px;height:43px;padding: 5px 0px 0px 0px' alt='title' src='/uploads/UserFiles/Image/2014-07-26/53d38108cf4c1.png'/>
+							
+							
+							</a>
+					</li>
+<li style="border-top: solid 1px #ddd; height: 75px;">
+						<div		style="clear: both; margin: 5px 0px 5px 0px; width: 65%; float: left; font-size: 12px">
+							<a class="all-want-txt-a" href="/a/zhijian/2014/0723/517.html">Violet--让你更好地晒太阳	</a>
+							<p style="margin: 5px 0px 5px 0px; font-size: 10px;">
+								<strong style="color: #ddd">
+								<a			href="/member/index.php?uid=brown.liu@geekview.c" class="all-want-txt-a-10">
+								 从此清纯是路人</a>
+								 &nbsp;&nbsp;2014-07-23</strong>
+							</p>
+						</div> <a target="_blank" style="line-height: 70px;"	href="/a/zhijian/2014/0723/517.html"> 
+						<img   style='width:98px;height:43px;padding: 5px 0px 0px 0px' alt='title' src='/uploads/UserFiles/Image/2014-07-26/53d37abe54457.jpg'/>
+							
+							
+							</a>
+					</li>
+<li style="border-top: solid 1px #ddd; height: 75px;">
+						<div		style="clear: both; margin: 5px 0px 5px 0px; width: 65%; float: left; font-size: 12px">
+							<a class="all-want-txt-a" href="/a/zhijian/2014/0620/539.html">记录你的生活 -- Lightbox #智能拍摄	</a>
+							<p style="margin: 5px 0px 5px 0px; font-size: 10px;">
+								<strong style="color: #ddd">
+								<a			href="/member/index.php?uid=brian.lee@geekview.c" class="all-want-txt-a-10">
+								 Brian</a>
+								 &nbsp;&nbsp;2014-06-20</strong>
+							</p>
+						</div> <a target="_blank" style="line-height: 70px;"	href="/a/zhijian/2014/0620/539.html"> 
+						<img   style='width:98px;height:43px;padding: 5px 0px 0px 0px' alt='title' src='/uploads/UserFiles/Image/2014-07-27/53d4614394514.jpg'/>
+							
+							
+							</a>
+					</li>
+<li style="border-top: solid 1px #ddd; height: 75px;">
+						<div		style="clear: both; margin: 5px 0px 5px 0px; width: 65%; float: left; font-size: 12px">
+							<a class="all-want-txt-a" href="/a/zhijian/2014/0731/553.html">一只会发亮的信鸽——AYATORI	</a>
+							<p style="margin: 5px 0px 5px 0px; font-size: 10px;">
+								<strong style="color: #ddd">
+								<a			href="/member/index.php?uid=Ailsaliang2014@163.c" class="all-want-txt-a-10">
+								 Ailsaliang</a>
+								 &nbsp;&nbsp;2014-07-31</strong>
+							</p>
+						</div> <a target="_blank" style="line-height: 70px;"	href="/a/zhijian/2014/0731/553.html"> 
+						<img   style='width:98px;height:43px;padding: 5px 0px 0px 0px' alt='title' src='/uploads/UserFiles/Image/2014-07-31/53da516ba48fd.png'/>
+							
+							
+							</a>
+					</li>
+<li style="border-top: solid 1px #ddd; height: 75px;">
+						<div		style="clear: both; margin: 5px 0px 5px 0px; width: 65%; float: left; font-size: 12px">
+							<a class="all-want-txt-a" href="/a/zhijian/2014/0624/542.html">身临其境体验游戏里中枪的感觉 	</a>
+							<p style="margin: 5px 0px 5px 0px; font-size: 10px;">
+								<strong style="color: #ddd">
+								<a			href="/member/index.php?uid=brian.lee@geekview.c" class="all-want-txt-a-10">
+								 Brian</a>
+								 &nbsp;&nbsp;2014-06-24</strong>
+							</p>
+						</div> <a target="_blank" style="line-height: 70px;"	href="/a/zhijian/2014/0624/542.html"> 
+						<img   style='width:98px;height:43px;padding: 5px 0px 0px 0px' alt='title' src='/uploads/UserFiles/Image/2014-07-27/53d46274a48f7.jpg'/>
+							
+							
+							</a>
+					</li>
+
+
+
+
+				</ul>
+			</div>
+		</div>
+		<div class="clear"></div>
+	</div>
+	<footer style="">
+		<div class="container">
+			<ul class="footer-link-list">
+				<li><p style="font:bold">公司介绍</p></li>
+				<li><a target="_blank" href="/index/index/aboutus" class="footer-link">关于我们</a></li>
+				<li><a target="_blank" href="/index/index/privacy" class="footer-link">隐私条款</a></li>
+				<li><a target="_blank" href="/index/index/userpolicy" class="footer-link">用户政策</a></li>
+				<li><a target="_blank" href="/index/index/joinus" class="footer-link">加入我们</a></li>
+
+			</ul>
+			<ul class="footer-link-list">
+				<li><p style="font:bold">合作伙伴</p></li>
+				<li><a target="_blank" href="http://www.baidu.com" class="footer-link external">百度</a></li>
+				<li><a target="_blank" href="http://www.aliyun.com" class="footer-link external">阿里云</a></li>
+				<li><a target="_blank" href="/index/index/userpolicy" class="footer-link"></a></li>
+				<li><a target="_blank" href="/index/index/joinus" class="footer-link"></a></li>
+
+			</ul>
+			<ul class="footer-link-list">
+				<li><p style="font:bold">订阅信息</p></li>
+				<li><a target="_blank" href="/templets/default/v1/Home/image/rss/geekviewRSS.xml" class="footer-link">
+				<img src="/templets/default/v1/Home/image/rss/rss.jpg" style="height:20px;"></a></li>
+
+			</ul>
+			<ul class="footer-link-list">
+				<li><p style="font:bold">&nbsp;</p></li>
+				<li>图片存储由&nbsp; <a href="http://www.aliyun.com/product/oss/?spm=5176.383338.201.7.IA7qhS" class="footer-link-ali external" target="_blank">阿里云存储</a> &nbsp;提供</li>
+
+			</ul>
+			<div class="clear"></div>		
+			<div class="copyright">
+				<span class="copyright-year">Copyright &copy;2013-2014 </span> <a href="#" class="footer-geekview">深圳市极客视界科技有限公司</a> <span class="company-number">粤ICP备14037549号-1</span>
+			</div>
+		</div>
+	</footer>
+	
+<script type="text/javascript">
+CheckLogin();
+</script>
+	<!-- /footer -->
+	</div>
+	
+</body>
+</html>

@@ -1,0 +1,546 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type"
+	content="text/html; charset=utf-8" />
+<title>不用再为没厕纸而捉急了 -- RollScout_极客</title>
+<meta name="keywords" content="智能家居" />
+<meta name="description" content="上厕所上到一半才发现厕纸已经没了，真的很让人抓狂。RollScout的诞生就是要把我们拯救于水深火热中，你不再需要蹲在洗手间里大喊大叫呼叫救兵啦！" />
+
+<link type="image/x-icon" rel="icon"
+	href="/templets/default/v1/Home/image/favicon.ico" />
+
+<link rel=”alternate” type=”application/rss+xml” title=”不用再为没厕纸而捉急了 -- RollScout” href=”/rss.php“/> 
+
+<link href="/templets/default/v1/Home/image/favicon.ico" type="image/x-icon" rel="icon" />
+<link href="/templets/default/v1/Home/css/panel.css" rel="stylesheet" media="screen" type="text/css" />
+<link href="/templets/default/v1/Home/css/normalize.css" rel="stylesheet" media="screen" type="text/css" />
+<link href="/templets/default/v1/Home/css/base.css" rel="stylesheet" media="screen" type="text/css" />
+<link href="/templets/default/v1/Home/css/responsive.css" rel="stylesheet" media="screen" type="text/css" />
+<link href="/templets/default/v1/Home/css/listPage.css" rel="stylesheet" media="screen" type="text/css" />
+<link href="/templets/default/v1/Home/css/login.css" rel="stylesheet" media="screen" type="text/css" />
+<link href="/templets/default/v1/css/pubnews.css" rel="stylesheet" media="screen" type="text/css" />
+<link href="/templets/default/v1/Home/css/toobar.css?2014" rel="stylesheet" media="screen" type="text/css" />
+
+<script src="/templets/default/v1/Home/js/jquery.min.js" language="javascript" type="text/javascript"></script>
+<script src="/templets/default/v1/Home/js/jquery.lazyload.min.js" language="javascript" type="text/javascript"></script>
+<script src="/templets/default/v1/Home/js/androidApp.js" language="javascript" type="text/javascript"></script>
+<script src="/templets/default/v1/Home/js/global.js" language="javascript" type="text/javascript"></script>
+<script src="/templets/default/v1/Home/js/placeholders.min.js" language="javascript" type="text/javascript"></script>
+<script src="/templets/default/v1/Home/js/ga.js" language="javascript" type="text/javascript"></script>
+<script src="/templets/default/v1/Home/js/main-2.js" language="javascript" type="text/javascript"></script>
+<script src="/templets/default/v1/Home/js/nr-100.js" language="javascript" type="text/javascript"></script>
+<script src="/templets/default/v1/Home/js/topics-x.js" language="javascript" type="text/javascript"></script>
+<script src="/templets/default/v1/Home/js/jquery.toolbar.min.js" language="javascript" type="text/javascript"></script>
+<script src="/templets/default/v1/Home/js/jquery.easing.1.3.js" language="javascript" type="text/javascript"></script>
+
+<script src="/include/dedeajax2.js" language="javascript" type="text/javascript" ></script>
+
+<script type="text/javascript">
+function CheckLogin(){
+  var taget_obj = document.getElementById('_userlogin');
+  myajax = new DedeAjax(taget_obj,false,false,'','','');
+  myajax.SendGet2("/member/ajax_loginsta.php");
+  $('.login-user-name').click( function()  {
+	    $('.manage-list ').toggle();
+	});
+  $('.loginForm').hide(0);
+  DedeXHTTP = null;
+}
+</script>
+
+
+<script language="javascript" type="text/javascript">
+<!--
+function postBadGood(ftype,fid)
+{
+	var taget_obj = document.getElementById(ftype+fid);
+	var saveid = GetCookie('badgoodid');
+	if(saveid != null)
+	{
+		var saveids = saveid.split(',');
+		var hasid = false;
+		saveid = '';
+		j = 1;
+		for(i=saveids.length-1;i>=0;i--)
+		{
+			if(saveids[i]==fid && hasid) continue;
+			else {
+				if(saveids[i]==fid && !hasid) hasid = true;
+				saveid += (saveid=='' ? saveids[i] : ','+saveids[i]);
+				j++;
+				if(j==10 && hasid) break;
+				if(j==9 && !hasid) break;
+			}
+		}
+		if(hasid) { alert('您刚才已表决过了喔！'); return false;}
+		else saveid += ','+fid;
+		SetCookie('badgoodid',saveid,1);
+	}
+	else
+	{
+		SetCookie('badgoodid',fid,1);
+	}
+	myajax = new DedeAjax(taget_obj,false,false,'','','');
+	myajax.SendGet2("/plus/feedback.php?aid="+fid+"&action="+ftype+"&fid="+fid);
+}
+function postDigg(ftype,aid)
+{
+	var taget_obj = document.getElementById('newdigg');
+	var saveid = GetCookie('diggid');
+	if(saveid != null)
+	{
+		var saveids = saveid.split(',');
+		var hasid = false;
+		saveid = '';
+		j = 1;
+		for(i=saveids.length-1;i>=0;i--)
+		{
+			if(saveids[i]==aid && hasid) continue;
+			else {
+				if(saveids[i]==aid && !hasid) hasid = true;
+				saveid += (saveid=='' ? saveids[i] : ','+saveids[i]);
+				j++;
+				if(j==20 && hasid) break;
+				if(j==19 && !hasid) break;
+			}
+		}
+		if(hasid) { alert("您已经顶过该帖，请不要重复顶帖 ！"); return; }
+		else saveid += ','+aid;
+		SetCookie('diggid',saveid,1);
+	}
+	else
+	{
+		SetCookie('diggid',aid,1);
+	}
+	myajax = new DedeAjax(taget_obj,false,false,'','','');
+	var url = "/plus/digg_ajax.php?action="+ftype+"&id="+aid;
+	myajax.SendGet2(url);
+}
+function getDigg(aid)
+{
+	var taget_obj = document.getElementById('newdigg');
+	myajax = new DedeAjax(taget_obj,false,false,'','','');
+	myajax.SendGet2("/plus/digg_ajax.php?id="+aid);
+	DedeXHTTP = null;
+}
+
+$(function(){
+	$("#lovediv").bind("mouseover",function(){
+		clicknum=$("#lovenums").text();
+		$("#lovenums").html('').addClass('activelove');
+	}).bind("mouseout",function(){
+		$("#lovenums").removeClass('activelove');
+		$("#lovenums").html(clicknum);
+	}).bind("click",function(){
+		
+		//todu  默认的顶踩逻辑
+		postDigg('good',552);
+		//todu
+				clicknum++;
+				try{
+				if(clicknum>999){
+					clicknum='999+';
+				}
+				$("#lovenums").html(clicknum).removeClass("activelove").css("color","#fff");
+				$("span","#loveA").css("color","#fff");
+				$("#loveA").css({"background-color":"#3091f2","color":"#fff"});
+				$(this).unbind("mouseover").unbind("mouseout").unbind("click");
+				postLoveArt();
+				}catch(e){};
+		
+		//取最新的nice_num数
+		//var articleid = $("#comment_articleid").val();
+	
+	});
+	$('#vertical-toolbar').toolbar({
+		content: '#user-toolbar-options',
+		position: 'left'
+	});
+	$(window.document).scroll(function () {
+		$("#tool-bar").css("position","fixed");
+		if($("#vertical-toolbar").hasClass("pressed")){
+			$(".tool-container,.gradient tool-left,.tool-rounded").hide();
+			$("#vertical-toolbar").removeClass("pressed");
+		}
+	});
+	$("#vertical-toolbar").click(function(){alert(1);
+		  $("#vertical-toolbar").toggleClass("pressed");
+		});
+});
+-->
+</script>
+</head>
+<body class="js articleview">
+
+	<div class="viewblock animation"><div id="wrapper">
+	<header id="site_header">
+		<div style="height: 85px" class="navbar">
+			<div id="nav_container" class="container visible">
+				<a href="/" class="logo"><img
+					src="/templets/default/v1/Home/image/new_logo.png" alt="极客视界" class="logo-img"></a>
+				<nav>
+					<ul id="nav">
+						<li><a class="nav-item" rel="dropmenu2" href="/a/zhijian/">智见</a></li>
+						<li><a class="nav-item" rel="dropmenu1" href="/special/index.html">专题</a></li>
+						<li><a class="nav-item" rel="dropmenu1" href="/app/">极客玩</a></li>
+						<!-- 
+						<li><a href="/index/topic/index" class="nav-item ">专题</a></li>
+						<LI><A class="nav-item nav-item-discover " href="/index/gk_discover/discover">极客发现</A></LI> -->
+					</ul>
+				</nav>
+				<div id="_userlogin">
+				
+				<div style="margin-top: 22px; float: right; width: 100px;"  >
+					
+					<div style="height: 36px; float: right;">
+						<div class="user-account-info"
+							style="float: right; margin-top: 3px;">
+							<!-- 
+							<a onclick="showLoginDialog();" href="javascript:void(0)"	class="log">登录</a>
+							 -->
+							<a   href="/member/index.php"	class="log">登录</a>
+						</div>
+						  
+						<div class="manage-list">
+							<span class="triangle-up"></span>
+							<ul>
+								<!--<LI class="manage-list-item"><A id="user_center" href="/index/member/personalization/inittype/BASEINFO"> <I class="icon-user-center"></I> <SPAN class="user-manage-list-text">个人中心</SPAN>-->
+								<li><a href="/index/member/personalization"
+									id="user_center" class="manage-list-item"> <span
+										class="user-manage-list-text">个人中心</span>
+								</a></li>
+								<li><a href="/index/message/viewmessage" id="user_edit"
+									class="manage-list-item"> <span
+										class="user-manage-list-text">最新消息 <font size="2px"
+											color="red"><sup></sup></font></span>
+								</a></li>
+								<li><a href="/index/member/modifyinfo" id="user_edit"
+									class="manage-list-item"> <span
+										class="user-manage-list-text">个人设置</span>
+								</a></li>
+
+								<li><a href="/index/member/logout" id="logout"
+									class="manage-list-item"> <span
+										class="user-manage-list-text">退出登录</span>
+								</a></li>
+							</ul>
+							
+						</div>
+						
+						
+					</div>
+				</div>
+				</div>
+				<div style="margin-top: 22px; float: right; width: 200px;">
+
+					<div style="height: 36px; margin-top: 3px; float: right;">
+						<form method="POST" action="">
+
+							<!-- <div style="width:200px;"> -->
+
+							<span style="float: left;"> <input type="text"
+								autocomplete="off" value="" placeholder="搜索设备"
+								class="default-search" name="keyword">
+
+							</span> <span style="position: absolute; margin: 9px -25px"> <input
+								type="submit" value="提交查询内容" class="search-icon">
+
+							</span>
+
+						</form>
+
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
+
+		<div class="clear"></div>
+
+
+
+	</header>
+
+</div>
+
+
+</div>
+	<!-- /header -->
+	<ul id="tool-bar"
+		style="margin-left: 100px; position: fixed; background: none repeat scroll 0% 0% rgb(255, 255, 255); z-index: 2;">
+		<li class="li-first"><a id="tb-comment" title="评论"
+			href="#comment_app_area"><span class="tool-bar-icon tool-comment"></span><label></label></a>
+		</li>
+		
+		
+		<li id="lovediv" class="li-middle"><a id="loveA" title="喜欢"
+			href="javascript:void(0);"><span class="tool-bar-icon tool-like">
+			</span> <div id="lovenums" class=""> 72 </div></a></li>
+		<!-- 
+		<li class="li-last"><a id="vertical-toolbar" title="分享" href="#"><span
+				class="tool-bar-icon tool-share"></span></a></li>
+		 -->
+		<a id="weixin_link" style="display: none"
+			class="jiathis_button_weixin" title="分享到微信"> <span
+			class="jiathis_txt jiathis_separator jtico jtico_weixin">微信</span>
+		</a>
+	</ul>
+
+
+
+	<div class="container" id="content_wrapper">
+		<div class="left-side">
+			<article> <section> <!-- Web Article -->
+			<div class="content-card article-style">
+							
+				<a
+					style="background-image: url(/uploads/UserFiles/Image/2014-07-31/53da38623ef6d.jpg " id="article_cover"> </a> <input
+					type="hidden" value="2465">
+					<div id="web-article-header">
+						<div class="article-title">
+							<div class="app-title">
+								<h1>不用再为没厕纸而捉急了 -- RollScout</h1>
+							</div>
+						</div>
+
+						<div class="article-info-and-tag-area">
+							<div>
+								<div class="pub-time-and-version">
+									<ul class="pub-time-and-version-list">
+
+										<a href="/member/index.php?uid=brown.liu@geekview.c&action=article">
+											<li class="pub-author">从此清纯是路人.</li>
+
+											<li class="pub-time">2014-07-31</li>
+										</a>
+									</ul>
+								</div>
+							</div>
+							<div>
+								<a	href="/tags.php?/智能家居"><span	class="tag-span">智能家居</span></a>
+								
+							</div>
+						</div>
+						<div id="summary" class="short-des">
+							
+							<div class="intro">上厕所上到一半才发现厕纸已经没了，真的很让人抓狂。RollScout的诞生就是要把我们拯救于水深火热中，你不再需要蹲在洗手间里大喊大叫呼叫救兵啦！</div>
+							
+						</div>
+					</div>
+					<div id="article_content"><p>上厕所上到一半才发现厕纸已经没了，真的很让人抓狂。RollScout的诞生就是要把我们拯救于水深火热中，你不再需要蹲在洗手间里大喊大叫呼叫救兵啦！</p><blockquote><p><strong>洗手间也要智能化</strong></p></blockquote><p>RollScout是一款时尚大方的智能厕纸架，当洗手间里的厕纸已经快没的时候，RollScout会提醒你要换纸卷了，避免了尴尬场面的出现。RollScout使得洗手间智能化，但不繁杂，甚至可以让洗手间更“迷人”——其设计大方简洁，对于任何一种装修风格都是百搭款。</p><blockquote><p><strong>帮你“盯着”厕纸卷</strong></p></blockquote><p>RollScout结合利用稳定的红外线发射源和传感器，检测厕纸卷的使用程度。当厕纸卷的厚度低于预设的最低值，就会触发RollScout的警告器，黄色的警告灯环会不停闪烁。配置的警告灯足够亮，即使在白天或者在光线充足下也很明显。</p><p><img src="/ueditor/php/upload/image/20140731/1406809739755701.jpg" title="1406809739755701.jpg" alt="62ac324ac796267cf3e3da7deaf0bf11_large(2).jpg"/></p><blockquote><p><strong>省电的运作模式</strong></p></blockquote><p>RollScout的低功率设计使得电池的寿命更长，正常试用下，电池寿命可达9至12个月。当电量不足的时候，警告灯环会变成蓝色，提醒用户更换电池。</p><p>RollScout并不是时刻都在工作。每隔几分钟会检测一次厕纸的使用程度，当检测到厕纸的厚度低于警戒线，RollScout就会一直运作，直到用户更换厕纸后才恢复到正常工作。</p><blockquote><p><strong>安装简单</strong></p></blockquote><p>RollScout的安装很简单，10分钟就可以搞定。只需要有螺丝和螺丝刀再加一节电池，你就可以使用了。</p><p><img src="/ueditor/php/upload/image/20140731/1406809807548577.jpg" title="1406809807548577.jpg" alt="93490b0916fe80573550814b22b54aa1_large.jpg"/></p><p>RollScout使用一节A23电池，电池盒的位置方便安全。</p><p><img src="/ueditor/php/upload/image/20140731/1406809843632003.jpg" title="1406809843632003.jpg" alt="766c53fafb3c4d2cdf515727173a62c7_large.jpg"/></p><blockquote><p><strong>追求质量</strong></p></blockquote><p>RollScout的电子元件和感应器来自专业领域的制造商。RollScout在外观设计上同样十分注重质量。最初的模型材质是使用100%的黄铜，可以说这方面超越了市面上的很多知名品牌。目前，在Kickstarters上捐赠不同的筹资额会得到不同材质的RollScout作为奖励。可提供的材质包括：铝合金、古青铜色、陶瓷白、14K镀金等。</p><p><img src="/ueditor/php/upload/image/20140731/1406809911425419.jpg" title="1406809911425419.jpg" alt="09814d27f999091ae6a48df6515a51d7_large.jpg"/></p><blockquote><p><strong>项目阶段</strong></p></blockquote><p>目前，RollScout已经制造出模型并且通过了测试阶段。电路设计已经完工，并且在洗手间里试用成功。可以像对待普通T恤一样对待它！tshirtOS由柔软的棉布制成，可以折叠，手洗，而且其上的LED显示屏并不会因此而损坏！</p><p>此次在Kickstarters上筹资，主要是为了解决RollScout的框架设计和生产以及定制的线路板的生产成本。RollScout还表示，如果能筹资55000美元，就能够开发出一款同步的App，用户可以在手机上收到RollScout发出的提示。</p><blockquote><p><strong>关于RollScout团队</strong></p></blockquote><p>RollScout的创作团队是一个夫妻档——Rinkal Thakker和Vivek Pandey。Rinkal拥有经济学和网络计算机编程的学位，曾为好莱坞工作室和金融机构工作。她合伙在伦敦成立了一家咨询公司。Vivek拥有计算机工程学位，并且在美国密歇根大学大学获得了MBA学位。他曾经在IBM和Sony工作，拥有11年的技术平台运营管理经验， 并且在孟买和伦敦开创了自己的事业。</p><p>在RollScout这个项目里面，Rinkal主要是担任财务的角色，监控和管理项目开发的资金预算。而Vivek主要负责产品设计和生产，拓展业务，监督和实施严格的工艺流程。。RollScout还表示，如果能筹资55000美元，就能够开发出一款同步的App，用户可以在手机上收到RollScout发出的提示。</p><blockquote><p><strong>设备信息</strong></p></blockquote><p>RollScout | 智能家居</p><p>厂商：RollScout | 开发进度：产品原型</p><p>尺寸：未知 | 重量：未知</p><p>官网：http://www.facebook.com/rollscout/</p><blockquote><p><strong>Geeker说</strong></p></blockquote><p>没人对生活或家居智能化的理解都不一样，但是其目的都是为了能让我们的生活更加便利舒适。目前RollScout在Kickstarter上的筹资情况并不乐观。</p><p><br/></p><p>					</p></div> <!-- 分享 -->
+			</div>
+			</section> <!-- Already Commented --> <section class="quote-card">
+			<div id="user_comments" class="content-card"></div>
+			</section> <!-- Comment App Area --> <section id="comment_app_area">
+
+			<!-- //AJAX评论区 --> <!-- 
+ <div class='_DEDECY' style=''><div id='SOHUCS' sid='552'></div></div><script>(function(){var doc = document,s = doc.createElement('script'),h = doc.getElementsByTagName('head')[0] || doc.head || doc.documentElement;s.type = 'text/javascript';s.charset = 'utf-8';s.src='http://assets.changyan.sohu.com/upload/changyan.js?conf=prod_6d4b7e17e66a3883e0acda697bdfcb0c&appid=cyrmNqJCm';h.insertBefore(s,h.firstChild);window.SCS_NO_IFRAME = true;})()</script>
+ -->
+
+<!--兼容版，可保证页面完全兼容-->
+<div id="SOHUCS"></div>
+<script>
+  (function(){
+    var appid = 'cyrpbrFrK',
+    conf = 'prod_6467eecac294bf28a5a7a4809767ab2b';
+    var doc = document,
+    s = doc.createElement('script'),
+    h = doc.getElementsByTagName('head')[0] || doc.head || doc.documentElement;
+    s.type = 'text/javascript';
+    s.charset = 'utf-8';
+    s.src =  'http://assets.changyan.sohu.com/upload/changyan.js?conf='+ conf +'&appid=' + appid;
+    h.insertBefore(s,h.firstChild);
+  })()
+</script>
+ <!-- //顶踩 -->
+			<!-- //顶踩部份的源码结束 --> </section> <footer> <a href="#top"
+				class="back-to-top"></a> </footer> </article>
+		</div>
+		<div class="right-side">
+			<!-- Platform Infomation -->
+			<div style="padding: 10px 10px 10px 10px; height: 130px"
+				class="side-card">
+
+				<div style="float: left; padding: 12px 10px 0px 0px;"
+					id="left-image">
+					<a href="/index.php?uid=552"
+						class="display-user-profile">
+						<img src="/member/templets/images/dfboy.png"/>
+				</div>
+				<div style="float: left;" id="right-short-introduce">
+					<div style="clear: both; width: 100%;">
+						<span
+							style="font-size: 16px; color: black; font-style: BOLD; width: 100%; float: left; margin-top: 5px;"
+							id="username"> <a
+							href="/member/index.php?uid=brown.liu@geekview.c"
+							class="user-name-a">从此清纯是路人.</a>
+						</span>
+					</div>
+					<div style="clear: both; padding-top: 10px;; width: 100%;">
+						<span style="float: left" id="self-desc"></span>
+					</div>
+				</div>
+				<div style="clear: both; padding-top: 8px">
+					<a class="login-social__weibo external"		href="http://weibo.com/u/2488657122" target="_blank"> <i
+						class="right_icon-social-sinaweibo-auth"></i></a> 
+						<a			class="login-social__xiaomi external"			href="http://me.mi.com/414482630" target="_blank"><i
+						class="right_icon-social-xiaomi-auth"></i></a>
+						
+						527
+						 <a	href="/member/index.php?uid=brown.liu@geekview.c&action=article"> <i
+						style="color: #797979; text-align: right; font: inherit; white-space: nowrap; position: absolute; right: 10px; width: 132px; height: 14px; float: left; margin: 0 5px 0 0; text-decoration: none; text-shadow: none;">
+						查看我的文章</i>
+					</a>
+				</div>
+			</div>
+
+			<!-- All Wants -->
+			<div style="padding: 10px 10px 10px 10px;" class="side-card">
+				<h5>大家还喜欢</h5>
+				<ul style="margin-top: 10px;">
+					<li style="border-top: solid 1px #ddd; height: 75px;">
+						<div		style="clear: both; margin: 5px 0px 5px 0px; width: 65%; float: left; font-size: 12px">
+							<a class="all-want-txt-a" href="/a/zhijian/2014/0707/532.html">再刷你就裸了 -- X.pose	</a>
+							<p style="margin: 5px 0px 5px 0px; font-size: 10px;">
+								<strong style="color: #ddd">
+								<a			href="/member/index.php?uid=brown.liu@geekview.c" class="all-want-txt-a-10">
+								 从此清纯是路人</a>
+								 &nbsp;&nbsp;2014-07-07</strong>
+							</p>
+						</div> <a target="_blank" style="line-height: 70px;"	href="/a/zhijian/2014/0707/532.html"> 
+						<img   style='width:98px;height:43px;padding: 5px 0px 0px 0px' alt='title' src='/uploads/UserFiles/Image/2014-07-26/53d384dc92358.jpg'/>
+							
+							
+							</a>
+					</li>
+<li style="border-top: solid 1px #ddd; height: 75px;">
+						<div		style="clear: both; margin: 5px 0px 5px 0px; width: 65%; float: left; font-size: 12px">
+							<a class="all-want-txt-a" href="/a/zhijian/2014/0704/525.html">让你的空调智能起来——Sensibo	</a>
+							<p style="margin: 5px 0px 5px 0px; font-size: 10px;">
+								<strong style="color: #ddd">
+								<a			href="/member/index.php?uid=brian.lee@geekview.c" class="all-want-txt-a-10">
+								 Brian</a>
+								 &nbsp;&nbsp;2014-07-04</strong>
+							</p>
+						</div> <a target="_blank" style="line-height: 70px;"	href="/a/zhijian/2014/0704/525.html"> 
+						<img   style='width:98px;height:43px;padding: 5px 0px 0px 0px' alt='title' src='/uploads/UserFiles/Image/2014-07-26/53d38108cf4c1.png'/>
+							
+							
+							</a>
+					</li>
+<li style="border-top: solid 1px #ddd; height: 75px;">
+						<div		style="clear: both; margin: 5px 0px 5px 0px; width: 65%; float: left; font-size: 12px">
+							<a class="all-want-txt-a" href="/a/zhijian/2014/0723/517.html">Violet--让你更好地晒太阳	</a>
+							<p style="margin: 5px 0px 5px 0px; font-size: 10px;">
+								<strong style="color: #ddd">
+								<a			href="/member/index.php?uid=brown.liu@geekview.c" class="all-want-txt-a-10">
+								 从此清纯是路人</a>
+								 &nbsp;&nbsp;2014-07-23</strong>
+							</p>
+						</div> <a target="_blank" style="line-height: 70px;"	href="/a/zhijian/2014/0723/517.html"> 
+						<img   style='width:98px;height:43px;padding: 5px 0px 0px 0px' alt='title' src='/uploads/UserFiles/Image/2014-07-26/53d37abe54457.jpg'/>
+							
+							
+							</a>
+					</li>
+<li style="border-top: solid 1px #ddd; height: 75px;">
+						<div		style="clear: both; margin: 5px 0px 5px 0px; width: 65%; float: left; font-size: 12px">
+							<a class="all-want-txt-a" href="/a/zhijian/2014/0620/539.html">记录你的生活 -- Lightbox #智能拍摄	</a>
+							<p style="margin: 5px 0px 5px 0px; font-size: 10px;">
+								<strong style="color: #ddd">
+								<a			href="/member/index.php?uid=brian.lee@geekview.c" class="all-want-txt-a-10">
+								 Brian</a>
+								 &nbsp;&nbsp;2014-06-20</strong>
+							</p>
+						</div> <a target="_blank" style="line-height: 70px;"	href="/a/zhijian/2014/0620/539.html"> 
+						<img   style='width:98px;height:43px;padding: 5px 0px 0px 0px' alt='title' src='/uploads/UserFiles/Image/2014-07-27/53d4614394514.jpg'/>
+							
+							
+							</a>
+					</li>
+<li style="border-top: solid 1px #ddd; height: 75px;">
+						<div		style="clear: both; margin: 5px 0px 5px 0px; width: 65%; float: left; font-size: 12px">
+							<a class="all-want-txt-a" href="/a/zhijian/2014/0731/553.html">一只会发亮的信鸽——AYATORI	</a>
+							<p style="margin: 5px 0px 5px 0px; font-size: 10px;">
+								<strong style="color: #ddd">
+								<a			href="/member/index.php?uid=Ailsaliang2014@163.c" class="all-want-txt-a-10">
+								 Ailsaliang</a>
+								 &nbsp;&nbsp;2014-07-31</strong>
+							</p>
+						</div> <a target="_blank" style="line-height: 70px;"	href="/a/zhijian/2014/0731/553.html"> 
+						<img   style='width:98px;height:43px;padding: 5px 0px 0px 0px' alt='title' src='/uploads/UserFiles/Image/2014-07-31/53da516ba48fd.png'/>
+							
+							
+							</a>
+					</li>
+<li style="border-top: solid 1px #ddd; height: 75px;">
+						<div		style="clear: both; margin: 5px 0px 5px 0px; width: 65%; float: left; font-size: 12px">
+							<a class="all-want-txt-a" href="/a/zhijian/2014/0624/542.html">身临其境体验游戏里中枪的感觉 	</a>
+							<p style="margin: 5px 0px 5px 0px; font-size: 10px;">
+								<strong style="color: #ddd">
+								<a			href="/member/index.php?uid=brian.lee@geekview.c" class="all-want-txt-a-10">
+								 Brian</a>
+								 &nbsp;&nbsp;2014-06-24</strong>
+							</p>
+						</div> <a target="_blank" style="line-height: 70px;"	href="/a/zhijian/2014/0624/542.html"> 
+						<img   style='width:98px;height:43px;padding: 5px 0px 0px 0px' alt='title' src='/uploads/UserFiles/Image/2014-07-27/53d46274a48f7.jpg'/>
+							
+							
+							</a>
+					</li>
+
+
+
+
+				</ul>
+			</div>
+		</div>
+		<div class="clear"></div>
+	</div>
+	<footer style="">
+		<div class="container">
+			<ul class="footer-link-list">
+				<li><p style="font:bold">公司介绍</p></li>
+				<li><a target="_blank" href="/index/index/aboutus" class="footer-link">关于我们</a></li>
+				<li><a target="_blank" href="/index/index/privacy" class="footer-link">隐私条款</a></li>
+				<li><a target="_blank" href="/index/index/userpolicy" class="footer-link">用户政策</a></li>
+				<li><a target="_blank" href="/index/index/joinus" class="footer-link">加入我们</a></li>
+
+			</ul>
+			<ul class="footer-link-list">
+				<li><p style="font:bold">合作伙伴</p></li>
+				<li><a target="_blank" href="http://www.baidu.com" class="footer-link external">百度</a></li>
+				<li><a target="_blank" href="http://www.aliyun.com" class="footer-link external">阿里云</a></li>
+				<li><a target="_blank" href="/index/index/userpolicy" class="footer-link"></a></li>
+				<li><a target="_blank" href="/index/index/joinus" class="footer-link"></a></li>
+
+			</ul>
+			<ul class="footer-link-list">
+				<li><p style="font:bold">订阅信息</p></li>
+				<li><a target="_blank" href="/templets/default/v1/Home/image/rss/geekviewRSS.xml" class="footer-link">
+				<img src="/templets/default/v1/Home/image/rss/rss.jpg" style="height:20px;"></a></li>
+
+			</ul>
+			<ul class="footer-link-list">
+				<li><p style="font:bold">&nbsp;</p></li>
+				<li>图片存储由&nbsp; <a href="http://www.aliyun.com/product/oss/?spm=5176.383338.201.7.IA7qhS" class="footer-link-ali external" target="_blank">阿里云存储</a> &nbsp;提供</li>
+
+			</ul>
+			<div class="clear"></div>		
+			<div class="copyright">
+				<span class="copyright-year">Copyright &copy;2013-2014 </span> <a href="#" class="footer-geekview">深圳市极客视界科技有限公司</a> <span class="company-number">粤ICP备14037549号-1</span>
+			</div>
+		</div>
+	</footer>
+	
+<script type="text/javascript">
+CheckLogin();
+</script>
+	<!-- /footer -->
+	</div>
+	
+</body>
+</html>

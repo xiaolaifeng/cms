@@ -1,0 +1,547 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type"
+	content="text/html; charset=utf-8" />
+<title>高端全功能头戴虚拟显示设备——Totem_极客</title>
+<meta name="keywords" content="游戏娱乐,智能穿戴" />
+<meta name="description" content="Totem是一款适用于开发者与高端玩家的头戴式虚拟现实设备。它丰富的特性与强大的功能可以让你获得前所未有的沉浸式游戏体验。" />
+
+<link type="image/x-icon" rel="icon"
+	href="/templets/default/v1/Home/image/favicon.ico" />
+
+<link rel=”alternate” type=”application/rss+xml” title=”高端全功能头戴虚拟显示设备——Totem” href=”/rss.php“/> 
+
+<link href="/templets/default/v1/Home/image/favicon.ico" type="image/x-icon" rel="icon" />
+<link href="/templets/default/v1/Home/css/panel.css" rel="stylesheet" media="screen" type="text/css" />
+<link href="/templets/default/v1/Home/css/normalize.css" rel="stylesheet" media="screen" type="text/css" />
+<link href="/templets/default/v1/Home/css/base.css" rel="stylesheet" media="screen" type="text/css" />
+<link href="/templets/default/v1/Home/css/responsive.css" rel="stylesheet" media="screen" type="text/css" />
+<link href="/templets/default/v1/Home/css/listPage.css" rel="stylesheet" media="screen" type="text/css" />
+<link href="/templets/default/v1/Home/css/login.css" rel="stylesheet" media="screen" type="text/css" />
+<link href="/templets/default/v1/css/pubnews.css" rel="stylesheet" media="screen" type="text/css" />
+<link href="/templets/default/v1/Home/css/toobar.css?2014" rel="stylesheet" media="screen" type="text/css" />
+
+<script src="/templets/default/v1/Home/js/jquery.min.js" language="javascript" type="text/javascript"></script>
+<script src="/templets/default/v1/Home/js/jquery.lazyload.min.js" language="javascript" type="text/javascript"></script>
+<script src="/templets/default/v1/Home/js/androidApp.js" language="javascript" type="text/javascript"></script>
+<script src="/templets/default/v1/Home/js/global.js" language="javascript" type="text/javascript"></script>
+<script src="/templets/default/v1/Home/js/placeholders.min.js" language="javascript" type="text/javascript"></script>
+<script src="/templets/default/v1/Home/js/ga.js" language="javascript" type="text/javascript"></script>
+<script src="/templets/default/v1/Home/js/main-2.js" language="javascript" type="text/javascript"></script>
+<script src="/templets/default/v1/Home/js/nr-100.js" language="javascript" type="text/javascript"></script>
+<script src="/templets/default/v1/Home/js/topics-x.js" language="javascript" type="text/javascript"></script>
+<script src="/templets/default/v1/Home/js/jquery.toolbar.min.js" language="javascript" type="text/javascript"></script>
+<script src="/templets/default/v1/Home/js/jquery.easing.1.3.js" language="javascript" type="text/javascript"></script>
+
+<script src="/include/dedeajax2.js" language="javascript" type="text/javascript" ></script>
+
+<script type="text/javascript">
+function CheckLogin(){
+  var taget_obj = document.getElementById('_userlogin');
+  myajax = new DedeAjax(taget_obj,false,false,'','','');
+  myajax.SendGet2("/member/ajax_loginsta.php");
+  $('.login-user-name').click( function()  {
+	    $('.manage-list ').toggle();
+	});
+  $('.loginForm').hide(0);
+  DedeXHTTP = null;
+}
+</script>
+
+
+<script language="javascript" type="text/javascript">
+<!--
+function postBadGood(ftype,fid)
+{
+	var taget_obj = document.getElementById(ftype+fid);
+	var saveid = GetCookie('badgoodid');
+	if(saveid != null)
+	{
+		var saveids = saveid.split(',');
+		var hasid = false;
+		saveid = '';
+		j = 1;
+		for(i=saveids.length-1;i>=0;i--)
+		{
+			if(saveids[i]==fid && hasid) continue;
+			else {
+				if(saveids[i]==fid && !hasid) hasid = true;
+				saveid += (saveid=='' ? saveids[i] : ','+saveids[i]);
+				j++;
+				if(j==10 && hasid) break;
+				if(j==9 && !hasid) break;
+			}
+		}
+		if(hasid) { alert('您刚才已表决过了喔！'); return false;}
+		else saveid += ','+fid;
+		SetCookie('badgoodid',saveid,1);
+	}
+	else
+	{
+		SetCookie('badgoodid',fid,1);
+	}
+	myajax = new DedeAjax(taget_obj,false,false,'','','');
+	myajax.SendGet2("/plus/feedback.php?aid="+fid+"&action="+ftype+"&fid="+fid);
+}
+function postDigg(ftype,aid)
+{
+	var taget_obj = document.getElementById('newdigg');
+	var saveid = GetCookie('diggid');
+	if(saveid != null)
+	{
+		var saveids = saveid.split(',');
+		var hasid = false;
+		saveid = '';
+		j = 1;
+		for(i=saveids.length-1;i>=0;i--)
+		{
+			if(saveids[i]==aid && hasid) continue;
+			else {
+				if(saveids[i]==aid && !hasid) hasid = true;
+				saveid += (saveid=='' ? saveids[i] : ','+saveids[i]);
+				j++;
+				if(j==20 && hasid) break;
+				if(j==19 && !hasid) break;
+			}
+		}
+		if(hasid) { alert("您已经顶过该帖，请不要重复顶帖 ！"); return; }
+		else saveid += ','+aid;
+		SetCookie('diggid',saveid,1);
+	}
+	else
+	{
+		SetCookie('diggid',aid,1);
+	}
+	myajax = new DedeAjax(taget_obj,false,false,'','','');
+	var url = "/plus/digg_ajax.php?action="+ftype+"&id="+aid;
+	myajax.SendGet2(url);
+}
+function getDigg(aid)
+{
+	var taget_obj = document.getElementById('newdigg');
+	myajax = new DedeAjax(taget_obj,false,false,'','','');
+	myajax.SendGet2("/plus/digg_ajax.php?id="+aid);
+	DedeXHTTP = null;
+}
+
+$(function(){
+	$("#lovediv").bind("mouseover",function(){
+		clicknum=$("#lovenums").text();
+		$("#lovenums").html('').addClass('activelove');
+	}).bind("mouseout",function(){
+		$("#lovenums").removeClass('activelove');
+		$("#lovenums").html(clicknum);
+	}).bind("click",function(){
+		
+		//todu  默认的顶踩逻辑
+		postDigg('good',671);
+		//todu
+				clicknum++;
+				try{
+				if(clicknum>999){
+					clicknum='999+';
+				}
+				$("#lovenums").html(clicknum).removeClass("activelove").css("color","#fff");
+				$("span","#loveA").css("color","#fff");
+				$("#loveA").css({"background-color":"#3091f2","color":"#fff"});
+				$(this).unbind("mouseover").unbind("mouseout").unbind("click");
+				postLoveArt();
+				}catch(e){};
+		
+		//取最新的nice_num数
+		//var articleid = $("#comment_articleid").val();
+	
+	});
+	$('#vertical-toolbar').toolbar({
+		content: '#user-toolbar-options',
+		position: 'left'
+	});
+	$(window.document).scroll(function () {
+		$("#tool-bar").css("position","fixed");
+		if($("#vertical-toolbar").hasClass("pressed")){
+			$(".tool-container,.gradient tool-left,.tool-rounded").hide();
+			$("#vertical-toolbar").removeClass("pressed");
+		}
+	});
+	$("#vertical-toolbar").click(function(){alert(1);
+		  $("#vertical-toolbar").toggleClass("pressed");
+		});
+});
+-->
+</script>
+</head>
+<body class="js articleview">
+
+	<div class="viewblock animation"><div id="wrapper">
+	<header id="site_header">
+		<div style="height: 85px" class="navbar">
+			<div id="nav_container" class="container visible">
+				<a href="/" class="logo"><img
+					src="/templets/default/v1/Home/image/new_logo.png" alt="极客视界" class="logo-img"></a>
+				<nav>
+					<ul id="nav">
+						<li><a class="nav-item" rel="dropmenu2" href="/a/zhijian/">智见</a></li>
+						<li><a class="nav-item" rel="dropmenu1" href="/special/index.html">专题</a></li>
+						<li><a class="nav-item" rel="dropmenu1" href="/app/">极客玩</a></li>
+						<!-- 
+						<li><a href="/index/topic/index" class="nav-item ">专题</a></li>
+						<LI><A class="nav-item nav-item-discover " href="/index/gk_discover/discover">极客发现</A></LI> -->
+					</ul>
+				</nav>
+				<div id="_userlogin">
+				
+				<div style="margin-top: 22px; float: right; width: 100px;"  >
+					
+					<div style="height: 36px; float: right;">
+						<div class="user-account-info"
+							style="float: right; margin-top: 3px;">
+							<!-- 
+							<a onclick="showLoginDialog();" href="javascript:void(0)"	class="log">登录</a>
+							 -->
+							<a   href="/member/index.php"	class="log">登录</a>
+						</div>
+						  
+						<div class="manage-list">
+							<span class="triangle-up"></span>
+							<ul>
+								<!--<LI class="manage-list-item"><A id="user_center" href="/index/member/personalization/inittype/BASEINFO"> <I class="icon-user-center"></I> <SPAN class="user-manage-list-text">个人中心</SPAN>-->
+								<li><a href="/index/member/personalization"
+									id="user_center" class="manage-list-item"> <span
+										class="user-manage-list-text">个人中心</span>
+								</a></li>
+								<li><a href="/index/message/viewmessage" id="user_edit"
+									class="manage-list-item"> <span
+										class="user-manage-list-text">最新消息 <font size="2px"
+											color="red"><sup></sup></font></span>
+								</a></li>
+								<li><a href="/index/member/modifyinfo" id="user_edit"
+									class="manage-list-item"> <span
+										class="user-manage-list-text">个人设置</span>
+								</a></li>
+
+								<li><a href="/index/member/logout" id="logout"
+									class="manage-list-item"> <span
+										class="user-manage-list-text">退出登录</span>
+								</a></li>
+							</ul>
+							
+						</div>
+						
+						
+					</div>
+				</div>
+				</div>
+				<div style="margin-top: 22px; float: right; width: 200px;">
+
+					<div style="height: 36px; margin-top: 3px; float: right;">
+						<form method="POST" action="">
+
+							<!-- <div style="width:200px;"> -->
+
+							<span style="float: left;"> <input type="text"
+								autocomplete="off" value="" placeholder="搜索设备"
+								class="default-search" name="keyword">
+
+							</span> <span style="position: absolute; margin: 9px -25px"> <input
+								type="submit" value="提交查询内容" class="search-icon">
+
+							</span>
+
+						</form>
+
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
+
+		<div class="clear"></div>
+
+
+
+	</header>
+
+</div>
+
+
+</div>
+	<!-- /header -->
+	<ul id="tool-bar"
+		style="margin-left: 100px; position: fixed; background: none repeat scroll 0% 0% rgb(255, 255, 255); z-index: 2;">
+		<li class="li-first"><a id="tb-comment" title="评论"
+			href="#comment_app_area"><span class="tool-bar-icon tool-comment"></span><label></label></a>
+		</li>
+		
+		
+		<li id="lovediv" class="li-middle"><a id="loveA" title="喜欢"
+			href="javascript:void(0);"><span class="tool-bar-icon tool-like">
+			</span> <div id="lovenums" class=""> 0 </div></a></li>
+		<!-- 
+		<li class="li-last"><a id="vertical-toolbar" title="分享" href="#"><span
+				class="tool-bar-icon tool-share"></span></a></li>
+		 -->
+		<a id="weixin_link" style="display: none"
+			class="jiathis_button_weixin" title="分享到微信"> <span
+			class="jiathis_txt jiathis_separator jtico jtico_weixin">微信</span>
+		</a>
+	</ul>
+
+
+
+	<div class="container" id="content_wrapper">
+		<div class="left-side">
+			<article> <section> <!-- Web Article -->
+			<div class="content-card article-style">
+							
+				<a
+					style="background-image: url(/uploads/UserFiles/Image/2014-09-18/541a9406f3209.jpg " id="article_cover"> </a> <input
+					type="hidden" value="2465">
+					<div id="web-article-header">
+						<div class="article-title">
+							<div class="app-title">
+								<h1>高端全功能头戴虚拟显示设备——Totem</h1>
+							</div>
+						</div>
+
+						<div class="article-info-and-tag-area">
+							<div>
+								<div class="pub-time-and-version">
+									<ul class="pub-time-and-version-list">
+
+										<a href="/member/index.php?uid=brian.lee@geekview.c&action=article">
+											<li class="pub-author">Brian.</li>
+
+											<li class="pub-time">2014-09-18</li>
+										</a>
+									</ul>
+								</div>
+							</div>
+							<div>
+								<a	href="/tags.php?/游戏娱乐"><span	class="tag-span">游戏娱乐</span></a><a	href="/tags.php?/智能穿戴"><span	class="tag-span">智能穿戴</span></a>
+								
+							</div>
+						</div>
+						<div id="summary" class="short-des">
+							
+							<div class="intro">Totem是一款适用于开发者与高端玩家的头戴式虚拟现实设备。它丰富的特性与强大的功能可以让你获得前所未有的沉浸式游戏体验。
+</div>
+							
+						</div>
+					</div>
+					<div id="article_content"><blockquote><p>为你打开虚拟世界的大门</p></blockquote><p>Totem是一款高端的头戴式虚拟现实设备。它能够与HDMI源连接（计算机、游戏主机、蓝光设备、平板电脑等等），让你在观看3D视频或者是玩3D游戏时获得亲临现场（SbS, Side-by-Side）的体验。Totem对多平台的兼容让你的投资更有价值。全高清分辨率的OLED显示、超广角视野、极佳的用户交互体验加上集成的摄像头以及内置的加速度传感器，让Totem成为了最令人兴奋的头戴式虚拟现实设备之一。Totem为你打开了虚拟空间的大门，唯一的限制只有你的想象力。</p><p><img src="/ueditor/php/upload/image/20140918/1411027865579087.jpg" title="1411027865579087.jpg" alt="32d8d119640e3fcc6920fab86fa3d43c_large.jpg"/></p><p>现有的VR（Virtual Reality，虚拟显示）设备为了跟踪你的运动情况，往往会把你的活动范围限制在外置跟踪摄像头的视野范围内（Field of View, FOV）.当你脱离了这个范围，这些摄像头就无法有效跟踪你的运动情况，从而破坏了整个游戏或观影体验。而Totem能够利用内置的传感器实时跟踪你的位置与运动情况，让你在现实世界里自由移动。而且每当你需要回到现实世界时，你不需要反复脱下和戴上设备，Totem集成的摄像头能够让你在虚拟与显示之间自由切换。</p><p><img src="/ueditor/php/upload/image/20140918/1411027881239797.png" title="1411027881239797.png" alt="c06904b0c8fc3e901be4fbd6a22d3205_large.png"/></p><blockquote><p>超强的图形渲染能力</p></blockquote><p>对VR设备来说，性能是如此重要。Totem独特的硬件加速能够做到低延迟，让整个虚拟现实体验更加自然。Totem还集成了自动的失真纠正以及仿真控制功能，因此能够支持任何带HDMI接口的设备，如平板电脑、笔记本电脑、智能手机、以及游戏主机等等。</p><p><img src="/ueditor/php/upload/image/20140918/1411027901143909.png" title="1411027901143909.png" alt="70ca6c78160a4524afd840162d15ffd8_large.png"/>对多平台的兼容与仿真控制极大地减少了用户对其他配件的依赖。Totem能够自动把你的运动数据转换成传统的控制信号，就像鼠标与游戏手柄等。&nbsp;<img src="/ueditor/php/upload/image/20140918/1411027914299917.jpg" title="1411027914299917.jpg" alt="fd42d822551eb2cf956e428016d31859_large.jpg"/></p><p>虚拟显示的感官体验中，声音担任了很重要的角色。全方位的立体音响系统对沉浸式的游戏体验有很大影响，甚至直接决定了游戏体验。Totem提供了一个3.5mm的标准音频接口，支持耳机外设，让你获得最佳的立体声感受。</p><blockquote><p>可升级的硬件</p></blockquote><p>Totem中的光学元件都是由Totem团队亲自设计的。在Totem的设计里，团队充分考虑了近视与远视的问题，因而像小编一样近视的同学大可不必对此有任何担心。更有意思的是，因为Totem与眼部贴合的部分的特殊设计，如果你非要戴着眼镜来使用Totem的话也未尝不可</p><p><img src="/ueditor/php/upload/image/20140918/1411027939127061.jpg" title="1411027939127061.jpg" alt="c4fa335257d276a9a099cd161023cbd2_large.jpg"/></p><p>Totem的两大处理元件，USB微控制器以及音频/视频处理器（FPGA）都是可现场升级的（field-upgradable）。这也是FPGA带来的好处。</p><fieldset style="box-sizing: border-box; margin: 10px 0px 15px; padding: 5px 10px; border: 1px solid rgb(204, 204, 204); text-rendering: optimizelegibility; -webkit-font-smoothing: antialiased; font-family: &#39;Open Sans&#39;, &#39;Helvetica Neue&#39;, Arial, &#39;Hiragino Sans GB&#39;, &#39;Microsoft YaHei&#39;, &#39;WenQuanYi Micro Hei&#39;, sans-serif; white-space: normal; line-height: 24px; color: rgb(166, 166, 166); font-size: 14px; background-color: rgb(255, 255, 255);"><legend style="box-sizing: border-box; padding: 0px; border: 0px currentcolor; border-image-source: none; margin: 0px; font-weight: bold; color: rgb(0, 0, 0);"><span style="box-sizing: border-box; margin: 0px; padding: 4px 10px; font-weight: normal; text-rendering: optimizelegibility; -webkit-font-smoothing: antialiased; color: rgb(255, 255, 255); background-color: rgb(191, 191, 191);"><strong style="box-sizing: border-box; margin: 0px; padding: 0px; text-rendering: optimizelegibility; -webkit-font-smoothing: antialiased; color: rgb(0, 0, 0);">设备信息</strong></span></legend><strong style="box-sizing: border-box; margin: 0px; padding: 0px; text-rendering: optimizelegibility; -webkit-font-smoothing: antialiased; color: rgb(0, 0, 0);"><p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 0px; padding: 0px; font-weight: normal; text-rendering: optimizelegibility; -webkit-font-smoothing: antialiased; color: rgb(51, 51, 51); line-height: 2em; clear: both; font-size: 16px; overflow: hidden; position: relative; text-align: justify; letter-spacing: 0.06em; font-family: &#39;Microsoft YaHei&#39;, 宋体;">Totem</p><p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 0px; padding: 0px; font-weight: normal; text-rendering: optimizelegibility; -webkit-font-smoothing: antialiased; color: rgb(51, 51, 51); line-height: 2em; clear: both; font-size: 16px; overflow: hidden; position: relative; text-align: justify; letter-spacing: 0.06em; font-family: &#39;Microsoft YaHei&#39;, 宋体;">厂商：VRVANA | 开发进度：研发中</p><p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 0px; padding: 0px; font-weight: normal; text-rendering: optimizelegibility; -webkit-font-smoothing: antialiased; color: rgb(51, 51, 51); line-height: 2em; clear: both; font-size: 16px; overflow: hidden; position: relative; text-align: justify; letter-spacing: 0.06em; font-family: &#39;Microsoft YaHei&#39;, 宋体;">尺寸：未知 | 重量：未知</p><p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 0px; padding: 0px; font-weight: normal; text-rendering: optimizelegibility; -webkit-font-smoothing: antialiased; color: rgb(51, 51, 51); line-height: 2em; clear: both; font-size: 16px; overflow: hidden; position: relative; text-align: justify; letter-spacing: 0.06em; font-family: &#39;Microsoft YaHei&#39;, 宋体;">官网：http://www.vrvana.com/</p></strong></fieldset><blockquote><p>Geeker说</p></blockquote><p>头戴式虚拟现实（VR）设备是一个大的趋势。它能给人机交互带来的革命性变化就像触屏手机一样，甚至震撼程度远远超出后者。而且它与其他的出现在科幻作品中的设备不同，VR设备的发展道路非常明确，不是虚无缥缈的。</p><p><br/></p><p>					</p></div> <!-- 分享 -->
+			</div>
+			</section> <!-- Already Commented --> <section class="quote-card">
+			<div id="user_comments" class="content-card"></div>
+			</section> <!-- Comment App Area --> <section id="comment_app_area">
+
+			<!-- //AJAX评论区 --> <!-- 
+ <div class='_DEDECY' style=''><div id='SOHUCS' sid='671'></div></div><script>(function(){var doc = document,s = doc.createElement('script'),h = doc.getElementsByTagName('head')[0] || doc.head || doc.documentElement;s.type = 'text/javascript';s.charset = 'utf-8';s.src='http://assets.changyan.sohu.com/upload/changyan.js?conf=prod_6d4b7e17e66a3883e0acda697bdfcb0c&appid=cyrmNqJCm';h.insertBefore(s,h.firstChild);window.SCS_NO_IFRAME = true;})()</script>
+ -->
+
+<!--兼容版，可保证页面完全兼容-->
+<div id="SOHUCS"></div>
+<script>
+  (function(){
+    var appid = 'cyrpbrFrK',
+    conf = 'prod_6467eecac294bf28a5a7a4809767ab2b';
+    var doc = document,
+    s = doc.createElement('script'),
+    h = doc.getElementsByTagName('head')[0] || doc.head || doc.documentElement;
+    s.type = 'text/javascript';
+    s.charset = 'utf-8';
+    s.src =  'http://assets.changyan.sohu.com/upload/changyan.js?conf='+ conf +'&appid=' + appid;
+    h.insertBefore(s,h.firstChild);
+  })()
+</script>
+ <!-- //顶踩 -->
+			<!-- //顶踩部份的源码结束 --> </section> <footer> <a href="#top"
+				class="back-to-top"></a> </footer> </article>
+		</div>
+		<div class="right-side">
+			<!-- Platform Infomation -->
+			<div style="padding: 10px 10px 10px 10px; height: 130px"
+				class="side-card">
+
+				<div style="float: left; padding: 12px 10px 0px 0px;"
+					id="left-image">
+					<a href="/index.php?uid=671"
+						class="display-user-profile">
+						<img src="/member/templets/images/dfboy.png"/>
+				</div>
+				<div style="float: left;" id="right-short-introduce">
+					<div style="clear: both; width: 100%;">
+						<span
+							style="font-size: 16px; color: black; font-style: BOLD; width: 100%; float: left; margin-top: 5px;"
+							id="username"> <a
+							href="/member/index.php?uid=brian.lee@geekview.c"
+							class="user-name-a">Brian.</a>
+						</span>
+					</div>
+					<div style="clear: both; padding-top: 10px;; width: 100%;">
+						<span style="float: left" id="self-desc"></span>
+					</div>
+				</div>
+				<div style="clear: both; padding-top: 8px">
+					<a class="login-social__weibo external"		href="http://weibo.com/u/2488657122" target="_blank"> <i
+						class="right_icon-social-sinaweibo-auth"></i></a> 
+						<a			class="login-social__xiaomi external"			href="http://me.mi.com/414482630" target="_blank"><i
+						class="right_icon-social-xiaomi-auth"></i></a>
+						
+						524
+						 <a	href="/member/index.php?uid=brian.lee@geekview.c&action=article"> <i
+						style="color: #797979; text-align: right; font: inherit; white-space: nowrap; position: absolute; right: 10px; width: 132px; height: 14px; float: left; margin: 0 5px 0 0; text-decoration: none; text-shadow: none;">
+						查看我的文章</i>
+					</a>
+				</div>
+			</div>
+
+			<!-- All Wants -->
+			<div style="padding: 10px 10px 10px 10px;" class="side-card">
+				<h5>大家还喜欢</h5>
+				<ul style="margin-top: 10px;">
+					<li style="border-top: solid 1px #ddd; height: 75px;">
+						<div		style="clear: both; margin: 5px 0px 5px 0px; width: 65%; float: left; font-size: 12px">
+							<a class="all-want-txt-a" href="/a/zhijian/2014/0707/532.html">再刷你就裸了 -- X.pose	</a>
+							<p style="margin: 5px 0px 5px 0px; font-size: 10px;">
+								<strong style="color: #ddd">
+								<a			href="/member/index.php?uid=brown.liu@geekview.c" class="all-want-txt-a-10">
+								 从此清纯是路人</a>
+								 &nbsp;&nbsp;2014-07-07</strong>
+							</p>
+						</div> <a target="_blank" style="line-height: 70px;"	href="/a/zhijian/2014/0707/532.html"> 
+						<img   style='width:98px;height:43px;padding: 5px 0px 0px 0px' alt='title' src='/uploads/UserFiles/Image/2014-07-26/53d384dc92358.jpg'/>
+							
+							
+							</a>
+					</li>
+<li style="border-top: solid 1px #ddd; height: 75px;">
+						<div		style="clear: both; margin: 5px 0px 5px 0px; width: 65%; float: left; font-size: 12px">
+							<a class="all-want-txt-a" href="/a/zhijian/2014/0704/525.html">让你的空调智能起来——Sensibo	</a>
+							<p style="margin: 5px 0px 5px 0px; font-size: 10px;">
+								<strong style="color: #ddd">
+								<a			href="/member/index.php?uid=brian.lee@geekview.c" class="all-want-txt-a-10">
+								 Brian</a>
+								 &nbsp;&nbsp;2014-07-04</strong>
+							</p>
+						</div> <a target="_blank" style="line-height: 70px;"	href="/a/zhijian/2014/0704/525.html"> 
+						<img   style='width:98px;height:43px;padding: 5px 0px 0px 0px' alt='title' src='/uploads/UserFiles/Image/2014-07-26/53d38108cf4c1.png'/>
+							
+							
+							</a>
+					</li>
+<li style="border-top: solid 1px #ddd; height: 75px;">
+						<div		style="clear: both; margin: 5px 0px 5px 0px; width: 65%; float: left; font-size: 12px">
+							<a class="all-want-txt-a" href="/a/zhijian/2014/0723/517.html">Violet--让你更好地晒太阳	</a>
+							<p style="margin: 5px 0px 5px 0px; font-size: 10px;">
+								<strong style="color: #ddd">
+								<a			href="/member/index.php?uid=brown.liu@geekview.c" class="all-want-txt-a-10">
+								 从此清纯是路人</a>
+								 &nbsp;&nbsp;2014-07-23</strong>
+							</p>
+						</div> <a target="_blank" style="line-height: 70px;"	href="/a/zhijian/2014/0723/517.html"> 
+						<img   style='width:98px;height:43px;padding: 5px 0px 0px 0px' alt='title' src='/uploads/UserFiles/Image/2014-07-26/53d37abe54457.jpg'/>
+							
+							
+							</a>
+					</li>
+<li style="border-top: solid 1px #ddd; height: 75px;">
+						<div		style="clear: both; margin: 5px 0px 5px 0px; width: 65%; float: left; font-size: 12px">
+							<a class="all-want-txt-a" href="/a/zhijian/2014/0620/539.html">记录你的生活 -- Lightbox #智能拍摄	</a>
+							<p style="margin: 5px 0px 5px 0px; font-size: 10px;">
+								<strong style="color: #ddd">
+								<a			href="/member/index.php?uid=brian.lee@geekview.c" class="all-want-txt-a-10">
+								 Brian</a>
+								 &nbsp;&nbsp;2014-06-20</strong>
+							</p>
+						</div> <a target="_blank" style="line-height: 70px;"	href="/a/zhijian/2014/0620/539.html"> 
+						<img   style='width:98px;height:43px;padding: 5px 0px 0px 0px' alt='title' src='/uploads/UserFiles/Image/2014-07-27/53d4614394514.jpg'/>
+							
+							
+							</a>
+					</li>
+<li style="border-top: solid 1px #ddd; height: 75px;">
+						<div		style="clear: both; margin: 5px 0px 5px 0px; width: 65%; float: left; font-size: 12px">
+							<a class="all-want-txt-a" href="/a/zhijian/2014/0731/553.html">一只会发亮的信鸽——AYATORI	</a>
+							<p style="margin: 5px 0px 5px 0px; font-size: 10px;">
+								<strong style="color: #ddd">
+								<a			href="/member/index.php?uid=Ailsaliang2014@163.c" class="all-want-txt-a-10">
+								 Ailsaliang</a>
+								 &nbsp;&nbsp;2014-07-31</strong>
+							</p>
+						</div> <a target="_blank" style="line-height: 70px;"	href="/a/zhijian/2014/0731/553.html"> 
+						<img   style='width:98px;height:43px;padding: 5px 0px 0px 0px' alt='title' src='/uploads/UserFiles/Image/2014-07-31/53da516ba48fd.png'/>
+							
+							
+							</a>
+					</li>
+<li style="border-top: solid 1px #ddd; height: 75px;">
+						<div		style="clear: both; margin: 5px 0px 5px 0px; width: 65%; float: left; font-size: 12px">
+							<a class="all-want-txt-a" href="/a/zhijian/2014/0624/542.html">身临其境体验游戏里中枪的感觉 	</a>
+							<p style="margin: 5px 0px 5px 0px; font-size: 10px;">
+								<strong style="color: #ddd">
+								<a			href="/member/index.php?uid=brian.lee@geekview.c" class="all-want-txt-a-10">
+								 Brian</a>
+								 &nbsp;&nbsp;2014-06-24</strong>
+							</p>
+						</div> <a target="_blank" style="line-height: 70px;"	href="/a/zhijian/2014/0624/542.html"> 
+						<img   style='width:98px;height:43px;padding: 5px 0px 0px 0px' alt='title' src='/uploads/UserFiles/Image/2014-07-27/53d46274a48f7.jpg'/>
+							
+							
+							</a>
+					</li>
+
+
+
+
+				</ul>
+			</div>
+		</div>
+		<div class="clear"></div>
+	</div>
+	<footer style="">
+		<div class="container">
+			<ul class="footer-link-list">
+				<li><p style="font:bold">公司介绍</p></li>
+				<li><a target="_blank" href="/index/index/aboutus" class="footer-link">关于我们</a></li>
+				<li><a target="_blank" href="/index/index/privacy" class="footer-link">隐私条款</a></li>
+				<li><a target="_blank" href="/index/index/userpolicy" class="footer-link">用户政策</a></li>
+				<li><a target="_blank" href="/index/index/joinus" class="footer-link">加入我们</a></li>
+
+			</ul>
+			<ul class="footer-link-list">
+				<li><p style="font:bold">合作伙伴</p></li>
+				<li><a target="_blank" href="http://www.baidu.com" class="footer-link external">百度</a></li>
+				<li><a target="_blank" href="http://www.aliyun.com" class="footer-link external">阿里云</a></li>
+				<li><a target="_blank" href="/index/index/userpolicy" class="footer-link"></a></li>
+				<li><a target="_blank" href="/index/index/joinus" class="footer-link"></a></li>
+
+			</ul>
+			<ul class="footer-link-list">
+				<li><p style="font:bold">订阅信息</p></li>
+				<li><a target="_blank" href="/templets/default/v1/Home/image/rss/geekviewRSS.xml" class="footer-link">
+				<img src="/templets/default/v1/Home/image/rss/rss.jpg" style="height:20px;"></a></li>
+
+			</ul>
+			<ul class="footer-link-list">
+				<li><p style="font:bold">&nbsp;</p></li>
+				<li>图片存储由&nbsp; <a href="http://www.aliyun.com/product/oss/?spm=5176.383338.201.7.IA7qhS" class="footer-link-ali external" target="_blank">阿里云存储</a> &nbsp;提供</li>
+
+			</ul>
+			<div class="clear"></div>		
+			<div class="copyright">
+				<span class="copyright-year">Copyright &copy;2013-2014 </span> <a href="#" class="footer-geekview">深圳市极客视界科技有限公司</a> <span class="company-number">粤ICP备14037549号-1</span>
+			</div>
+		</div>
+	</footer>
+	
+<script type="text/javascript">
+CheckLogin();
+</script>
+	<!-- /footer -->
+	</div>
+	
+</body>
+</html>

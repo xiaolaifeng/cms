@@ -1,0 +1,546 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type"
+	content="text/html; charset=utf-8" />
+<title>摩托骑行新体验——智能头盔SKULLY AR1_极客</title>
+<meta name="keywords" content="智能穿戴" />
+<meta name="description" content="各大科幻影视作品中都不缺拥有“智能眼睛”的角色——不论是眼镜还是头戴设备都具有显示对象具体参数的功能。现在，这么高大上的家伙我们不用再羡慕妒忌恨了。" />
+
+<link type="image/x-icon" rel="icon"
+	href="/templets/default/v1/Home/image/favicon.ico" />
+
+<link rel=”alternate” type=”application/rss+xml” title=”摩托骑行新体验——智能头盔SKULLY AR1” href=”/rss.php“/> 
+
+<link href="/templets/default/v1/Home/image/favicon.ico" type="image/x-icon" rel="icon" />
+<link href="/templets/default/v1/Home/css/panel.css" rel="stylesheet" media="screen" type="text/css" />
+<link href="/templets/default/v1/Home/css/normalize.css" rel="stylesheet" media="screen" type="text/css" />
+<link href="/templets/default/v1/Home/css/base.css" rel="stylesheet" media="screen" type="text/css" />
+<link href="/templets/default/v1/Home/css/responsive.css" rel="stylesheet" media="screen" type="text/css" />
+<link href="/templets/default/v1/Home/css/listPage.css" rel="stylesheet" media="screen" type="text/css" />
+<link href="/templets/default/v1/Home/css/login.css" rel="stylesheet" media="screen" type="text/css" />
+<link href="/templets/default/v1/css/pubnews.css" rel="stylesheet" media="screen" type="text/css" />
+<link href="/templets/default/v1/Home/css/toobar.css?2014" rel="stylesheet" media="screen" type="text/css" />
+
+<script src="/templets/default/v1/Home/js/jquery.min.js" language="javascript" type="text/javascript"></script>
+<script src="/templets/default/v1/Home/js/jquery.lazyload.min.js" language="javascript" type="text/javascript"></script>
+<script src="/templets/default/v1/Home/js/androidApp.js" language="javascript" type="text/javascript"></script>
+<script src="/templets/default/v1/Home/js/global.js" language="javascript" type="text/javascript"></script>
+<script src="/templets/default/v1/Home/js/placeholders.min.js" language="javascript" type="text/javascript"></script>
+<script src="/templets/default/v1/Home/js/ga.js" language="javascript" type="text/javascript"></script>
+<script src="/templets/default/v1/Home/js/main-2.js" language="javascript" type="text/javascript"></script>
+<script src="/templets/default/v1/Home/js/nr-100.js" language="javascript" type="text/javascript"></script>
+<script src="/templets/default/v1/Home/js/topics-x.js" language="javascript" type="text/javascript"></script>
+<script src="/templets/default/v1/Home/js/jquery.toolbar.min.js" language="javascript" type="text/javascript"></script>
+<script src="/templets/default/v1/Home/js/jquery.easing.1.3.js" language="javascript" type="text/javascript"></script>
+
+<script src="/include/dedeajax2.js" language="javascript" type="text/javascript" ></script>
+
+<script type="text/javascript">
+function CheckLogin(){
+  var taget_obj = document.getElementById('_userlogin');
+  myajax = new DedeAjax(taget_obj,false,false,'','','');
+  myajax.SendGet2("/member/ajax_loginsta.php");
+  $('.login-user-name').click( function()  {
+	    $('.manage-list ').toggle();
+	});
+  $('.loginForm').hide(0);
+  DedeXHTTP = null;
+}
+</script>
+
+
+<script language="javascript" type="text/javascript">
+<!--
+function postBadGood(ftype,fid)
+{
+	var taget_obj = document.getElementById(ftype+fid);
+	var saveid = GetCookie('badgoodid');
+	if(saveid != null)
+	{
+		var saveids = saveid.split(',');
+		var hasid = false;
+		saveid = '';
+		j = 1;
+		for(i=saveids.length-1;i>=0;i--)
+		{
+			if(saveids[i]==fid && hasid) continue;
+			else {
+				if(saveids[i]==fid && !hasid) hasid = true;
+				saveid += (saveid=='' ? saveids[i] : ','+saveids[i]);
+				j++;
+				if(j==10 && hasid) break;
+				if(j==9 && !hasid) break;
+			}
+		}
+		if(hasid) { alert('您刚才已表决过了喔！'); return false;}
+		else saveid += ','+fid;
+		SetCookie('badgoodid',saveid,1);
+	}
+	else
+	{
+		SetCookie('badgoodid',fid,1);
+	}
+	myajax = new DedeAjax(taget_obj,false,false,'','','');
+	myajax.SendGet2("/plus/feedback.php?aid="+fid+"&action="+ftype+"&fid="+fid);
+}
+function postDigg(ftype,aid)
+{
+	var taget_obj = document.getElementById('newdigg');
+	var saveid = GetCookie('diggid');
+	if(saveid != null)
+	{
+		var saveids = saveid.split(',');
+		var hasid = false;
+		saveid = '';
+		j = 1;
+		for(i=saveids.length-1;i>=0;i--)
+		{
+			if(saveids[i]==aid && hasid) continue;
+			else {
+				if(saveids[i]==aid && !hasid) hasid = true;
+				saveid += (saveid=='' ? saveids[i] : ','+saveids[i]);
+				j++;
+				if(j==20 && hasid) break;
+				if(j==19 && !hasid) break;
+			}
+		}
+		if(hasid) { alert("您已经顶过该帖，请不要重复顶帖 ！"); return; }
+		else saveid += ','+aid;
+		SetCookie('diggid',saveid,1);
+	}
+	else
+	{
+		SetCookie('diggid',aid,1);
+	}
+	myajax = new DedeAjax(taget_obj,false,false,'','','');
+	var url = "/plus/digg_ajax.php?action="+ftype+"&id="+aid;
+	myajax.SendGet2(url);
+}
+function getDigg(aid)
+{
+	var taget_obj = document.getElementById('newdigg');
+	myajax = new DedeAjax(taget_obj,false,false,'','','');
+	myajax.SendGet2("/plus/digg_ajax.php?id="+aid);
+	DedeXHTTP = null;
+}
+
+$(function(){
+	$("#lovediv").bind("mouseover",function(){
+		clicknum=$("#lovenums").text();
+		$("#lovenums").html('').addClass('activelove');
+	}).bind("mouseout",function(){
+		$("#lovenums").removeClass('activelove');
+		$("#lovenums").html(clicknum);
+	}).bind("click",function(){
+		
+		//todu  默认的顶踩逻辑
+		postDigg('good',598);
+		//todu
+				clicknum++;
+				try{
+				if(clicknum>999){
+					clicknum='999+';
+				}
+				$("#lovenums").html(clicknum).removeClass("activelove").css("color","#fff");
+				$("span","#loveA").css("color","#fff");
+				$("#loveA").css({"background-color":"#3091f2","color":"#fff"});
+				$(this).unbind("mouseover").unbind("mouseout").unbind("click");
+				postLoveArt();
+				}catch(e){};
+		
+		//取最新的nice_num数
+		//var articleid = $("#comment_articleid").val();
+	
+	});
+	$('#vertical-toolbar').toolbar({
+		content: '#user-toolbar-options',
+		position: 'left'
+	});
+	$(window.document).scroll(function () {
+		$("#tool-bar").css("position","fixed");
+		if($("#vertical-toolbar").hasClass("pressed")){
+			$(".tool-container,.gradient tool-left,.tool-rounded").hide();
+			$("#vertical-toolbar").removeClass("pressed");
+		}
+	});
+	$("#vertical-toolbar").click(function(){alert(1);
+		  $("#vertical-toolbar").toggleClass("pressed");
+		});
+});
+-->
+</script>
+</head>
+<body class="js articleview">
+
+	<div class="viewblock animation"><div id="wrapper">
+	<header id="site_header">
+		<div style="height: 85px" class="navbar">
+			<div id="nav_container" class="container visible">
+				<a href="/" class="logo"><img
+					src="/templets/default/v1/Home/image/new_logo.png" alt="极客视界" class="logo-img"></a>
+				<nav>
+					<ul id="nav">
+						<li><a class="nav-item" rel="dropmenu2" href="/a/zhijian/">智见</a></li>
+						<li><a class="nav-item" rel="dropmenu1" href="/special/index.html">专题</a></li>
+						<li><a class="nav-item" rel="dropmenu1" href="/app/">极客玩</a></li>
+						<!-- 
+						<li><a href="/index/topic/index" class="nav-item ">专题</a></li>
+						<LI><A class="nav-item nav-item-discover " href="/index/gk_discover/discover">极客发现</A></LI> -->
+					</ul>
+				</nav>
+				<div id="_userlogin">
+				
+				<div style="margin-top: 22px; float: right; width: 100px;"  >
+					
+					<div style="height: 36px; float: right;">
+						<div class="user-account-info"
+							style="float: right; margin-top: 3px;">
+							<!-- 
+							<a onclick="showLoginDialog();" href="javascript:void(0)"	class="log">登录</a>
+							 -->
+							<a   href="/member/index.php"	class="log">登录</a>
+						</div>
+						  
+						<div class="manage-list">
+							<span class="triangle-up"></span>
+							<ul>
+								<!--<LI class="manage-list-item"><A id="user_center" href="/index/member/personalization/inittype/BASEINFO"> <I class="icon-user-center"></I> <SPAN class="user-manage-list-text">个人中心</SPAN>-->
+								<li><a href="/index/member/personalization"
+									id="user_center" class="manage-list-item"> <span
+										class="user-manage-list-text">个人中心</span>
+								</a></li>
+								<li><a href="/index/message/viewmessage" id="user_edit"
+									class="manage-list-item"> <span
+										class="user-manage-list-text">最新消息 <font size="2px"
+											color="red"><sup></sup></font></span>
+								</a></li>
+								<li><a href="/index/member/modifyinfo" id="user_edit"
+									class="manage-list-item"> <span
+										class="user-manage-list-text">个人设置</span>
+								</a></li>
+
+								<li><a href="/index/member/logout" id="logout"
+									class="manage-list-item"> <span
+										class="user-manage-list-text">退出登录</span>
+								</a></li>
+							</ul>
+							
+						</div>
+						
+						
+					</div>
+				</div>
+				</div>
+				<div style="margin-top: 22px; float: right; width: 200px;">
+
+					<div style="height: 36px; margin-top: 3px; float: right;">
+						<form method="POST" action="">
+
+							<!-- <div style="width:200px;"> -->
+
+							<span style="float: left;"> <input type="text"
+								autocomplete="off" value="" placeholder="搜索设备"
+								class="default-search" name="keyword">
+
+							</span> <span style="position: absolute; margin: 9px -25px"> <input
+								type="submit" value="提交查询内容" class="search-icon">
+
+							</span>
+
+						</form>
+
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
+
+		<div class="clear"></div>
+
+
+
+	</header>
+
+</div>
+
+
+</div>
+	<!-- /header -->
+	<ul id="tool-bar"
+		style="margin-left: 100px; position: fixed; background: none repeat scroll 0% 0% rgb(255, 255, 255); z-index: 2;">
+		<li class="li-first"><a id="tb-comment" title="评论"
+			href="#comment_app_area"><span class="tool-bar-icon tool-comment"></span><label></label></a>
+		</li>
+		
+		
+		<li id="lovediv" class="li-middle"><a id="loveA" title="喜欢"
+			href="javascript:void(0);"><span class="tool-bar-icon tool-like">
+			</span> <div id="lovenums" class=""> 1 </div></a></li>
+		<!-- 
+		<li class="li-last"><a id="vertical-toolbar" title="分享" href="#"><span
+				class="tool-bar-icon tool-share"></span></a></li>
+		 -->
+		<a id="weixin_link" style="display: none"
+			class="jiathis_button_weixin" title="分享到微信"> <span
+			class="jiathis_txt jiathis_separator jtico jtico_weixin">微信</span>
+		</a>
+	</ul>
+
+
+
+	<div class="container" id="content_wrapper">
+		<div class="left-side">
+			<article> <section> <!-- Web Article -->
+			<div class="content-card article-style">
+							
+				<a
+					style="background-image: url(/uploads/UserFiles/Image/2014-08-14/53eb8d775f9c4.jpg " id="article_cover"> </a> <input
+					type="hidden" value="2465">
+					<div id="web-article-header">
+						<div class="article-title">
+							<div class="app-title">
+								<h1>摩托骑行新体验——智能头盔SKULLY AR1</h1>
+							</div>
+						</div>
+
+						<div class="article-info-and-tag-area">
+							<div>
+								<div class="pub-time-and-version">
+									<ul class="pub-time-and-version-list">
+
+										<a href="/member/index.php?uid=Ailsaliang2014@163.c&action=article">
+											<li class="pub-author">Ailsaliang.</li>
+
+											<li class="pub-time">2014-08-14</li>
+										</a>
+									</ul>
+								</div>
+							</div>
+							<div>
+								<a	href="/tags.php?/智能穿戴"><span	class="tag-span">智能穿戴</span></a>
+								
+							</div>
+						</div>
+						<div id="summary" class="short-des">
+							
+							<div class="intro">各大科幻影视作品中都不缺拥有“智能眼睛”的角色——不论是眼镜还是头戴设备都具有显示对象具体参数的功能。现在，这么高大上的家伙我们不用再羡慕妒忌恨了。</div>
+							
+						</div>
+					</div>
+					<div id="article_content"><blockquote><p>向前看就一目了然<br/></p></blockquote><p>智能头盔SKULLY AR1具有“抬头显示器”、后视镜像、GPS导航等的功能，为你提供更好的驾驶体验之余能实实在在提高驾驶安全。</p><p style="text-align: center"><img src="/ueditor/php/upload/image/20140814/1407946194961164.jpg" title="1407946194961164.jpg" alt="Benefit_1_HUD_Display.jpg"/></p><blockquote><p>技术参数</p></blockquote><p>轻身、气动的外壳；</p><p>超广角的后视镜像。后视镜头拥有180度广角的视角范围，这说明用户通过后视镜头看到的不只是后视图，还有两旁视角盲点的路况，用户不需要扭过头也可以清楚地知道倒车时后方的具体情况。SKULLY还可以通过手机App调整后视镜头的角度，以适合不同用户的驾驶位置习惯，高清后视镜像，能给用户提供超真实的后视全景；</p><p style="text-align: center"><img src="/ueditor/php/upload/image/20140814/1407946229859636.jpg" title="1407946229859636.jpg" alt="Benefit_2_RearCamera.jpg"/></p><p>镜面防雾、防刮、防眩光；</p><p>音频和视频的导航功能——精准的导航信息，即使是一个拐弯也不会漏掉；</p><p>智能的多焦点平视显示系统——追踪用户的眼睛焦点，透明的信息显示不会阻碍驾驶，方便且安全。在这个系统下，用户不再需要转移视线左顾右盼了，面前的挡风板能为你指明路况，提高驾驶安全。SKULLY的显示是远景的视觉效果，所以并不会有妨碍驾驶者的视线、而且，这些显示信息只会在有需要的时候才会出现，当路况稳定或没有其他需要提醒的特别事项，这些显示信息就会消失。例如，摩托车驾驶员可以看到摩托车的行驶速度、传动装置等的相关信息和数据；</p><p style="text-align: center"><img src="/ueditor/php/upload/image/20140814/1407946247495409.jpg" title="1407946247495409.jpg" alt="Benefit_4_test (1).jpg"/></p><p>能快速打开头盔的下巴托和面罩；</p><p>3D激光切割，外型和舒适度都具有突出的优势；</p><p>透气吸汗的内衬；</p><p>通过蓝牙连接手机，能通过手机上网进行无线升级——通过手机联网下载和更新功能</p><p>电池在连续使用的情况下可以用9个小时，连上USB充电口即可充电</p><blockquote><p>关于团队</p></blockquote><p style="text-align: center"><img src="/ueditor/php/upload/image/20140814/1407946289321298.jpg" title="1407946289321298.jpg" alt="20140810113407-Mitch.jpg"/></p><p>Marcus Weller曾参与智能交通系统的研究，一直对人因工程学和工业心理学有浓厚的兴趣和热情。2013年，因为一宗发生在他身上的交通事故促使他开始思考如何提高骑行安全，并且开始和他的亲生兄弟Mitchell Weller着手SKULLY的研发项目。Weller兄弟有超过20年的骑行经验，结合这些丰富的驾驶体会，相信创于他们手下的SKULLY AR1能为广大骑行者提供更为安全智能的驾驶体验。<br/></p><fieldset style="box-sizing: border-box; margin: 10px 0px 15px; padding: 5px 10px; border: 1px solid rgb(204, 204, 204); text-rendering: optimizelegibility; -webkit-font-smoothing: antialiased; font-family: &#39;Open Sans&#39;, &#39;Helvetica Neue&#39;, Arial, &#39;Hiragino Sans GB&#39;, &#39;Microsoft YaHei&#39;, &#39;WenQuanYi Micro Hei&#39;, sans-serif; white-space: normal; line-height: 24px; color: rgb(166, 166, 166); font-size: 14px; background-color: rgb(255, 255, 255);"><legend style="box-sizing: border-box; padding: 0px; border: 0px currentcolor; border-image-source: none; margin: 0px; font-weight: bold; color: rgb(0, 0, 0);"><span style="box-sizing: border-box; margin: 0px; padding: 4px 10px; font-weight: normal; text-rendering: optimizelegibility; -webkit-font-smoothing: antialiased; color: rgb(255, 255, 255); background-color: rgb(191, 191, 191);"><strong style="box-sizing: border-box; margin: 0px; padding: 0px; text-rendering: optimizelegibility; -webkit-font-smoothing: antialiased; color: rgb(0, 0, 0);">设备信息</strong></span><strong style="box-sizing: border-box; margin: 0px; padding: 0px; text-rendering: optimizelegibility; -webkit-font-smoothing: antialiased;"></strong></legend><strong style="box-sizing: border-box; margin: 0px; padding: 0px; text-rendering: optimizelegibility; -webkit-font-smoothing: antialiased; color: rgb(0, 0, 0);"><p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 0px; padding: 0px; font-weight: normal; text-rendering: optimizelegibility; -webkit-font-smoothing: antialiased; color: rgb(51, 51, 51); line-height: 2em; clear: both; font-size: 16px; overflow: hidden; position: relative; text-align: justify; letter-spacing: 0.06em; font-family: &#39;Microsoft YaHei&#39;, 宋体;">SKULLY AR-1</p><p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 0px; padding: 0px; font-weight: normal; text-rendering: optimizelegibility; -webkit-font-smoothing: antialiased; color: rgb(51, 51, 51); line-height: 2em; clear: both; font-size: 16px; overflow: hidden; position: relative; text-align: justify; letter-spacing: 0.06em; font-family: &#39;Microsoft YaHei&#39;, 宋体;">厂商：SKULLY Systems | 开发进度：产品原型</p><p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 0px; padding: 0px; font-weight: normal; text-rendering: optimizelegibility; -webkit-font-smoothing: antialiased; color: rgb(51, 51, 51); line-height: 2em; clear: both; font-size: 16px; overflow: hidden; position: relative; text-align: justify; letter-spacing: 0.06em; font-family: &#39;Microsoft YaHei&#39;, 宋体;">尺寸：多尺寸 | 重量：未知</p><p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 0px; padding: 0px; font-weight: normal; text-rendering: optimizelegibility; -webkit-font-smoothing: antialiased; color: rgb(51, 51, 51); line-height: 2em; clear: both; font-size: 16px; overflow: hidden; position: relative; text-align: justify; letter-spacing: 0.06em; font-family: &#39;Microsoft YaHei&#39;, 宋体;">官网：www.SKULLYSYSTEMS.com</p></strong></fieldset><blockquote><p>Geeker说</p></blockquote><p>SKULLY AR-1已经过多次的路面测试。Indiegogo上的筹资活动表现十分好，截止发稿日期已获得超过400%的筹资。今年来智能穿戴市场膨胀发展，但是真正能戳中消费者痛处的产品并不多。智能产品的发展趋势让我们看到消费市场回归到“以人为本”，而良好的消费体验是产品能在千万个竞争对手中脱颖而出的关键。</p><p>					</p></div> <!-- 分享 -->
+			</div>
+			</section> <!-- Already Commented --> <section class="quote-card">
+			<div id="user_comments" class="content-card"></div>
+			</section> <!-- Comment App Area --> <section id="comment_app_area">
+
+			<!-- //AJAX评论区 --> <!-- 
+ <div class='_DEDECY' style=''><div id='SOHUCS' sid='598'></div></div><script>(function(){var doc = document,s = doc.createElement('script'),h = doc.getElementsByTagName('head')[0] || doc.head || doc.documentElement;s.type = 'text/javascript';s.charset = 'utf-8';s.src='http://assets.changyan.sohu.com/upload/changyan.js?conf=prod_6d4b7e17e66a3883e0acda697bdfcb0c&appid=cyrmNqJCm';h.insertBefore(s,h.firstChild);window.SCS_NO_IFRAME = true;})()</script>
+ -->
+
+<!--兼容版，可保证页面完全兼容-->
+<div id="SOHUCS"></div>
+<script>
+  (function(){
+    var appid = 'cyrpbrFrK',
+    conf = 'prod_6467eecac294bf28a5a7a4809767ab2b';
+    var doc = document,
+    s = doc.createElement('script'),
+    h = doc.getElementsByTagName('head')[0] || doc.head || doc.documentElement;
+    s.type = 'text/javascript';
+    s.charset = 'utf-8';
+    s.src =  'http://assets.changyan.sohu.com/upload/changyan.js?conf='+ conf +'&appid=' + appid;
+    h.insertBefore(s,h.firstChild);
+  })()
+</script>
+ <!-- //顶踩 -->
+			<!-- //顶踩部份的源码结束 --> </section> <footer> <a href="#top"
+				class="back-to-top"></a> </footer> </article>
+		</div>
+		<div class="right-side">
+			<!-- Platform Infomation -->
+			<div style="padding: 10px 10px 10px 10px; height: 130px"
+				class="side-card">
+
+				<div style="float: left; padding: 12px 10px 0px 0px;"
+					id="left-image">
+					<a href="/index.php?uid=598"
+						class="display-user-profile">
+						<img src="/member/templets/images/dfboy.png"/>
+				</div>
+				<div style="float: left;" id="right-short-introduce">
+					<div style="clear: both; width: 100%;">
+						<span
+							style="font-size: 16px; color: black; font-style: BOLD; width: 100%; float: left; margin-top: 5px;"
+							id="username"> <a
+							href="/member/index.php?uid=Ailsaliang2014@163.c"
+							class="user-name-a">Ailsaliang.</a>
+						</span>
+					</div>
+					<div style="clear: both; padding-top: 10px;; width: 100%;">
+						<span style="float: left" id="self-desc"></span>
+					</div>
+				</div>
+				<div style="clear: both; padding-top: 8px">
+					<a class="login-social__weibo external"		href="http://weibo.com/u/2488657122" target="_blank"> <i
+						class="right_icon-social-sinaweibo-auth"></i></a> 
+						<a			class="login-social__xiaomi external"			href="http://me.mi.com/414482630" target="_blank"><i
+						class="right_icon-social-xiaomi-auth"></i></a>
+						
+						532
+						 <a	href="/member/index.php?uid=Ailsaliang2014@163.c&action=article"> <i
+						style="color: #797979; text-align: right; font: inherit; white-space: nowrap; position: absolute; right: 10px; width: 132px; height: 14px; float: left; margin: 0 5px 0 0; text-decoration: none; text-shadow: none;">
+						查看我的文章</i>
+					</a>
+				</div>
+			</div>
+
+			<!-- All Wants -->
+			<div style="padding: 10px 10px 10px 10px;" class="side-card">
+				<h5>大家还喜欢</h5>
+				<ul style="margin-top: 10px;">
+					<li style="border-top: solid 1px #ddd; height: 75px;">
+						<div		style="clear: both; margin: 5px 0px 5px 0px; width: 65%; float: left; font-size: 12px">
+							<a class="all-want-txt-a" href="/a/zhijian/2014/0707/532.html">再刷你就裸了 -- X.pose	</a>
+							<p style="margin: 5px 0px 5px 0px; font-size: 10px;">
+								<strong style="color: #ddd">
+								<a			href="/member/index.php?uid=brown.liu@geekview.c" class="all-want-txt-a-10">
+								 从此清纯是路人</a>
+								 &nbsp;&nbsp;2014-07-07</strong>
+							</p>
+						</div> <a target="_blank" style="line-height: 70px;"	href="/a/zhijian/2014/0707/532.html"> 
+						<img   style='width:98px;height:43px;padding: 5px 0px 0px 0px' alt='title' src='/uploads/UserFiles/Image/2014-07-26/53d384dc92358.jpg'/>
+							
+							
+							</a>
+					</li>
+<li style="border-top: solid 1px #ddd; height: 75px;">
+						<div		style="clear: both; margin: 5px 0px 5px 0px; width: 65%; float: left; font-size: 12px">
+							<a class="all-want-txt-a" href="/a/zhijian/2014/0704/525.html">让你的空调智能起来——Sensibo	</a>
+							<p style="margin: 5px 0px 5px 0px; font-size: 10px;">
+								<strong style="color: #ddd">
+								<a			href="/member/index.php?uid=brian.lee@geekview.c" class="all-want-txt-a-10">
+								 Brian</a>
+								 &nbsp;&nbsp;2014-07-04</strong>
+							</p>
+						</div> <a target="_blank" style="line-height: 70px;"	href="/a/zhijian/2014/0704/525.html"> 
+						<img   style='width:98px;height:43px;padding: 5px 0px 0px 0px' alt='title' src='/uploads/UserFiles/Image/2014-07-26/53d38108cf4c1.png'/>
+							
+							
+							</a>
+					</li>
+<li style="border-top: solid 1px #ddd; height: 75px;">
+						<div		style="clear: both; margin: 5px 0px 5px 0px; width: 65%; float: left; font-size: 12px">
+							<a class="all-want-txt-a" href="/a/zhijian/2014/0723/517.html">Violet--让你更好地晒太阳	</a>
+							<p style="margin: 5px 0px 5px 0px; font-size: 10px;">
+								<strong style="color: #ddd">
+								<a			href="/member/index.php?uid=brown.liu@geekview.c" class="all-want-txt-a-10">
+								 从此清纯是路人</a>
+								 &nbsp;&nbsp;2014-07-23</strong>
+							</p>
+						</div> <a target="_blank" style="line-height: 70px;"	href="/a/zhijian/2014/0723/517.html"> 
+						<img   style='width:98px;height:43px;padding: 5px 0px 0px 0px' alt='title' src='/uploads/UserFiles/Image/2014-07-26/53d37abe54457.jpg'/>
+							
+							
+							</a>
+					</li>
+<li style="border-top: solid 1px #ddd; height: 75px;">
+						<div		style="clear: both; margin: 5px 0px 5px 0px; width: 65%; float: left; font-size: 12px">
+							<a class="all-want-txt-a" href="/a/zhijian/2014/0620/539.html">记录你的生活 -- Lightbox #智能拍摄	</a>
+							<p style="margin: 5px 0px 5px 0px; font-size: 10px;">
+								<strong style="color: #ddd">
+								<a			href="/member/index.php?uid=brian.lee@geekview.c" class="all-want-txt-a-10">
+								 Brian</a>
+								 &nbsp;&nbsp;2014-06-20</strong>
+							</p>
+						</div> <a target="_blank" style="line-height: 70px;"	href="/a/zhijian/2014/0620/539.html"> 
+						<img   style='width:98px;height:43px;padding: 5px 0px 0px 0px' alt='title' src='/uploads/UserFiles/Image/2014-07-27/53d4614394514.jpg'/>
+							
+							
+							</a>
+					</li>
+<li style="border-top: solid 1px #ddd; height: 75px;">
+						<div		style="clear: both; margin: 5px 0px 5px 0px; width: 65%; float: left; font-size: 12px">
+							<a class="all-want-txt-a" href="/a/zhijian/2014/0731/553.html">一只会发亮的信鸽——AYATORI	</a>
+							<p style="margin: 5px 0px 5px 0px; font-size: 10px;">
+								<strong style="color: #ddd">
+								<a			href="/member/index.php?uid=Ailsaliang2014@163.c" class="all-want-txt-a-10">
+								 Ailsaliang</a>
+								 &nbsp;&nbsp;2014-07-31</strong>
+							</p>
+						</div> <a target="_blank" style="line-height: 70px;"	href="/a/zhijian/2014/0731/553.html"> 
+						<img   style='width:98px;height:43px;padding: 5px 0px 0px 0px' alt='title' src='/uploads/UserFiles/Image/2014-07-31/53da516ba48fd.png'/>
+							
+							
+							</a>
+					</li>
+<li style="border-top: solid 1px #ddd; height: 75px;">
+						<div		style="clear: both; margin: 5px 0px 5px 0px; width: 65%; float: left; font-size: 12px">
+							<a class="all-want-txt-a" href="/a/zhijian/2014/0624/542.html">身临其境体验游戏里中枪的感觉 	</a>
+							<p style="margin: 5px 0px 5px 0px; font-size: 10px;">
+								<strong style="color: #ddd">
+								<a			href="/member/index.php?uid=brian.lee@geekview.c" class="all-want-txt-a-10">
+								 Brian</a>
+								 &nbsp;&nbsp;2014-06-24</strong>
+							</p>
+						</div> <a target="_blank" style="line-height: 70px;"	href="/a/zhijian/2014/0624/542.html"> 
+						<img   style='width:98px;height:43px;padding: 5px 0px 0px 0px' alt='title' src='/uploads/UserFiles/Image/2014-07-27/53d46274a48f7.jpg'/>
+							
+							
+							</a>
+					</li>
+
+
+
+
+				</ul>
+			</div>
+		</div>
+		<div class="clear"></div>
+	</div>
+	<footer style="">
+		<div class="container">
+			<ul class="footer-link-list">
+				<li><p style="font:bold">公司介绍</p></li>
+				<li><a target="_blank" href="/index/index/aboutus" class="footer-link">关于我们</a></li>
+				<li><a target="_blank" href="/index/index/privacy" class="footer-link">隐私条款</a></li>
+				<li><a target="_blank" href="/index/index/userpolicy" class="footer-link">用户政策</a></li>
+				<li><a target="_blank" href="/index/index/joinus" class="footer-link">加入我们</a></li>
+
+			</ul>
+			<ul class="footer-link-list">
+				<li><p style="font:bold">合作伙伴</p></li>
+				<li><a target="_blank" href="http://www.baidu.com" class="footer-link external">百度</a></li>
+				<li><a target="_blank" href="http://www.aliyun.com" class="footer-link external">阿里云</a></li>
+				<li><a target="_blank" href="/index/index/userpolicy" class="footer-link"></a></li>
+				<li><a target="_blank" href="/index/index/joinus" class="footer-link"></a></li>
+
+			</ul>
+			<ul class="footer-link-list">
+				<li><p style="font:bold">订阅信息</p></li>
+				<li><a target="_blank" href="/templets/default/v1/Home/image/rss/geekviewRSS.xml" class="footer-link">
+				<img src="/templets/default/v1/Home/image/rss/rss.jpg" style="height:20px;"></a></li>
+
+			</ul>
+			<ul class="footer-link-list">
+				<li><p style="font:bold">&nbsp;</p></li>
+				<li>图片存储由&nbsp; <a href="http://www.aliyun.com/product/oss/?spm=5176.383338.201.7.IA7qhS" class="footer-link-ali external" target="_blank">阿里云存储</a> &nbsp;提供</li>
+
+			</ul>
+			<div class="clear"></div>		
+			<div class="copyright">
+				<span class="copyright-year">Copyright &copy;2013-2014 </span> <a href="#" class="footer-geekview">深圳市极客视界科技有限公司</a> <span class="company-number">粤ICP备14037549号-1</span>
+			</div>
+		</div>
+	</footer>
+	
+<script type="text/javascript">
+CheckLogin();
+</script>
+	<!-- /footer -->
+	</div>
+	
+</body>
+</html>

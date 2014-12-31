@@ -1,0 +1,547 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type"
+	content="text/html; charset=utf-8" />
+<title>Smart Plant 让你的花卉对你微笑_极客</title>
+<meta name="keywords" content="智能家居,效率工具" />
+<meta name="description" content="花花世界让很多人对花花草草着迷不已，但是并不是所有人都能将植物从大自然中完美地搬进我们的生活的，温度、湿度、土壤成份、光照强度等等你想都难想透的繁琐的节让许多伪植物爱好者或者都市上班族成为植物杀手。难道我们就这样放弃让庭院生机盎然、瓜果飘香的机会么？不，看这儿，有了这款Smart Plant，你的植物就能傲慢地迎头生长啦！" />
+
+<link type="image/x-icon" rel="icon"
+	href="/templets/default/v1/Home/image/favicon.ico" />
+
+<link rel=”alternate” type=”application/rss+xml” title=”Smart Plant 让你的花卉对你微笑” href=”/rss.php“/> 
+
+<link href="/templets/default/v1/Home/image/favicon.ico" type="image/x-icon" rel="icon" />
+<link href="/templets/default/v1/Home/css/panel.css" rel="stylesheet" media="screen" type="text/css" />
+<link href="/templets/default/v1/Home/css/normalize.css" rel="stylesheet" media="screen" type="text/css" />
+<link href="/templets/default/v1/Home/css/base.css" rel="stylesheet" media="screen" type="text/css" />
+<link href="/templets/default/v1/Home/css/responsive.css" rel="stylesheet" media="screen" type="text/css" />
+<link href="/templets/default/v1/Home/css/listPage.css" rel="stylesheet" media="screen" type="text/css" />
+<link href="/templets/default/v1/Home/css/login.css" rel="stylesheet" media="screen" type="text/css" />
+<link href="/templets/default/v1/css/pubnews.css" rel="stylesheet" media="screen" type="text/css" />
+<link href="/templets/default/v1/Home/css/toobar.css?2014" rel="stylesheet" media="screen" type="text/css" />
+
+<script src="/templets/default/v1/Home/js/jquery.min.js" language="javascript" type="text/javascript"></script>
+<script src="/templets/default/v1/Home/js/jquery.lazyload.min.js" language="javascript" type="text/javascript"></script>
+<script src="/templets/default/v1/Home/js/androidApp.js" language="javascript" type="text/javascript"></script>
+<script src="/templets/default/v1/Home/js/global.js" language="javascript" type="text/javascript"></script>
+<script src="/templets/default/v1/Home/js/placeholders.min.js" language="javascript" type="text/javascript"></script>
+<script src="/templets/default/v1/Home/js/ga.js" language="javascript" type="text/javascript"></script>
+<script src="/templets/default/v1/Home/js/main-2.js" language="javascript" type="text/javascript"></script>
+<script src="/templets/default/v1/Home/js/nr-100.js" language="javascript" type="text/javascript"></script>
+<script src="/templets/default/v1/Home/js/topics-x.js" language="javascript" type="text/javascript"></script>
+<script src="/templets/default/v1/Home/js/jquery.toolbar.min.js" language="javascript" type="text/javascript"></script>
+<script src="/templets/default/v1/Home/js/jquery.easing.1.3.js" language="javascript" type="text/javascript"></script>
+
+<script src="/include/dedeajax2.js" language="javascript" type="text/javascript" ></script>
+
+<script type="text/javascript">
+function CheckLogin(){
+  var taget_obj = document.getElementById('_userlogin');
+  myajax = new DedeAjax(taget_obj,false,false,'','','');
+  myajax.SendGet2("/member/ajax_loginsta.php");
+  $('.login-user-name').click( function()  {
+	    $('.manage-list ').toggle();
+	});
+  $('.loginForm').hide(0);
+  DedeXHTTP = null;
+}
+</script>
+
+
+<script language="javascript" type="text/javascript">
+<!--
+function postBadGood(ftype,fid)
+{
+	var taget_obj = document.getElementById(ftype+fid);
+	var saveid = GetCookie('badgoodid');
+	if(saveid != null)
+	{
+		var saveids = saveid.split(',');
+		var hasid = false;
+		saveid = '';
+		j = 1;
+		for(i=saveids.length-1;i>=0;i--)
+		{
+			if(saveids[i]==fid && hasid) continue;
+			else {
+				if(saveids[i]==fid && !hasid) hasid = true;
+				saveid += (saveid=='' ? saveids[i] : ','+saveids[i]);
+				j++;
+				if(j==10 && hasid) break;
+				if(j==9 && !hasid) break;
+			}
+		}
+		if(hasid) { alert('您刚才已表决过了喔！'); return false;}
+		else saveid += ','+fid;
+		SetCookie('badgoodid',saveid,1);
+	}
+	else
+	{
+		SetCookie('badgoodid',fid,1);
+	}
+	myajax = new DedeAjax(taget_obj,false,false,'','','');
+	myajax.SendGet2("/plus/feedback.php?aid="+fid+"&action="+ftype+"&fid="+fid);
+}
+function postDigg(ftype,aid)
+{
+	var taget_obj = document.getElementById('newdigg');
+	var saveid = GetCookie('diggid');
+	if(saveid != null)
+	{
+		var saveids = saveid.split(',');
+		var hasid = false;
+		saveid = '';
+		j = 1;
+		for(i=saveids.length-1;i>=0;i--)
+		{
+			if(saveids[i]==aid && hasid) continue;
+			else {
+				if(saveids[i]==aid && !hasid) hasid = true;
+				saveid += (saveid=='' ? saveids[i] : ','+saveids[i]);
+				j++;
+				if(j==20 && hasid) break;
+				if(j==19 && !hasid) break;
+			}
+		}
+		if(hasid) { alert("您已经顶过该帖，请不要重复顶帖 ！"); return; }
+		else saveid += ','+aid;
+		SetCookie('diggid',saveid,1);
+	}
+	else
+	{
+		SetCookie('diggid',aid,1);
+	}
+	myajax = new DedeAjax(taget_obj,false,false,'','','');
+	var url = "/plus/digg_ajax.php?action="+ftype+"&id="+aid;
+	myajax.SendGet2(url);
+}
+function getDigg(aid)
+{
+	var taget_obj = document.getElementById('newdigg');
+	myajax = new DedeAjax(taget_obj,false,false,'','','');
+	myajax.SendGet2("/plus/digg_ajax.php?id="+aid);
+	DedeXHTTP = null;
+}
+
+$(function(){
+	$("#lovediv").bind("mouseover",function(){
+		clicknum=$("#lovenums").text();
+		$("#lovenums").html('').addClass('activelove');
+	}).bind("mouseout",function(){
+		$("#lovenums").removeClass('activelove');
+		$("#lovenums").html(clicknum);
+	}).bind("click",function(){
+		
+		//todu  默认的顶踩逻辑
+		postDigg('good',600);
+		//todu
+				clicknum++;
+				try{
+				if(clicknum>999){
+					clicknum='999+';
+				}
+				$("#lovenums").html(clicknum).removeClass("activelove").css("color","#fff");
+				$("span","#loveA").css("color","#fff");
+				$("#loveA").css({"background-color":"#3091f2","color":"#fff"});
+				$(this).unbind("mouseover").unbind("mouseout").unbind("click");
+				postLoveArt();
+				}catch(e){};
+		
+		//取最新的nice_num数
+		//var articleid = $("#comment_articleid").val();
+	
+	});
+	$('#vertical-toolbar').toolbar({
+		content: '#user-toolbar-options',
+		position: 'left'
+	});
+	$(window.document).scroll(function () {
+		$("#tool-bar").css("position","fixed");
+		if($("#vertical-toolbar").hasClass("pressed")){
+			$(".tool-container,.gradient tool-left,.tool-rounded").hide();
+			$("#vertical-toolbar").removeClass("pressed");
+		}
+	});
+	$("#vertical-toolbar").click(function(){alert(1);
+		  $("#vertical-toolbar").toggleClass("pressed");
+		});
+});
+-->
+</script>
+</head>
+<body class="js articleview">
+
+	<div class="viewblock animation"><div id="wrapper">
+	<header id="site_header">
+		<div style="height: 85px" class="navbar">
+			<div id="nav_container" class="container visible">
+				<a href="/" class="logo"><img
+					src="/templets/default/v1/Home/image/new_logo.png" alt="极客视界" class="logo-img"></a>
+				<nav>
+					<ul id="nav">
+						<li><a class="nav-item" rel="dropmenu2" href="/a/zhijian/">智见</a></li>
+						<li><a class="nav-item" rel="dropmenu1" href="/special/index.html">专题</a></li>
+						<li><a class="nav-item" rel="dropmenu1" href="/app/">极客玩</a></li>
+						<!-- 
+						<li><a href="/index/topic/index" class="nav-item ">专题</a></li>
+						<LI><A class="nav-item nav-item-discover " href="/index/gk_discover/discover">极客发现</A></LI> -->
+					</ul>
+				</nav>
+				<div id="_userlogin">
+				
+				<div style="margin-top: 22px; float: right; width: 100px;"  >
+					
+					<div style="height: 36px; float: right;">
+						<div class="user-account-info"
+							style="float: right; margin-top: 3px;">
+							<!-- 
+							<a onclick="showLoginDialog();" href="javascript:void(0)"	class="log">登录</a>
+							 -->
+							<a   href="/member/index.php"	class="log">登录</a>
+						</div>
+						  
+						<div class="manage-list">
+							<span class="triangle-up"></span>
+							<ul>
+								<!--<LI class="manage-list-item"><A id="user_center" href="/index/member/personalization/inittype/BASEINFO"> <I class="icon-user-center"></I> <SPAN class="user-manage-list-text">个人中心</SPAN>-->
+								<li><a href="/index/member/personalization"
+									id="user_center" class="manage-list-item"> <span
+										class="user-manage-list-text">个人中心</span>
+								</a></li>
+								<li><a href="/index/message/viewmessage" id="user_edit"
+									class="manage-list-item"> <span
+										class="user-manage-list-text">最新消息 <font size="2px"
+											color="red"><sup></sup></font></span>
+								</a></li>
+								<li><a href="/index/member/modifyinfo" id="user_edit"
+									class="manage-list-item"> <span
+										class="user-manage-list-text">个人设置</span>
+								</a></li>
+
+								<li><a href="/index/member/logout" id="logout"
+									class="manage-list-item"> <span
+										class="user-manage-list-text">退出登录</span>
+								</a></li>
+							</ul>
+							
+						</div>
+						
+						
+					</div>
+				</div>
+				</div>
+				<div style="margin-top: 22px; float: right; width: 200px;">
+
+					<div style="height: 36px; margin-top: 3px; float: right;">
+						<form method="POST" action="">
+
+							<!-- <div style="width:200px;"> -->
+
+							<span style="float: left;"> <input type="text"
+								autocomplete="off" value="" placeholder="搜索设备"
+								class="default-search" name="keyword">
+
+							</span> <span style="position: absolute; margin: 9px -25px"> <input
+								type="submit" value="提交查询内容" class="search-icon">
+
+							</span>
+
+						</form>
+
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
+
+		<div class="clear"></div>
+
+
+
+	</header>
+
+</div>
+
+
+</div>
+	<!-- /header -->
+	<ul id="tool-bar"
+		style="margin-left: 100px; position: fixed; background: none repeat scroll 0% 0% rgb(255, 255, 255); z-index: 2;">
+		<li class="li-first"><a id="tb-comment" title="评论"
+			href="#comment_app_area"><span class="tool-bar-icon tool-comment"></span><label></label></a>
+		</li>
+		
+		
+		<li id="lovediv" class="li-middle"><a id="loveA" title="喜欢"
+			href="javascript:void(0);"><span class="tool-bar-icon tool-like">
+			</span> <div id="lovenums" class=""> 0 </div></a></li>
+		<!-- 
+		<li class="li-last"><a id="vertical-toolbar" title="分享" href="#"><span
+				class="tool-bar-icon tool-share"></span></a></li>
+		 -->
+		<a id="weixin_link" style="display: none"
+			class="jiathis_button_weixin" title="分享到微信"> <span
+			class="jiathis_txt jiathis_separator jtico jtico_weixin">微信</span>
+		</a>
+	</ul>
+
+
+
+	<div class="container" id="content_wrapper">
+		<div class="left-side">
+			<article> <section> <!-- Web Article -->
+			<div class="content-card article-style">
+							
+				<a
+					style="background-image: url(/uploads/UserFiles/Image/2014-08-14/53ec39f5e07ef.png " id="article_cover"> </a> <input
+					type="hidden" value="2465">
+					<div id="web-article-header">
+						<div class="article-title">
+							<div class="app-title">
+								<h1>Smart Plant 让你的花卉对你微笑</h1>
+							</div>
+						</div>
+
+						<div class="article-info-and-tag-area">
+							<div>
+								<div class="pub-time-and-version">
+									<ul class="pub-time-and-version-list">
+
+										<a href="/member/index.php?uid=liujie8403@foxmail.c&action=article">
+											<li class="pub-author">brown_liu.</li>
+
+											<li class="pub-time">2014-08-14</li>
+										</a>
+									</ul>
+								</div>
+							</div>
+							<div>
+								<a	href="/tags.php?/智能家居"><span	class="tag-span">智能家居</span></a><a	href="/tags.php?/效率工具"><span	class="tag-span">效率工具</span></a>
+								
+							</div>
+						</div>
+						<div id="summary" class="short-des">
+							
+							<div class="intro">花花世界让很多人对花花草草着迷不已，但是并不是所有人都能将植物从大自然中完美地搬进我们的生活的，温度、湿度、土壤成份、光照强度等等你想都难想透的繁琐的节让许多伪植物爱好者或者都市上班族成为植物杀手。难道我们就这样放弃让庭院生机盎然、瓜果飘香的机会么？不，看这儿，有了这款Smart Plant，你的植物就能傲慢地迎头生长啦！</div>
+							
+						</div>
+					</div>
+					<div id="article_content"><blockquote><p><strong>Smart&nbsp;Plant不是xx植物</strong></p></blockquote><p>Smart&nbsp;Plant是一个由蓝牙和互联网控制的模块化的智能灌溉系统，而便携式蓝牙控制的智能植物浇水系统会帮助你监视和跟踪你家的花园或草坪植物的环境温度、土壤水分和光强度，这让你对周围的植物花卉有了更深的了解，以便你自己给它们浇刚刚好的水，晒晒太阳，让它们感受到贴心的人文关怀。当然啦，我们多半时候并不会在它们身边，你也别担心它们会埋怨你，只要它们身边有Smart&nbsp;Plant，它的蓝牙和互联网控制系统会自动监测你的植物们，并进行适当地浇水，这样你便可以在任何地方通过你的手机监控你的花园或房子里的植物啦。<img title="1407990013278097.png" alt="62214eeb1be3e59a82142c3f5892b6ba_large.png" src="/ueditor/php/upload/image/20140814/1407990013278097.png"/></p><blockquote><p><strong>Smart&nbsp;Plant是怎么工作的呢？</strong></p></blockquote><p>Smart&nbsp;Plant包括土壤水分传感器、光和温度传感器、智能泵，以及当没有iOS、Android手机的情况下用以显示的信息的LED信息屏。不论室内还是室外，你只需要将Smart&nbsp;Plant插在植物旁边或者你的草坪上它就可以工作。<img title="1407989855952209.png" alt="74fbd7716d2d2c1c4c7c0f16a928f95d_large.png" src="/ueditor/php/upload/image/20140814/1407989855952209.png"/>当你的植物的生长状况很好时，Smart&nbsp;Plant会自动打开并显示一个笑脸。它会定期测量土壤水分含量，温度和光照，当土壤过于干燥或环境太热时，Smart&nbsp;Plant会显示不同的面部表情、传感器的值，甚至从盛水的容器中帮你的植物浇水，这样很像植物对你微笑，很可爱很治愈有木有？！<img title="1407989893851990.png" alt="e4e82b3a2f61fa5ff23346da669583d2_large.png" src="/ueditor/php/upload/image/20140814/1407989893851990.png"/>如果你想使用你的手机来监测植物的状况，你只需要安装SmartPlantAPP到你的手机，由于不同类型的植物，对浇水量的需求不同，你要在APP里面设置好植物的种类，这样你就能通过你的手机控制Smart&nbsp;Plant装置来监测你的植物。此外，你还可以自主设置浇水的时段，还可以查看你的植物生长环境前后的对比，一番倒腾下来是不是颇有点心得呢？<img title="1407989915396984.png" alt="bb58e08ec771c906ebabe683938a5a24_large.png" src="/ueditor/php/upload/image/20140814/1407989915396984.png"/>如果你想要在任何地方，在任何时间监测和水的植物，你可以用智能设备连接器实现。Smart&nbsp;Plant定期测量植物周围的光强度，温度，土壤中的水的量，并通过SP连接器发送信息到我们的Web服务，打开浏览器登录你的账号后你就可以在线监控植物，而且当植物出现问题时警戒系统也会及时通知你。</p><p><img title="1407989946466300.png" src="/ueditor/php/upload/image/20140814/1407989946466300.png"/></p><p><img title="1407989949274418.png" src="/ueditor/php/upload/image/20140814/1407989949274418.png"/></p><blockquote><p><strong>团队介绍</strong></p></blockquote><p>AVI实验室是一支由设计师、开发人员和程序员组成的队伍，起初只是Ahmet&nbsp;Vura公司成立的一个土耳其的配水装置以及游戏编写代码的移动软件开发室，后来渐渐发展，现在队伍由Ahmet公司，Şahin阿斯兰，Abdulkadir奥斯比和Naime奥斯比公司组成。</p><fieldset style="margin: 10px 0px 15px; padding: 5px 10px; border: 1px solid rgb(204, 204, 204); color: rgb(166, 166, 166); line-height: 24px; font-family: " open="" helvetica="" hiragino="" sans="" microsoft="" wenquanyi="" micro="" font-size:="" white-space:="" box-sizing:="" background-color:="" -webkit-font-smoothing:="" text-rendering:=""><legend style="margin: 0px; padding: 0px; border: 0px currentColor; color: rgb(0, 0, 0); font-weight: bold; box-sizing: border-box; border-image-source: none;"><span style="margin: 0px; padding: 4px 10px; color: rgb(255, 255, 255); font-weight: normal; box-sizing: border-box; background-color: rgb(191, 191, 191); -webkit-font-smoothing: antialiased; text-rendering: optimizelegibility;"><strong style="margin: 0px; padding: 0px; color: rgb(0, 0, 0); box-sizing: border-box; -webkit-font-smoothing: antialiased; text-rendering: optimizelegibility;">设备信息</strong></span><strong style="margin: 0px; padding: 0px; box-sizing: border-box; -webkit-font-smoothing: antialiased; text-rendering: optimizelegibility;"></strong></legend><strong style="margin: 0px; padding: 0px; color: rgb(0, 0, 0); box-sizing: border-box; -webkit-font-smoothing: antialiased; text-rendering: optimizelegibility;"><p style="padding: 0px; text-align: justify; color: rgb(51, 51, 51); line-height: 2em; letter-spacing: 0.06em; overflow: hidden; clear: both; font-family: " microsoft="" font-size:="" font-weight:="" margin-top:="" margin-bottom:="" position:="" box-sizing:="" -webkit-font-smoothing:="" text-rendering:="">Smart Plant</p><p style="padding: 0px; text-align: justify; color: rgb(51, 51, 51); line-height: 2em; letter-spacing: 0.06em; overflow: hidden; clear: both; font-family: " microsoft="" font-size:="" font-weight:="" margin-top:="" margin-bottom:="" position:="" box-sizing:="" -webkit-font-smoothing:="" text-rendering:="">厂商：AVI lab | 开发进度：试生产</p><p style="padding: 0px; text-align: justify; color: rgb(51, 51, 51); line-height: 2em; letter-spacing: 0.06em; overflow: hidden; clear: both; font-family: " microsoft="" font-size:="" font-weight:="" margin-top:="" margin-bottom:="" position:="" box-sizing:="" -webkit-font-smoothing:="" text-rendering:="">尺寸：无信息 &nbsp; | 重量：无信息</p><p style="padding: 0px; text-align: justify; color: rgb(51, 51, 51); line-height: 2em; letter-spacing: 0.06em; overflow: hidden; clear: both; font-family: " microsoft="" font-size:="" font-weight:="" margin-top:="" margin-bottom:="" position:="" box-sizing:="" -webkit-font-smoothing:="" text-rendering:="">官网：转kickstarter链接： 
+https://www.kickstarter.com/projects/1068728574/smart-plant-let-your-plants-smile-at-you?ref=nav_search</p></strong></fieldset><blockquote><p><strong>点评</strong></p></blockquote><p>这款产品可以称得上是又懒又喜爱植物的人的福音啊，同时也给都市人的生活节省下大把时间，而且LED灯的表情显示确实让人很心欢啊！现今植物监测装置有不少先例，这款装置要抓住更多人们的眼球还需再加把劲呀！</p><p>&nbsp;</p><p>					</p></div> <!-- 分享 -->
+			</div>
+			</section> <!-- Already Commented --> <section class="quote-card">
+			<div id="user_comments" class="content-card"></div>
+			</section> <!-- Comment App Area --> <section id="comment_app_area">
+
+			<!-- //AJAX评论区 --> <!-- 
+ <div class='_DEDECY' style=''><div id='SOHUCS' sid='600'></div></div><script>(function(){var doc = document,s = doc.createElement('script'),h = doc.getElementsByTagName('head')[0] || doc.head || doc.documentElement;s.type = 'text/javascript';s.charset = 'utf-8';s.src='http://assets.changyan.sohu.com/upload/changyan.js?conf=prod_6d4b7e17e66a3883e0acda697bdfcb0c&appid=cyrmNqJCm';h.insertBefore(s,h.firstChild);window.SCS_NO_IFRAME = true;})()</script>
+ -->
+
+<!--兼容版，可保证页面完全兼容-->
+<div id="SOHUCS"></div>
+<script>
+  (function(){
+    var appid = 'cyrpbrFrK',
+    conf = 'prod_6467eecac294bf28a5a7a4809767ab2b';
+    var doc = document,
+    s = doc.createElement('script'),
+    h = doc.getElementsByTagName('head')[0] || doc.head || doc.documentElement;
+    s.type = 'text/javascript';
+    s.charset = 'utf-8';
+    s.src =  'http://assets.changyan.sohu.com/upload/changyan.js?conf='+ conf +'&appid=' + appid;
+    h.insertBefore(s,h.firstChild);
+  })()
+</script>
+ <!-- //顶踩 -->
+			<!-- //顶踩部份的源码结束 --> </section> <footer> <a href="#top"
+				class="back-to-top"></a> </footer> </article>
+		</div>
+		<div class="right-side">
+			<!-- Platform Infomation -->
+			<div style="padding: 10px 10px 10px 10px; height: 130px"
+				class="side-card">
+
+				<div style="float: left; padding: 12px 10px 0px 0px;"
+					id="left-image">
+					<a href="/index.php?uid=600"
+						class="display-user-profile">
+						<img src="/member/templets/images/dfboy.png"/>
+				</div>
+				<div style="float: left;" id="right-short-introduce">
+					<div style="clear: both; width: 100%;">
+						<span
+							style="font-size: 16px; color: black; font-style: BOLD; width: 100%; float: left; margin-top: 5px;"
+							id="username"> <a
+							href="/member/index.php?uid=liujie8403@foxmail.c"
+							class="user-name-a">brown_liu.</a>
+						</span>
+					</div>
+					<div style="clear: both; padding-top: 10px;; width: 100%;">
+						<span style="float: left" id="self-desc"></span>
+					</div>
+				</div>
+				<div style="clear: both; padding-top: 8px">
+					<a class="login-social__weibo external"		href="http://weibo.com/u/2488657122" target="_blank"> <i
+						class="right_icon-social-sinaweibo-auth"></i></a> 
+						<a			class="login-social__xiaomi external"			href="http://me.mi.com/414482630" target="_blank"><i
+						class="right_icon-social-xiaomi-auth"></i></a>
+						
+						526
+						 <a	href="/member/index.php?uid=liujie8403@foxmail.c&action=article"> <i
+						style="color: #797979; text-align: right; font: inherit; white-space: nowrap; position: absolute; right: 10px; width: 132px; height: 14px; float: left; margin: 0 5px 0 0; text-decoration: none; text-shadow: none;">
+						查看我的文章</i>
+					</a>
+				</div>
+			</div>
+
+			<!-- All Wants -->
+			<div style="padding: 10px 10px 10px 10px;" class="side-card">
+				<h5>大家还喜欢</h5>
+				<ul style="margin-top: 10px;">
+					<li style="border-top: solid 1px #ddd; height: 75px;">
+						<div		style="clear: both; margin: 5px 0px 5px 0px; width: 65%; float: left; font-size: 12px">
+							<a class="all-want-txt-a" href="/a/zhijian/2014/0707/532.html">再刷你就裸了 -- X.pose	</a>
+							<p style="margin: 5px 0px 5px 0px; font-size: 10px;">
+								<strong style="color: #ddd">
+								<a			href="/member/index.php?uid=brown.liu@geekview.c" class="all-want-txt-a-10">
+								 从此清纯是路人</a>
+								 &nbsp;&nbsp;2014-07-07</strong>
+							</p>
+						</div> <a target="_blank" style="line-height: 70px;"	href="/a/zhijian/2014/0707/532.html"> 
+						<img   style='width:98px;height:43px;padding: 5px 0px 0px 0px' alt='title' src='/uploads/UserFiles/Image/2014-07-26/53d384dc92358.jpg'/>
+							
+							
+							</a>
+					</li>
+<li style="border-top: solid 1px #ddd; height: 75px;">
+						<div		style="clear: both; margin: 5px 0px 5px 0px; width: 65%; float: left; font-size: 12px">
+							<a class="all-want-txt-a" href="/a/zhijian/2014/0704/525.html">让你的空调智能起来——Sensibo	</a>
+							<p style="margin: 5px 0px 5px 0px; font-size: 10px;">
+								<strong style="color: #ddd">
+								<a			href="/member/index.php?uid=brian.lee@geekview.c" class="all-want-txt-a-10">
+								 Brian</a>
+								 &nbsp;&nbsp;2014-07-04</strong>
+							</p>
+						</div> <a target="_blank" style="line-height: 70px;"	href="/a/zhijian/2014/0704/525.html"> 
+						<img   style='width:98px;height:43px;padding: 5px 0px 0px 0px' alt='title' src='/uploads/UserFiles/Image/2014-07-26/53d38108cf4c1.png'/>
+							
+							
+							</a>
+					</li>
+<li style="border-top: solid 1px #ddd; height: 75px;">
+						<div		style="clear: both; margin: 5px 0px 5px 0px; width: 65%; float: left; font-size: 12px">
+							<a class="all-want-txt-a" href="/a/zhijian/2014/0723/517.html">Violet--让你更好地晒太阳	</a>
+							<p style="margin: 5px 0px 5px 0px; font-size: 10px;">
+								<strong style="color: #ddd">
+								<a			href="/member/index.php?uid=brown.liu@geekview.c" class="all-want-txt-a-10">
+								 从此清纯是路人</a>
+								 &nbsp;&nbsp;2014-07-23</strong>
+							</p>
+						</div> <a target="_blank" style="line-height: 70px;"	href="/a/zhijian/2014/0723/517.html"> 
+						<img   style='width:98px;height:43px;padding: 5px 0px 0px 0px' alt='title' src='/uploads/UserFiles/Image/2014-07-26/53d37abe54457.jpg'/>
+							
+							
+							</a>
+					</li>
+<li style="border-top: solid 1px #ddd; height: 75px;">
+						<div		style="clear: both; margin: 5px 0px 5px 0px; width: 65%; float: left; font-size: 12px">
+							<a class="all-want-txt-a" href="/a/zhijian/2014/0620/539.html">记录你的生活 -- Lightbox #智能拍摄	</a>
+							<p style="margin: 5px 0px 5px 0px; font-size: 10px;">
+								<strong style="color: #ddd">
+								<a			href="/member/index.php?uid=brian.lee@geekview.c" class="all-want-txt-a-10">
+								 Brian</a>
+								 &nbsp;&nbsp;2014-06-20</strong>
+							</p>
+						</div> <a target="_blank" style="line-height: 70px;"	href="/a/zhijian/2014/0620/539.html"> 
+						<img   style='width:98px;height:43px;padding: 5px 0px 0px 0px' alt='title' src='/uploads/UserFiles/Image/2014-07-27/53d4614394514.jpg'/>
+							
+							
+							</a>
+					</li>
+<li style="border-top: solid 1px #ddd; height: 75px;">
+						<div		style="clear: both; margin: 5px 0px 5px 0px; width: 65%; float: left; font-size: 12px">
+							<a class="all-want-txt-a" href="/a/zhijian/2014/0731/553.html">一只会发亮的信鸽——AYATORI	</a>
+							<p style="margin: 5px 0px 5px 0px; font-size: 10px;">
+								<strong style="color: #ddd">
+								<a			href="/member/index.php?uid=Ailsaliang2014@163.c" class="all-want-txt-a-10">
+								 Ailsaliang</a>
+								 &nbsp;&nbsp;2014-07-31</strong>
+							</p>
+						</div> <a target="_blank" style="line-height: 70px;"	href="/a/zhijian/2014/0731/553.html"> 
+						<img   style='width:98px;height:43px;padding: 5px 0px 0px 0px' alt='title' src='/uploads/UserFiles/Image/2014-07-31/53da516ba48fd.png'/>
+							
+							
+							</a>
+					</li>
+<li style="border-top: solid 1px #ddd; height: 75px;">
+						<div		style="clear: both; margin: 5px 0px 5px 0px; width: 65%; float: left; font-size: 12px">
+							<a class="all-want-txt-a" href="/a/zhijian/2014/0624/542.html">身临其境体验游戏里中枪的感觉 	</a>
+							<p style="margin: 5px 0px 5px 0px; font-size: 10px;">
+								<strong style="color: #ddd">
+								<a			href="/member/index.php?uid=brian.lee@geekview.c" class="all-want-txt-a-10">
+								 Brian</a>
+								 &nbsp;&nbsp;2014-06-24</strong>
+							</p>
+						</div> <a target="_blank" style="line-height: 70px;"	href="/a/zhijian/2014/0624/542.html"> 
+						<img   style='width:98px;height:43px;padding: 5px 0px 0px 0px' alt='title' src='/uploads/UserFiles/Image/2014-07-27/53d46274a48f7.jpg'/>
+							
+							
+							</a>
+					</li>
+
+
+
+
+				</ul>
+			</div>
+		</div>
+		<div class="clear"></div>
+	</div>
+	<footer style="">
+		<div class="container">
+			<ul class="footer-link-list">
+				<li><p style="font:bold">公司介绍</p></li>
+				<li><a target="_blank" href="/index/index/aboutus" class="footer-link">关于我们</a></li>
+				<li><a target="_blank" href="/index/index/privacy" class="footer-link">隐私条款</a></li>
+				<li><a target="_blank" href="/index/index/userpolicy" class="footer-link">用户政策</a></li>
+				<li><a target="_blank" href="/index/index/joinus" class="footer-link">加入我们</a></li>
+
+			</ul>
+			<ul class="footer-link-list">
+				<li><p style="font:bold">合作伙伴</p></li>
+				<li><a target="_blank" href="http://www.baidu.com" class="footer-link external">百度</a></li>
+				<li><a target="_blank" href="http://www.aliyun.com" class="footer-link external">阿里云</a></li>
+				<li><a target="_blank" href="/index/index/userpolicy" class="footer-link"></a></li>
+				<li><a target="_blank" href="/index/index/joinus" class="footer-link"></a></li>
+
+			</ul>
+			<ul class="footer-link-list">
+				<li><p style="font:bold">订阅信息</p></li>
+				<li><a target="_blank" href="/templets/default/v1/Home/image/rss/geekviewRSS.xml" class="footer-link">
+				<img src="/templets/default/v1/Home/image/rss/rss.jpg" style="height:20px;"></a></li>
+
+			</ul>
+			<ul class="footer-link-list">
+				<li><p style="font:bold">&nbsp;</p></li>
+				<li>图片存储由&nbsp; <a href="http://www.aliyun.com/product/oss/?spm=5176.383338.201.7.IA7qhS" class="footer-link-ali external" target="_blank">阿里云存储</a> &nbsp;提供</li>
+
+			</ul>
+			<div class="clear"></div>		
+			<div class="copyright">
+				<span class="copyright-year">Copyright &copy;2013-2014 </span> <a href="#" class="footer-geekview">深圳市极客视界科技有限公司</a> <span class="company-number">粤ICP备14037549号-1</span>
+			</div>
+		</div>
+	</footer>
+	
+<script type="text/javascript">
+CheckLogin();
+</script>
+	<!-- /footer -->
+	</div>
+	
+</body>
+</html>

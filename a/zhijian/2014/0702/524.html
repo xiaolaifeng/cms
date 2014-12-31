@@ -1,0 +1,627 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type"
+	content="text/html; charset=utf-8" />
+<title>你的家庭口腔医生 -- Kolibree_极客</title>
+<meta name="keywords" content="健康医疗,奇趣设备" />
+<meta name="description" content="虽然我们每天都刷牙，但是却不知道是不是真的刷干净了。不少童鞋都很听话，一天刷三次牙，但是依然有蛀牙的烦恼……那肯定是你打开的方式不正确。今天就跟大家介绍一款老少咸宜的智能电动牙刷——Kolibree" />
+
+<link type="image/x-icon" rel="icon"
+	href="/templets/default/v1/Home/image/favicon.ico" />
+
+<link rel=”alternate” type=”application/rss+xml” title=”你的家庭口腔医生 -- Kolibree” href=”/rss.php“/> 
+
+<link href="/templets/default/v1/Home/image/favicon.ico" type="image/x-icon" rel="icon" />
+<link href="/templets/default/v1/Home/css/panel.css" rel="stylesheet" media="screen" type="text/css" />
+<link href="/templets/default/v1/Home/css/normalize.css" rel="stylesheet" media="screen" type="text/css" />
+<link href="/templets/default/v1/Home/css/base.css" rel="stylesheet" media="screen" type="text/css" />
+<link href="/templets/default/v1/Home/css/responsive.css" rel="stylesheet" media="screen" type="text/css" />
+<link href="/templets/default/v1/Home/css/listPage.css" rel="stylesheet" media="screen" type="text/css" />
+<link href="/templets/default/v1/Home/css/login.css" rel="stylesheet" media="screen" type="text/css" />
+<link href="/templets/default/v1/css/pubnews.css" rel="stylesheet" media="screen" type="text/css" />
+<link href="/templets/default/v1/Home/css/toobar.css?2014" rel="stylesheet" media="screen" type="text/css" />
+
+<script src="/templets/default/v1/Home/js/jquery.min.js" language="javascript" type="text/javascript"></script>
+<script src="/templets/default/v1/Home/js/jquery.lazyload.min.js" language="javascript" type="text/javascript"></script>
+<script src="/templets/default/v1/Home/js/androidApp.js" language="javascript" type="text/javascript"></script>
+<script src="/templets/default/v1/Home/js/global.js" language="javascript" type="text/javascript"></script>
+<script src="/templets/default/v1/Home/js/placeholders.min.js" language="javascript" type="text/javascript"></script>
+<script src="/templets/default/v1/Home/js/ga.js" language="javascript" type="text/javascript"></script>
+<script src="/templets/default/v1/Home/js/main-2.js" language="javascript" type="text/javascript"></script>
+<script src="/templets/default/v1/Home/js/nr-100.js" language="javascript" type="text/javascript"></script>
+<script src="/templets/default/v1/Home/js/topics-x.js" language="javascript" type="text/javascript"></script>
+<script src="/templets/default/v1/Home/js/jquery.toolbar.min.js" language="javascript" type="text/javascript"></script>
+<script src="/templets/default/v1/Home/js/jquery.easing.1.3.js" language="javascript" type="text/javascript"></script>
+
+<script src="/include/dedeajax2.js" language="javascript" type="text/javascript" ></script>
+
+<script type="text/javascript">
+function CheckLogin(){
+  var taget_obj = document.getElementById('_userlogin');
+  myajax = new DedeAjax(taget_obj,false,false,'','','');
+  myajax.SendGet2("/member/ajax_loginsta.php");
+  $('.login-user-name').click( function()  {
+	    $('.manage-list ').toggle();
+	});
+  $('.loginForm').hide(0);
+  DedeXHTTP = null;
+}
+</script>
+
+
+<script language="javascript" type="text/javascript">
+<!--
+function postBadGood(ftype,fid)
+{
+	var taget_obj = document.getElementById(ftype+fid);
+	var saveid = GetCookie('badgoodid');
+	if(saveid != null)
+	{
+		var saveids = saveid.split(',');
+		var hasid = false;
+		saveid = '';
+		j = 1;
+		for(i=saveids.length-1;i>=0;i--)
+		{
+			if(saveids[i]==fid && hasid) continue;
+			else {
+				if(saveids[i]==fid && !hasid) hasid = true;
+				saveid += (saveid=='' ? saveids[i] : ','+saveids[i]);
+				j++;
+				if(j==10 && hasid) break;
+				if(j==9 && !hasid) break;
+			}
+		}
+		if(hasid) { alert('您刚才已表决过了喔！'); return false;}
+		else saveid += ','+fid;
+		SetCookie('badgoodid',saveid,1);
+	}
+	else
+	{
+		SetCookie('badgoodid',fid,1);
+	}
+	myajax = new DedeAjax(taget_obj,false,false,'','','');
+	myajax.SendGet2("/plus/feedback.php?aid="+fid+"&action="+ftype+"&fid="+fid);
+}
+function postDigg(ftype,aid)
+{
+	var taget_obj = document.getElementById('newdigg');
+	var saveid = GetCookie('diggid');
+	if(saveid != null)
+	{
+		var saveids = saveid.split(',');
+		var hasid = false;
+		saveid = '';
+		j = 1;
+		for(i=saveids.length-1;i>=0;i--)
+		{
+			if(saveids[i]==aid && hasid) continue;
+			else {
+				if(saveids[i]==aid && !hasid) hasid = true;
+				saveid += (saveid=='' ? saveids[i] : ','+saveids[i]);
+				j++;
+				if(j==20 && hasid) break;
+				if(j==19 && !hasid) break;
+			}
+		}
+		if(hasid) { alert("您已经顶过该帖，请不要重复顶帖 ！"); return; }
+		else saveid += ','+aid;
+		SetCookie('diggid',saveid,1);
+	}
+	else
+	{
+		SetCookie('diggid',aid,1);
+	}
+	myajax = new DedeAjax(taget_obj,false,false,'','','');
+	var url = "/plus/digg_ajax.php?action="+ftype+"&id="+aid;
+	myajax.SendGet2(url);
+}
+function getDigg(aid)
+{
+	var taget_obj = document.getElementById('newdigg');
+	myajax = new DedeAjax(taget_obj,false,false,'','','');
+	myajax.SendGet2("/plus/digg_ajax.php?id="+aid);
+	DedeXHTTP = null;
+}
+
+$(function(){
+	$("#lovediv").bind("mouseover",function(){
+		clicknum=$("#lovenums").text();
+		$("#lovenums").html('').addClass('activelove');
+	}).bind("mouseout",function(){
+		$("#lovenums").removeClass('activelove');
+		$("#lovenums").html(clicknum);
+	}).bind("click",function(){
+		
+		//todu  默认的顶踩逻辑
+		postDigg('good',524);
+		//todu
+				clicknum++;
+				try{
+				if(clicknum>999){
+					clicknum='999+';
+				}
+				$("#lovenums").html(clicknum).removeClass("activelove").css("color","#fff");
+				$("span","#loveA").css("color","#fff");
+				$("#loveA").css({"background-color":"#3091f2","color":"#fff"});
+				$(this).unbind("mouseover").unbind("mouseout").unbind("click");
+				postLoveArt();
+				}catch(e){};
+		
+		//取最新的nice_num数
+		//var articleid = $("#comment_articleid").val();
+	
+	});
+	$('#vertical-toolbar').toolbar({
+		content: '#user-toolbar-options',
+		position: 'left'
+	});
+	$(window.document).scroll(function () {
+		$("#tool-bar").css("position","fixed");
+		if($("#vertical-toolbar").hasClass("pressed")){
+			$(".tool-container,.gradient tool-left,.tool-rounded").hide();
+			$("#vertical-toolbar").removeClass("pressed");
+		}
+	});
+	$("#vertical-toolbar").click(function(){alert(1);
+		  $("#vertical-toolbar").toggleClass("pressed");
+		});
+});
+-->
+</script>
+</head>
+<body class="js articleview">
+
+	<div class="viewblock animation"><div id="wrapper">
+	<header id="site_header">
+		<div style="height: 85px" class="navbar">
+			<div id="nav_container" class="container visible">
+				<a href="/" class="logo"><img
+					src="/templets/default/v1/Home/image/new_logo.png" alt="极客视界" class="logo-img"></a>
+				<nav>
+					<ul id="nav">
+						<li><a class="nav-item" rel="dropmenu2" href="/a/zhijian/">智见</a></li>
+						<li><a class="nav-item" rel="dropmenu1" href="/special/index.html">专题</a></li>
+						<li><a class="nav-item" rel="dropmenu1" href="/app/">极客玩</a></li>
+						<!-- 
+						<li><a href="/index/topic/index" class="nav-item ">专题</a></li>
+						<LI><A class="nav-item nav-item-discover " href="/index/gk_discover/discover">极客发现</A></LI> -->
+					</ul>
+				</nav>
+				<div id="_userlogin">
+				
+				<div style="margin-top: 22px; float: right; width: 100px;"  >
+					
+					<div style="height: 36px; float: right;">
+						<div class="user-account-info"
+							style="float: right; margin-top: 3px;">
+							<!-- 
+							<a onclick="showLoginDialog();" href="javascript:void(0)"	class="log">登录</a>
+							 -->
+							<a   href="/member/index.php"	class="log">登录</a>
+						</div>
+						  
+						<div class="manage-list">
+							<span class="triangle-up"></span>
+							<ul>
+								<!--<LI class="manage-list-item"><A id="user_center" href="/index/member/personalization/inittype/BASEINFO"> <I class="icon-user-center"></I> <SPAN class="user-manage-list-text">个人中心</SPAN>-->
+								<li><a href="/index/member/personalization"
+									id="user_center" class="manage-list-item"> <span
+										class="user-manage-list-text">个人中心</span>
+								</a></li>
+								<li><a href="/index/message/viewmessage" id="user_edit"
+									class="manage-list-item"> <span
+										class="user-manage-list-text">最新消息 <font size="2px"
+											color="red"><sup></sup></font></span>
+								</a></li>
+								<li><a href="/index/member/modifyinfo" id="user_edit"
+									class="manage-list-item"> <span
+										class="user-manage-list-text">个人设置</span>
+								</a></li>
+
+								<li><a href="/index/member/logout" id="logout"
+									class="manage-list-item"> <span
+										class="user-manage-list-text">退出登录</span>
+								</a></li>
+							</ul>
+							
+						</div>
+						
+						
+					</div>
+				</div>
+				</div>
+				<div style="margin-top: 22px; float: right; width: 200px;">
+
+					<div style="height: 36px; margin-top: 3px; float: right;">
+						<form method="POST" action="">
+
+							<!-- <div style="width:200px;"> -->
+
+							<span style="float: left;"> <input type="text"
+								autocomplete="off" value="" placeholder="搜索设备"
+								class="default-search" name="keyword">
+
+							</span> <span style="position: absolute; margin: 9px -25px"> <input
+								type="submit" value="提交查询内容" class="search-icon">
+
+							</span>
+
+						</form>
+
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
+
+		<div class="clear"></div>
+
+
+
+	</header>
+
+</div>
+
+
+</div>
+	<!-- /header -->
+	<ul id="tool-bar"
+		style="margin-left: 100px; position: fixed; background: none repeat scroll 0% 0% rgb(255, 255, 255); z-index: 2;">
+		<li class="li-first"><a id="tb-comment" title="评论"
+			href="#comment_app_area"><span class="tool-bar-icon tool-comment"></span><label></label></a>
+		</li>
+		
+		
+		<li id="lovediv" class="li-middle"><a id="loveA" title="喜欢"
+			href="javascript:void(0);"><span class="tool-bar-icon tool-like">
+			</span> <div id="lovenums" class=""> 106 </div></a></li>
+		<!-- 
+		<li class="li-last"><a id="vertical-toolbar" title="分享" href="#"><span
+				class="tool-bar-icon tool-share"></span></a></li>
+		 -->
+		<a id="weixin_link" style="display: none"
+			class="jiathis_button_weixin" title="分享到微信"> <span
+			class="jiathis_txt jiathis_separator jtico jtico_weixin">微信</span>
+		</a>
+	</ul>
+
+
+
+	<div class="container" id="content_wrapper">
+		<div class="left-side">
+			<article> <section> <!-- Web Article -->
+			<div class="content-card article-style">
+							
+				<a
+					style="background-image: url(/uploads/UserFiles/Image/2014-07-26/53d37f25d2a25.jpg " id="article_cover"> </a> <input
+					type="hidden" value="2465">
+					<div id="web-article-header">
+						<div class="article-title">
+							<div class="app-title">
+								<h1>你的家庭口腔医生 -- Kolibree</h1>
+							</div>
+						</div>
+
+						<div class="article-info-and-tag-area">
+							<div>
+								<div class="pub-time-and-version">
+									<ul class="pub-time-and-version-list">
+
+										<a href="/member/index.php?uid=brown.liu@geekview.c&action=article">
+											<li class="pub-author">从此清纯是路人.</li>
+
+											<li class="pub-time">2014-07-02</li>
+										</a>
+									</ul>
+								</div>
+							</div>
+							<div>
+								<a	href="/tags.php?/健康医疗"><span	class="tag-span">健康医疗</span></a><a	href="/tags.php?/奇趣设备"><span	class="tag-span">奇趣设备</span></a>
+								
+							</div>
+						</div>
+						<div id="summary" class="short-des">
+							
+							<div class="intro">虽然我们每天都刷牙，但是却不知道是不是真的刷干净了。不少童鞋都很听话，一天刷三次牙，但是依然有蛀牙的烦恼……那肯定是你打开的方式不正确。今天就跟大家介绍一款老少咸宜的智能电动牙刷——Kolibree</div>
+							
+						</div>
+					</div>
+					<div id="article_content">
+<h2 class="article-content-old" style="border-left:3px solid rgb(14,110,184);">
+    <p class="article-content-old"  style="text-indent:10px; font-weight:bold;font-family: Microsoft YaHei,宋体; line-height:30px;margin-bottom: 25px; font-size:16px;">        第一款智能牙刷
+    </p>
+</h2>
+<p class = "article-content-old" style= "text-align: justify;text-justify:inter-ideograph; letter-spacing: 0.06em; line-height:30px; margin-bottom:  25px;  font-size:16px ;font-family: Microsoft YaHei,宋体;">
+    Kolibree是一款能教会你如何照顾好你的牙齿的智能电动牙刷。配备的手机App和小游戏照顾到不同年龄的用户。有1米水深的防水功能，掉进浴缸里也不用担心哦。
+</p>
+<p class = "article-content-old" style= "text-align: justify;text-justify:inter-ideograph; letter-spacing: 0.06em; line-height:30px; margin-bottom:  25px;  font-size:16px ;font-family: Microsoft YaHei,宋体;">
+    除了技术上的突破，Kolibree还非常关注牙刷的外形和使用体验。相比其他电动牙刷，Kolibree看起来很醒目，而且比较轻，手柄的设计适合大人和小孩。
+</p>
+    <img src="http://mmbiz.qpic.cn/mmbiz/pS2CDmRJXTjKQk8AniaH4Ik3pd5kt9RpnPic2SqtAJk0JJGM2HM3kmeC8mBXRTW87mlD3kdnl3L5zgFbFhYs7QHQ/0" class="article-content-image" style="width: 620px;margin-bottom:25px; " data-src="http://mmbiz.qpic.cn/mmbiz/pS2CDmRJXTjKQk8AniaH4Ik3pd5kt9RpnPic2SqtAJk0JJGM2HM3kmeC8mBXRTW87mlD3kdnl3L5zgFbFhYs7QHQ/0"/>
+<h2 class="article-content-old" style="border-left:3px solid rgb(14,110,184);">
+    <p class="article-content-old"  style="text-indent:10px; font-weight:bold;font-family: Microsoft YaHei,宋体; line-height:30px;margin-bottom: 25px; font-size:16px;">
+        它不只是一支牙刷
+    </p>
+</h2>
+<p class = "article-content-old" style= "text-align: justify;text-justify:inter-ideograph; letter-spacing: 0.06em; line-height:30px; margin-bottom:  25px;  font-size:16px ;font-family: Microsoft YaHei,宋体;">
+    利用蓝牙，Kolibree能连接你的手机（iOS和安卓系统都可以用哦）或者平板，在你刷牙的过程中，安装在牙刷中的综合传感器会同步输出数据并且分析用户的刷牙情况，帮助纠正刷牙习惯。利用方向传感器等技术，Kolibree能捕捉到用户的刷牙时间和哪些口腔区域没有完全清洁等。App会通过一个表盘来显示每次刷牙的所得分数，你都不好意思让隔壁知道连这都没刷个及格吧。早上没睡醒忘了打开手机的蓝牙也没关系，传感器会记录你的刷牙情况，下次打开蓝牙后就会自动把数据上传。
+</p>
+    <img src="http://mmbiz.qpic.cn/mmbiz/pS2CDmRJXTjKQk8AniaH4Ik3pd5kt9Rpnibtibpvibd8RPOk4JcU8ibvBNCCicsBxFKia6zIxegf3NKPWJSibxP0x0chdQ/0" class="article-content-image" style="width: 620px;margin-bottom:25px; " data-src="http://mmbiz.qpic.cn/mmbiz/pS2CDmRJXTjKQk8AniaH4Ik3pd5kt9Rpnibtibpvibd8RPOk4JcU8ibvBNCCicsBxFKia6zIxegf3NKPWJSibxP0x0chdQ/0"/>
+<h2 class="article-content-old" style="border-left:3px solid rgb(14,110,184);">
+    <p class="article-content-old"  style="text-indent:10px; font-weight:bold;font-family: Microsoft YaHei,宋体; line-height:30px;margin-bottom: 25px; font-size:16px;">
+        边刷边玩
+    </p>
+</h2>
+<p class = "article-content-old" style= "text-align: justify;text-justify:inter-ideograph; letter-spacing: 0.06em; line-height:30px; margin-bottom:  25px;  font-size:16px ;font-family: Microsoft YaHei,宋体;">
+    为了让“刷牙”更欢乐，Kolibree还配备了手机小游戏，孩子拿着牙刷就像拿着游戏操纵杆，通过玩游戏学习如何把口腔清洁干净。清除糖果的游戏是要求孩子看着手机或者平板的屏幕，刷牙动作能操控游戏角色把牙齿上的糖果清除掉。
+</p>
+    <img class="article-content-image" style="width: 620px;margin-bottom:25px; "data-src="http://mmbiz.qpic.cn/mmbiz/pS2CDmRJXTjKQk8AniaH4Ik3pd5kt9RpnrRq0OU4Tv9SYzDynGlw44861zJS5d1zPqmAkF7A4ocCCH9W1NMcTxQ/0"/>
+<p class = "article-content-old" style= "text-align: justify;text-justify:inter-ideograph; letter-spacing: 0.06em; line-height:30px; margin-bottom:  25px;  font-size:16px ;font-family: Microsoft YaHei,宋体;">
+    还有一个是赛车游戏，通过摆动牙刷方向来控制小车。
+</p>
+    <img class="article-content-image" style="width: 620px;margin-bottom:25px; "data-src="http://mmbiz.qpic.cn/mmbiz/pS2CDmRJXTjKQk8AniaH4Ik3pd5kt9RpnnhKhXJXnNawo6vbialSsxlIy6WmropgBTAdWdf2P6kgzQR7ia3WorAuQ/0"/>
+<p class = "article-content-old" style= "text-align: justify;text-justify:inter-ideograph; letter-spacing: 0.06em; line-height:30px; margin-bottom:  25px;  font-size:16px ;font-family: Microsoft YaHei,宋体;">
+    这些游戏除了能增加刷牙的趣味，还会让孩子学会正确的刷牙方法。
+</p>
+<h2 class="article-content-old" style="border-left:3px solid rgb(14,110,184);">
+    <p class="article-content-old"  style="text-indent:10px; font-weight:bold;font-family: Microsoft YaHei,宋体; line-height:30px;margin-bottom: 25px; font-size:16px;">
+        支持数据分享
+    </p>
+</h2>
+<p class = "article-content-old" style= "text-align: justify;text-justify:inter-ideograph; letter-spacing: 0.06em; line-height:30px; margin-bottom:  25px;  font-size:16px ;font-family: Microsoft YaHei,宋体;">
+    配备的App支持多用户共用，全家人的口腔数据可以放在同一个App上面。闲暇时间里，用户可以翻看过去的口腔情况。App还提供很多关于保护牙齿和保持口腔清洁的小Tips。
+</p>
+<p class = "article-content-old" style= "text-align: justify;text-justify:inter-ideograph; letter-spacing: 0.06em; line-height:30px; margin-bottom:  25px;  font-size:16px ;font-family: Microsoft YaHei,宋体;">
+    记录在App上面的口腔健康数据可以分享到你的牙科医生手机上，更好地监督你的日常口腔健康。
+</p>
+    <img src="http://mmbiz.qpic.cn/mmbiz/pS2CDmRJXTjKQk8AniaH4Ik3pd5kt9RpnuHH44syIa3xdlIWD7k42TjAHuXfkjqh4VtENjP6EMhV4pyuUCr3o3g/0" class="article-content-image" style="width: 620px;margin-bottom:25px; " data-src="http://mmbiz.qpic.cn/mmbiz/pS2CDmRJXTjKQk8AniaH4Ik3pd5kt9RpnuHH44syIa3xdlIWD7k42TjAHuXfkjqh4VtENjP6EMhV4pyuUCr3o3g/0"/>
+<h2 class="article-content-old" style="border-left:3px solid rgb(14,110,184);">
+    <p class="article-content-old"  style="text-indent:10px; font-weight:bold;font-family: Microsoft YaHei,宋体; line-height:30px;margin-bottom: 25px; font-size:16px;">
+        关于Kolibree团队
+    </p>
+</h2>
+<p class = "article-content-old" style= "text-align: justify;text-justify:inter-ideograph; letter-spacing: 0.06em; line-height:30px; margin-bottom:  25px;  font-size:16px ;font-family: Microsoft YaHei,宋体;">
+    Kolibree是一个庞大的“军团”，有电子工业的退役军人，也有很多年轻的工程师。过去，他们处理过蓝牙技术设备，有15年的设计和生产计算机硬件的经验。这个团队致力于开发出能提高人们生活质量的智能设备，而Kolibree智能牙刷成为他们的新挑战。今年年初Kolibree在CES展会上备受触目，而刚过去的5月份成功地在Kickstarter完成了筹资目标，目前已经在官网上预售了。
+</p>
+<fieldset style="white-space: normal; margin: 10px 0px 15px; padding: 5px 10px; border: 1px solid rgb(204, 204, 204); line-height: 24px; color: rgb(166, 166, 166); font-size: 14px;">
+    <legend style="margin: 0px; padding: 0px; font-weight: bold; color: rgb(0, 0, 0);">
+        <span style="margin: 0px; padding: 4px 10px; color: rgb(255, 255, 255); background-color: rgb(191, 191, 191);"><strong style="margin: 0px; padding: 0px;">设备信息</span>
+    </legend>
+    <p style="margin-top: 0px; margin-bottom: 0px; padding: 0px; color: rgb(51, 51, 51); line-height: 2em;">
+        Kolibree | 智能牙刷
+    </p>
+    <p style="margin-top: 0px; margin-bottom: 0px; padding: 0px; color: rgb(51, 51, 51); line-height: 2em;">
+        厂商：Kolibree | 开发进度：试生产
+    </p>
+    <p style="margin-top: 0px; margin-bottom: 0px; padding: 0px; color: rgb(51, 51, 51); line-height: 2em;">
+        尺寸：手柄长22.3cm 刷头长9.5cm | 重量：130g
+    </p>
+    <p style="margin-top: 0px; margin-bottom: 0px; padding: 0px; color: rgb(51, 51, 51); line-height: 2em;">
+        官网：http://www.kolibree.com/
+    </p>
+</fieldset>
+
+<p class = "article-content-old" style="text-align:justify;text-justify:inter-ideograph;line-height:30px; margin-bottom: 25px; font-size:16px ;font-family: Microsoft YaHei,宋体; font-weight: bold;">
+   Geeker说
+</p>
+<p class = "article-content-old" style= "text-align: justify;text-justify:inter-ideograph; letter-spacing: 0.06em; line-height:30px; margin-bottom:  25px;  font-size:16px ;font-family: Microsoft YaHei,宋体;">
+    随着人们的生活水平提高，个人护理问题已不再是新鲜话题。事实上，日常生活中许多小东西都可以经过改造升级实现智能化。Kolibree在功能上、外观上和用户情感上都有细节表现，这在Kickstarter的筹资能体现——目前为止已成功筹资150%，资金总额108,683英镑。
+</p>
+</div> <!-- 分享 -->
+			</div>
+			</section> <!-- Already Commented --> <section class="quote-card">
+			<div id="user_comments" class="content-card"></div>
+			</section> <!-- Comment App Area --> <section id="comment_app_area">
+
+			<!-- //AJAX评论区 --> <!-- 
+ <div class='_DEDECY' style=''><div id='SOHUCS' sid='524'></div></div><script>(function(){var doc = document,s = doc.createElement('script'),h = doc.getElementsByTagName('head')[0] || doc.head || doc.documentElement;s.type = 'text/javascript';s.charset = 'utf-8';s.src='http://assets.changyan.sohu.com/upload/changyan.js?conf=prod_6d4b7e17e66a3883e0acda697bdfcb0c&appid=cyrmNqJCm';h.insertBefore(s,h.firstChild);window.SCS_NO_IFRAME = true;})()</script>
+ -->
+
+<!--兼容版，可保证页面完全兼容-->
+<div id="SOHUCS"></div>
+<script>
+  (function(){
+    var appid = 'cyrpbrFrK',
+    conf = 'prod_6467eecac294bf28a5a7a4809767ab2b';
+    var doc = document,
+    s = doc.createElement('script'),
+    h = doc.getElementsByTagName('head')[0] || doc.head || doc.documentElement;
+    s.type = 'text/javascript';
+    s.charset = 'utf-8';
+    s.src =  'http://assets.changyan.sohu.com/upload/changyan.js?conf='+ conf +'&appid=' + appid;
+    h.insertBefore(s,h.firstChild);
+  })()
+</script>
+ <!-- //顶踩 -->
+			<!-- //顶踩部份的源码结束 --> </section> <footer> <a href="#top"
+				class="back-to-top"></a> </footer> </article>
+		</div>
+		<div class="right-side">
+			<!-- Platform Infomation -->
+			<div style="padding: 10px 10px 10px 10px; height: 130px"
+				class="side-card">
+
+				<div style="float: left; padding: 12px 10px 0px 0px;"
+					id="left-image">
+					<a href="/index.php?uid=524"
+						class="display-user-profile">
+						<img src="/member/templets/images/dfboy.png"/>
+				</div>
+				<div style="float: left;" id="right-short-introduce">
+					<div style="clear: both; width: 100%;">
+						<span
+							style="font-size: 16px; color: black; font-style: BOLD; width: 100%; float: left; margin-top: 5px;"
+							id="username"> <a
+							href="/member/index.php?uid=brown.liu@geekview.c"
+							class="user-name-a">从此清纯是路人.</a>
+						</span>
+					</div>
+					<div style="clear: both; padding-top: 10px;; width: 100%;">
+						<span style="float: left" id="self-desc"></span>
+					</div>
+				</div>
+				<div style="clear: both; padding-top: 8px">
+					<a class="login-social__weibo external"		href="http://weibo.com/u/2488657122" target="_blank"> <i
+						class="right_icon-social-sinaweibo-auth"></i></a> 
+						<a			class="login-social__xiaomi external"			href="http://me.mi.com/414482630" target="_blank"><i
+						class="right_icon-social-xiaomi-auth"></i></a>
+						
+						527
+						 <a	href="/member/index.php?uid=brown.liu@geekview.c&action=article"> <i
+						style="color: #797979; text-align: right; font: inherit; white-space: nowrap; position: absolute; right: 10px; width: 132px; height: 14px; float: left; margin: 0 5px 0 0; text-decoration: none; text-shadow: none;">
+						查看我的文章</i>
+					</a>
+				</div>
+			</div>
+
+			<!-- All Wants -->
+			<div style="padding: 10px 10px 10px 10px;" class="side-card">
+				<h5>大家还喜欢</h5>
+				<ul style="margin-top: 10px;">
+					<li style="border-top: solid 1px #ddd; height: 75px;">
+						<div		style="clear: both; margin: 5px 0px 5px 0px; width: 65%; float: left; font-size: 12px">
+							<a class="all-want-txt-a" href="/a/zhijian/2014/0707/532.html">再刷你就裸了 -- X.pose	</a>
+							<p style="margin: 5px 0px 5px 0px; font-size: 10px;">
+								<strong style="color: #ddd">
+								<a			href="/member/index.php?uid=brown.liu@geekview.c" class="all-want-txt-a-10">
+								 从此清纯是路人</a>
+								 &nbsp;&nbsp;2014-07-07</strong>
+							</p>
+						</div> <a target="_blank" style="line-height: 70px;"	href="/a/zhijian/2014/0707/532.html"> 
+						<img   style='width:98px;height:43px;padding: 5px 0px 0px 0px' alt='title' src='/uploads/UserFiles/Image/2014-07-26/53d384dc92358.jpg'/>
+							
+							
+							</a>
+					</li>
+<li style="border-top: solid 1px #ddd; height: 75px;">
+						<div		style="clear: both; margin: 5px 0px 5px 0px; width: 65%; float: left; font-size: 12px">
+							<a class="all-want-txt-a" href="/a/zhijian/2014/0704/525.html">让你的空调智能起来——Sensibo	</a>
+							<p style="margin: 5px 0px 5px 0px; font-size: 10px;">
+								<strong style="color: #ddd">
+								<a			href="/member/index.php?uid=brian.lee@geekview.c" class="all-want-txt-a-10">
+								 Brian</a>
+								 &nbsp;&nbsp;2014-07-04</strong>
+							</p>
+						</div> <a target="_blank" style="line-height: 70px;"	href="/a/zhijian/2014/0704/525.html"> 
+						<img   style='width:98px;height:43px;padding: 5px 0px 0px 0px' alt='title' src='/uploads/UserFiles/Image/2014-07-26/53d38108cf4c1.png'/>
+							
+							
+							</a>
+					</li>
+<li style="border-top: solid 1px #ddd; height: 75px;">
+						<div		style="clear: both; margin: 5px 0px 5px 0px; width: 65%; float: left; font-size: 12px">
+							<a class="all-want-txt-a" href="/a/zhijian/2014/0723/517.html">Violet--让你更好地晒太阳	</a>
+							<p style="margin: 5px 0px 5px 0px; font-size: 10px;">
+								<strong style="color: #ddd">
+								<a			href="/member/index.php?uid=brown.liu@geekview.c" class="all-want-txt-a-10">
+								 从此清纯是路人</a>
+								 &nbsp;&nbsp;2014-07-23</strong>
+							</p>
+						</div> <a target="_blank" style="line-height: 70px;"	href="/a/zhijian/2014/0723/517.html"> 
+						<img   style='width:98px;height:43px;padding: 5px 0px 0px 0px' alt='title' src='/uploads/UserFiles/Image/2014-07-26/53d37abe54457.jpg'/>
+							
+							
+							</a>
+					</li>
+<li style="border-top: solid 1px #ddd; height: 75px;">
+						<div		style="clear: both; margin: 5px 0px 5px 0px; width: 65%; float: left; font-size: 12px">
+							<a class="all-want-txt-a" href="/a/zhijian/2014/0620/539.html">记录你的生活 -- Lightbox #智能拍摄	</a>
+							<p style="margin: 5px 0px 5px 0px; font-size: 10px;">
+								<strong style="color: #ddd">
+								<a			href="/member/index.php?uid=brian.lee@geekview.c" class="all-want-txt-a-10">
+								 Brian</a>
+								 &nbsp;&nbsp;2014-06-20</strong>
+							</p>
+						</div> <a target="_blank" style="line-height: 70px;"	href="/a/zhijian/2014/0620/539.html"> 
+						<img   style='width:98px;height:43px;padding: 5px 0px 0px 0px' alt='title' src='/uploads/UserFiles/Image/2014-07-27/53d4614394514.jpg'/>
+							
+							
+							</a>
+					</li>
+<li style="border-top: solid 1px #ddd; height: 75px;">
+						<div		style="clear: both; margin: 5px 0px 5px 0px; width: 65%; float: left; font-size: 12px">
+							<a class="all-want-txt-a" href="/a/zhijian/2014/0731/553.html">一只会发亮的信鸽——AYATORI	</a>
+							<p style="margin: 5px 0px 5px 0px; font-size: 10px;">
+								<strong style="color: #ddd">
+								<a			href="/member/index.php?uid=Ailsaliang2014@163.c" class="all-want-txt-a-10">
+								 Ailsaliang</a>
+								 &nbsp;&nbsp;2014-07-31</strong>
+							</p>
+						</div> <a target="_blank" style="line-height: 70px;"	href="/a/zhijian/2014/0731/553.html"> 
+						<img   style='width:98px;height:43px;padding: 5px 0px 0px 0px' alt='title' src='/uploads/UserFiles/Image/2014-07-31/53da516ba48fd.png'/>
+							
+							
+							</a>
+					</li>
+<li style="border-top: solid 1px #ddd; height: 75px;">
+						<div		style="clear: both; margin: 5px 0px 5px 0px; width: 65%; float: left; font-size: 12px">
+							<a class="all-want-txt-a" href="/a/zhijian/2014/0624/542.html">身临其境体验游戏里中枪的感觉 	</a>
+							<p style="margin: 5px 0px 5px 0px; font-size: 10px;">
+								<strong style="color: #ddd">
+								<a			href="/member/index.php?uid=brian.lee@geekview.c" class="all-want-txt-a-10">
+								 Brian</a>
+								 &nbsp;&nbsp;2014-06-24</strong>
+							</p>
+						</div> <a target="_blank" style="line-height: 70px;"	href="/a/zhijian/2014/0624/542.html"> 
+						<img   style='width:98px;height:43px;padding: 5px 0px 0px 0px' alt='title' src='/uploads/UserFiles/Image/2014-07-27/53d46274a48f7.jpg'/>
+							
+							
+							</a>
+					</li>
+
+
+
+
+				</ul>
+			</div>
+		</div>
+		<div class="clear"></div>
+	</div>
+	<footer style="">
+		<div class="container">
+			<ul class="footer-link-list">
+				<li><p style="font:bold">公司介绍</p></li>
+				<li><a target="_blank" href="/index/index/aboutus" class="footer-link">关于我们</a></li>
+				<li><a target="_blank" href="/index/index/privacy" class="footer-link">隐私条款</a></li>
+				<li><a target="_blank" href="/index/index/userpolicy" class="footer-link">用户政策</a></li>
+				<li><a target="_blank" href="/index/index/joinus" class="footer-link">加入我们</a></li>
+
+			</ul>
+			<ul class="footer-link-list">
+				<li><p style="font:bold">合作伙伴</p></li>
+				<li><a target="_blank" href="http://www.baidu.com" class="footer-link external">百度</a></li>
+				<li><a target="_blank" href="http://www.aliyun.com" class="footer-link external">阿里云</a></li>
+				<li><a target="_blank" href="/index/index/userpolicy" class="footer-link"></a></li>
+				<li><a target="_blank" href="/index/index/joinus" class="footer-link"></a></li>
+
+			</ul>
+			<ul class="footer-link-list">
+				<li><p style="font:bold">订阅信息</p></li>
+				<li><a target="_blank" href="/templets/default/v1/Home/image/rss/geekviewRSS.xml" class="footer-link">
+				<img src="/templets/default/v1/Home/image/rss/rss.jpg" style="height:20px;"></a></li>
+
+			</ul>
+			<ul class="footer-link-list">
+				<li><p style="font:bold">&nbsp;</p></li>
+				<li>图片存储由&nbsp; <a href="http://www.aliyun.com/product/oss/?spm=5176.383338.201.7.IA7qhS" class="footer-link-ali external" target="_blank">阿里云存储</a> &nbsp;提供</li>
+
+			</ul>
+			<div class="clear"></div>		
+			<div class="copyright">
+				<span class="copyright-year">Copyright &copy;2013-2014 </span> <a href="#" class="footer-geekview">深圳市极客视界科技有限公司</a> <span class="company-number">粤ICP备14037549号-1</span>
+			</div>
+		</div>
+	</footer>
+	
+<script type="text/javascript">
+CheckLogin();
+</script>
+	<!-- /footer -->
+	</div>
+	
+</body>
+</html>
