@@ -1,0 +1,46 @@
+<?php
+$z[0]=Array("global","",236,264);
+$z[0][4]['name']="cfg_soft_lang";
+$z[1]=Array("global","",277,303);
+$z[1][4]['name']="cfg_webname";
+$z[2]=Array("global","",347,377);
+$z[2][4]['name']="cfg_description";
+$z[3]=Array("global","",414,441);
+$z[3][4]['name']="cfg_keywords";
+$z[4]=Array("include","",510,547);
+$z[4][4]['filename']="v2/css.htm";
+$z[5]=Array("include","",587,625);
+$z[5][4]['filename']="v2/head.htm";
+$z[6]=Array("include","",649,688);
+$z[6][4]['filename']="v2/login.htm";
+$z[7]=Array("arclist","\r\n    <div class=\"row\">\r\n      <div class=\"col-xs-12\">\r\n        <div class=\"dashboard-card-img\">\r\n		 \r\n          <!-- Article Img -->\r\n		 [field:array runphp='yes']@me = (empty(@me['litpic']) ? \"\" : \"<a href='{@me['arcurl']}' class='article-img'  target='_blank'><img src='{@me['litpic']}'/></a>\"); [/field:array]\r\n		 \r\n        </div>\r\n        <div class=\"view-card-header\">\r\n           <a  href=\"[field:arcurl/]\" ><p>[field:title  function=' ( strlen(\"@me\")>60 ? cn_substr(\"@me\",60).\"...\" : \"@me\" ) '/]</p></a>\r\n          <p class=\"date\">[field:pubdate function=\"GetDateMk(@me)\"/]</p>\r\n        </div>\r\n        <div class=\"view-card-text\">\r\n          <p>\r\n         [field:description runphp='yes']\r\n				if(@me<>'' )@me = ' <div class=\"intro\">'.@me.'</div> ';\r\n		[/field:description]\r\n          \r\n          </p>\r\n        </div>\r\n        <div class=\"view-card-status\">\r\n          <div class=\"pr-sm pull-left\">\r\n            <i class=\"fa fa-heart-o\"></i>[field:goodpost/]\r\n          </div>\r\n          <div class=\"pr-sm pull-left\">\r\n            <i class=\"fa fa-comments\"></i>[field:click/]\r\n          </div>\r\n          \r\n          <div class=\"pull-right\">\r\n            <span><a href=\"/member/index.php?uid=[field:mid function=GetMemberInfos('userid',@me)/]&action=article\">[field:writer/]</a></span>\r\n            <span>极客</span>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n    ",837,2319);
+$z[7][4]['typeid']="2";
+$z[7][4]['orderby']="pubdate";
+$z[7][4]['tagid']="index";
+$z[7][4]['pagesize']="10";
+$z[8]=Array("arcpagelist","",2381,2414);
+$z[8][4]['tagid']="index";
+$z[9]=Array("pagelist","",2419,2498);
+$z[9][4]['listitem']="info,index,end,pre,next,pageno,option";
+$z[9][4]['listsize']="10";
+$z[10]=Array("global","",2720,2745);
+$z[10][4]['name']="cfg_cmsurl";
+$z[11]=Array("arclist","\r\n      <div class=\"col-md-12\">\r\n        <div class=\"dashboard-card-img\">\r\n          <a href=\"[field:arcurl/]\"><img height=\"300\" width=\"360\" src=\"[field:litpic/]\" alt=\"\"></img></a>\r\n        </div>\r\n        <div class=\"view-card-header\">\r\n        	 <a  href=\"[field:arcurl/]\" >\r\n         		 <p>[field:title/]</p>\r\n			</a>\r\n        </div>\r\n        <div class=\"view-card-status\">\r\n          <div class=\"pr-sm pull-left\">\r\n            <i class=\"fa fa-heart-o\"></i>[field:goodpost/]\r\n          </div>\r\n          <div class=\"pull-right\">\r\n            <span>共[field:total/]篇智见</span>\r\n          </div>\r\n        </div>\r\n      </div>\r\n      ",3483,4220);
+$z[11][4]['channelid']="-1";
+$z[11][4]['addfields']="total,templet,note";
+$z[11][4]['titlelen']="42";
+$z[11][4]['row']="6";
+$z[12]=Array("arclist","\r\n          <div class=\"row app-card-in\">\r\n            <div class=\"col-xs-3 app-icon\">\r\n              <a href=\"[field:arcurl/]\"><img width=\"68\" height=\"68\" src=\"[field:litpic/]\" alt=\"\"></img></a>\r\n              \r\n            </div>\r\n            <div class=\"col-xs-9 app-content\">\r\n              <div class=\"row\">\r\n                <div class=\"app-title pull-left\">\r\n                </div>\r\n                <a  href=\"[field:arcurl/]\" >\r\n                  <h4>[field:title/]</h4>\r\n				</a>\r\n                <div class=\"app-device-logo pull-left\">\r\n                  <div class=\"android-logo active pull-left\">\r\n                    <em class=\"fa fa-android\"></em>\r\n                  </div>\r\n                  <div class=\"ios-logo active pull-left\">\r\n                    <em class=\"fa fa-apple\"></em>\r\n					\r\n                  </div>\r\n                </div>\r\n                <div class=\"pull-right\">\r\n                	 [field:softlinks /]\r\n                  <a class=\"btn btn-info\" href=\" [field:softlinks /]\">\r\n                  <li class=\"fa fa-download\"></li>下载\r\n                  </a>\r\n                </div>\r\n              </div>\r\n              <div class=\"row\">\r\n                [field:softrank  function='GetRankStar(@me)'/]\r\n				[field:softrank/]\r\n              </div>\r\n            </div>\r\n          </div>\r\n	      ",4349,5794);
+$z[12][4]['row']="10";
+$z[12][4]['channelid']="3";
+$z[12][4]['titlelen']="24";
+$z[12][4]['orderby']="pubdate";
+$z[12][4]['idlist']="";
+$z[12][4]['addfields']="softrank";
+$z[12][4]['col']="1";
+$z[13]=Array("include","",5968,6004);
+$z[13][4]['filename']="v2/js.htm";
+$z[14]=Array("include","",6006,6043);
+$z[14][4]['filename']="footer.htm";
+
+?>

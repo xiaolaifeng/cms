@@ -1,0 +1,3 @@
+  
+						           [field:typename/]--[field:id/]
+						        

@@ -1,0 +1,1 @@
+{dede:specnote imgheight='90' imgwidth='120'  infolen='160' titlelen='60' col='1' idlist='528,654,612,608,565,628,514,606'    name='默认节点' noteid='default' isauto='0' rownum='10'   keywords='' typeid='0'}  {/dede:specnote}

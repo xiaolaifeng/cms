@@ -1,0 +1,128 @@
+<?php
+if(!isset($GLOBALS['_vars'])) $GLOBALS['_vars'] = array(); 
+$fields = array();
+ include $this->CompilerInclude("header.htm");
+ ?>
+<!-- 内容 -->
+<div class="container page-content">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="pull-left">
+        <ul class="nav nav-pills">
+          <li class="active"><a href="#">最新</a></li>
+          <li><a href="#">精选</a></li>
+          <li><a href="#">热门</a></li>
+          <li><a href="#">专题</a></li>
+        </ul>
+      </div>
+      <div class="pull-right hidden-xs">
+        <span>有新发现？立即分享智见吧</span>
+        <button class="btn btn-info">
+          <li class="fa fa-edit"></li>分享新智见
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <!-- 文章预览 -->
+    <div class="col-md-9 col-sm-9 col-xs-12">
+    <?php
+$atts = array();
+$atts['tagname'] = 'datalist';
+$blockValue = $this->refObj->GetArcList($atts,$this->refObj,$fields); 
+if(is_array($blockValue)){
+foreach( $blockValue as $key=>$fields )
+{
+?>
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="dashboard-card-img">
+	          <a href="<?php echo $fields['arcurl']; ?>">
+	            <img src="<?php echo $fields['litpic']; ?>" style="height:380px;" alt="">
+	          </a>
+          </div>
+          <div class="view-card-header">
+            <p><a href="<?php echo $fields['arcurl']; ?>"><?php echo $fields['title']; ?></a></p>
+            <p class="date"><?php echo MyDate('Y-m-d',$fields['pubdate']); ?></p>
+          </div>
+          <div class="view-card-text">
+            <p><?php echo $fields['description']; ?>
+            </p>
+          </div>
+          <div class="view-card-status">
+            <div class="pr-sm pull-left">
+              <i class="fa fa-heart-o"></i><?php echo $fields['goodpost']; ?>
+            </div>
+            <div class="pr-sm pull-left">
+              <i class="fa fa-comments"></i><?php echo $fields['click']; ?>
+            </div>
+            
+            <div class="pull-right">
+              <span><a  href='/member/index.php?uid=<?php echo GetMemberInfos('userid',$fields['mid']); ?>&action=article'><?php echo $fields['writer']; ?></a></span>
+              <span>极客</span>
+            </div>
+        </div>
+      </div>
+ 		
+   	</div>
+ 	<?php
+}
+}?>
+ 	<!--<div class="fRight mTB10 pd10"><?php
+$atts = array();
+$atts['tagname'] = 'pagelist';
+ echo $this->refObj->GetPageList($atts,$this->refObj,$fields); 
+?>
+</div>
+     <div class="clearfix"></div>
+    --></div>
+    <!-- 文章预览END -->
+    <!-- 分类 -->
+    <div class="col-md-3 col-sm-3 hidden-xs">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="tiles white p">
+            <h4>分类</h4>
+            <span class="label label-success">通讯</span>
+            <span class="label label-success">通讯</span>
+            <span class="label label-success">通讯</span>
+            <span class="label label-success">通讯</span>
+          </div>
+        </div>
+        <div class="col-md-12 pt">
+          <div class="dashboard-card-img">
+            <img src="/resource/img/background/background-2.jpg" alt="">
+          </div>
+          <div class="view-card-status">
+            <div class="pr-sm pull-left">
+              <i class="fa fa-heart-o"></i>5
+            </div>
+            <div class="pull-right">
+              <span>共10篇智见</span>
+            </div>
+          </div> 
+        </div>
+        <div class="col-md-12 pt">
+          <h4>关注我们</h4>
+          <div class="dashboard-social-btn">
+            <div class="qq-sm pull-left mr-sm">
+              <a href="#" class="text-center">
+                <i class="fa fa-qq"></i>
+              </a>
+            </div>
+            <div class="weibo-sm pull-left mr-sm">
+              <a href="#" class="text-center">
+                <i class="fa fa-weibo"></i>
+              </a>
+            </div>
+            <div class="xiaomi-sm pull-left mr-sm"></div>
+		</div>
+		</div>
+		</div>
+		</div>
+		</div>
+<?php include $this->CompilerInclude("js.htm");
+  include $this->CompilerInclude("footer.htm");
+ ?>
+</body>
+</html>

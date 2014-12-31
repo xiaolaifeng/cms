@@ -1,0 +1,186 @@
+<!-- Left side Cards -->
+		
+		<div class="left-side">
+			<article>
+			 {dede:arclist typeid='2'    sort='hot' subday='90'  tagid='index' pagesize='10' }
+        
+				<section>
+						<div class="content-card-wrapper">
+							<div class="content-card">
+								<!-- Article Title -->
+								<div class="article-title">
+									<a data="2465" target="_blank" href="[field:arcurl/]" class="app-title">
+										<h1>[field:title/]	</h1>
+									</a>
+									<div style="padding-top: 10px;" class="pub-time-and-version"> 
+										<span class="pub-time">[field:pubdate function="GetDateMk(@me)"/]</span>
+									</div>
+								</div>
+								<a target="_blank" href="" class="detail-icon" title="进入应用详情页面"></a>
+								<!-- Article Img -->
+								 [field:array runphp='yes']@me = (empty(@me['litpic']) ? "" : "<a href='{@me['arcurl']}' class='article-img'  target='_blank'><img src='{@me['litpic']}'/></a>"); [/field:array]
+							</div>
+							<!-- Quote Area -->
+							<div class="quote-area">
+								<div class="quote-words">
+									<a target="_blank" href="[field:arcurl/]" class="quote-text">
+									   [field:description runphp='yes']
+										  if(@me<>'' )@me = ' <div class="intro">'.@me.'</div> ';
+										  [/field:description]
+									</a>
+								</div>
+								    <p>
+									<a href="/index/member/personalization/tagetuser/285"><span class="user-title"></span>
+									<span style="float:right" class="user-name">[field:writer/]</span></a>
+									<span class="newsimagenice">
+										<i></i><span>[field:goodpost/]</span>
+									</span>
+								    </p>
+							    </div>
+						    </div>
+			</section>
+			{/dede:arclist}
+
+				<!-- Footer -->
+				<footer>
+					<div class="page-direct">
+					{dede:arcpagelist tagid='index'/}
+					 {dede:pagelist listitem="info,index,end,pre,next,pageno,option" listsize="5"/}
+						  <a href="/index/index/index/p/2" class="next-one">下一页</a>  						
+					</div>
+					
+				</footer> 
+			</article>
+
+
+
+		</div>
+
+		<!-- Right side Card -->
+		<div class="right-side">
+		
+		<!-- login begin -->
+			<div class="side-card loginForm"  >
+					<div class="cont f-cb ztag">
+						<div class="contl">
+						
+						
+							 <form name="userlogin" action="{dede:global.cfg_memberurl/}/index_do.php" method="POST"  class="ztag">
+								 <input type="hidden" name="fmdo" value="login" />
+						        <input type="hidden" name="dopost" value="login" />
+						        <input type="hidden" name="keeptime" value="604800" />
+								<ul class="w-user w-user-2">
+									<li class="w0">
+										<div class="logininpt ">
+										<input type="text" style="" class="txt ztag" tabindex="1" name="userid"  placeholder="邮箱">
+										</div>
+									</li>
+									<li class="w0">
+										<div class="logininpt ">
+											<input type="password" name="pwd"  autocomplete="off" class="txt ztag" placeholder="密码" tabindex="2">
+										</div>
+									</li>
+									  {dede:php}
+								        if(preg_match("#2#", $safe_gdopen))
+								        {
+								        echo '
+								        <li class="w0 ">
+								        <div class="logininpt"> 
+								        <input type="text" style="" class="txt ztag" tabindex="1" name="vdcode"  placeholder="验证码">
+								        </li>
+								        <li class="w0 ">
+								        <div class="logininpt"> 
+								         <img id="vdimgck" align="absmiddle" onClick="this.src=this.src+\'?\'" style="cursor:pointer;margin-left:0px;text-transform:uppercase;" alt="看不清？点击更换" src="'.$cfg_cmspath.'/include/vdimgck.php"/></div>
+								        </li>
+								        ';
+								        }
+								        {/dede:php}
+									<li class="w0 w2">
+										<button class="w-btn" type="submit" tabindex="4">
+											<span>登录</span>
+										</button>
+									</li>
+								</ul>
+							</form>
+						</div>
+						<div class="contr">
+							<div class="others">
+								<span class="sepln"></span> <span class="septxt">或</span>
+								<ul id="otherLogin2" class="w-user w-user-3">
+									<li class="w1 sina"><a onclick="login('WEIBO')" href="javascript:void(0)" class="w-btn3">新浪微博</a></li>
+									<li class="w1 qq"><a onclick="login('QQ')" href="javascript:void(0)" class="w-btn3 w-btn3-1">腾讯QQ</a></li>
+									<li class="w1 rr"><a onclick="login('XIAOMI')" href="javascript:void(0)" class="w-btn3 w-btn3-2">小米用户</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					
+					
+			</div>
+		
+		<!-- login end -->
+		<!--首页登陆界面-->
+		<!-- publishing area -->
+            <div class="side-card">
+            	<div id="new_publish">
+					<a href='{dede:global.cfg_memberurl/}/article_add.php' class="new-publish-words">我要分享</a>
+
+				</div>
+			</div>
+			<!-- 精选 热门等分类入口 -->
+			
+			<div class="side-card">
+                <ul class="web-tag">
+						<li class="web-tag-list active-tag"><a style="padding-right: 220px;" id="allTag"   href="/a/c-article.html" class="web-tag-list-item">精选</a></li>
+					<li class="web-tag-list "><a style="padding-right: 220px;" id="hotTag"   href="/a/hot-article.html" class="web-tag-list-item">热门</a></li>
+					<li class="web-tag-list "><a style="padding-right: 220px;" id="hotTag"  href="/" class="web-tag-list-item">全部</a></li>
+				</ul>  
+            </div>
+			<!-- 精选 热门等分类入口 end -->
+			<!-- 文章分类列表   -->
+			<div class="side-card">
+				<ul class="web-tag">
+				   <li class="web-tag-list">
+				<a class="web-tag-list-item" href="/tags.php?/%E6%99%BA%E8%83%BD%E5%AE%B6%E5%B1%85/">智能家居</a></li>
+			<li class="web-tag-list">
+				<a class="web-tag-list-item" href="/tags.php?/%E6%99%BA%E8%83%BD%E7%A9%BF%E6%88%B4/">智能穿戴</a></li>
+			<li class="web-tag-list">
+				<a class="web-tag-list-item" href="/tags.php?/%E6%99%BA%E8%83%BD%E4%BA%A4%E9%80%9A/">智能交通</a></li>
+			<li class="web-tag-list">
+				<a class="web-tag-list-item" href="/tags.php?/%E6%99%BA%E8%83%BD%E5%AE%89%E9%98%B2/">智能安防</a></li>
+			<li class="web-tag-list">
+				<a class="web-tag-list-item" href="/tags.php?/%E5%81%A5%E5%BA%B7%E5%8C%BB%E7%96%97/">健康医疗</a></li>
+			<li class="web-tag-list">
+				<a class="web-tag-list-item" href="/tags.php?/%E5%84%BF%E7%AB%A5%E8%AE%BE%E5%A4%87/">儿童设备</a></li>
+			<li class="web-tag-list">
+				<a class="web-tag-list-item" href="/tags.php?/%E5%AE%A0%E7%89%A9%E8%AE%BE%E5%A4%87/">宠物设备</a></li>
+			<li class="web-tag-list">
+				<a class="web-tag-list-item" href="/tags.php?/%E6%B8%B8%E6%88%8F%E5%A8%B1%E4%B9%90/">游戏娱乐</a></li>
+			<li class="web-tag-list">
+				<a class="web-tag-list-item" href="/tags.php?/%E6%95%88%E7%8E%87%E5%B7%A5%E5%85%B7/">效率工具</a></li>
+			<li class="web-tag-list">
+				<a class="web-tag-list-item" href="/tags.php?/%E5%A5%87%E8%B6%A3%E8%AE%BE%E5%A4%87/">奇趣设备</a></li>
+	        	</ul> 
+			</div>
+			
+
+			<!-- 关注我们 -->
+			<div style="background-color: rgb(240,240,240);" class="side-card">
+				<h5 class="bottom1">关注我们</h5>
+				<!-- JiaThis Button BEGIN -->
+				<div class="jiathis_style_32x32">
+					<a href="http://weibo.com/geekview" target="_blank" class="link_button_tsina external">新浪微博</a> 
+					<a href="http://www.douban.com/people/geekview/" target="_blank" class="link_button_douban external">豆瓣</a>
+					 <a href="http://zhan.renren.com/geekview/" target="_blank" class="link_button_renren external">人人</a> 
+					 <a href="http://t.qq.com/geekview/" target="_blank" class="link_button_tqq external">腾讯微博</a>
+					 <a href="https://plus.google.com/108385600415800739993/" target="_blank" class="link_button_google external">Google+</a>
+				</div>
+				<!-- JiaThis Button END -->
+			</div>
+			<!-- 关注我们end -->
+		</div>
+	</div>
+
+<!-- /content -->
+
+<!-- article end  -->

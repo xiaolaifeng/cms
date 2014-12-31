@@ -1,0 +1,1 @@
+{dede:img text='' width='' height=''} /uploads/soft/141007/1-14100G40635A6.png {/dede:img}

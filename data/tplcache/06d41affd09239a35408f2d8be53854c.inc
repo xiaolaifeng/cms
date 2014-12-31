@@ -1,0 +1,1 @@
+{dede:img text='' width='' height=''} /dedecms/uploads/soft/140910/1-140910124G1O6.jpg {/dede:img}

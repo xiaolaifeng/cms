@@ -1,0 +1,10 @@
+<?php
+$z[0]=Array("list","<section>\r\n						<div class=\"content-card-wrapper\">\r\n							<div class=\"content-card\">\r\n								<!-- Article Title -->\r\n								<div class=\"article-title\">\r\n									<a data=\"2465\" target=\"_blank\" href=\"[field:arcurl/]\" class=\"app-title\">\r\n										<h1>[field:title  function=' ( strlen(\"@me\")>40 ? cn_substr(\"@me\",40).\"...\" : \"@me\" ) '/]	</h1>\r\n									</a>\r\n									<div style=\"padding-top: 10px;\" class=\"pub-time-and-version\"> \r\n										<span class=\"pub-time\">[field:pubdate function=\"GetDateMk(@me)\"/]</span>\r\n									</div>\r\n								</div>\r\n								<a target=\"_blank\" href=\"\" class=\"detail-icon\" title=\"进入应用详情页面\"></a>\r\n								<!-- Article Img -->\r\n								 [field:array runphp='yes']@me = (empty(@me['litpic']) ? \"\" : \"<a href='{@me['arcurl']}' class='article-img'  target='_blank'><img src='{@me['litpic']}'/></a>\"); [/field:array]\r\n							</div>\r\n							<!-- Quote Area -->\r\n							<div class=\"quote-area\">\r\n								<div class=\"quote-words\">\r\n									<a target=\"_blank\" href=\"[field:arcurl/]\" class=\"quote-text\">\r\n									   [field:description runphp='yes']\r\n										  if(@me<>'' )@me = ' <div class=\"intro\">'.@me.'</div> ';\r\n										  [/field:description]\r\n									</a>\r\n								</div>\r\n								    <p>\r\n									<a href=\"/index/member/personalization/tagetuser/285\"><span class=\"user-title\"></span>\r\n									<span style=\"float:right\" class=\"user-name\">[field:writer/]</span></a>\r\n									<span class=\"newsimagenice\">\r\n										<i></i><span>[field:goodpost/]</span>\r\n									</span>\r\n								    </p>\r\n							    </div>\r\n						    </div>\r\n			</section>",2,1706);
+$z[0][4]['pagesize']="30";
+$z[0][4]['col']="1";
+$z[0][4]['titlelen']="60";
+$z[0][4]['orderby']="pubdate";
+$z[0][4]['orderway']="desc";
+$z[0][4]['channel']="1";
+
+?>

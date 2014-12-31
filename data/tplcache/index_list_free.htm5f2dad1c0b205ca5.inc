@@ -1,0 +1,45 @@
+<?php
+$z[0]=Array("global","",236,264);
+$z[0][4]['name']="cfg_soft_lang";
+$z[1]=Array("global","",277,303);
+$z[1][4]['name']="cfg_webname";
+$z[2]=Array("global","",347,377);
+$z[2][4]['name']="cfg_description";
+$z[3]=Array("global","",414,441);
+$z[3][4]['name']="cfg_keywords";
+$z[4]=Array("include","",510,547);
+$z[4][4]['filename']="v2/css.htm";
+$z[5]=Array("include","",587,625);
+$z[5][4]['filename']="v2/head.htm";
+$z[6]=Array("include","",649,688);
+$z[6][4]['filename']="v2/login.htm";
+$z[7]=Array("freelist","",841,857);
+$z[8]=Array("pagelist","",869,940);
+$z[8][4]['listitem']="info,index,end,pre,next,pageno";
+$z[8][4]['listsize']="5";
+$z[9]=Array("global","",1141,1166);
+$z[9][4]['name']="cfg_cmsurl";
+$z[10]=Array("arclist","\r\n      <div class=\"col-md-12\">\r\n        <div class=\"dashboard-card-img\">\r\n          <a href=\"[field:arcurl/]\"><img height=\"300\" width=\"360\" src=\"[field:litpic/]\" alt=\"\"></img></a>\r\n        </div>\r\n        <div class=\"view-card-header\">\r\n        	 <a  href=\"[field:arcurl/]\" >\r\n         		 <p>[field:title/]</p>\r\n			</a>\r\n        </div>\r\n        <div class=\"view-card-status\">\r\n          <div class=\"pr-sm pull-left\">\r\n            <i class=\"fa fa-heart-o\"></i>[field:goodpost/]\r\n          </div>\r\n          <div class=\"pull-right\">\r\n            <a href=\"[field:arcurl/]\"><span>共[field:total/]篇智见</span></a>\r\n          </div>\r\n        </div>\r\n      </div>\r\n      ",1904,2671);
+$z[10][4]['channelid']="-1";
+$z[10][4]['addfields']="total,templet,note";
+$z[10][4]['titlelen']="42";
+$z[10][4]['row']="6";
+$z[11]=Array("arclist","\r\n          <div class=\"row app-card-in\">\r\n            <div class=\"col-xs-3 app-icon\">\r\n              <a href=\"[field:arcurl/]\"><img width=\"68\" height=\"68\" src=\"[field:litpic/]\" alt=\"\"></img></a>\r\n              \r\n            </div>\r\n            <div class=\"col-xs-9 app-content\">\r\n              <div class=\"row\">\r\n                <div class=\"app-title pull-left\">\r\n                </div>\r\n                <a  href=\"[field:arcurl/]\" >\r\n                  <h4>[field:title/]</h4>\r\n				</a>\r\n                <div class=\"app-device-logo pull-left\">\r\n                  <div class=\"android-logo active pull-left\">\r\n                    <em class=\"fa fa-android\"></em>\r\n                  </div>\r\n                  <div class=\"ios-logo active pull-left\">\r\n                    <em class=\"fa fa-apple\"></em>\r\n					\r\n                  </div>\r\n                </div>\r\n                <div class=\"pull-right\">\r\n                	 [field:softlinks /]\r\n                  <a class=\"btn btn-info\" href=\" [field:softlinks /]\">\r\n                  <li class=\"fa fa-download\"></li>下载\r\n                  </a>\r\n                </div>\r\n              </div>\r\n              <div class=\"row\">\r\n                [field:softrank  function='GetRankStar(@me)'/]\r\n				[field:softrank/]\r\n              </div>\r\n            </div>\r\n          </div>\r\n	      ",2800,4245);
+$z[11][4]['row']="10";
+$z[11][4]['channelid']="3";
+$z[11][4]['titlelen']="24";
+$z[11][4]['orderby']="pubdate";
+$z[11][4]['idlist']="";
+$z[11][4]['addfields']="softrank";
+$z[11][4]['col']="1";
+$z[12]=Array("global","",4775,4803);
+$z[12][4]['name']="cfg_memberurl";
+$z[13]=Array("php","\r\n								        if(preg_match(\"#2#\", \$safe_gdopen))\r\n								        {\r\n								        echo '\r\n								        <li class=\"w0 \">\r\n								        <div class=\"logininpt\"> \r\n								        <input type=\"text\" style=\"\" class=\"txt ztag\" tabindex=\"1\" name=\"vdcode\"  placeholder=\"验证码\">\r\n								        </li>\r\n								        <li class=\"w0 \">\r\n								        <div class=\"logininpt\"> \r\n								         <img id=\"vdimgck\" align=\"absmiddle\" onClick=\"this.src=this.src+\\'?\\'\" style=\"cursor:pointer;margin-left:0px;text-transform:uppercase;\" alt=\"看不清？点击更换\" src=\"'.\$cfg_cmspath.'/include/vdimgck.php\"/></div>\r\n								        </li>\r\n								        ';\r\n								        }\r\n								        ",5510,6232);
+$z[14]=Array("global","",7242,7270);
+$z[14][4]['name']="cfg_memberurl";
+$z[15]=Array("include","",10460,10496);
+$z[15][4]['filename']="v2/js.htm";
+$z[16]=Array("include","",10498,10536);
+$z[16][4]['filename']="footer3.htm";
+
+?>
