@@ -1,0 +1,1579 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>极客</title>
+<meta name="description" content="" />
+<meta name="keywords" content="" />
+<meta property="qc:admins" content="230157644475536157636" />
+
+<link href="/resource/plugins/boostrapv3/css/bootstrap.min.css"
+	rel="stylesheet" type="text/css" />
+<link href="/resource/plugins/boostrapv3/css/bootstrap-theme.min.css"
+	rel="stylesheet" type="text/css" />
+<link href="/resource/plugins/font-awesome/css/font-awesome.css"
+	rel="stylesheet" type="text/css" />
+<link href="/resource/css/icomoon.css" rel="stylesheet" type="text/css" />
+<link href="/resource/css/style.css" rel="stylesheet" type="text/css" />
+<link href="/resource/css/app-screenshot.css" rel="stylesheet"
+	type="text/css" />
+<link href="/resource/css/star-rating.css" rel="stylesheet"
+	type="text/css" />
+
+<!-- 兼容IE8,IE9 -->
+<script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+<script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+
+</head>
+<body >
+ <!-- 导航 -->
+
+<!-- 导航 -->
+<div class="navbar navbar-fixed-top bg-white" role="navigation">
+
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed"
+        data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+        aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span> <span
+          class="icon-bar"></span> <span class="icon-bar"></span> <span
+          class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand"><img
+        src="/resource/img/logo/logo_large.png" alt="" /></a>
+    </div>
+    <div id="navbar" class="collapse navbar-collapse">
+      <ul class="nav navbar-nav">
+        <li><a href='/'  class="nav-item">首页</a></li>
+        
+          <li><a href='/a/zhijian/'   class="nav-item">智见</a></li>
+        
+          <li><a href='/a/spec/'   class="nav-item">专题</a></li>
+        
+          <li><a href='/app/'  rel='dropmenu1'  class="nav-item">极客玩</a></li>
+        
+        <li class="dropdown active"><a href="##" data-toggle="dropdown"
+          class="dropdown-toggle">极客玩<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="##">应用</a></li>
+            <li><a href="##">游戏</a></li>
+            <li class="dropdown-submenu"><a tabindex="-1"
+              href="javascript:;">专题</a>
+              <ul class="dropdown-menu">
+                <li><a tabindex="-1" href="javascript:;">社交</a></li>
+                <li><a tabindex="-1" href="javascript:;">通讯</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <form action="##" class="navbar-form navbar-right" rol="search">
+        <div class="form-group has-feedback">
+          <input type="text" class="form-control" placeholder="请输入关键词"/>
+          <span class="fa fa-search form-control-feedback text-muted"></span>
+        </div>
+        
+      </form>
+      <!-- 登录后替换掉此div内容为个人信息下拉菜单 -->
+     <div id="_userlogin">
+        <a class="btn btn-danger" href="/member/index.php">登陆</a>
+     </div>
+    </div>
+  </div>
+</div>
+<!-- 导航END -->
+
+
+
+
+  <!-- 登录框 -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+  <!-- 登录框 -->
+          <div class="modal fade" id="loginModal">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header b0">
+                  <button type="button" class="close" data-dismiss="modal">
+                  <span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <!-- 登录框内容 -->
+                  <div class="row">
+                    <div class="col-md-8 col-md-offset-2 col-xs-12">
+                      <div class="panel panel-default panel-flat login-panel">
+                        <ul id="loginTab" class="nav nav-tabs nav-justified">
+                          <li class="active"><a href="#login" data-toggle="tab">登录</a>
+                        </li>
+                        <li class=""><a href="#register" data-toggle="tab">注册</a>
+                      </li>
+                    </ul>
+                    <div class="tab-content">
+                      <div class="tab-pane fade active in" id="login">
+                        <div class="panel-body">
+                          <div class="login-desc">
+                            <strong>使用第三方帐号登录</strong> <br></br>
+                          </div>
+                          <div class="text-center">
+                            <a href="/member/qq_bind_auth.php" class="circular-social-btn qq mr"><i
+                            class="fa fa-qq"></i></a> 
+                            <a href="https://api.weibo.com/oauth2/authorize?client_id=3608508910&amp;redirect_uri=http%3A%2F%2Fwww.geekview.cn%2Fplus%2Fsina-weibologin%2Fcallback.php&amp;response_type=code"
+                            class="circular-social-btn weibo mr"><i
+                          class="fa fa-weibo"></i></a>
+                           <a href="/plus/xiaomi-login/getCode.php"
+                          class="circular-social-btn xiaomi mr"><i
+                        class="fa icon-xiaomi"></i></a> <a href="#"
+                        class="circular-social-btn douban"><i
+                      class="fa icon-douban"></i></a>
+                    </div>
+                    <div class="seperator login-desc">
+                      <strong>使用邮箱登陆</strong>
+                      <hr>
+                    </div>
+                    <form  role="form" class="mb-lg" name='form1' method='POST' action='/member/index_do.php'>
+                      <input type="hidden" name="fmdo" value="login">
+				      <input type="hidden" name="dopost" value="login">
+				      <input type="hidden" name="gourl" value="index.php">
+                    
+                    
+                      <div class="form-group has-feedback">
+                        <input id="loginEmail" name="userid" type="email" placeholder="常用邮箱"
+                        class="form-control"> <span
+                        class="fa fa-envelope form-control-feedback text-muted"></span>
+                      </div>
+                      <div class="form-group has-feedback">
+                        <input id="loginPassword" type="password" name="pwd"
+                        placeholder="请输入密码" class="form-control"> <span
+                        class="fa fa-lock form-control-feedback text-muted"></span>
+                      </div>
+                      <div class="clearfix">
+                        <div class="checkbox c-checkbox pull-left mt0">
+                          <label> <input type="checkbox" value=""> <span
+                          class="fa fa-check"></span>记住我
+                        </label>
+                      </div>
+                      <div class="pull-right">
+                        <a href="#" class="text-muted">忘记密码?</a>
+                      </div>
+                    </div>
+                    <button type="submit" class="btn btn-block btn-primary">登录</button>
+                  </form>
+                </div>
+              </div>
+              <div class="tab-pane fade" id="register">
+                <div class="panel-body">
+               	 <form role="form" class="mb-lg" action="/member/reg_new.php"  name="form2">
+	                     <input type="hidden" value="regbase" name="dopost"/>
+					      <input type="hidden" value="1" name="step"/>
+					      <input type="hidden" value="个人" name="mtype"/>
+	                     <div class="form-group has-feedback">
+	                        <input name="uname" id="registerUserName" type="text" placeholder="昵称，4～30字符" class="form-control">
+	                        <span class="fa fa-user form-control-feedback text-muted"></span>
+	                     </div>
+	                     <div class="form-group has-feedback">
+	                        <input  name="email" id="registerEmail" type="email" placeholder="常用邮箱" class="form-control">
+	                        <span class="fa fa-envelope form-control-feedback text-muted"></span>
+	                     </div>
+	                     <div class="form-group has-feedback">
+	                        <input  name="userpwd" id="registerPassword" type="password" placeholder="密码" class="form-control">
+	                        <span class="fa fa-lock form-control-feedback text-muted"></span>
+	                     </div>
+	                     <div class="clearfix">
+	                       
+	                        
+	                  </div>
+	                  <button type="submit" class="btn btn-block btn-primary">注册</button>
+	               </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- 登录框内容END -->
+    </div>
+  </div>
+</div>
+</div>
+<!-- 登录框END -->
+ 
+<!-- 内容 -->
+<div class="container page-content">
+<div class="row">
+  <!-- 文章预览 -->
+  <div class="col-md-8 col-sm-8 col-xs-12">
+    <section>
+						<div class="content-card-wrapper">
+							<div class="content-card">
+								<!-- Article Title -->
+								<div class="article-title">
+									<a data="2465" target="_blank" href="/a/zhijian/2014/0814/551.html" class="app-title">
+										<h1>现实版的巴别魚——SIGMO	</h1>
+									</a>
+									<div style="padding-top: 10px;" class="pub-time-and-version"> 
+										<span class="pub-time">2014-08-14</span>
+									</div>
+								</div>
+								<a target="_blank" href="" class="detail-icon" title="进入应用详情页面"></a>
+								<!-- Article Img -->
+								 <a href='/a/zhijian/2014/0814/551.html' class='article-img'  target='_blank'><img src='/uploads/UserFiles/Image/2014-08-14/53ec81b10284c.jpg'/></a>
+							</div>
+							<!-- Quote Area -->
+							<div class="quote-area">
+								<div class="quote-words">
+									<a target="_blank" href="/a/zhijian/2014/0814/551.html" class="quote-text">
+									    <div class="intro">看过《银河系漫游指南》吗？把巴别魚塞进耳朵，你就能够理解以任何形式的语言对你说的话。SIGMO就像现实版的巴别魚，有可能会颠覆你对语言的认知。</div> 
+									</a>
+								</div>
+								    <p>
+									<a href="/member/index.php?uid=liujie8403@foxmail.c&action=article"></span>
+									<span style="float:right" class="user-name">brown_liu</span></a>
+									<span class="newsimagenice">
+										<i></i><span>0</span>
+									</span>
+								    </p>
+							    </div>
+						    </div>
+			</section><section>
+						<div class="content-card-wrapper">
+							<div class="content-card">
+								<!-- Article Title -->
+								<div class="article-title">
+									<a data="2465" target="_blank" href="/a/zhijian/2014/0804/559.html" class="app-title">
+										<h1>不舍不弃，它的GPS跟踪器——Iota	</h1>
+									</a>
+									<div style="padding-top: 10px;" class="pub-time-and-version"> 
+										<span class="pub-time">2014-08-04</span>
+									</div>
+								</div>
+								<a target="_blank" href="" class="detail-icon" title="进入应用详情页面"></a>
+								<!-- Article Img -->
+								 <a href='/a/zhijian/2014/0804/559.html' class='article-img'  target='_blank'><img src='/uploads/UserFiles/Image/2014-08-04/53df4ba88d363.jpg'/></a>
+							</div>
+							<!-- Quote Area -->
+							<div class="quote-area">
+								<div class="quote-words">
+									<a target="_blank" href="/a/zhijian/2014/0804/559.html" class="quote-text">
+									    <div class="intro">Iota，号称是世界上最小，续航时间最长的GPS跟踪器。特性丰富，功能强大，无须支付额外的服务费。真的有这么牛逼吗？小编带你一探究竟。</div> 
+									</a>
+								</div>
+								    <p>
+									<a href="/member/index.php?uid=brian.lee@geekview.c&action=article"></span>
+									<span style="float:right" class="user-name">Brian</span></a>
+									<span class="newsimagenice">
+										<i></i><span>0</span>
+									</span>
+								    </p>
+							    </div>
+						    </div>
+			</section><section>
+						<div class="content-card-wrapper">
+							<div class="content-card">
+								<!-- Article Title -->
+								<div class="article-title">
+									<a data="2465" target="_blank" href="/a/zhijian/2014/0805/560.html" class="app-title">
+										<h1>盗梦空间v0.1——Structure Sensor	</h1>
+									</a>
+									<div style="padding-top: 10px;" class="pub-time-and-version"> 
+										<span class="pub-time">2014-08-05</span>
+									</div>
+								</div>
+								<a target="_blank" href="" class="detail-icon" title="进入应用详情页面"></a>
+								<!-- Article Img -->
+								 <a href='/a/zhijian/2014/0805/560.html' class='article-img'  target='_blank'><img src='/uploads/UserFiles/Image/2014-08-05/53e0bd0e306a7.jpg'/></a>
+							</div>
+							<!-- Quote Area -->
+							<div class="quote-area">
+								<div class="quote-words">
+									<a target="_blank" href="/a/zhijian/2014/0805/560.html" class="quote-text">
+									    <div class="intro">虚拟现实总是让人着迷，有多少人对盗梦空间心存期待？使用Structure Sensor，就可以对任意物体和建筑进行3D扫描，利用周围环境来进行游戏，甚至以此开发具备3D视角的移动应用。有了它，这些</div> 
+									</a>
+								</div>
+								    <p>
+									<a href="/member/index.php?uid=brian.lee@geekview.c&action=article"></span>
+									<span style="float:right" class="user-name">Brian</span></a>
+									<span class="newsimagenice">
+										<i></i><span>0</span>
+									</span>
+								    </p>
+							    </div>
+						    </div>
+			</section><section>
+						<div class="content-card-wrapper">
+							<div class="content-card">
+								<!-- Article Title -->
+								<div class="article-title">
+									<a data="2465" target="_blank" href="/a/zhijian/2014/0808/564.html" class="app-title">
+										<h1>what's my dream?	</h1>
+									</a>
+									<div style="padding-top: 10px;" class="pub-time-and-version"> 
+										<span class="pub-time">2014-08-08</span>
+									</div>
+								</div>
+								<a target="_blank" href="" class="detail-icon" title="进入应用详情页面"></a>
+								<!-- Article Img -->
+								 <a href='/a/zhijian/2014/0808/564.html' class='article-img'  target='_blank'><img src='/uploads/UserFiles/Image/2014-08-08/53e3b52f6faa7.jpg'/></a>
+							</div>
+							<!-- Quote Area -->
+							<div class="quote-area">
+								<div class="quote-words">
+									<a target="_blank" href="/a/zhijian/2014/0808/564.html" class="quote-text">
+									    <div class="intro">Love this game!</div> 
+									</a>
+								</div>
+								    <p>
+									<a href="/member/index.php?uid=brian.lee@geekview.c&action=article"></span>
+									<span style="float:right" class="user-name">Brian</span></a>
+									<span class="newsimagenice">
+										<i></i><span>0</span>
+									</span>
+								    </p>
+							    </div>
+						    </div>
+			</section><section>
+						<div class="content-card-wrapper">
+							<div class="content-card">
+								<!-- Article Title -->
+								<div class="article-title">
+									<a data="2465" target="_blank" href="/a/zhijian/2014/0808/568.html" class="app-title">
+										<h1>Ninja Sphere，一体化的智能家居网络	</h1>
+									</a>
+									<div style="padding-top: 10px;" class="pub-time-and-version"> 
+										<span class="pub-time">2014-08-08</span>
+									</div>
+								</div>
+								<a target="_blank" href="" class="detail-icon" title="进入应用详情页面"></a>
+								<!-- Article Img -->
+								 <a href='/a/zhijian/2014/0808/568.html' class='article-img'  target='_blank'><img src='/uploads/UserFiles/Image/2014-08-08/53e4902524aed.png'/></a>
+							</div>
+							<!-- Quote Area -->
+							<div class="quote-area">
+								<div class="quote-words">
+									<a target="_blank" href="/a/zhijian/2014/0808/568.html" class="quote-text">
+									    <div class="intro">Ninja Sphere可以把家中的电器和电子设备连接起来，搭建一个智能家居网络，让你随时随地掌控家里的所有情况。</div> 
+									</a>
+								</div>
+								    <p>
+									<a href="/member/index.php?uid=brian.lee@geekview.c&action=article"></span>
+									<span style="float:right" class="user-name">Brian</span></a>
+									<span class="newsimagenice">
+										<i></i><span>0</span>
+									</span>
+								    </p>
+							    </div>
+						    </div>
+			</section><section>
+						<div class="content-card-wrapper">
+							<div class="content-card">
+								<!-- Article Title -->
+								<div class="article-title">
+									<a data="2465" target="_blank" href="/a/zhijian/2014/0808/569.html" class="app-title">
+										<h1>智能通风口管家——E-Vent	</h1>
+									</a>
+									<div style="padding-top: 10px;" class="pub-time-and-version"> 
+										<span class="pub-time">2014-08-08</span>
+									</div>
+								</div>
+								<a target="_blank" href="" class="detail-icon" title="进入应用详情页面"></a>
+								<!-- Article Img -->
+								 <a href='/a/zhijian/2014/0808/569.html' class='article-img'  target='_blank'><img src='/uploads/UserFiles/Image/2014-08-08/53e4e3d3e9e4e.jpg'/></a>
+							</div>
+							<!-- Quote Area -->
+							<div class="quote-area">
+								<div class="quote-words">
+									<a target="_blank" href="/a/zhijian/2014/0808/569.html" class="quote-text">
+									    <div class="intro">你可以把家中陈旧的手动控制通风口换掉了，E-Vent较其他智能通风口装置更加实惠，省电之余让家中的通风口更加“人性化”。</div> 
+									</a>
+								</div>
+								    <p>
+									<a href="/member/index.php?uid=Ailsaliang2014@163.c&action=article"></span>
+									<span style="float:right" class="user-name">Ailsaliang</span></a>
+									<span class="newsimagenice">
+										<i></i><span>0</span>
+									</span>
+								    </p>
+							    </div>
+						    </div>
+			</section><section>
+						<div class="content-card-wrapper">
+							<div class="content-card">
+								<!-- Article Title -->
+								<div class="article-title">
+									<a data="2465" target="_blank" href="/a/zhijian/2014/0811/574.html" class="app-title">
+										<h1>合成音乐的好助手——m!lTone	</h1>
+									</a>
+									<div style="padding-top: 10px;" class="pub-time-and-version"> 
+										<span class="pub-time">2014-08-11</span>
+									</div>
+								</div>
+								<a target="_blank" href="" class="detail-icon" title="进入应用详情页面"></a>
+								<!-- Article Img -->
+								 <a href='/a/zhijian/2014/0811/574.html' class='article-img'  target='_blank'><img src='/uploads/UserFiles/Image/2014-08-11/53e8284232da0.jpg'/></a>
+							</div>
+							<!-- Quote Area -->
+							<div class="quote-area">
+								<div class="quote-words">
+									<a target="_blank" href="/a/zhijian/2014/0811/574.html" class="quote-text">
+									    <div class="intro">m!lTone是一款开源的声音合成器和控制器，有了他，你只需要摆动你的手（或者脚也可以啦）来创作音乐，连上霓虹灯后还可以随意控制光束的位置。</div> 
+									</a>
+								</div>
+								    <p>
+									<a href="/member/index.php?uid=Ailsaliang2014@163.c&action=article"></span>
+									<span style="float:right" class="user-name">Ailsaliang</span></a>
+									<span class="newsimagenice">
+										<i></i><span>0</span>
+									</span>
+								    </p>
+							    </div>
+						    </div>
+			</section><section>
+						<div class="content-card-wrapper">
+							<div class="content-card">
+								<!-- Article Title -->
+								<div class="article-title">
+									<a data="2465" target="_blank" href="/a/zhijian/2014/0811/575.html" class="app-title">
+										<h1>智能的电子香烟—Kosmo	</h1>
+									</a>
+									<div style="padding-top: 10px;" class="pub-time-and-version"> 
+										<span class="pub-time">2014-08-11</span>
+									</div>
+								</div>
+								<a target="_blank" href="" class="detail-icon" title="进入应用详情页面"></a>
+								<!-- Article Img -->
+								 <a href='/a/zhijian/2014/0811/575.html' class='article-img'  target='_blank'><img src='/uploads/UserFiles/Image/2014-08-11/53e82fe0afc40.png'/></a>
+							</div>
+							<!-- Quote Area -->
+							<div class="quote-area">
+								<div class="quote-words">
+									<a target="_blank" href="/a/zhijian/2014/0811/575.html" class="quote-text">
+									    <div class="intro">Kosmo是一款智能而优雅的电子香烟，能够与互联网连接，帮助你管理自己的吸烟习惯。</div> 
+									</a>
+								</div>
+								    <p>
+									<a href="/member/index.php?uid=brian.lee@geekview.c&action=article"></span>
+									<span style="float:right" class="user-name">Brian</span></a>
+									<span class="newsimagenice">
+										<i></i><span>0</span>
+									</span>
+								    </p>
+							    </div>
+						    </div>
+			</section><section>
+						<div class="content-card-wrapper">
+							<div class="content-card">
+								<!-- Article Title -->
+								<div class="article-title">
+									<a data="2465" target="_blank" href="/a/zhijian/2014/0812/578.html" class="app-title">
+										<h1>SITU，热量翻译机	</h1>
+									</a>
+									<div style="padding-top: 10px;" class="pub-time-and-version"> 
+										<span class="pub-time">2014-08-12</span>
+									</div>
+								</div>
+								<a target="_blank" href="" class="detail-icon" title="进入应用详情页面"></a>
+								<!-- Article Img -->
+								 <a href='/a/zhijian/2014/0812/578.html' class='article-img'  target='_blank'><img src='/uploads/UserFiles/Image/2014-08-12/53e9af1d2cf16.png'/></a>
+							</div>
+							<!-- Quote Area -->
+							<div class="quote-area">
+								<div class="quote-words">
+									<a target="_blank" href="/a/zhijian/2014/0812/578.html" class="quote-text">
+									    <div class="intro">SITU一款能够测量食物所含热量的智能设备。它的基本原理是通过测量食物的重量，配合应用程序来计算卡路里和营养组成。</div> 
+									</a>
+								</div>
+								    <p>
+									<a href="/member/index.php?uid=liujie8403@foxmail.c&action=article"></span>
+									<span style="float:right" class="user-name">brown_liu</span></a>
+									<span class="newsimagenice">
+										<i></i><span>0</span>
+									</span>
+								    </p>
+							    </div>
+						    </div>
+			</section><section>
+						<div class="content-card-wrapper">
+							<div class="content-card">
+								<!-- Article Title -->
+								<div class="article-title">
+									<a data="2465" target="_blank" href="/a/zhijian/2014/0812/579.html" class="app-title">
+										<h1>你够专注吗？Melon告诉你	</h1>
+									</a>
+									<div style="padding-top: 10px;" class="pub-time-and-version"> 
+										<span class="pub-time">2014-08-12</span>
+									</div>
+								</div>
+								<a target="_blank" href="" class="detail-icon" title="进入应用详情页面"></a>
+								<!-- Article Img -->
+								 <a href='/a/zhijian/2014/0812/579.html' class='article-img'  target='_blank'><img src='/uploads/UserFiles/Image/2014-08-12/53e9b87f2a8a5.png'/></a>
+							</div>
+							<!-- Quote Area -->
+							<div class="quote-area">
+								<div class="quote-words">
+									<a target="_blank" href="/a/zhijian/2014/0812/579.html" class="quote-text">
+									    <div class="intro">试想一下，如果能够有某种设备能够实时地观测到你大脑的专注程度，应该对工作学习会有很大的帮助吧？我说的可不是那种示波器一样庞大而丑陋的设备，而是Melon，一款外观时尚而不乏强大</div> 
+									</a>
+								</div>
+								    <p>
+									<a href="/member/index.php?uid=brian.lee@geekview.c&action=article"></span>
+									<span style="float:right" class="user-name">Brian</span></a>
+									<span class="newsimagenice">
+										<i></i><span>0</span>
+									</span>
+								    </p>
+							    </div>
+						    </div>
+			</section><section>
+						<div class="content-card-wrapper">
+							<div class="content-card">
+								<!-- Article Title -->
+								<div class="article-title">
+									<a data="2465" target="_blank" href="/a/zhijian/2014/0812/580.html" class="app-title">
+										<h1>BEACON  -  炫彩发光腰带	</h1>
+									</a>
+									<div style="padding-top: 10px;" class="pub-time-and-version"> 
+										<span class="pub-time">2014-08-12</span>
+									</div>
+								</div>
+								<a target="_blank" href="" class="detail-icon" title="进入应用详情页面"></a>
+								<!-- Article Img -->
+								 <a href='/a/zhijian/2014/0812/580.html' class='article-img'  target='_blank'><img src='/uploads/UserFiles/Image/2014-08-12/53e9bc76597b5.jpg'/></a>
+							</div>
+							<!-- Quote Area -->
+							<div class="quote-area">
+								<div class="quote-words">
+									<a target="_blank" href="/a/zhijian/2014/0812/580.html" class="quote-text">
+									    <div class="intro">对众多跑步，骑行等户外运动爱好者来说，安全是个不小的问题。一般的做法都是穿上带强反光材料的衣服，戴上头灯，或者是在自行车的尾部安装警示灯。这些装备大部分都其貌不扬而且笨重</div> 
+									</a>
+								</div>
+								    <p>
+									<a href="/member/index.php?uid=brian.lee@geekview.c&action=article"></span>
+									<span style="float:right" class="user-name">Brian</span></a>
+									<span class="newsimagenice">
+										<i></i><span>0</span>
+									</span>
+								    </p>
+							    </div>
+						    </div>
+			</section><section>
+						<div class="content-card-wrapper">
+							<div class="content-card">
+								<!-- Article Title -->
+								<div class="article-title">
+									<a data="2465" target="_blank" href="/a/zhijian/2014/0812/581.html" class="app-title">
+										<h1>Re-Timer 倒时差眼镜	</h1>
+									</a>
+									<div style="padding-top: 10px;" class="pub-time-and-version"> 
+										<span class="pub-time">2014-08-12</span>
+									</div>
+								</div>
+								<a target="_blank" href="" class="detail-icon" title="进入应用详情页面"></a>
+								<!-- Article Img -->
+								 <a href='/a/zhijian/2014/0812/581.html' class='article-img'  target='_blank'><img src='/uploads/UserFiles/Image/2014-08-12/53e9bf7b0be4f.jpg'/></a>
+							</div>
+							<!-- Quote Area -->
+							<div class="quote-area">
+								<div class="quote-words">
+									<a target="_blank" href="/a/zhijian/2014/0812/581.html" class="quote-text">
+									    <div class="intro">对于众多“空中飞人”来说，倒时差是一件非常痛苦的事情。频繁地在多个时区里穿梭，生物钟常常不堪其扰。幸运的是，一家澳洲睡眠研究公司推出了一款名为Re-Timer的穿戴设备，可以帮助这</div> 
+									</a>
+								</div>
+								    <p>
+									<a href="/member/index.php?uid=liujie8403@foxmail.c&action=article"></span>
+									<span style="float:right" class="user-name">brown_liu</span></a>
+									<span class="newsimagenice">
+										<i></i><span>0</span>
+									</span>
+								    </p>
+							    </div>
+						    </div>
+			</section><section>
+						<div class="content-card-wrapper">
+							<div class="content-card">
+								<!-- Article Title -->
+								<div class="article-title">
+									<a data="2465" target="_blank" href="/a/zhijian/2014/0813/582.html" class="app-title">
+										<h1>Tado，让空调一秒钟智能化	</h1>
+									</a>
+									<div style="padding-top: 10px;" class="pub-time-and-version"> 
+										<span class="pub-time">2014-08-13</span>
+									</div>
+								</div>
+								<a target="_blank" href="" class="detail-icon" title="进入应用详情页面"></a>
+								<!-- Article Img -->
+								 <a href='/a/zhijian/2014/0813/582.html' class='article-img'  target='_blank'><img src='/uploads/UserFiles/Image/2014-08-13/53eaf56ea7e49.png'/></a>
+							</div>
+							<!-- Quote Area -->
+							<div class="quote-area">
+								<div class="quote-words">
+									<a target="_blank" href="/a/zhijian/2014/0813/582.html" class="quote-text">
+									    <div class="intro">Tado能对任何空调设备进行智能控制：自动开关、室内人物感应、以及针对单个房间的自动控制等。</div> 
+									</a>
+								</div>
+								    <p>
+									<a href="/member/index.php?uid=liujie8403@foxmail.c&action=article"></span>
+									<span style="float:right" class="user-name">brown_liu</span></a>
+									<span class="newsimagenice">
+										<i></i><span>0</span>
+									</span>
+								    </p>
+							    </div>
+						    </div>
+			</section><section>
+						<div class="content-card-wrapper">
+							<div class="content-card">
+								<!-- Article Title -->
+								<div class="article-title">
+									<a data="2465" target="_blank" href="/a/zhijian/2014/0812/583.html" class="app-title">
+										<h1>上帝说要有光—于是有了Emberlight	</h1>
+									</a>
+									<div style="padding-top: 10px;" class="pub-time-and-version"> 
+										<span class="pub-time">2014-08-12</span>
+									</div>
+								</div>
+								<a target="_blank" href="" class="detail-icon" title="进入应用详情页面"></a>
+								<!-- Article Img -->
+								 <a href='/a/zhijian/2014/0812/583.html' class='article-img'  target='_blank'><img src='/uploads/UserFiles/Image/2014-08-12/53e9c466bd6d6.png'/></a>
+							</div>
+							<!-- Quote Area -->
+							<div class="quote-area">
+								<div class="quote-words">
+									<a target="_blank" href="/a/zhijian/2014/0812/583.html" class="quote-text">
+									    <div class="intro">如果家里的所有灯泡都能够用智能手机控制，那便是极好的。可等到看了看市面上智能灯具的价格，大部分人估计只能捂着钱包叹气了。现在最便宜的智能灯泡也得40到50美元一个，倘若把家里</div> 
+									</a>
+								</div>
+								    <p>
+									<a href="/member/index.php?uid=liujie8403@foxmail.c&action=article"></span>
+									<span style="float:right" class="user-name">brown_liu</span></a>
+									<span class="newsimagenice">
+										<i></i><span>0</span>
+									</span>
+								    </p>
+							    </div>
+						    </div>
+			</section><section>
+						<div class="content-card-wrapper">
+							<div class="content-card">
+								<!-- Article Title -->
+								<div class="article-title">
+									<a data="2465" target="_blank" href="/a/zhijian/2014/0812/584.html" class="app-title">
+										<h1>可弯曲AMOLED屏幕	</h1>
+									</a>
+									<div style="padding-top: 10px;" class="pub-time-and-version"> 
+										<span class="pub-time">2014-08-12</span>
+									</div>
+								</div>
+								<a target="_blank" href="" class="detail-icon" title="进入应用详情页面"></a>
+								<!-- Article Img -->
+								 <a href='/a/zhijian/2014/0812/584.html' class='article-img'  target='_blank'><img src='/uploads/UserFiles/Image/2014-08-12/53e9c7b0c7495.jpg'/></a>
+							</div>
+							<!-- Quote Area -->
+							<div class="quote-area">
+								<div class="quote-words">
+									<a target="_blank" href="/a/zhijian/2014/0812/584.html" class="quote-text">
+									    <div class="intro">你是否曾经感慨烟花易冷，屏幕易碎？你是否曾经埋怨手机太小，平板太重？你是否曾经…好吧就此打住，小编不再故作文艺。但是今天的重磅消息实在是激动人心，要介绍给大家的东西更是牛</div> 
+									</a>
+								</div>
+								    <p>
+									<a href="/member/index.php?uid=liujie8403@foxmail.c&action=article"></span>
+									<span style="float:right" class="user-name">brown_liu</span></a>
+									<span class="newsimagenice">
+										<i></i><span>0</span>
+									</span>
+								    </p>
+							    </div>
+						    </div>
+			</section><section>
+						<div class="content-card-wrapper">
+							<div class="content-card">
+								<!-- Article Title -->
+								<div class="article-title">
+									<a data="2465" target="_blank" href="/a/zhijian/2014/0812/585.html" class="app-title">
+										<h1>Archive Eye相机	</h1>
+									</a>
+									<div style="padding-top: 10px;" class="pub-time-and-version"> 
+										<span class="pub-time">2014-08-12</span>
+									</div>
+								</div>
+								<a target="_blank" href="" class="detail-icon" title="进入应用详情页面"></a>
+								<!-- Article Img -->
+								 <a href='/a/zhijian/2014/0812/585.html' class='article-img'  target='_blank'><img src='/uploads/UserFiles/Image/2014-08-12/53e9cc3f8f8c5.jpg'/></a>
+							</div>
+							<!-- Quote Area -->
+							<div class="quote-area">
+								<div class="quote-words">
+									<a target="_blank" href="/a/zhijian/2014/0812/585.html" class="quote-text">
+									    <div class="intro">现在的可穿戴设备太多了，各种智能手环智能腕表智能眼镜智能服饰层出不穷，而如今可穿戴的智能相机也来搀和。今天小编要介绍的Archive Eye就是一款小巧的可穿戴智能相机，旨在帮你更好地</div> 
+									</a>
+								</div>
+								    <p>
+									<a href="/member/index.php?uid=liujie8403@foxmail.c&action=article"></span>
+									<span style="float:right" class="user-name">brown_liu</span></a>
+									<span class="newsimagenice">
+										<i></i><span>0</span>
+									</span>
+								    </p>
+							    </div>
+						    </div>
+			</section><section>
+						<div class="content-card-wrapper">
+							<div class="content-card">
+								<!-- Article Title -->
+								<div class="article-title">
+									<a data="2465" target="_blank" href="/a/zhijian/2014/0812/586.html" class="app-title">
+										<h1>Nymi专属个人手环	</h1>
+									</a>
+									<div style="padding-top: 10px;" class="pub-time-and-version"> 
+										<span class="pub-time">2014-08-12</span>
+									</div>
+								</div>
+								<a target="_blank" href="" class="detail-icon" title="进入应用详情页面"></a>
+								<!-- Article Img -->
+								 <a href='/a/zhijian/2014/0812/586.html' class='article-img'  target='_blank'><img src='/uploads/UserFiles/Image/2014-08-12/53e9d2933ebb6.jpg'/></a>
+							</div>
+							<!-- Quote Area -->
+							<div class="quote-area">
+								<div class="quote-words">
+									<a target="_blank" href="/a/zhijian/2014/0812/586.html" class="quote-text">
+									    <div class="intro">近年以来可穿戴设备层出不穷，大小厂商各显神通，恨不得让自己的产品黏在消费者的身上。可惜市面上不少可穿戴设备都华而不实，没有真正解决消费者的迫切需求。今天要介绍的Nymi手环则</div> 
+									</a>
+								</div>
+								    <p>
+									<a href="/member/index.php?uid=liujie8403@foxmail.c&action=article"></span>
+									<span style="float:right" class="user-name">brown_liu</span></a>
+									<span class="newsimagenice">
+										<i></i><span>0</span>
+									</span>
+								    </p>
+							    </div>
+						    </div>
+			</section><section>
+						<div class="content-card-wrapper">
+							<div class="content-card">
+								<!-- Article Title -->
+								<div class="article-title">
+									<a data="2465" target="_blank" href="/a/zhijian/2014/0812/587.html" class="app-title">
+										<h1>Nymi专属个人手环	</h1>
+									</a>
+									<div style="padding-top: 10px;" class="pub-time-and-version"> 
+										<span class="pub-time">2014-08-12</span>
+									</div>
+								</div>
+								<a target="_blank" href="" class="detail-icon" title="进入应用详情页面"></a>
+								<!-- Article Img -->
+								 <a href='/a/zhijian/2014/0812/587.html' class='article-img'  target='_blank'><img src='/uploads/UserFiles/Image/2014-08-12/53e9d2955ba49.jpg'/></a>
+							</div>
+							<!-- Quote Area -->
+							<div class="quote-area">
+								<div class="quote-words">
+									<a target="_blank" href="/a/zhijian/2014/0812/587.html" class="quote-text">
+									    <div class="intro">近年以来可穿戴设备层出不穷，大小厂商各显神通，恨不得让自己的产品黏在消费者的身上。可惜市面上不少可穿戴设备都华而不实，没有真正解决消费者的迫切需求。今天要介绍的Nymi手环则</div> 
+									</a>
+								</div>
+								    <p>
+									<a href="/member/index.php?uid=liujie8403@foxmail.c&action=article"></span>
+									<span style="float:right" class="user-name">brown_liu</span></a>
+									<span class="newsimagenice">
+										<i></i><span>0</span>
+									</span>
+								    </p>
+							    </div>
+						    </div>
+			</section><section>
+						<div class="content-card-wrapper">
+							<div class="content-card">
+								<!-- Article Title -->
+								<div class="article-title">
+									<a data="2465" target="_blank" href="/a/zhijian/2014/0812/588.html" class="app-title">
+										<h1>Jawbone Up24多功能智能手环	</h1>
+									</a>
+									<div style="padding-top: 10px;" class="pub-time-and-version"> 
+										<span class="pub-time">2014-08-12</span>
+									</div>
+								</div>
+								<a target="_blank" href="" class="detail-icon" title="进入应用详情页面"></a>
+								<!-- Article Img -->
+								 <a href='/a/zhijian/2014/0812/588.html' class='article-img'  target='_blank'><img src='/uploads/UserFiles/Image/2014-08-12/53e9d539829dd.jpg'/></a>
+							</div>
+							<!-- Quote Area -->
+							<div class="quote-area">
+								<div class="quote-words">
+									<a target="_blank" href="/a/zhijian/2014/0812/588.html" class="quote-text">
+									    <div class="intro">Jawbone Up24是一款极其简单易用，而且舒适有型的智能手环。它可以帮助穿戴者记录行走里程，睡眠时间，还有卡路里消耗等健康数据。全身防水、极轻的重量和舒适的触感使得它适合全天候穿戴</div> 
+									</a>
+								</div>
+								    <p>
+									<a href="/member/index.php?uid=liujie8403@foxmail.c&action=article"></span>
+									<span style="float:right" class="user-name">brown_liu</span></a>
+									<span class="newsimagenice">
+										<i></i><span>0</span>
+									</span>
+								    </p>
+							    </div>
+						    </div>
+			</section><section>
+						<div class="content-card-wrapper">
+							<div class="content-card">
+								<!-- Article Title -->
+								<div class="article-title">
+									<a data="2465" target="_blank" href="/a/zhijian/2014/0812/589.html" class="app-title">
+										<h1>智能园丁--Edyn	</h1>
+									</a>
+									<div style="padding-top: 10px;" class="pub-time-and-version"> 
+										<span class="pub-time">2014-08-12</span>
+									</div>
+								</div>
+								<a target="_blank" href="" class="detail-icon" title="进入应用详情页面"></a>
+								<!-- Article Img -->
+								 <a href='/a/zhijian/2014/0812/589.html' class='article-img'  target='_blank'><img src='/uploads/UserFiles/Image/2014-08-12/53e9d8bdb9cd1.jpg'/></a>
+							</div>
+							<!-- Quote Area -->
+							<div class="quote-area">
+								<div class="quote-words">
+									<a target="_blank" href="/a/zhijian/2014/0812/589.html" class="quote-text">
+									    <div class="intro">打理花园是一件技术活儿，光照土壤水分样样都有讲究。即使是经验丰富的园丁，也容易在众多植物之间忙不过来；至于初试园艺的新手，那更是一件头大的事情了。所幸的是，Edyn智能花园管</div> 
+									</a>
+								</div>
+								    <p>
+									<a href="/member/index.php?uid=liujie8403@foxmail.c&action=article"></span>
+									<span style="float:right" class="user-name">brown_liu</span></a>
+									<span class="newsimagenice">
+										<i></i><span>0</span>
+									</span>
+								    </p>
+							    </div>
+						    </div>
+			</section><section>
+						<div class="content-card-wrapper">
+							<div class="content-card">
+								<!-- Article Title -->
+								<div class="article-title">
+									<a data="2465" target="_blank" href="/a/zhijian/2014/0812/590.html" class="app-title">
+										<h1>Smarty Ring智能戒指	</h1>
+									</a>
+									<div style="padding-top: 10px;" class="pub-time-and-version"> 
+										<span class="pub-time">2014-08-12</span>
+									</div>
+								</div>
+								<a target="_blank" href="" class="detail-icon" title="进入应用详情页面"></a>
+								<!-- Article Img -->
+								 <a href='/a/zhijian/2014/0812/590.html' class='article-img'  target='_blank'><img src='/uploads/UserFiles/Image/2014-08-12/53e9db5200f9d.jpg'/></a>
+							</div>
+							<!-- Quote Area -->
+							<div class="quote-area">
+								<div class="quote-words">
+									<a target="_blank" href="/a/zhijian/2014/0812/590.html" class="quote-text">
+									    <div class="intro">手环？腕表？No, Too Young Too Simple. 我们需要一点新东西。这实际上是众筹网站indiegogo上正在众筹的Smarty Ring智能戒指。它提供的智能特性让你“武装到牙齿，智能到手指”。</div> 
+									</a>
+								</div>
+								    <p>
+									<a href="/member/index.php?uid=liujie8403@foxmail.c&action=article"></span>
+									<span style="float:right" class="user-name">brown_liu</span></a>
+									<span class="newsimagenice">
+										<i></i><span>0</span>
+									</span>
+								    </p>
+							    </div>
+						    </div>
+			</section><section>
+						<div class="content-card-wrapper">
+							<div class="content-card">
+								<!-- Article Title -->
+								<div class="article-title">
+									<a data="2465" target="_blank" href="/a/zhijian/2014/0813/592.html" class="app-title">
+										<h1>郑屠，吃我一记重拳！	</h1>
+									</a>
+									<div style="padding-top: 10px;" class="pub-time-and-version"> 
+										<span class="pub-time">2014-08-13</span>
+									</div>
+								</div>
+								<a target="_blank" href="" class="detail-icon" title="进入应用详情页面"></a>
+								<!-- Article Img -->
+								 <a href='/a/zhijian/2014/0813/592.html' class='article-img'  target='_blank'><img src='/uploads/UserFiles/Image/2014-08-13/53eaca0168c8b.jpg'/></a>
+							</div>
+							<!-- Quote Area -->
+							<div class="quote-area">
+								<div class="quote-words">
+									<a target="_blank" href="/a/zhijian/2014/0813/592.html" class="quote-text">
+									    <div class="intro">官人饶命！别打脸！且慢，你可知道这一拳下来的分量有多重？你可知道挥拳的速度几何？你可知道这一拳与上一拳的差别又有多大？戴上iPunch智能搏击手套再打我好嘛...</div> 
+									</a>
+								</div>
+								    <p>
+									<a href="/member/index.php?uid=liujie8403@foxmail.c&action=article"></span>
+									<span style="float:right" class="user-name">brown_liu</span></a>
+									<span class="newsimagenice">
+										<i></i><span>0</span>
+									</span>
+								    </p>
+							    </div>
+						    </div>
+			</section><section>
+						<div class="content-card-wrapper">
+							<div class="content-card">
+								<!-- Article Title -->
+								<div class="article-title">
+									<a data="2465" target="_blank" href="/a/zhijian/2014/0813/593.html" class="app-title">
+										<h1>Bionic Pancreas，糖尿病人的福音	</h1>
+									</a>
+									<div style="padding-top: 10px;" class="pub-time-and-version"> 
+										<span class="pub-time">2014-08-13</span>
+									</div>
+								</div>
+								<a target="_blank" href="" class="detail-icon" title="进入应用详情页面"></a>
+								<!-- Article Img -->
+								 <a href='/a/zhijian/2014/0813/593.html' class='article-img'  target='_blank'><img src='/uploads/UserFiles/Image/2014-08-13/53eacc9ddf64e.jpg'/></a>
+							</div>
+							<!-- Quote Area -->
+							<div class="quote-area">
+								<div class="quote-words">
+									<a target="_blank" href="/a/zhijian/2014/0813/593.html" class="quote-text">
+									    <div class="intro">提到可穿戴设备，人们第一反应大多是想到具备社交和娱乐功能的智能腕表、智能手环等，如FitBit和三星Galaxy Gear. 然而可穿戴设备的最重要的应用就是医学领域，比如说今天要介绍的Bionic Pan</div> 
+									</a>
+								</div>
+								    <p>
+									<a href="/member/index.php?uid=liujie8403@foxmail.c&action=article"></span>
+									<span style="float:right" class="user-name">brown_liu</span></a>
+									<span class="newsimagenice">
+										<i></i><span>0</span>
+									</span>
+								    </p>
+							    </div>
+						    </div>
+			</section><section>
+						<div class="content-card-wrapper">
+							<div class="content-card">
+								<!-- Article Title -->
+								<div class="article-title">
+									<a data="2465" target="_blank" href="/a/zhijian/2014/0813/594.html" class="app-title">
+										<h1>神器帮你60秒补好自行车胎	</h1>
+									</a>
+									<div style="padding-top: 10px;" class="pub-time-and-version"> 
+										<span class="pub-time">2014-08-13</span>
+									</div>
+								</div>
+								<a target="_blank" href="" class="detail-icon" title="进入应用详情页面"></a>
+								<!-- Article Img -->
+								 <a href='/a/zhijian/2014/0813/594.html' class='article-img'  target='_blank'><img src='/uploads/UserFiles/Image/2014-08-13/53eacf97a0840.jpg'/></a>
+							</div>
+							<!-- Quote Area -->
+							<div class="quote-area">
+								<div class="quote-words">
+									<a target="_blank" href="/a/zhijian/2014/0813/594.html" class="quote-text">
+									    <div class="intro">激情难免发生意外，然而对骑行爱好者来说，爆胎或许才是更难堪的事情。今天要介绍的补胎神器，能够帮大家60秒补好车胎。</div> 
+									</a>
+								</div>
+								    <p>
+									<a href="/member/index.php?uid=liujie8403@foxmail.c&action=article"></span>
+									<span style="float:right" class="user-name">brown_liu</span></a>
+									<span class="newsimagenice">
+										<i></i><span>0</span>
+									</span>
+								    </p>
+							    </div>
+						    </div>
+			</section><section>
+						<div class="content-card-wrapper">
+							<div class="content-card">
+								<!-- Article Title -->
+								<div class="article-title">
+									<a data="2465" target="_blank" href="/a/zhijian/2014/0813/595.html" class="app-title">
+										<h1>Sensoria Smart Sock，智能跑步教练	</h1>
+									</a>
+									<div style="padding-top: 10px;" class="pub-time-and-version"> 
+										<span class="pub-time">2014-08-13</span>
+									</div>
+								</div>
+								<a target="_blank" href="" class="detail-icon" title="进入应用详情页面"></a>
+								<!-- Article Img -->
+								 <a href='/a/zhijian/2014/0813/595.html' class='article-img'  target='_blank'><img src='/uploads/UserFiles/Image/2014-08-13/53ead3f07ba7e.jpg'/></a>
+							</div>
+							<!-- Quote Area -->
+							<div class="quote-area">
+								<div class="quote-words">
+									<a target="_blank" href="/a/zhijian/2014/0813/595.html" class="quote-text">
+									    <div class="intro">跑步速度不仅仅和天赋有关，更多的时候你需要一些技巧以及对自身情况的精准分析。Sensoria正是为此而设计的。</div> 
+									</a>
+								</div>
+								    <p>
+									<a href="/member/index.php?uid=liujie8403@foxmail.c&action=article"></span>
+									<span style="float:right" class="user-name">brown_liu</span></a>
+									<span class="newsimagenice">
+										<i></i><span>0</span>
+									</span>
+								    </p>
+							    </div>
+						    </div>
+			</section><section>
+						<div class="content-card-wrapper">
+							<div class="content-card">
+								<!-- Article Title -->
+								<div class="article-title">
+									<a data="2465" target="_blank" href="/a/zhijian/2014/0813/596.html" class="app-title">
+										<h1>GOkey，多功能的移动电源	</h1>
+									</a>
+									<div style="padding-top: 10px;" class="pub-time-and-version"> 
+										<span class="pub-time">2014-08-13</span>
+									</div>
+								</div>
+								<a target="_blank" href="" class="detail-icon" title="进入应用详情页面"></a>
+								<!-- Article Img -->
+								 <a href='/a/zhijian/2014/0813/596.html' class='article-img'  target='_blank'><img src='/uploads/UserFiles/Image/2014-08-13/53eaf87d04d20.jpg'/></a>
+							</div>
+							<!-- Quote Area -->
+							<div class="quote-area">
+								<div class="quote-words">
+									<a target="_blank" href="/a/zhijian/2014/0813/596.html" class="quote-text">
+									    <div class="intro">GOkey可以让你的手机随时随地满血复活，也能够作为设备之间数据同步的媒介。它还是一个闪存，以及一个蓝牙防丢器。</div> 
+									</a>
+								</div>
+								    <p>
+									<a href="/member/index.php?uid=liujie8403@foxmail.c&action=article"></span>
+									<span style="float:right" class="user-name">brown_liu</span></a>
+									<span class="newsimagenice">
+										<i></i><span>0</span>
+									</span>
+								    </p>
+							    </div>
+						    </div>
+			</section><section>
+						<div class="content-card-wrapper">
+							<div class="content-card">
+								<!-- Article Title -->
+								<div class="article-title">
+									<a data="2465" target="_blank" href="/a/zhijian/2014/0813/597.html" class="app-title">
+										<h1>Glance，让你的手表一秒钟变智能	</h1>
+									</a>
+									<div style="padding-top: 10px;" class="pub-time-and-version"> 
+										<span class="pub-time">2014-08-13</span>
+									</div>
+								</div>
+								<a target="_blank" href="" class="detail-icon" title="进入应用详情页面"></a>
+								<!-- Article Img -->
+								 <a href='/a/zhijian/2014/0813/597.html' class='article-img'  target='_blank'><img src='/uploads/UserFiles/Image/2014-08-13/53eafb36d18a7.jpg'/></a>
+							</div>
+							<!-- Quote Area -->
+							<div class="quote-area">
+								<div class="quote-words">
+									<a target="_blank" href="/a/zhijian/2014/0813/597.html" class="quote-text">
+									    <div class="intro">Glance是一个小巧的手表智能配件。它支持来电显示、找回手机、日常活动跟踪等功能。除此之外，它还能为其他智能设备提供手势控制。</div> 
+									</a>
+								</div>
+								    <p>
+									<a href="/member/index.php?uid=liujie8403@foxmail.c&action=article"></span>
+									<span style="float:right" class="user-name">brown_liu</span></a>
+									<span class="newsimagenice">
+										<i></i><span>0</span>
+									</span>
+								    </p>
+							    </div>
+						    </div>
+			</section><section>
+						<div class="content-card-wrapper">
+							<div class="content-card">
+								<!-- Article Title -->
+								<div class="article-title">
+									<a data="2465" target="_blank" href="/a/zhijian/2014/0814/599.html" class="app-title">
+										<h1>The Hug---普通水瓶的逆袭	</h1>
+									</a>
+									<div style="padding-top: 10px;" class="pub-time-and-version"> 
+										<span class="pub-time">2014-08-14</span>
+									</div>
+								</div>
+								<a target="_blank" href="" class="detail-icon" title="进入应用详情页面"></a>
+								<!-- Article Img -->
+								 <a href='/a/zhijian/2014/0814/599.html' class='article-img'  target='_blank'><img src='/uploads/UserFiles/Image/2014-08-14/53ec0ff518945.jpg'/></a>
+							</div>
+							<!-- Quote Area -->
+							<div class="quote-area">
+								<div class="quote-words">
+									<a target="_blank" href="/a/zhijian/2014/0814/599.html" class="quote-text">
+									    <div class="intro">有一句话，女人是水做的，其实，人都是水做的。水是生命之源，人的一切生命活动离不开水，水占人身体重量的60%，为了保证健康的新陈代谢，一个人一天至少要摄取2000毫升左右的水分，除</div> 
+									</a>
+								</div>
+								    <p>
+									<a href="/member/index.php?uid=liujie8403@foxmail.c&action=article"></span>
+									<span style="float:right" class="user-name">brown_liu</span></a>
+									<span class="newsimagenice">
+										<i></i><span>0</span>
+									</span>
+								    </p>
+							    </div>
+						    </div>
+			</section><section>
+						<div class="content-card-wrapper">
+							<div class="content-card">
+								<!-- Article Title -->
+								<div class="article-title">
+									<a data="2465" target="_blank" href="/a/zhijian/2014/0814/600.html" class="app-title">
+										<h1>Smart Plant 让你的花卉对你微笑	</h1>
+									</a>
+									<div style="padding-top: 10px;" class="pub-time-and-version"> 
+										<span class="pub-time">2014-08-14</span>
+									</div>
+								</div>
+								<a target="_blank" href="" class="detail-icon" title="进入应用详情页面"></a>
+								<!-- Article Img -->
+								 <a href='/a/zhijian/2014/0814/600.html' class='article-img'  target='_blank'><img src='/uploads/UserFiles/Image/2014-08-14/53ec39f5e07ef.png'/></a>
+							</div>
+							<!-- Quote Area -->
+							<div class="quote-area">
+								<div class="quote-words">
+									<a target="_blank" href="/a/zhijian/2014/0814/600.html" class="quote-text">
+									    <div class="intro">花花世界让很多人对花花草草着迷不已，但是并不是所有人都能将植物从大自然中完美地搬进我们的生活的，温度、湿度、土壤成份、光照强度等等你想都难想透的繁琐的节让许多伪植物爱好者</div> 
+									</a>
+								</div>
+								    <p>
+									<a href="/member/index.php?uid=liujie8403@foxmail.c&action=article"></span>
+									<span style="float:right" class="user-name">brown_liu</span></a>
+									<span class="newsimagenice">
+										<i></i><span>0</span>
+									</span>
+								    </p>
+							    </div>
+						    </div>
+			</section><section>
+						<div class="content-card-wrapper">
+							<div class="content-card">
+								<!-- Article Title -->
+								<div class="article-title">
+									<a data="2465" target="_blank" href="/a/zhijian/2014/0814/603.html" class="app-title">
+										<h1>更智能的血压计——QardioArm	</h1>
+									</a>
+									<div style="padding-top: 10px;" class="pub-time-and-version"> 
+										<span class="pub-time">2014-08-14</span>
+									</div>
+								</div>
+								<a target="_blank" href="" class="detail-icon" title="进入应用详情页面"></a>
+								<!-- Article Img -->
+								 <a href='/a/zhijian/2014/0814/603.html' class='article-img'  target='_blank'><img src='/uploads/UserFiles/Image/2014-08-14/53ec834fbc98a.jpg'/></a>
+							</div>
+							<!-- Quote Area -->
+							<div class="quote-area">
+								<div class="quote-words">
+									<a target="_blank" href="/a/zhijian/2014/0814/603.html" class="quote-text">
+									    <div class="intro">与你的生活无缝对接，与你的手机无线通讯，自动记录医学级别的数据，你的身体情况，医生和你都了如指掌。</div> 
+									</a>
+								</div>
+								    <p>
+									<a href="/member/index.php?uid=liujie8403@foxmail.c&action=article"></span>
+									<span style="float:right" class="user-name">brown_liu</span></a>
+									<span class="newsimagenice">
+										<i></i><span>0</span>
+									</span>
+								    </p>
+							    </div>
+						    </div>
+			</section>
+    
+    <a class ='first-page'  href='index_12_1.html'>回到首页</a>
+ <a class='last-one' href='index_12_4.html'>上一页</a>
+ <a  class='next-one'  href='index_12_6.html'>下一页</a>
+ 
+    
+  </div>
+  <!-- 文章预览END -->
+  <!-- 分类 -->
+  <div class="col-md-4 col-sm-4 hidden-xs">
+    <div class="row">
+      <div class="col-md-12">
+        <center>
+          <a href="/member/qq_bind_auth.php" class="circular-social-btn-lg qq mr"><i
+          class="fa fa-qq"></i></a>
+          <a href="https://api.weibo.com/oauth2/authorize?client_id=3608508910&amp;redirect_uri=http%3A%2F%2Fwww.geekview.cn%2Fplus%2Fsina-weibologin%2Fcallback.php&amp;response_type=code"
+            class="circular-social-btn-lg weibo mr"><i
+          class="fa fa-weibo"></i></a>
+          <a href="/plus/xiaomi-login/getCode.php"
+            class="circular-social-btn-lg xiaomi mr"><i
+          class="fa icon-xiaomi"></i></a>
+          <a href="#"
+            class="circular-social-btn-lg douban"><i
+          class="fa icon-douban"></i></a>
+        </center>
+      </div>
+    </div>
+    <div class="row pt">
+     <div class="col-md-12">
+        <div class="dashboard-card-img">
+          <a href="/app/2014/1101/11139.html"><img height="300" width="360" src="/images/defaultpic.gif" alt=""></img></a>
+        </div>
+        <div class="view-card-header">
+        	 <a  href="/app/2014/1101/11139.html" >
+         		 <p>游戏专题</p>
+			</a>
+        </div>
+        <div class="view-card-status">
+          <div class="pr-sm pull-left">
+            <i class="fa fa-heart-o"></i>0
+          </div>
+          <div class="pull-right">
+            <span>共42篇智见</span>
+          </div>
+        </div>
+      </div>
+<div class="col-md-12">
+        <div class="dashboard-card-img">
+          <a href="/special/arc-11122.html"><img height="300" width="360" src="/images/defaultpic.gif" alt=""></img></a>
+        </div>
+        <div class="view-card-header">
+        	 <a  href="/special/arc-11122.html" >
+         		 <p>专题2</p>
+			</a>
+        </div>
+        <div class="view-card-status">
+          <div class="pr-sm pull-left">
+            <i class="fa fa-heart-o"></i>0
+          </div>
+          <div class="pull-right">
+            <span>共42篇智见</span>
+          </div>
+        </div>
+      </div>
+<div class="col-md-12">
+        <div class="dashboard-card-img">
+          <a href="/app/2014/0910/6.html"><img height="300" width="360" src="/uploads/141018/1-14101QGZ0539.jpg" alt=""></img></a>
+        </div>
+        <div class="view-card-header">
+        	 <a  href="/app/2014/0910/6.html" >
+         		 <p>专题</p>
+			</a>
+        </div>
+        <div class="view-card-status">
+          <div class="pr-sm pull-left">
+            <i class="fa fa-heart-o"></i>0
+          </div>
+          <div class="pull-right">
+            <span>共42篇智见</span>
+          </div>
+        </div>
+      </div>
+<div class="col-md-12">
+        <div class="dashboard-card-img">
+          <a href="/special/arc-11136.html"><img height="300" width="360" src="/Uploads/UserFiles/Image/2014-09-12/5412923487db2.jpg" alt=""></img></a>
+        </div>
+        <div class="view-card-header">
+        	 <a  href="/special/arc-11136.html" >
+         		 <p>奈何不是女汉子</p>
+			</a>
+        </div>
+        <div class="view-card-status">
+          <div class="pr-sm pull-left">
+            <i class="fa fa-heart-o"></i>0
+          </div>
+          <div class="pull-right">
+            <span>共42篇智见</span>
+          </div>
+        </div>
+      </div>
+<div class="col-md-12">
+        <div class="dashboard-card-img">
+          <a href="/special/arc-11137.html"><img height="300" width="360" src="/Uploads/UserFiles/Image/2014-09-12/541294e51a71e.jpg" alt=""></img></a>
+        </div>
+        <div class="view-card-header">
+        	 <a  href="/special/arc-11137.html" >
+         		 <p>骑行天下</p>
+			</a>
+        </div>
+        <div class="view-card-status">
+          <div class="pr-sm pull-left">
+            <i class="fa fa-heart-o"></i>0
+          </div>
+          <div class="pull-right">
+            <span>共42篇智见</span>
+          </div>
+        </div>
+      </div>
+<div class="col-md-12">
+        <div class="dashboard-card-img">
+          <a href="/special/arc-11138.html"><img height="300" width="360" src="/Uploads/UserFiles/Image/2014-09-12/5412ab8113478.jpg" alt=""></img></a>
+        </div>
+        <div class="view-card-header">
+        	 <a  href="/special/arc-11138.html" >
+         		 <p>鞋子大乱斗</p>
+			</a>
+        </div>
+        <div class="view-card-status">
+          <div class="pr-sm pull-left">
+            <i class="fa fa-heart-o"></i>0
+          </div>
+          <div class="pull-right">
+            <span>共42篇智见</span>
+          </div>
+        </div>
+      </div>
+
+						
+      <div class="col-md-12 pt">
+        <div class="tiles white p">
+          <h4>极客玩</h4>
+         
+	      <div class="row app-card-in">
+            <div class="col-xs-3 app-icon">
+              <a href="/app/game/celue/2014/1012/8.html"><img width="68" height="68" src="/uploads/soft/140910/1-140910124G1O6.jpg" alt=""></img></a>
+              
+            </div>
+            <div class="col-xs-9 app-content">
+              <div class="row">
+                <div class="app-title pull-left">
+                </div>
+                <a  href="/app/game/celue/2014/1012/8.html" >
+                  <h4>apptest2</h4>
+				</a>
+                <div class="app-device-logo pull-left">
+                  <div class="android-logo active pull-left">
+                    <em class="fa fa-android"></em>
+                  </div>
+                  <div class="ios-logo active pull-left">
+                    <em class="fa fa-apple"></em>
+					
+                  </div>
+                </div>
+                <div class="pull-right">
+                	 
+                  <a class="btn btn-info" href=" ">
+                  <li class="fa fa-download"></li>下载
+                  </a>
+                </div>
+              </div>
+              <div class="row">
+                ★★★☆☆
+				3
+              </div>
+            </div>
+          </div>
+<div class="row app-card-in">
+            <div class="col-xs-3 app-icon">
+              <a href="/app/a1/2014/0910/2.html"><img width="68" height="68" src="/uploads/soft/141007/1-14100G40635A6.png" alt=""></img></a>
+              
+            </div>
+            <div class="col-xs-9 app-content">
+              <div class="row">
+                <div class="app-title pull-left">
+                </div>
+                <a  href="/app/a1/2014/0910/2.html" >
+                  <h4>app下载test</h4>
+				</a>
+                <div class="app-device-logo pull-left">
+                  <div class="android-logo active pull-left">
+                    <em class="fa fa-android"></em>
+                  </div>
+                  <div class="ios-logo active pull-left">
+                    <em class="fa fa-apple"></em>
+					
+                  </div>
+                </div>
+                <div class="pull-right">
+                	 
+                  <a class="btn btn-info" href=" ">
+                  <li class="fa fa-download"></li>下载
+                  </a>
+                </div>
+              </div>
+              <div class="row">
+                ★★★☆☆
+				3
+              </div>
+            </div>
+          </div>
+	
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- 分类END -->
+</div>
+</div>
+<!-- 内容END -->
+
+
+<!-- article begin -->
+
+<div id="content_wrapper" class="container">
+		<!-- Left side Cards -->
+		
+		<div class="left-side">
+			<article>
+			</article>
+		</div>
+
+		<!-- Right side Card -->
+		<div class="right-side">
+		
+		<!-- login begin -->
+			<div class="side-card loginForm"  >
+					<div class="cont f-cb ztag">
+						<div class="contl">
+						
+						
+							 <form name="userlogin" action="/member/index_do.php" method="POST"  class="ztag">
+								 <input type="hidden" name="fmdo" value="login" />
+						        <input type="hidden" name="dopost" value="login" />
+						        <input type="hidden" name="keeptime" value="604800" />
+								<ul class="w-user w-user-2">
+									<li class="w0">
+										<div class="logininpt ">
+										<input type="text" style="" class="txt ztag" tabindex="1" name="userid"  placeholder="邮箱">
+										</div>
+									</li>
+									<li class="w0">
+										<div class="logininpt ">
+											<input type="password" name="pwd"  autocomplete="off" class="txt ztag" placeholder="密码" tabindex="2">
+										</div>
+									</li>
+									  
+									<li class="w0 w2">
+										<button class="w-btn" type="submit" tabindex="4">
+											<span>登录</span>
+										</button>
+									</li>
+								</ul>
+							</form>
+						</div>
+						<div class="contr">
+							<div class="others">
+								<span class="sepln"></span> <span class="septxt">或</span>
+								<ul id="otherLogin2" class="w-user w-user-3">
+									<li class="w1 sina"><a onclick="login('WEIBO')" href="javascript:void(0)" class="w-btn3">新浪微博</a></li>
+									<li class="w1 qq"><a onclick="login('QQ')" href="javascript:void(0)" class="w-btn3 w-btn3-1">腾讯QQ</a></li>
+									<li class="w1 rr"><a onclick="login('XIAOMI')" href="javascript:void(0)" class="w-btn3 w-btn3-2">小米用户</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					
+					
+			</div>
+		
+		<!-- login end -->
+		<!--首页登陆界面-->
+		<!-- publishing area -->
+            <div class="side-card">
+            	<div id="new_publish">
+					<a href='/member/article_add.php' class="new-publish-words">我要分享</a>
+
+				</div>
+			</div>
+			<!-- 精选 热门等分类入口 -->
+			
+			<div class="side-card">
+                <ul class="web-tag">
+					<li class="web-tag-list active-tag"><a style="padding-right: 220px;" id="allTag"   href="/a/c-article.html" class="web-tag-list-item">精选</a></li>
+					<li class="web-tag-list "><a style="padding-right: 220px;" id="hotTag"   href="/a/hot-article.html" class="web-tag-list-item">热门</a></li>
+					<li class="web-tag-list "><a style="padding-right: 220px;" id="hotTag"  href="/" class="web-tag-list-item">全部</a></li>
+				</ul>  
+            </div>
+			<!-- 精选 热门等分类入口 end -->
+			<!-- 文章分类列表   -->
+			<div class="side-card">
+				<ul class="web-tag">
+				   <li class="web-tag-list">
+				<a class="web-tag-list-item" href="/tags.php?/%E6%99%BA%E8%83%BD%E5%AE%B6%E5%B1%85/">智能家居</a></li>
+			<li class="web-tag-list">
+				<a class="web-tag-list-item" href="/tags.php?/%E6%99%BA%E8%83%BD%E7%A9%BF%E6%88%B4/">智能穿戴</a></li>
+			<li class="web-tag-list">
+				<a class="web-tag-list-item" href="/tags.php?/%E6%99%BA%E8%83%BD%E4%BA%A4%E9%80%9A/">智能交通</a></li>
+			<li class="web-tag-list">
+				<a class="web-tag-list-item" href="/tags.php?/%E6%99%BA%E8%83%BD%E5%AE%89%E9%98%B2/">智能安防</a></li>
+			<li class="web-tag-list">
+				<a class="web-tag-list-item" href="/tags.php?/%E5%81%A5%E5%BA%B7%E5%8C%BB%E7%96%97/">健康医疗</a></li>
+			<li class="web-tag-list">
+				<a class="web-tag-list-item" href="/tags.php?/%E5%84%BF%E7%AB%A5%E8%AE%BE%E5%A4%87/">儿童设备</a></li>
+			<li class="web-tag-list">
+				<a class="web-tag-list-item" href="/tags.php?/%E5%AE%A0%E7%89%A9%E8%AE%BE%E5%A4%87/">宠物设备</a></li>
+			<li class="web-tag-list">
+				<a class="web-tag-list-item" href="/tags.php?/%E6%B8%B8%E6%88%8F%E5%A8%B1%E4%B9%90/">游戏娱乐</a></li>
+			<li class="web-tag-list">
+				<a class="web-tag-list-item" href="/tags.php?/%E6%95%88%E7%8E%87%E5%B7%A5%E5%85%B7/">效率工具</a></li>
+			<li class="web-tag-list">
+				<a class="web-tag-list-item" href="/tags.php?/%E5%A5%87%E8%B6%A3%E8%AE%BE%E5%A4%87/">奇趣设备</a></li>
+	        	</ul> 
+			</div>
+			
+
+			<!-- 关注我们 -->
+			<div style="background-color: rgb(240,240,240);" class="side-card">
+				<h5 class="bottom1">关注我们</h5>
+				<!-- JiaThis Button BEGIN -->
+				<div class="jiathis_style_32x32">
+					<a href="http://weibo.com/geekview" target="_blank" class="link_button_tsina external">新浪微博</a> 
+					<a href="http://www.douban.com/people/geekview/" target="_blank" class="link_button_douban external">豆瓣</a>
+					 <a href="http://zhan.renren.com/geekview/" target="_blank" class="link_button_renren external">人人</a> 
+					 <a href="http://t.qq.com/geekview/" target="_blank" class="link_button_tqq external">腾讯微博</a>
+					 <a href="https://plus.google.com/108385600415800739993/" target="_blank" class="link_button_google external">Google+</a>
+				</div>
+				<!-- JiaThis Button END -->
+			</div>
+			<!-- 关注我们end -->
+		</div>
+	</div>
+
+<!-- /content -->
+</div>
+
+
+
+<script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+<script src="/resource/plugins/boostrapv3/js/bootstrap.min.js"></script>
+<script src="/resource/js/scroller.js"></script>
+<script src="/resource/js/star-rating.js"></script>
+<script src="/resource/js/app.js"></script>
+
+
+
+
+<script language="javascript" type="text/javascript" src="/include/dedeajax2.js"></script>
+
+<script type="text/javascript">
+function CheckLogin(){
+  var taget_obj = document.getElementById('_userlogin');
+  myajax = new DedeAjax(taget_obj,false,false,'','','');
+  myajax.SendGet2("/member/ajax_loginsta.php");
+  $('.login-user-name').click( function()  {
+	    $('.manage-list ').toggle();
+	});
+  $('.loginForm').hide(0);
+  DedeXHTTP = null;
+}
+</script>
+
+<footer style="">
+		<div class="container">
+			<ul class="footer-link-list">
+				<li><p style="font:bold">公司介绍</p></li>
+				<li><a target="_blank" href="/index/index/aboutus" class="footer-link">关于我们</a></li>
+				<li><a target="_blank" href="/index/index/privacy" class="footer-link">隐私条款</a></li>
+				<li><a target="_blank" href="/index/index/userpolicy" class="footer-link">用户政策</a></li>
+				<li><a target="_blank" href="/index/index/joinus" class="footer-link">加入我们</a></li>
+
+			</ul>
+			<ul class="footer-link-list">
+				<li><p style="font:bold">合作伙伴</p></li>
+				<li><a target="_blank" href="http://www.baidu.com" class="footer-link external">百度</a></li>
+				<li><a target="_blank" href="http://www.aliyun.com" class="footer-link external">阿里云</a></li>
+				<li><a target="_blank" href="/index/index/userpolicy" class="footer-link"></a></li>
+				<li><a target="_blank" href="/index/index/joinus" class="footer-link"></a></li>
+
+			</ul>
+			<ul class="footer-link-list">
+				<li><p style="font:bold">订阅信息</p></li>
+				<li><a target="_blank" href="/templets/default/v1/Home/image/rss/geekviewRSS.xml" class="footer-link">
+				<img src="/templets/default/v1/Home/image/rss/rss.jpg" style="height:20px;"></a></li>
+
+			</ul>
+			<ul class="footer-link-list">
+				<li><p style="font:bold">&nbsp;</p></li>
+				<li>图片存储由&nbsp; <a href="http://www.aliyun.com/product/oss/?spm=5176.383338.201.7.IA7qhS" class="footer-link-ali external" target="_blank">阿里云存储</a> &nbsp;提供</li>
+
+			</ul>
+			<div class="clear"></div>		
+			<div class="copyright">
+				<span class="copyright-year">Copyright &copy;2013-2014 </span> <a href="#" class="footer-geekview">深圳市极客视界科技有限公司</a> <span class="company-number">粤ICP备14037549号-1</span>
+			</div>
+		</div>
+	</footer>
+	
+<script type="text/javascript">
+CheckLogin();
+</script>
+<!-- /footer -->
+</body>
+</html>
