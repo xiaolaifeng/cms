@@ -1,0 +1,327 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>精美_极客</title>
+<meta name="keywords" content="" />
+<meta name="description" content="有你就精彩" />
+<link rel=”alternate” type=”application/rss+xml” title=”精美” href=”/rss.php“/> 
+
+<link href="/templets/default/v1/Home/image/favicon.ico" type="image/x-icon" rel="icon" />
+<link href="/templets/default/v1/Home/css/panel.css" rel="stylesheet" media="screen" type="text/css" />
+<link href="/templets/default/v1/Home/css/normalize.css" rel="stylesheet" media="screen" type="text/css" />
+<link href="/templets/default/v1/Home/css/base.css" rel="stylesheet" media="screen" type="text/css" />
+<link href="/templets/default/v1/Home/css/responsive.css" rel="stylesheet" media="screen" type="text/css" />
+<link href="/templets/default/v1/Home/css/listPage.css" rel="stylesheet" media="screen" type="text/css" />
+<link href="/templets/default/v1/Home/css/login.css" rel="stylesheet" media="screen" type="text/css" />
+<link href="/templets/default/v1/css/pubnews.css" rel="stylesheet" media="screen" type="text/css" />
+<link href="/templets/default/v1/Home/css/toobar.css?2014" rel="stylesheet" media="screen" type="text/css" />
+
+<script src="/templets/default/v1/Home/js/jquery.min.js" language="javascript" type="text/javascript"></script>
+<script src="/templets/default/v1/Home/js/jquery.lazyload.min.js" language="javascript" type="text/javascript"></script>
+<script src="/templets/default/v1/Home/js/androidApp.js" language="javascript" type="text/javascript"></script>
+<script src="/templets/default/v1/Home/js/global.js" language="javascript" type="text/javascript"></script>
+<script src="/templets/default/v1/Home/js/placeholders.min.js" language="javascript" type="text/javascript"></script>
+<script src="/templets/default/v1/Home/js/ga.js" language="javascript" type="text/javascript"></script>
+<script src="/templets/default/v1/Home/js/main-2.js" language="javascript" type="text/javascript"></script>
+<script src="/templets/default/v1/Home/js/nr-100.js" language="javascript" type="text/javascript"></script>
+<script src="/templets/default/v1/Home/js/topics-x.js" language="javascript" type="text/javascript"></script>
+<script src="/templets/default/v1/Home/js/jquery.toolbar.min.js" language="javascript" type="text/javascript"></script>
+<script src="/templets/default/v1/Home/js/jquery.easing.1.3.js" language="javascript" type="text/javascript"></script>
+
+<script src="/include/dedeajax2.js" language="javascript" type="text/javascript" ></script>
+
+<script type="text/javascript">
+function CheckLogin(){
+  var taget_obj = document.getElementById('_userlogin');
+  myajax = new DedeAjax(taget_obj,false,false,'','','');
+  myajax.SendGet2("/member/ajax_loginsta.php");
+  $('.login-user-name').click( function()  {
+	    $('.manage-list ').toggle();
+	});
+  $('.loginForm').hide(0);
+  DedeXHTTP = null;
+}
+</script>
+
+
+
+</head>
+<body class=" js">
+<div class="viewblock animation">
+<div id="wrapper">
+	<header id="site_header">
+		<div style="height: 85px" class="navbar">
+			<div id="nav_container" class="container visible">
+				<a href="/" class="logo"><img
+					src="/templets/default/v1/Home/image/new_logo.png" alt="极客视界" class="logo-img"></a>
+				<nav>
+					<ul id="nav">
+						<li><a class="nav-item" rel="dropmenu2" href="/a/zhijian/">智见</a></li>
+						<li><a class="nav-item" rel="dropmenu1" href="/special/index.html">专题</a></li>
+						<li><a class="nav-item" rel="dropmenu1" href="/app/">极客玩</a></li>
+						<!-- 
+						<li><a href="/index/topic/index" class="nav-item ">专题</a></li>
+						<LI><A class="nav-item nav-item-discover " href="/index/gk_discover/discover">极客发现</A></LI> -->
+					</ul>
+				</nav>
+				<div id="_userlogin">
+				
+				<div style="margin-top: 22px; float: right; width: 100px;"  >
+					
+					<div style="height: 36px; float: right;">
+						<div class="user-account-info"
+							style="float: right; margin-top: 3px;">
+							<!-- 
+							<a onclick="showLoginDialog();" href="javascript:void(0)"	class="log">登录</a>
+							 -->
+							<a   href="/member/index.php"	class="log">登录</a>
+						</div>
+						  
+						<div class="manage-list">
+							<span class="triangle-up"></span>
+							<ul>
+								<!--<LI class="manage-list-item"><A id="user_center" href="/index/member/personalization/inittype/BASEINFO"> <I class="icon-user-center"></I> <SPAN class="user-manage-list-text">个人中心</SPAN>-->
+								<li><a href="/index/member/personalization"
+									id="user_center" class="manage-list-item"> <span
+										class="user-manage-list-text">个人中心</span>
+								</a></li>
+								<li><a href="/index/message/viewmessage" id="user_edit"
+									class="manage-list-item"> <span
+										class="user-manage-list-text">最新消息 <font size="2px"
+											color="red"><sup></sup></font></span>
+								</a></li>
+								<li><a href="/index/member/modifyinfo" id="user_edit"
+									class="manage-list-item"> <span
+										class="user-manage-list-text">个人设置</span>
+								</a></li>
+
+								<li><a href="/index/member/logout" id="logout"
+									class="manage-list-item"> <span
+										class="user-manage-list-text">退出登录</span>
+								</a></li>
+							</ul>
+							
+						</div>
+						
+						
+					</div>
+				</div>
+				</div>
+				<div style="margin-top: 22px; float: right; width: 200px;">
+
+					<div style="height: 36px; margin-top: 3px; float: right;">
+						<form method="POST" action="">
+
+							<!-- <div style="width:200px;"> -->
+
+							<span style="float: left;"> <input type="text"
+								autocomplete="off" value="" placeholder="搜索设备"
+								class="default-search" name="keyword">
+
+							</span> <span style="position: absolute; margin: 9px -25px"> <input
+								type="submit" value="提交查询内容" class="search-icon">
+
+							</span>
+
+						</form>
+
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
+
+		<div class="clear"></div>
+
+
+
+	</header>
+
+</div>
+
+
+
+<div class="container" id="content_wrapper">
+		<!-- 		<div class="fixed-ad web">
+			<img alt="" class="fixed-ad-img" src="/Public/Home/image/yingyongbao_lottery.png" />
+			<div class="close-fixed-ad">关闭</div>
+		</div> -->
+		<!-- Left side Cards -->
+		<div class="left-side">
+			<article>
+				<section>
+					<!-- Web Article -->
+					<div class="content-card article-style">
+						<img id="article_cover" alt="精美" src="/Uploads/UserFiles/Image/2014-09-01/540495ac90fe6.jpg" data-original="/Uploads/UserFiles/Image/2014-09-01/540495ac90fe6.jpg">
+						<input type="hidden" value="21">
+						<div id="web-article-header">
+							<div class="article-title" style="margin-bottom: 0px;">
+								<div class="app-title">
+									<h1 style="margin-top:0px;float: left;width: auto;">
+										精美									</h1>
+									<h4 style="margin:0px 0px 0px 30px;float: left;padding: 10px 0px 0px;">
+										2014-09-01 23:50								</h4>
+								</div>
+							</div>
+							<div class="short-des" id="summary">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;有你就精彩</div>
+						</div>
+					</div>
+				</section>
+				<!-- Comment App Area -->
+
+				<div style="margin-bottom: 0px;margin-top: 20px;border: 1px solid #D9DADC;border-bottom: 0px;color: #66;background: #fff;text-align: left;padding-left: 10px; ">
+					<h1 style="color: #3091F2;">专题相关文章 &gt;&gt;</h1>
+				</div>
+				<div style="margin: 0px;height: 3px;border-bottom: 5px solid #3091F2;background: #3091F2;"></div>
+					 			<dl class="tbox">
+				<dd>
+					<ul class="d1 ico3">
+                    	<section>
+				<div class="content-card-wrapper">
+					<div class="content-card">
+						<!-- Article Title -->
+						<div class="article-title">
+							<a class="app-title" href="/a/zhijian/2014/0826/630.html" target="_blank" data="6958a4a2cc2eabcf9071d055e658deea">
+								<h1>
+									不一样的数据线 -- bleed								</h1>
+							</a>
+							<div class="pub-time-and-version" style="padding-top: 10px;">
+								<span class="pub-time">2014-08-26</span>
+							</div>
+						</div>
+						<!-- Article Img -->
+						<a class="article-img" href="/a/zhijian/2014/0826/630.html" target="_blank">
+						<img   style='display: block;' alt='title' src='/uploads/UserFiles/Image/2014-08-26/53fc24f1cab86.jpg'  data-original='/uploads/UserFiles/Image/2014-08-26/53fc24f1cab86.jpg'/>
+						
+						</a>
+					</div>
+					<!-- Quote Area -->
+					<div class="quote-area">
+						<div class="quote-words">
+							<div class="quote-icon"></div>
+							<a class="quote-text" href="/a/zhijian/2014/0826/630.html" target="_blank">
+							如果你觉得一根USB线只能用来给手机充电，那就凹凸曼了！作为智能充电线一条，bleed除了拥有时尚鲜亮的外观外还是个手机的数据备份库，走到哪里数据跟到哪里，即使没有任何网络。
+							
+						</div>
+						<p>
+							<a href="/member/index.php?uid=liujie8403@foxmail.c&action=article""><span class="user-title"></span>
+							<span class="user-name" style="float:right"> brown_liu</span></a>
+							<span class="newsimagenice">
+								<i></i><span>0</span>
+							</span>
+						</p>
+					</div>
+				 </div>
+			</section>
+
+					</ul>
+				</dd>
+
+				<footer>
+				<a class="back-to-top" href="#top"></a>
+			</footer>
+		</article>
+		</div>
+		
+		<div class="right-side">
+			<!-- Platform Infomation -->
+			<div class="side-card" style="padding: 10px 10px 10px 10px;">
+				<h5>最新专题</h5>
+				<ul style="margin-top: 10px;">
+						  <li style="border-top: solid 1px #ddd;height: 75px;">
+				  			<div style="clear:both;margin: 5px 0px 5px 0px;width:65%; float: left; font-size: 12px">
+				  				<a href="/app/2014/1101/11139.html" class="all-want-txt-a">游戏专题</a>
+				  				<p style="margin: 5px 0px 5px 0px;font-size: 10px;"><strong style="color: #ddd">&nbsp;&nbsp;2014-11-01 16:26</strong></p>
+				  			</div>
+			  				<a href="/app/2014/1101/11139.html" style="line-height: 70px;" target="_blank"><img alt="游戏专题" src="/images/defaultpic.gif" style="padding: 5px 0px 0px 0px" width="35%" height="60px"></a>
+						</li>
+<li style="border-top: solid 1px #ddd;height: 75px;">
+				  			<div style="clear:both;margin: 5px 0px 5px 0px;width:65%; float: left; font-size: 12px">
+				  				<a href="/special/arc-11122.html" class="all-want-txt-a">专题2</a>
+				  				<p style="margin: 5px 0px 5px 0px;font-size: 10px;"><strong style="color: #ddd">&nbsp;&nbsp;2014-10-25 19:47</strong></p>
+				  			</div>
+			  				<a href="/special/arc-11122.html" style="line-height: 70px;" target="_blank"><img alt="专题2" src="/images/defaultpic.gif" style="padding: 5px 0px 0px 0px" width="35%" height="60px"></a>
+						</li>
+<li style="border-top: solid 1px #ddd;height: 75px;">
+				  			<div style="clear:both;margin: 5px 0px 5px 0px;width:65%; float: left; font-size: 12px">
+				  				<a href="/app/2014/0910/6.html" class="all-want-txt-a">专题</a>
+				  				<p style="margin: 5px 0px 5px 0px;font-size: 10px;"><strong style="color: #ddd">&nbsp;&nbsp;2014-09-10 19:12</strong></p>
+				  			</div>
+			  				<a href="/app/2014/0910/6.html" style="line-height: 70px;" target="_blank"><img alt="专题" src="/uploads/141018/1-14101QGZ0539.jpg" style="padding: 5px 0px 0px 0px" width="35%" height="60px"></a>
+						</li>
+<li style="border-top: solid 1px #ddd;height: 75px;">
+				  			<div style="clear:both;margin: 5px 0px 5px 0px;width:65%; float: left; font-size: 12px">
+				  				<a href="/special/arc-11136.html" class="all-want-txt-a">奈何不是女汉子</a>
+				  				<p style="margin: 5px 0px 5px 0px;font-size: 10px;"><strong style="color: #ddd">&nbsp;&nbsp;2014-09-12 14:17</strong></p>
+				  			</div>
+			  				<a href="/special/arc-11136.html" style="line-height: 70px;" target="_blank"><img alt="奈何不是女汉子" src="/Uploads/UserFiles/Image/2014-09-12/5412923487db2.jpg" style="padding: 5px 0px 0px 0px" width="35%" height="60px"></a>
+						</li>
+<li style="border-top: solid 1px #ddd;height: 75px;">
+				  			<div style="clear:both;margin: 5px 0px 5px 0px;width:65%; float: left; font-size: 12px">
+				  				<a href="/special/arc-11137.html" class="all-want-txt-a">骑行天下</a>
+				  				<p style="margin: 5px 0px 5px 0px;font-size: 10px;"><strong style="color: #ddd">&nbsp;&nbsp;2014-09-12 14:38</strong></p>
+				  			</div>
+			  				<a href="/special/arc-11137.html" style="line-height: 70px;" target="_blank"><img alt="骑行天下" src="/Uploads/UserFiles/Image/2014-09-12/541294e51a71e.jpg" style="padding: 5px 0px 0px 0px" width="35%" height="60px"></a>
+						</li>
+<li style="border-top: solid 1px #ddd;height: 75px;">
+				  			<div style="clear:both;margin: 5px 0px 5px 0px;width:65%; float: left; font-size: 12px">
+				  				<a href="/special/arc-11138.html" class="all-want-txt-a">鞋子大乱斗</a>
+				  				<p style="margin: 5px 0px 5px 0px;font-size: 10px;"><strong style="color: #ddd">&nbsp;&nbsp;2014-09-12 16:14</strong></p>
+				  			</div>
+			  				<a href="/special/arc-11138.html" style="line-height: 70px;" target="_blank"><img alt="鞋子大乱斗" src="/Uploads/UserFiles/Image/2014-09-12/5412ab8113478.jpg" style="padding: 5px 0px 0px 0px" width="35%" height="60px"></a>
+						</li>
+
+						</ul>
+			</div>
+		</div>
+	</div>
+	
+	<div class="clear"></div>
+
+</div>
+<footer style="">
+		<div class="container">
+			<ul class="footer-link-list">
+				<li><p style="font:bold">公司介绍</p></li>
+				<li><a target="_blank" href="/index/index/aboutus" class="footer-link">关于我们</a></li>
+				<li><a target="_blank" href="/index/index/privacy" class="footer-link">隐私条款</a></li>
+				<li><a target="_blank" href="/index/index/userpolicy" class="footer-link">用户政策</a></li>
+				<li><a target="_blank" href="/index/index/joinus" class="footer-link">加入我们</a></li>
+
+			</ul>
+			<ul class="footer-link-list">
+				<li><p style="font:bold">合作伙伴</p></li>
+				<li><a target="_blank" href="http://www.baidu.com" class="footer-link external">百度</a></li>
+				<li><a target="_blank" href="http://www.aliyun.com" class="footer-link external">阿里云</a></li>
+				<li><a target="_blank" href="/index/index/userpolicy" class="footer-link"></a></li>
+				<li><a target="_blank" href="/index/index/joinus" class="footer-link"></a></li>
+
+			</ul>
+			<ul class="footer-link-list">
+				<li><p style="font:bold">订阅信息</p></li>
+				<li><a target="_blank" href="/templets/default/v1/Home/image/rss/geekviewRSS.xml" class="footer-link">
+				<img src="/templets/default/v1/Home/image/rss/rss.jpg" style="height:20px;"></a></li>
+
+			</ul>
+			<ul class="footer-link-list">
+				<li><p style="font:bold">&nbsp;</p></li>
+				<li>图片存储由&nbsp; <a href="http://www.aliyun.com/product/oss/?spm=5176.383338.201.7.IA7qhS" class="footer-link-ali external" target="_blank">阿里云存储</a> &nbsp;提供</li>
+
+			</ul>
+			<div class="clear"></div>		
+			<div class="copyright">
+				<span class="copyright-year">Copyright &copy;2013-2014 </span> <a href="#" class="footer-geekview">深圳市极客视界科技有限公司</a> <span class="company-number">粤ICP备14037549号-1</span>
+			</div>
+		</div>
+	</footer>
+	
+<script type="text/javascript">
+CheckLogin();
+</script>
+
+
+</body>
+</html>

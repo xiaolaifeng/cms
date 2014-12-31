@@ -1,0 +1,481 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>极客</title>
+<meta name="description" content="" />
+<meta name="keywords" content="" />
+
+<link rel=”alternate” type=”application/rss+xml” title=”” href=”/rss.php“/> 
+
+<link href="/templets/default/v1/Home/image/favicon.ico" type="image/x-icon" rel="icon" />
+<link href="/templets/default/v1/Home/css/panel.css" rel="stylesheet" media="screen" type="text/css" />
+<link href="/templets/default/v1/Home/css/normalize.css" rel="stylesheet" media="screen" type="text/css" />
+<link href="/templets/default/v1/Home/css/base.css" rel="stylesheet" media="screen" type="text/css" />
+<link href="/templets/default/v1/Home/css/responsive.css" rel="stylesheet" media="screen" type="text/css" />
+<link href="/templets/default/v1/Home/css/listPage.css" rel="stylesheet" media="screen" type="text/css" />
+<link href="/templets/default/v1/Home/css/login.css" rel="stylesheet" media="screen" type="text/css" />
+<link href="/templets/default/v1/css/pubnews.css" rel="stylesheet" media="screen" type="text/css" />
+<link href="/templets/default/v1/Home/css/toobar.css?2014" rel="stylesheet" media="screen" type="text/css" />
+
+<script src="/templets/default/v1/Home/js/jquery.min.js" language="javascript" type="text/javascript"></script>
+<script src="/templets/default/v1/Home/js/jquery.lazyload.min.js" language="javascript" type="text/javascript"></script>
+<script src="/templets/default/v1/Home/js/androidApp.js" language="javascript" type="text/javascript"></script>
+<script src="/templets/default/v1/Home/js/global.js" language="javascript" type="text/javascript"></script>
+<script src="/templets/default/v1/Home/js/placeholders.min.js" language="javascript" type="text/javascript"></script>
+<script src="/templets/default/v1/Home/js/ga.js" language="javascript" type="text/javascript"></script>
+<script src="/templets/default/v1/Home/js/main-2.js" language="javascript" type="text/javascript"></script>
+<script src="/templets/default/v1/Home/js/nr-100.js" language="javascript" type="text/javascript"></script>
+<script src="/templets/default/v1/Home/js/topics-x.js" language="javascript" type="text/javascript"></script>
+<script src="/templets/default/v1/Home/js/jquery.toolbar.min.js" language="javascript" type="text/javascript"></script>
+<script src="/templets/default/v1/Home/js/jquery.easing.1.3.js" language="javascript" type="text/javascript"></script>
+
+<script src="/include/dedeajax2.js" language="javascript" type="text/javascript" ></script>
+
+<script type="text/javascript">
+function CheckLogin(){
+  var taget_obj = document.getElementById('_userlogin');
+  myajax = new DedeAjax(taget_obj,false,false,'','','');
+  myajax.SendGet2("/member/ajax_loginsta.php");
+  $('.login-user-name').click( function()  {
+	    $('.manage-list ').toggle();
+	});
+  $('.loginForm').hide(0);
+  DedeXHTTP = null;
+}
+</script>
+
+
+<link href="/templets/default/v1/Home/css/community_list.css" rel="stylesheet" type="text/css" />
+
+<script language="javascript" type="text/javascript">
+<!--
+	$(function(){
+		$("a[_for]").mouseover(function(){
+			$(this).parents().children("a[_for]").removeClass("thisclass").parents().children("dd").hide();
+			$(this).addClass("thisclass").blur();
+			$("#"+$(this).attr("_for")).show();
+		});
+		$("a[_for=uc_member]").mouseover();
+		$("a[_for=flink_1]").mouseover();
+	});
+-->
+</script>
+</head>
+<body class=" js">
+<div class="viewblock animation">
+<div id="wrapper">
+	<header id="site_header">
+		<div style="height: 85px" class="navbar">
+			<div id="nav_container" class="container visible">
+				<a href="/" class="logo"><img
+					src="/templets/default/v1/Home/image/new_logo.png" alt="极客视界" class="logo-img"></a>
+				<nav>
+					<ul id="nav">
+						<li><a class="nav-item" rel="dropmenu2" href="/a/zhijian/">智见</a></li>
+						<li><a class="nav-item" rel="dropmenu1" href="/special/index.html">专题</a></li>
+						<li><a class="nav-item" rel="dropmenu1" href="/app/">极客玩</a></li>
+						<!-- 
+						<li><a href="/index/topic/index" class="nav-item ">专题</a></li>
+						<LI><A class="nav-item nav-item-discover " href="/index/gk_discover/discover">极客发现</A></LI> -->
+					</ul>
+				</nav>
+				<div id="_userlogin">
+				
+				<div style="margin-top: 22px; float: right; width: 100px;"  >
+					
+					<div style="height: 36px; float: right;">
+						<div class="user-account-info"
+							style="float: right; margin-top: 3px;">
+							<!-- 
+							<a onclick="showLoginDialog();" href="javascript:void(0)"	class="log">登录</a>
+							 -->
+							<a   href="/member/index.php"	class="log">登录</a>
+						</div>
+						  
+						<div class="manage-list">
+							<span class="triangle-up"></span>
+							<ul>
+								<!--<LI class="manage-list-item"><A id="user_center" href="/index/member/personalization/inittype/BASEINFO"> <I class="icon-user-center"></I> <SPAN class="user-manage-list-text">个人中心</SPAN>-->
+								<li><a href="/index/member/personalization"
+									id="user_center" class="manage-list-item"> <span
+										class="user-manage-list-text">个人中心</span>
+								</a></li>
+								<li><a href="/index/message/viewmessage" id="user_edit"
+									class="manage-list-item"> <span
+										class="user-manage-list-text">最新消息 <font size="2px"
+											color="red"><sup></sup></font></span>
+								</a></li>
+								<li><a href="/index/member/modifyinfo" id="user_edit"
+									class="manage-list-item"> <span
+										class="user-manage-list-text">个人设置</span>
+								</a></li>
+
+								<li><a href="/index/member/logout" id="logout"
+									class="manage-list-item"> <span
+										class="user-manage-list-text">退出登录</span>
+								</a></li>
+							</ul>
+							
+						</div>
+						
+						
+					</div>
+				</div>
+				</div>
+				<div style="margin-top: 22px; float: right; width: 200px;">
+
+					<div style="height: 36px; margin-top: 3px; float: right;">
+						<form method="POST" action="">
+
+							<!-- <div style="width:200px;"> -->
+
+							<span style="float: left;"> <input type="text"
+								autocomplete="off" value="" placeholder="搜索设备"
+								class="default-search" name="keyword">
+
+							</span> <span style="position: absolute; margin: 9px -25px"> <input
+								type="submit" value="提交查询内容" class="search-icon">
+
+							</span>
+
+						</form>
+
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
+
+		<div class="clear"></div>
+
+
+
+	</header>
+
+</div>
+
+
+
+<!-- head nav end -->
+
+<!-- article begin -->
+<div class="container" id="content_wrapper">
+		<div class="left-side">
+			<article>
+					<ul class="community-app-list-wrapper">
+				           <li class="community-app-wrapper">
+								<div class="community-app-info-wrapper">
+									<img alt="" class="community-app-cover" src="/images/defaultpic.gif" width="100%;" height="181">
+									<div class="caption" style="bottom: -191px;">
+										<a href="/special/arc-11122.html" target="_blank">
+											<span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
+										</a>
+									</div>
+								</div>
+								<div class="totpic_title">
+									<span class="lSpan">
+										<a href="/special/arc-11122.html" target="_blank">
+											专题2										</a>
+									</span>
+									<span class="rSpan">文章(<a href="/special/arc-11122.html" target="_blank">200</a>)</span>
+								</div>
+							</li><li class="community-app-wrapper">
+								<div class="community-app-info-wrapper">
+									<img alt="" class="community-app-cover" src="/Uploads/UserFiles/Image/2014-09-12/5412ab8113478.jpg" width="100%;" height="181">
+									<div class="caption" style="bottom: -191px;">
+										<a href="/special/arc-11138.html" target="_blank">
+											<span>&nbsp;&nbsp;&nbsp;&nbsp;只能说，人类的需求才是推动社会发展的根本啊，原本的只是用来协助行走的鞋子与现代科技的结合已经衍生出许许多多的功能，看看无妨~</span>
+										</a>
+									</div>
+								</div>
+								<div class="totpic_title">
+									<span class="lSpan">
+										<a href="/special/arc-11138.html" target="_blank">
+											鞋子大乱斗										</a>
+									</span>
+									<span class="rSpan">文章(<a href="/special/arc-11138.html" target="_blank">0</a>)</span>
+								</div>
+							</li><li class="community-app-wrapper">
+								<div class="community-app-info-wrapper">
+									<img alt="" class="community-app-cover" src="/Uploads/UserFiles/Image/2014-09-12/541294e51a71e.jpg" width="100%;" height="181">
+									<div class="caption" style="bottom: -191px;">
+										<a href="/special/arc-11137.html" target="_blank">
+											<span>&nbsp;&nbsp;&nbsp;&nbsp;如今，自行车的身份早就跳出代步工具这个范畴了，什么西藏骑行，环岛骑行都是时下很时髦的做法，不仅强身健体，还能开阔视野。如此这般，多了解些关于自行车的知识又有何妨？</span>
+										</a>
+									</div>
+								</div>
+								<div class="totpic_title">
+									<span class="lSpan">
+										<a href="/special/arc-11137.html" target="_blank">
+											骑行天下										</a>
+									</span>
+									<span class="rSpan">文章(<a href="/special/arc-11137.html" target="_blank">0</a>)</span>
+								</div>
+							</li><li class="community-app-wrapper">
+								<div class="community-app-info-wrapper">
+									<img alt="" class="community-app-cover" src="/Uploads/UserFiles/Image/2014-09-12/5412923487db2.jpg" width="100%;" height="181">
+									<div class="caption" style="bottom: -191px;">
+										<a href="/special/arc-11136.html" target="_blank">
+											<span>&nbsp;&nbsp;&nbsp;&nbsp;女性一直都是社会上的弱势群体，而且哪里有女性失踪啊，受到侵犯啊，甚至被杀害这类新闻总是层出不穷，女性啊，到底什么时候才能不受到这么多的伤害啊！！！ 但是不管怎么说，女性总</span>
+										</a>
+									</div>
+								</div>
+								<div class="totpic_title">
+									<span class="lSpan">
+										<a href="/special/arc-11136.html" target="_blank">
+											奈何不是女汉子										</a>
+									</span>
+									<span class="rSpan">文章(<a href="/special/arc-11136.html" target="_blank">0</a>)</span>
+								</div>
+							</li><li class="community-app-wrapper">
+								<div class="community-app-info-wrapper">
+									<img alt="" class="community-app-cover" src="/Uploads/UserFiles/Image/2014-09-11/541160186324a.jpg" width="100%;" height="181">
+									<div class="caption" style="bottom: -191px;">
+										<a href="/special/arc-11135.html" target="_blank">
+											<span>&nbsp;&nbsp;&nbsp;&nbsp;民以食为天！能给自己做饭，那自己就是幸福的；能给喜欢的人做饭，那他/她也是幸福的。说白了就是...会做饭！不是很会？没关系！智能时代多少能给你在做饭的天赋或者勤奋度上弥补一些</span>
+										</a>
+									</div>
+								</div>
+								<div class="totpic_title">
+									<span class="lSpan">
+										<a href="/special/arc-11135.html" target="_blank">
+											厨神驾到										</a>
+									</span>
+									<span class="rSpan">文章(<a href="/special/arc-11135.html" target="_blank">0</a>)</span>
+								</div>
+							</li><li class="community-app-wrapper">
+								<div class="community-app-info-wrapper">
+									<img alt="" class="community-app-cover" src="/Uploads/UserFiles/Image/2014-09-11/54115b25dfbaf.jpg" width="100%;" height="181">
+									<div class="caption" style="bottom: -191px;">
+										<a href="/special/arc-11134.html" target="_blank">
+											<span>&nbsp;&nbsp;&nbsp;&nbsp;不得不说现在小偷的能耐也越来越厉害了，翻墙顶，爬排气窗，无所不用其极，家庭财产安全堪忧，那么我们就需要更加智能更加强硬的设备来帮助我们了！</span>
+										</a>
+									</div>
+								</div>
+								<div class="totpic_title">
+									<span class="lSpan">
+										<a href="/special/arc-11134.html" target="_blank">
+											看家能手										</a>
+									</span>
+									<span class="rSpan">文章(<a href="/special/arc-11134.html" target="_blank">0</a>)</span>
+								</div>
+							</li><li class="community-app-wrapper">
+								<div class="community-app-info-wrapper">
+									<img alt="" class="community-app-cover" src="/Uploads/UserFiles/Image/2014-09-11/54114f72086b7.jpg" width="100%;" height="181">
+									<div class="caption" style="bottom: -191px;">
+										<a href="/special/arc-11133.html" target="_blank">
+											<span>&nbsp;&nbsp;&nbsp;&nbsp;很多人喜欢花草，不仅仅是因为植物能够美化环境，更是因为种植花草能够修养身心，淘去内心的浮躁。但是花草亦有花草的脾性，想要种植它们前提是要懂得它们。省却阅读大批资料的时间，</span>
+										</a>
+									</div>
+								</div>
+								<div class="totpic_title">
+									<span class="lSpan">
+										<a href="/special/arc-11133.html" target="_blank">
+											植物大神										</a>
+									</span>
+									<span class="rSpan">文章(<a href="/special/arc-11133.html" target="_blank">0</a>)</span>
+								</div>
+							</li><li class="community-app-wrapper">
+								<div class="community-app-info-wrapper">
+									<img alt="" class="community-app-cover" src="/Uploads/UserFiles/Image/2014-09-11/54114a532100f.jpg" width="100%;" height="181">
+									<div class="caption" style="bottom: -191px;">
+										<a href="/special/arc-11132.html" target="_blank">
+											<span>&nbsp;&nbsp;&nbsp;&nbsp;不管一个人在外面怎么叱咤风云，怎么呼风唤雨，他/她最有安全感的地方都是自己的家，不然怎么说金窝银窝不如自家的狗窝呢~ 哪怕是简简单单的一束花，一张画，也能顿时让你家更加温馨，</span>
+										</a>
+									</div>
+								</div>
+								<div class="totpic_title">
+									<span class="lSpan">
+										<a href="/special/arc-11132.html" target="_blank">
+											我想有个更温馨的家										</a>
+									</span>
+									<span class="rSpan">文章(<a href="/special/arc-11132.html" target="_blank">0</a>)</span>
+								</div>
+							</li><li class="community-app-wrapper">
+								<div class="community-app-info-wrapper">
+									<img alt="" class="community-app-cover" src="/Uploads/UserFiles/Image/2014-09-11/541145f7b4efe.jpg" width="100%;" height="181">
+									<div class="caption" style="bottom: -191px;">
+										<a href="/special/arc-11131.html" target="_blank">
+											<span>&nbsp;&nbsp;&nbsp;&nbsp;不要问我为什么面容憔悴，也不要问我为什么焦躁不安，我只是睡！不！好！而已。对比其他的，其实睡不好更容易让一个人崩溃，几乎没有人能持续不眠不休几个日夜的，大脑得不到休息你还</span>
+										</a>
+									</div>
+								</div>
+								<div class="totpic_title">
+									<span class="lSpan">
+										<a href="/special/arc-11131.html" target="_blank">
+											周公呓语										</a>
+									</span>
+									<span class="rSpan">文章(<a href="/special/arc-11131.html" target="_blank">0</a>)</span>
+								</div>
+							</li><li class="community-app-wrapper">
+								<div class="community-app-info-wrapper">
+									<img alt="" class="community-app-cover" src="/Uploads/UserFiles/Image/2014-09-11/54113fa56c1f1.jpg" width="100%;" height="181">
+									<div class="caption" style="bottom: -191px;">
+										<a href="/special/arc-11130.html" target="_blank">
+											<span>&nbsp;&nbsp;&nbsp;&nbsp;现代人的生活节奏越来越快，纷纷追求灵魂在路上，可是身体呢？很多时候根本就顾不上吧，经常都是等积累到一定程度大爆发了才幡然醒悟---身体是革命的本钱！来吧，这些小设备或许能让你</span>
+										</a>
+									</div>
+								</div>
+								<div class="totpic_title">
+									<span class="lSpan">
+										<a href="/special/arc-11130.html" target="_blank">
+											关于身体，你知多少										</a>
+									</span>
+									<span class="rSpan">文章(<a href="/special/arc-11130.html" target="_blank">0</a>)</span>
+								</div>
+							</li><li class="community-app-wrapper">
+								<div class="community-app-info-wrapper">
+									<img alt="" class="community-app-cover" src="/Uploads/UserFiles/Image/2014-09-11/54113bba97d8e.jpg" width="100%;" height="181">
+									<div class="caption" style="bottom: -191px;">
+										<a href="/special/arc-11129.html" target="_blank">
+											<span>&nbsp;&nbsp;&nbsp;&nbsp;不想总被丢三落四找不到东西的郁闷情绪锁俘虏就来这里看看吧，不管是下面的哪一款，都能让你藏起来的东西或是自己跑掉的东西乖乖现形！</span>
+										</a>
+									</div>
+								</div>
+								<div class="totpic_title">
+									<span class="lSpan">
+										<a href="/special/arc-11129.html" target="_blank">
+											呔，你往哪里跑										</a>
+									</span>
+									<span class="rSpan">文章(<a href="/special/arc-11129.html" target="_blank">0</a>)</span>
+								</div>
+							</li><li class="community-app-wrapper">
+								<div class="community-app-info-wrapper">
+									<img alt="" class="community-app-cover" src="/Uploads/UserFiles/Image/2014-09-10/54100c6c2a354.jpg" width="100%;" height="181">
+									<div class="caption" style="bottom: -191px;">
+										<a href="/special/arc-11128.html" target="_blank">
+											<span>&nbsp;&nbsp;&nbsp;&nbsp;古时候，有权利的人可以只手遮天。信息化的智能时代，只手遮天再也不是什么难事，翻手为云，覆手为雨，简简单单的几款设备就等实现你对生活的控制。</span>
+										</a>
+									</div>
+								</div>
+								<div class="totpic_title">
+									<span class="lSpan">
+										<a href="/special/arc-11128.html" target="_blank">
+											翻云覆雨										</a>
+									</span>
+									<span class="rSpan">文章(<a href="/special/arc-11128.html" target="_blank">0</a>)</span>
+								</div>
+							</li><li class="community-app-wrapper">
+								<div class="community-app-info-wrapper">
+									<img alt="" class="community-app-cover" src="/Uploads/UserFiles/Image/2014-09-03/5406b5b87dc18.jpg" width="100%;" height="181">
+									<div class="caption" style="bottom: -191px;">
+										<a href="/special/arc-11127.html" target="_blank">
+											<span>&nbsp;&nbsp;&nbsp;&nbsp;懒惰是人的天性？或许可能，但运动绝对让人天性美。如何把动作做标准，如何把握运动量，如何不让自己受到伤害 。在没有教练和旁观者的前提下，往往训练不足没有效果，或者训练过度导</span>
+										</a>
+									</div>
+								</div>
+								<div class="totpic_title">
+									<span class="lSpan">
+										<a href="/special/arc-11127.html" target="_blank">
+											运动达人										</a>
+									</span>
+									<span class="rSpan">文章(<a href="/special/arc-11127.html" target="_blank">0</a>)</span>
+								</div>
+							</li><li class="community-app-wrapper">
+								<div class="community-app-info-wrapper">
+									<img alt="" class="community-app-cover" src="/Uploads/UserFiles/Image/2014-09-01/540496345f4db.png" width="100%;" height="181">
+									<div class="caption" style="bottom: -191px;">
+										<a href="/special/arc-11126.html" target="_blank">
+											<span>&nbsp;&nbsp;&nbsp;&nbsp;戴出个性</span>
+										</a>
+									</div>
+								</div>
+								<div class="totpic_title">
+									<span class="lSpan">
+										<a href="/special/arc-11126.html" target="_blank">
+											穿戴										</a>
+									</span>
+									<span class="rSpan">文章(<a href="/special/arc-11126.html" target="_blank">0</a>)</span>
+								</div>
+							</li><li class="community-app-wrapper">
+								<div class="community-app-info-wrapper">
+									<img alt="" class="community-app-cover" src="/Uploads/UserFiles/Image/2014-09-01/540495ac90fe6.jpg" width="100%;" height="181">
+									<div class="caption" style="bottom: -191px;">
+										<a href="/special/arc-11125.html" target="_blank">
+											<span>&nbsp;&nbsp;&nbsp;&nbsp;有你就精彩</span>
+										</a>
+									</div>
+								</div>
+								<div class="totpic_title">
+									<span class="lSpan">
+										<a href="/special/arc-11125.html" target="_blank">
+											精美										</a>
+									</span>
+									<span class="rSpan">文章(<a href="/special/arc-11125.html" target="_blank">0</a>)</span>
+								</div>
+							</li>
+				</ul>
+
+				<!-- Back to top -->
+				<a class="back-to-top" href="#top"></a>
+			</article>
+		</div>
+	</div>
+
+
+<!-- /content -->
+</div>
+
+<footer style="">
+		<div class="container">
+			<ul class="footer-link-list">
+				<li><p style="font:bold">公司介绍</p></li>
+				<li><a target="_blank" href="/index/index/aboutus" class="footer-link">关于我们</a></li>
+				<li><a target="_blank" href="/index/index/privacy" class="footer-link">隐私条款</a></li>
+				<li><a target="_blank" href="/index/index/userpolicy" class="footer-link">用户政策</a></li>
+				<li><a target="_blank" href="/index/index/joinus" class="footer-link">加入我们</a></li>
+
+			</ul>
+			<ul class="footer-link-list">
+				<li><p style="font:bold">合作伙伴</p></li>
+				<li><a target="_blank" href="http://www.baidu.com" class="footer-link external">百度</a></li>
+				<li><a target="_blank" href="http://www.aliyun.com" class="footer-link external">阿里云</a></li>
+				<li><a target="_blank" href="/index/index/userpolicy" class="footer-link"></a></li>
+				<li><a target="_blank" href="/index/index/joinus" class="footer-link"></a></li>
+
+			</ul>
+			<ul class="footer-link-list">
+				<li><p style="font:bold">订阅信息</p></li>
+				<li><a target="_blank" href="/templets/default/v1/Home/image/rss/geekviewRSS.xml" class="footer-link">
+				<img src="/templets/default/v1/Home/image/rss/rss.jpg" style="height:20px;"></a></li>
+
+			</ul>
+			<ul class="footer-link-list">
+				<li><p style="font:bold">&nbsp;</p></li>
+				<li>图片存储由&nbsp; <a href="http://www.aliyun.com/product/oss/?spm=5176.383338.201.7.IA7qhS" class="footer-link-ali external" target="_blank">阿里云存储</a> &nbsp;提供</li>
+
+			</ul>
+			<div class="clear"></div>		
+			<div class="copyright">
+				<span class="copyright-year">Copyright &copy;2013-2014 </span> <a href="#" class="footer-geekview">深圳市极客视界科技有限公司</a> <span class="company-number">粤ICP备14037549号-1</span>
+			</div>
+		</div>
+	</footer>
+	
+<script type="text/javascript">
+CheckLogin();
+</script>
+
+<script>
+$(document).ready(function () {
+// transition effect
+style = 'easeOutQuart';
+// if the mouse hover the image
+$('.community-app-info-wrapper').hover(
+function() {
+//display heading and caption
+$(this).children(".caption").stop(false,true).animate({bottom:0},{duration:200, easing: style});
+},
+function() {
+//hide heading and caption
+$(this).children(".caption").stop(false,true).animate({bottom:-191},{duration:200, easing: style});
+}
+);
+});
+</script> 
+<!-- /footer -->
+</body>
+</html>

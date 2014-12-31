@@ -1,0 +1,128 @@
+﻿#app-ss-div ul,#app-ss-div li {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+#app-ss-div img {
+	border: 0;
+	vertical-align: top;
+}
+
+#app-ss-div {
+	position: relative;
+	height: 400px;
+	text-align: left;
+}
+
+#app-ss-div .app-ss-ul {
+	position: relative;
+	margin: 0 auto;
+	height: 100%;
+}
+
+#app-ss-div .app-ss-ul li {
+	position: absolute;
+	display: none;
+	z-index: 0;
+}
+
+#app-ss-div .app-ss-ul li img {
+	width: 100%;
+}
+
+#app-ss-div .app-ss-ul li.div-ss-01 {
+	display: block;
+	width: 160px;
+	left: 0%;
+	top: 60px;
+	z-index: 1;
+}
+
+#app-ss-div .app-ss-ul li.div-ss-02 {
+	display: block;
+	width: 180px;
+	left: 10%;
+	top: 40px;
+	z-index: 2;
+}
+
+#app-ss-div .app-ss-ul li.div-ss-03 {
+	display: block;
+	width: 200px;
+	left: 25%;
+	top: 20px;
+	z-index: 3;
+}
+
+#app-ss-div .app-ss-ul li.div-ss-04 {
+	display: block;
+	width: 180px;
+	right: 10%;
+	top: 40px;
+	z-index: 2;
+}
+
+#app-ss-div .app-ss-ul li.div-ss-05 {
+	display: block;
+	width: 160px;
+	right: 0%;
+	top: 60px;
+	z-index: 1;
+}
+
+#app-ss-div .app-ss-menu {
+	position: absolute;
+	bottom: 0px;
+	width: 100%;
+	text-align: center;
+}
+
+#app-ss-div .app-ss-menu li {
+	display: inline-block;
+	zoom: 1;
+	*display: inline;
+	width: 12px;
+	height: 12px;
+	cursor: pointer;
+	margin-right: 3px;
+}
+#app-ss-div .app-ss-menu li:before, #app-ss-div .app-ss-menu li.selected:before {
+	font-size: 16px;
+	font-family: 'FontAwesome';
+} 
+
+#app-ss-div .app-ss-menu li:before {
+	content: "\f10c";
+}
+
+#app-ss-div .app-ss-menu li.selected:before {
+	content: "\f111";
+}
+
+#app-ss-div .app-ss-next, #app-ss-div .app-ss-prev {
+	position: absolute;
+	left: 50%;
+	top: 160px;
+	z-index: 10;
+	cursor: pointer;
+}
+
+#app-ss-div .app-ss-next {
+	margin-left: 300px;
+}
+
+#app-ss-div .app-ss-prev {
+	margin-left: -360px;
+}
+
+@media (max-width: 768px) {
+	#app-ss-div .app-ss-next {
+		margin-left: 120px;
+	}
+
+	#app-ss-div .app-ss-prev {
+		margin-left: -180px;
+	}
+}
+

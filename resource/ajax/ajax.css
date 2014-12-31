@@ -1,0 +1,27 @@
+/****** 可自行修改CSS显示风格 示例可参看 blog.very68.com, 星星图片star.png可自行切割和定制  *****/
+.score{background-color: white;display:block;}
+.pfen{color:#888787;height:26px;margin:auto;overflow:hidden}
+.pfen .star{width:188px;height:26px;overflow:hidden;float:left}
+.pfen .star div{height:26px;overflow:hidden;float:left}
+.pfen .starscore{width:180px;height:26px;overflow:hidden;float:left}
+.pfen p b{color:#ff3900;height:26px;line-height:25px;font-size:24px;font-family:Arial,Helvetica,sans-serif;overflow:hidden;float:left}
+.pfen p em{color:#f00;font-size:12px;padding-right:6px;overflow:hidden;float:left}
+.pfen .starA{width:120px;height:26px;margin:0;padding:0;background:url(/resource/ajax/star.png) repeat-x scroll 0 -38px transparent;display:block;position:relative;float:left}
+.pfen .starB{height:24px;margin:0;background:url(/resource/ajax/star.png) repeat-x scroll 0 -64px transparent;display:block;float:left}
+.pfen .starC{width:120px;height:26px;line-height:24px;top:0;left:0;position:absolute;float:left}
+.pfen .starC a{width:12px;height:26px;margin:0;display:block;float:left}
+.pfen .s0{width:0;float:left}
+.pfen .s1{width:11.5px;float:left}
+.pfen .s2{width:23px;float:left}
+.pfen .s3{width:35px;float:left}
+.pfen .s4{width:46px;float:left}
+.pfen .s5{width:59.5px;float:left}
+.pfen .s6{width:71px;float:left}
+.pfen .s7{width:83px;float:left}
+.pfen .s8{width:94px;float:left}
+.pfen .s9{width:107.5px;float:left}
+.pfen .s10{width:120px;float:left}
+#start{height:26px;overflow:hidden}
+#filmStarScore{height:26px;line-height:25px;padding:0 3px 0 12px;font-weight:bold;color:#FF6600;font-family:Arial;font-size:24px;float:left;overflow:hidden}
+#filmStarScore i{font-style:normal;font-size:18px}
+#filmStarScoreTip{color:#888787;font-size:12px;height:26px;line-height:25px;margin-left:6px;display:block;float:left;overflow:hidden}

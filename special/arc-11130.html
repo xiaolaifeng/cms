@@ -1,0 +1,662 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>关于身体，你知多少_极客</title>
+<meta name="keywords" content="" />
+<meta name="description" content="现代人的生活节奏越来越快，纷纷追求灵魂在路上，可是身体呢？很多时候根本就顾不上吧，经常都是等积累到一定程度大爆发了才幡然醒悟---身体是革命的本钱！来吧，这些小设备或许能让你更加了解自己的身体。" />
+<link rel=”alternate” type=”application/rss+xml” title=”关于身体，你知多少” href=”/rss.php“/> 
+
+<link href="/templets/default/v1/Home/image/favicon.ico" type="image/x-icon" rel="icon" />
+<link href="/templets/default/v1/Home/css/panel.css" rel="stylesheet" media="screen" type="text/css" />
+<link href="/templets/default/v1/Home/css/normalize.css" rel="stylesheet" media="screen" type="text/css" />
+<link href="/templets/default/v1/Home/css/base.css" rel="stylesheet" media="screen" type="text/css" />
+<link href="/templets/default/v1/Home/css/responsive.css" rel="stylesheet" media="screen" type="text/css" />
+<link href="/templets/default/v1/Home/css/listPage.css" rel="stylesheet" media="screen" type="text/css" />
+<link href="/templets/default/v1/Home/css/login.css" rel="stylesheet" media="screen" type="text/css" />
+<link href="/templets/default/v1/css/pubnews.css" rel="stylesheet" media="screen" type="text/css" />
+<link href="/templets/default/v1/Home/css/toobar.css?2014" rel="stylesheet" media="screen" type="text/css" />
+
+<script src="/templets/default/v1/Home/js/jquery.min.js" language="javascript" type="text/javascript"></script>
+<script src="/templets/default/v1/Home/js/jquery.lazyload.min.js" language="javascript" type="text/javascript"></script>
+<script src="/templets/default/v1/Home/js/androidApp.js" language="javascript" type="text/javascript"></script>
+<script src="/templets/default/v1/Home/js/global.js" language="javascript" type="text/javascript"></script>
+<script src="/templets/default/v1/Home/js/placeholders.min.js" language="javascript" type="text/javascript"></script>
+<script src="/templets/default/v1/Home/js/ga.js" language="javascript" type="text/javascript"></script>
+<script src="/templets/default/v1/Home/js/main-2.js" language="javascript" type="text/javascript"></script>
+<script src="/templets/default/v1/Home/js/nr-100.js" language="javascript" type="text/javascript"></script>
+<script src="/templets/default/v1/Home/js/topics-x.js" language="javascript" type="text/javascript"></script>
+<script src="/templets/default/v1/Home/js/jquery.toolbar.min.js" language="javascript" type="text/javascript"></script>
+<script src="/templets/default/v1/Home/js/jquery.easing.1.3.js" language="javascript" type="text/javascript"></script>
+
+<script src="/include/dedeajax2.js" language="javascript" type="text/javascript" ></script>
+
+<script type="text/javascript">
+function CheckLogin(){
+  var taget_obj = document.getElementById('_userlogin');
+  myajax = new DedeAjax(taget_obj,false,false,'','','');
+  myajax.SendGet2("/member/ajax_loginsta.php");
+  $('.login-user-name').click( function()  {
+	    $('.manage-list ').toggle();
+	});
+  $('.loginForm').hide(0);
+  DedeXHTTP = null;
+}
+</script>
+
+
+
+</head>
+<body class=" js">
+<div class="viewblock animation">
+<div id="wrapper">
+	<header id="site_header">
+		<div style="height: 85px" class="navbar">
+			<div id="nav_container" class="container visible">
+				<a href="/" class="logo"><img
+					src="/templets/default/v1/Home/image/new_logo.png" alt="极客视界" class="logo-img"></a>
+				<nav>
+					<ul id="nav">
+						<li><a class="nav-item" rel="dropmenu2" href="/a/zhijian/">智见</a></li>
+						<li><a class="nav-item" rel="dropmenu1" href="/special/index.html">专题</a></li>
+						<li><a class="nav-item" rel="dropmenu1" href="/app/">极客玩</a></li>
+						<!-- 
+						<li><a href="/index/topic/index" class="nav-item ">专题</a></li>
+						<LI><A class="nav-item nav-item-discover " href="/index/gk_discover/discover">极客发现</A></LI> -->
+					</ul>
+				</nav>
+				<div id="_userlogin">
+				
+				<div style="margin-top: 22px; float: right; width: 100px;"  >
+					
+					<div style="height: 36px; float: right;">
+						<div class="user-account-info"
+							style="float: right; margin-top: 3px;">
+							<!-- 
+							<a onclick="showLoginDialog();" href="javascript:void(0)"	class="log">登录</a>
+							 -->
+							<a   href="/member/index.php"	class="log">登录</a>
+						</div>
+						  
+						<div class="manage-list">
+							<span class="triangle-up"></span>
+							<ul>
+								<!--<LI class="manage-list-item"><A id="user_center" href="/index/member/personalization/inittype/BASEINFO"> <I class="icon-user-center"></I> <SPAN class="user-manage-list-text">个人中心</SPAN>-->
+								<li><a href="/index/member/personalization"
+									id="user_center" class="manage-list-item"> <span
+										class="user-manage-list-text">个人中心</span>
+								</a></li>
+								<li><a href="/index/message/viewmessage" id="user_edit"
+									class="manage-list-item"> <span
+										class="user-manage-list-text">最新消息 <font size="2px"
+											color="red"><sup></sup></font></span>
+								</a></li>
+								<li><a href="/index/member/modifyinfo" id="user_edit"
+									class="manage-list-item"> <span
+										class="user-manage-list-text">个人设置</span>
+								</a></li>
+
+								<li><a href="/index/member/logout" id="logout"
+									class="manage-list-item"> <span
+										class="user-manage-list-text">退出登录</span>
+								</a></li>
+							</ul>
+							
+						</div>
+						
+						
+					</div>
+				</div>
+				</div>
+				<div style="margin-top: 22px; float: right; width: 200px;">
+
+					<div style="height: 36px; margin-top: 3px; float: right;">
+						<form method="POST" action="">
+
+							<!-- <div style="width:200px;"> -->
+
+							<span style="float: left;"> <input type="text"
+								autocomplete="off" value="" placeholder="搜索设备"
+								class="default-search" name="keyword">
+
+							</span> <span style="position: absolute; margin: 9px -25px"> <input
+								type="submit" value="提交查询内容" class="search-icon">
+
+							</span>
+
+						</form>
+
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
+
+		<div class="clear"></div>
+
+
+
+	</header>
+
+</div>
+
+
+
+<div class="container" id="content_wrapper">
+		<!-- 		<div class="fixed-ad web">
+			<img alt="" class="fixed-ad-img" src="/Public/Home/image/yingyongbao_lottery.png" />
+			<div class="close-fixed-ad">关闭</div>
+		</div> -->
+		<!-- Left side Cards -->
+		<div class="left-side">
+			<article>
+				<section>
+					<!-- Web Article -->
+					<div class="content-card article-style">
+						<img id="article_cover" alt="关于身体，你知多少" src="/Uploads/UserFiles/Image/2014-09-11/54113fa56c1f1.jpg" data-original="/Uploads/UserFiles/Image/2014-09-11/54113fa56c1f1.jpg">
+						<input type="hidden" value="21">
+						<div id="web-article-header">
+							<div class="article-title" style="margin-bottom: 0px;">
+								<div class="app-title">
+									<h1 style="margin-top:0px;float: left;width: auto;">
+										关于身体，你知多少									</h1>
+									<h4 style="margin:0px 0px 0px 30px;float: left;padding: 10px 0px 0px;">
+										2014-09-11 14:22								</h4>
+								</div>
+							</div>
+							<div class="short-des" id="summary">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;现代人的生活节奏越来越快，纷纷追求灵魂在路上，可是身体呢？很多时候根本就顾不上吧，经常都是等积累到一定程度大爆发了才幡然醒悟---身体是革命的本钱！来吧，这些小设备或许能让你更加了解自己的身体。</div>
+						</div>
+					</div>
+				</section>
+				<!-- Comment App Area -->
+
+				<div style="margin-bottom: 0px;margin-top: 20px;border: 1px solid #D9DADC;border-bottom: 0px;color: #66;background: #fff;text-align: left;padding-left: 10px; ">
+					<h1 style="color: #3091F2;">专题相关文章 &gt;&gt;</h1>
+				</div>
+				<div style="margin: 0px;height: 3px;border-bottom: 5px solid #3091F2;background: #3091F2;"></div>
+					 			<dl class="tbox">
+				<dd>
+					<ul class="d1 ico3">
+                    	<section>
+				<div class="content-card-wrapper">
+					<div class="content-card">
+						<!-- Article Title -->
+						<div class="article-title">
+							<a class="app-title" href="/a/zhijian/2014/0717/512.html" target="_blank" data="6958a4a2cc2eabcf9071d055e658deea">
+								<h1>
+									你的家庭个人助理 -- Jibo								</h1>
+							</a>
+							<div class="pub-time-and-version" style="padding-top: 10px;">
+								<span class="pub-time">2014-07-17</span>
+							</div>
+						</div>
+						<!-- Article Img -->
+						<a class="article-img" href="/a/zhijian/2014/0717/512.html" target="_blank">
+						<img   style='display: block;' alt='title' src='/uploads/UserFiles/Image/2014-07-22/53ce15c50342d.jpg'  data-original='/uploads/UserFiles/Image/2014-07-22/53ce15c50342d.jpg'/>
+						
+						</a>
+					</div>
+					<!-- Quote Area -->
+					<div class="quote-area">
+						<div class="quote-words">
+							<div class="quote-icon"></div>
+							<a class="quote-text" href="/a/zhijian/2014/0717/512.html" target="_blank">
+							就像Siri，Google Now和Cortana，Jibo是你的个人助理；但是又与前三者不同，Jibo是一个真正的，活生生的，触手可及的机器人。
+							
+						</div>
+						<p>
+							<a href="/member/index.php?uid=brian.lee@geekview.c&action=article""><span class="user-title"></span>
+							<span class="user-name" style="float:right"> Brian</span></a>
+							<span class="newsimagenice">
+								<i></i><span>84</span>
+							</span>
+						</p>
+					</div>
+				 </div>
+			</section>
+<section>
+				<div class="content-card-wrapper">
+					<div class="content-card">
+						<!-- Article Title -->
+						<div class="article-title">
+							<a class="app-title" href="/a/zhijian/2014/0723/517.html" target="_blank" data="6958a4a2cc2eabcf9071d055e658deea">
+								<h1>
+									Violet--让你更好地晒太阳								</h1>
+							</a>
+							<div class="pub-time-and-version" style="padding-top: 10px;">
+								<span class="pub-time">2014-07-23</span>
+							</div>
+						</div>
+						<!-- Article Img -->
+						<a class="article-img" href="/a/zhijian/2014/0723/517.html" target="_blank">
+						<img   style='display: block;' alt='title' src='/uploads/UserFiles/Image/2014-07-26/53d37abe54457.jpg'  data-original='/uploads/UserFiles/Image/2014-07-26/53d37abe54457.jpg'/>
+						
+						</a>
+					</div>
+					<!-- Quote Area -->
+					<div class="quote-area">
+						<div class="quote-words">
+							<div class="quote-icon"></div>
+							<a class="quote-text" href="/a/zhijian/2014/0723/517.html" target="_blank">
+							Violet是一款小巧的可穿戴设备，它能够帮助你跟踪你的紫外线辐照程度以及估量由太阳光照而产生维D的量。
+							
+						</div>
+						<p>
+							<a href="/member/index.php?uid=brown.liu@geekview.c&action=article""><span class="user-title"></span>
+							<span class="user-name" style="float:right"> 从此清纯是路人</span></a>
+							<span class="newsimagenice">
+								<i></i><span>110</span>
+							</span>
+						</p>
+					</div>
+				 </div>
+			</section>
+<section>
+				<div class="content-card-wrapper">
+					<div class="content-card">
+						<!-- Article Title -->
+						<div class="article-title">
+							<a class="app-title" href="/a/zhijian/2014/0702/524.html" target="_blank" data="6958a4a2cc2eabcf9071d055e658deea">
+								<h1>
+									你的家庭口腔医生 -- Kolibree								</h1>
+							</a>
+							<div class="pub-time-and-version" style="padding-top: 10px;">
+								<span class="pub-time">2014-07-02</span>
+							</div>
+						</div>
+						<!-- Article Img -->
+						<a class="article-img" href="/a/zhijian/2014/0702/524.html" target="_blank">
+						<img   style='display: block;' alt='title' src='/uploads/UserFiles/Image/2014-07-26/53d37f25d2a25.jpg'  data-original='/uploads/UserFiles/Image/2014-07-26/53d37f25d2a25.jpg'/>
+						
+						</a>
+					</div>
+					<!-- Quote Area -->
+					<div class="quote-area">
+						<div class="quote-words">
+							<div class="quote-icon"></div>
+							<a class="quote-text" href="/a/zhijian/2014/0702/524.html" target="_blank">
+							虽然我们每天都刷牙，但是却不知道是不是真的刷干净了。不少童鞋都很听话，一天刷三次牙，但是依然有蛀牙的烦恼……那肯定是你打开的方式不正确。今天就跟大家介绍一款老少咸宜的智能电动牙刷——Kolibree
+							
+						</div>
+						<p>
+							<a href="/member/index.php?uid=brown.liu@geekview.c&action=article""><span class="user-title"></span>
+							<span class="user-name" style="float:right"> 从此清纯是路人</span></a>
+							<span class="newsimagenice">
+								<i></i><span>106</span>
+							</span>
+						</p>
+					</div>
+				 </div>
+			</section>
+<section>
+				<div class="content-card-wrapper">
+					<div class="content-card">
+						<!-- Article Title -->
+						<div class="article-title">
+							<a class="app-title" href="/a/zhijian/2014/0613/530.html" target="_blank" data="6958a4a2cc2eabcf9071d055e658deea">
+								<h1>
+									在家做医学化验 -- CUE #智能医疗								</h1>
+							</a>
+							<div class="pub-time-and-version" style="padding-top: 10px;">
+								<span class="pub-time">2014-06-13</span>
+							</div>
+						</div>
+						<!-- Article Img -->
+						<a class="article-img" href="/a/zhijian/2014/0613/530.html" target="_blank">
+						<img   style='display: block;' alt='title' src='/uploads/UserFiles/Image/2014-07-26/53d38302a19c9.jpg'  data-original='/uploads/UserFiles/Image/2014-07-26/53d38302a19c9.jpg'/>
+						
+						</a>
+					</div>
+					<!-- Quote Area -->
+					<div class="quote-area">
+						<div class="quote-words">
+							<div class="quote-icon"></div>
+							<a class="quote-text" href="/a/zhijian/2014/0613/530.html" target="_blank">
+							不想为了看个小感冒就到医院排长队？那就自己在家做化验吧，只需要你的一滴血液或者一点唾液，甚至是，呃......一张擦过鼻涕的纸巾。
+							
+						</div>
+						<p>
+							<a href="/member/index.php?uid=brian.lee@geekview.c&action=article""><span class="user-title"></span>
+							<span class="user-name" style="float:right"> Brian</span></a>
+							<span class="newsimagenice">
+								<i></i><span>106</span>
+							</span>
+						</p>
+					</div>
+				 </div>
+			</section>
+<section>
+				<div class="content-card-wrapper">
+					<div class="content-card">
+						<!-- Article Title -->
+						<div class="article-title">
+							<a class="app-title" href="/a/zhijian/2014/0616/535.html" target="_blank" data="6958a4a2cc2eabcf9071d055e658deea">
+								<h1>
+									知道你喝啥的智能杯具 -- Vessyl #智能水杯								</h1>
+							</a>
+							<div class="pub-time-and-version" style="padding-top: 10px;">
+								<span class="pub-time">2014-06-16</span>
+							</div>
+						</div>
+						<!-- Article Img -->
+						<a class="article-img" href="/a/zhijian/2014/0616/535.html" target="_blank">
+						<img   style='display: block;' alt='title' src='/uploads/UserFiles/Image/2014-07-27/53d45f1501099.jpg'  data-original='/uploads/UserFiles/Image/2014-07-27/53d45f1501099.jpg'/>
+						
+						</a>
+					</div>
+					<!-- Quote Area -->
+					<div class="quote-area">
+						<div class="quote-words">
+							<div class="quote-icon"></div>
+							<a class="quote-text" href="/a/zhijian/2014/0616/535.html" target="_blank">
+							它能辨认出你喝的是雪碧、可口可乐还是百事可乐，帮你分析营养成分和计算卡路里摄入。
+							
+						</div>
+						<p>
+							<a href="/member/index.php?uid=brian.lee@geekview.c&action=article""><span class="user-title"></span>
+							<span class="user-name" style="float:right"> Brian</span></a>
+							<span class="newsimagenice">
+								<i></i><span>101</span>
+							</span>
+						</p>
+					</div>
+				 </div>
+			</section>
+<section>
+				<div class="content-card-wrapper">
+					<div class="content-card">
+						<!-- Article Title -->
+						<div class="article-title">
+							<a class="app-title" href="/a/zhijian/2014/0807/562.html" target="_blank" data="6958a4a2cc2eabcf9071d055e658deea">
+								<h1>
+									请多喝水——The Hug								</h1>
+							</a>
+							<div class="pub-time-and-version" style="padding-top: 10px;">
+								<span class="pub-time">2014-08-07</span>
+							</div>
+						</div>
+						<!-- Article Img -->
+						<a class="article-img" href="/a/zhijian/2014/0807/562.html" target="_blank">
+						<img   style='display: block;' alt='title' src='/uploads/UserFiles/Image/2014-08-07/53e336b629ed8.jpg'  data-original='/uploads/UserFiles/Image/2014-08-07/53e336b629ed8.jpg'/>
+						
+						</a>
+					</div>
+					<!-- Quote Area -->
+					<div class="quote-area">
+						<div class="quote-words">
+							<div class="quote-icon"></div>
+							<a class="quote-text" href="/a/zhijian/2014/0807/562.html" target="_blank">
+							The Hug是一个关于监测日常饮水的完美解决方案，包括了一个智能传感器和一个手机应用。它能跟踪你的饮水情况，并在最恰当的时候提醒你去饮水。
+							
+						</div>
+						<p>
+							<a href="/member/index.php?uid=brian.lee@geekview.c&action=article""><span class="user-title"></span>
+							<span class="user-name" style="float:right"> Brian</span></a>
+							<span class="newsimagenice">
+								<i></i><span>1</span>
+							</span>
+						</p>
+					</div>
+				 </div>
+			</section>
+<section>
+				<div class="content-card-wrapper">
+					<div class="content-card">
+						<!-- Article Title -->
+						<div class="article-title">
+							<a class="app-title" href="/a/zhijian/2014/0812/576.html" target="_blank" data="6958a4a2cc2eabcf9071d055e658deea">
+								<h1>
+									10秒钟做个体检——Scanadu Scout								</h1>
+							</a>
+							<div class="pub-time-and-version" style="padding-top: 10px;">
+								<span class="pub-time">2014-08-12</span>
+							</div>
+						</div>
+						<!-- Article Img -->
+						<a class="article-img" href="/a/zhijian/2014/0812/576.html" target="_blank">
+						<img   style='display: block;' alt='title' src='/uploads/UserFiles/Image/2014-08-12/53e992dd78943.jpg'  data-original='/uploads/UserFiles/Image/2014-08-12/53e992dd78943.jpg'/>
+						
+						</a>
+					</div>
+					<!-- Quote Area -->
+					<div class="quote-area">
+						<div class="quote-words">
+							<div class="quote-icon"></div>
+							<a class="quote-text" href="/a/zhijian/2014/0812/576.html" target="_blank">
+							Scanadu Scout是一款扫描体检设备，为读取你身体的核心健康数据而设计，并无线同步到智能手机上。所有的这些都会在10秒之内完成。你可以在任何时间，任何地点，查看自己的身体状况。
+							
+						</div>
+						<p>
+							<a href="/member/index.php?uid=brian.lee@geekview.c&action=article""><span class="user-title"></span>
+							<span class="user-name" style="float:right"> Brian</span></a>
+							<span class="newsimagenice">
+								<i></i><span>1</span>
+							</span>
+						</p>
+					</div>
+				 </div>
+			</section>
+<section>
+				<div class="content-card-wrapper">
+					<div class="content-card">
+						<!-- Article Title -->
+						<div class="article-title">
+							<a class="app-title" href="/a/zhijian/2014/0812/579.html" target="_blank" data="6958a4a2cc2eabcf9071d055e658deea">
+								<h1>
+									你够专注吗？Melon告诉你								</h1>
+							</a>
+							<div class="pub-time-and-version" style="padding-top: 10px;">
+								<span class="pub-time">2014-08-12</span>
+							</div>
+						</div>
+						<!-- Article Img -->
+						<a class="article-img" href="/a/zhijian/2014/0812/579.html" target="_blank">
+						<img   style='display: block;' alt='title' src='/uploads/UserFiles/Image/2014-08-12/53e9b87f2a8a5.png'  data-original='/uploads/UserFiles/Image/2014-08-12/53e9b87f2a8a5.png'/>
+						
+						</a>
+					</div>
+					<!-- Quote Area -->
+					<div class="quote-area">
+						<div class="quote-words">
+							<div class="quote-icon"></div>
+							<a class="quote-text" href="/a/zhijian/2014/0812/579.html" target="_blank">
+							试想一下，如果能够有某种设备能够实时地观测到你大脑的专注程度，应该对工作学习会有很大的帮助吧？我说的可不是那种示波器一样庞大而丑陋的设备，而是Melon，一款外观时尚而不乏强大功能的头环。 
+
+它能够帮助穿戴者观测自己的大脑活动，通过形象的方式反馈出穿戴者当前的专注程度，并且给出合适的建议来促进学习和工作效率。
+							
+						</div>
+						<p>
+							<a href="/member/index.php?uid=brian.lee@geekview.c&action=article""><span class="user-title"></span>
+							<span class="user-name" style="float:right"> Brian</span></a>
+							<span class="newsimagenice">
+								<i></i><span>0</span>
+							</span>
+						</p>
+					</div>
+				 </div>
+			</section>
+<section>
+				<div class="content-card-wrapper">
+					<div class="content-card">
+						<!-- Article Title -->
+						<div class="article-title">
+							<a class="app-title" href="/a/zhijian/2014/0813/593.html" target="_blank" data="6958a4a2cc2eabcf9071d055e658deea">
+								<h1>
+									Bionic Pancreas，糖尿病人的福音								</h1>
+							</a>
+							<div class="pub-time-and-version" style="padding-top: 10px;">
+								<span class="pub-time">2014-08-13</span>
+							</div>
+						</div>
+						<!-- Article Img -->
+						<a class="article-img" href="/a/zhijian/2014/0813/593.html" target="_blank">
+						<img   style='display: block;' alt='title' src='/uploads/UserFiles/Image/2014-08-13/53eacc9ddf64e.jpg'  data-original='/uploads/UserFiles/Image/2014-08-13/53eacc9ddf64e.jpg'/>
+						
+						</a>
+					</div>
+					<!-- Quote Area -->
+					<div class="quote-area">
+						<div class="quote-words">
+							<div class="quote-icon"></div>
+							<a class="quote-text" href="/a/zhijian/2014/0813/593.html" target="_blank">
+							提到可穿戴设备，人们第一反应大多是想到具备社交和娱乐功能的智能腕表、智能手环等，如FitBit和三星Galaxy Gear. 然而可穿戴设备的最重要的应用就是医学领域，比如说今天要介绍的Bionic Pancreas.
+							
+						</div>
+						<p>
+							<a href="/member/index.php?uid=liujie8403@foxmail.c&action=article""><span class="user-title"></span>
+							<span class="user-name" style="float:right"> brown_liu</span></a>
+							<span class="newsimagenice">
+								<i></i><span>0</span>
+							</span>
+						</p>
+					</div>
+				 </div>
+			</section>
+<section>
+				<div class="content-card-wrapper">
+					<div class="content-card">
+						<!-- Article Title -->
+						<div class="article-title">
+							<a class="app-title" href="/a/zhijian/2014/0814/603.html" target="_blank" data="6958a4a2cc2eabcf9071d055e658deea">
+								<h1>
+									更智能的血压计——QardioArm								</h1>
+							</a>
+							<div class="pub-time-and-version" style="padding-top: 10px;">
+								<span class="pub-time">2014-08-14</span>
+							</div>
+						</div>
+						<!-- Article Img -->
+						<a class="article-img" href="/a/zhijian/2014/0814/603.html" target="_blank">
+						<img   style='display: block;' alt='title' src='/uploads/UserFiles/Image/2014-08-14/53ec834fbc98a.jpg'  data-original='/uploads/UserFiles/Image/2014-08-14/53ec834fbc98a.jpg'/>
+						
+						</a>
+					</div>
+					<!-- Quote Area -->
+					<div class="quote-area">
+						<div class="quote-words">
+							<div class="quote-icon"></div>
+							<a class="quote-text" href="/a/zhijian/2014/0814/603.html" target="_blank">
+							与你的生活无缝对接，与你的手机无线通讯，自动记录医学级别的数据，你的身体情况，医生和你都了如指掌。
+							
+						</div>
+						<p>
+							<a href="/member/index.php?uid=liujie8403@foxmail.c&action=article""><span class="user-title"></span>
+							<span class="user-name" style="float:right"> brown_liu</span></a>
+							<span class="newsimagenice">
+								<i></i><span>0</span>
+							</span>
+						</p>
+					</div>
+				 </div>
+			</section>
+
+					</ul>
+				</dd>
+
+				<footer>
+				<a class="back-to-top" href="#top"></a>
+			</footer>
+		</article>
+		</div>
+		
+		<div class="right-side">
+			<!-- Platform Infomation -->
+			<div class="side-card" style="padding: 10px 10px 10px 10px;">
+				<h5>最新专题</h5>
+				<ul style="margin-top: 10px;">
+						  <li style="border-top: solid 1px #ddd;height: 75px;">
+				  			<div style="clear:both;margin: 5px 0px 5px 0px;width:65%; float: left; font-size: 12px">
+				  				<a href="/app/2014/1101/11139.html" class="all-want-txt-a">游戏专题</a>
+				  				<p style="margin: 5px 0px 5px 0px;font-size: 10px;"><strong style="color: #ddd">&nbsp;&nbsp;2014-11-01 16:26</strong></p>
+				  			</div>
+			  				<a href="/app/2014/1101/11139.html" style="line-height: 70px;" target="_blank"><img alt="游戏专题" src="/images/defaultpic.gif" style="padding: 5px 0px 0px 0px" width="35%" height="60px"></a>
+						</li>
+<li style="border-top: solid 1px #ddd;height: 75px;">
+				  			<div style="clear:both;margin: 5px 0px 5px 0px;width:65%; float: left; font-size: 12px">
+				  				<a href="/special/arc-11122.html" class="all-want-txt-a">专题2</a>
+				  				<p style="margin: 5px 0px 5px 0px;font-size: 10px;"><strong style="color: #ddd">&nbsp;&nbsp;2014-10-25 19:47</strong></p>
+				  			</div>
+			  				<a href="/special/arc-11122.html" style="line-height: 70px;" target="_blank"><img alt="专题2" src="/images/defaultpic.gif" style="padding: 5px 0px 0px 0px" width="35%" height="60px"></a>
+						</li>
+<li style="border-top: solid 1px #ddd;height: 75px;">
+				  			<div style="clear:both;margin: 5px 0px 5px 0px;width:65%; float: left; font-size: 12px">
+				  				<a href="/app/2014/0910/6.html" class="all-want-txt-a">专题</a>
+				  				<p style="margin: 5px 0px 5px 0px;font-size: 10px;"><strong style="color: #ddd">&nbsp;&nbsp;2014-09-10 19:12</strong></p>
+				  			</div>
+			  				<a href="/app/2014/0910/6.html" style="line-height: 70px;" target="_blank"><img alt="专题" src="/uploads/141018/1-14101QGZ0539.jpg" style="padding: 5px 0px 0px 0px" width="35%" height="60px"></a>
+						</li>
+<li style="border-top: solid 1px #ddd;height: 75px;">
+				  			<div style="clear:both;margin: 5px 0px 5px 0px;width:65%; float: left; font-size: 12px">
+				  				<a href="/special/arc-11136.html" class="all-want-txt-a">奈何不是女汉子</a>
+				  				<p style="margin: 5px 0px 5px 0px;font-size: 10px;"><strong style="color: #ddd">&nbsp;&nbsp;2014-09-12 14:17</strong></p>
+				  			</div>
+			  				<a href="/special/arc-11136.html" style="line-height: 70px;" target="_blank"><img alt="奈何不是女汉子" src="/Uploads/UserFiles/Image/2014-09-12/5412923487db2.jpg" style="padding: 5px 0px 0px 0px" width="35%" height="60px"></a>
+						</li>
+<li style="border-top: solid 1px #ddd;height: 75px;">
+				  			<div style="clear:both;margin: 5px 0px 5px 0px;width:65%; float: left; font-size: 12px">
+				  				<a href="/special/arc-11137.html" class="all-want-txt-a">骑行天下</a>
+				  				<p style="margin: 5px 0px 5px 0px;font-size: 10px;"><strong style="color: #ddd">&nbsp;&nbsp;2014-09-12 14:38</strong></p>
+				  			</div>
+			  				<a href="/special/arc-11137.html" style="line-height: 70px;" target="_blank"><img alt="骑行天下" src="/Uploads/UserFiles/Image/2014-09-12/541294e51a71e.jpg" style="padding: 5px 0px 0px 0px" width="35%" height="60px"></a>
+						</li>
+<li style="border-top: solid 1px #ddd;height: 75px;">
+				  			<div style="clear:both;margin: 5px 0px 5px 0px;width:65%; float: left; font-size: 12px">
+				  				<a href="/special/arc-11138.html" class="all-want-txt-a">鞋子大乱斗</a>
+				  				<p style="margin: 5px 0px 5px 0px;font-size: 10px;"><strong style="color: #ddd">&nbsp;&nbsp;2014-09-12 16:14</strong></p>
+				  			</div>
+			  				<a href="/special/arc-11138.html" style="line-height: 70px;" target="_blank"><img alt="鞋子大乱斗" src="/Uploads/UserFiles/Image/2014-09-12/5412ab8113478.jpg" style="padding: 5px 0px 0px 0px" width="35%" height="60px"></a>
+						</li>
+
+						</ul>
+			</div>
+		</div>
+	</div>
+	
+	<div class="clear"></div>
+
+</div>
+<footer style="">
+		<div class="container">
+			<ul class="footer-link-list">
+				<li><p style="font:bold">公司介绍</p></li>
+				<li><a target="_blank" href="/index/index/aboutus" class="footer-link">关于我们</a></li>
+				<li><a target="_blank" href="/index/index/privacy" class="footer-link">隐私条款</a></li>
+				<li><a target="_blank" href="/index/index/userpolicy" class="footer-link">用户政策</a></li>
+				<li><a target="_blank" href="/index/index/joinus" class="footer-link">加入我们</a></li>
+
+			</ul>
+			<ul class="footer-link-list">
+				<li><p style="font:bold">合作伙伴</p></li>
+				<li><a target="_blank" href="http://www.baidu.com" class="footer-link external">百度</a></li>
+				<li><a target="_blank" href="http://www.aliyun.com" class="footer-link external">阿里云</a></li>
+				<li><a target="_blank" href="/index/index/userpolicy" class="footer-link"></a></li>
+				<li><a target="_blank" href="/index/index/joinus" class="footer-link"></a></li>
+
+			</ul>
+			<ul class="footer-link-list">
+				<li><p style="font:bold">订阅信息</p></li>
+				<li><a target="_blank" href="/templets/default/v1/Home/image/rss/geekviewRSS.xml" class="footer-link">
+				<img src="/templets/default/v1/Home/image/rss/rss.jpg" style="height:20px;"></a></li>
+
+			</ul>
+			<ul class="footer-link-list">
+				<li><p style="font:bold">&nbsp;</p></li>
+				<li>图片存储由&nbsp; <a href="http://www.aliyun.com/product/oss/?spm=5176.383338.201.7.IA7qhS" class="footer-link-ali external" target="_blank">阿里云存储</a> &nbsp;提供</li>
+
+			</ul>
+			<div class="clear"></div>		
+			<div class="copyright">
+				<span class="copyright-year">Copyright &copy;2013-2014 </span> <a href="#" class="footer-geekview">深圳市极客视界科技有限公司</a> <span class="company-number">粤ICP备14037549号-1</span>
+			</div>
+		</div>
+	</footer>
+	
+<script type="text/javascript">
+CheckLogin();
+</script>
+
+
+</body>
+</html>
