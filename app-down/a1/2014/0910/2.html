@@ -1,0 +1,329 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>app下载test_极客</title>
+<meta name="keywords" content="app下载testapp下载test" />
+<meta name="description" content="yle=text-align: center;" />
+<link href="/dedecms/templets/default/style/dedecms.css" rel="stylesheet" media="screen" type="text/css" />
+
+<link type="image/x-icon" rel="icon" href="http://www.geekview.cn/Public/Home/image/favicon.ico"/>
+<link href="http://www.geekview.cn/Public/Home/css/panel.css" rel="stylesheet" media="screen" type="text/css" />
+<link href="http://www.geekview.cn/Public/Home/css/normalize.css" rel="stylesheet" media="screen" type="text/css" />
+<link href="http://www.geekview.cn/Public/Home/css/base.css" rel="stylesheet" media="screen" type="text/css" />
+<link href="http://www.geekview.cn/Public/Home/css/responsive.css" rel="stylesheet" media="screen" type="text/css" />
+<link href="http://www.geekview.cn/Public/Home/css/listPage.css" rel="stylesheet" media="screen" type="text/css" />
+<link href="http://www.geekview.cn/Public/Home/css/login.css" rel="stylesheet" media="screen" type="text/css" />
+
+<script language="javascript" type="text/javascript" src="/dedecms/include/dedeajax2.js"></script>
+<script language="javascript" type="text/javascript">
+<!--
+function CheckLogin()
+{
+	var taget_obj = document.getElementById('_ajax_feedback');
+	myajax = new DedeAjax(taget_obj,false,false,'','','');
+	myajax.SendGet2("/dedecms/member/ajax_feedback.php");
+	DedeXHTTP = null;
+}
+function postBadGood(ftype,fid)
+{
+	var taget_obj = document.getElementById(ftype+fid);
+	var saveid = GetCookie('badgoodid');
+	if(saveid != null)
+	{
+		var saveids = saveid.split(',');
+		var hasid = false;
+		saveid = '';
+		j = 1;
+		for(i=saveids.length-1;i>=0;i--)
+		{
+			if(saveids[i]==fid && hasid) continue;
+			else {
+				if(saveids[i]==fid && !hasid) hasid = true;
+				saveid += (saveid=='' ? saveids[i] : ','+saveids[i]);
+				j++;
+				if(j==10 && hasid) break;
+				if(j==9 && !hasid) break;
+			}
+		}
+		if(hasid) { alert('您刚才已表决过了喔！'); return false;}
+		else saveid += ','+fid;
+		SetCookie('badgoodid',saveid,1);
+	}
+	else
+	{
+		SetCookie('badgoodid',fid,1);
+	}
+	myajax = new DedeAjax(taget_obj,false,false,'','','');
+	myajax.SendGet2("/dedecms/plus/feedback.php?aid="+fid+"&action="+ftype+"&fid="+fid);
+	DedeXHTTP = null;
+}
+function postDigg(ftype,aid)
+{
+	var taget_obj = document.getElementById('newdigg');
+	var saveid = GetCookie('diggid');
+	if(saveid != null)
+	{
+		var saveids = saveid.split(',');
+		var hasid = false;
+		saveid = '';
+		j = 1;
+		for(i=saveids.length-1;i>=0;i--)
+		{
+			if(saveids[i]==aid && hasid) continue;
+			else {
+				if(saveids[i]==aid && !hasid) hasid = true;
+				saveid += (saveid=='' ? saveids[i] : ','+saveids[i]);
+				j++;
+				if(j==20 && hasid) break;
+				if(j==19 && !hasid) break;
+			}
+		}
+		if(hasid) { alert("您已经顶过该帖，请不要重复顶帖 ！"); return; }
+		else saveid += ','+aid;
+		SetCookie('diggid',saveid,1);
+	}
+	else
+	{
+		SetCookie('diggid',aid,1);
+	}
+	myajax = new DedeAjax(taget_obj,false,false,'','','');
+	var url = "/dedecms/plus/digg_ajax.php?action="+ftype+"&id="+aid;
+	myajax.SendGet2(url);
+	DedeXHTTP = null;
+}
+function getDigg(aid)
+{
+	var taget_obj = document.getElementById('newdigg');
+	myajax = new DedeAjax(taget_obj,false,false,'','','');
+	myajax.SendGet2("/dedecms/plus/digg_ajax.php?id="+aid);
+	DedeXHTTP = null;
+}
+-->
+</script>
+</head>
+<body class="downlist js">
+<div id="wrapper">
+
+		<header id="site_header">
+
+			<div style="height:85px" class="navbar">
+
+				<div id="nav_container" class="container visible">
+
+					<a href="/" class="logo"><img src="http://www.geekview.cn/Public/Home/image/new_logo.png" alt="极客视界" class="logo-img"></a>
+
+					<nav>
+
+						<ul id="nav">
+
+
+      	
+      	<li><a href='/dedecms/a/zhijian/'  rel='dropmenu2'  class="nav-item">智见</a></li>
+      	<li class='hover'><a class='nav-item active-nav-item' href='/dedecms/app/'  rel='dropmenu1'>PLAY</a></li>
+
+
+							<!-- <LI><A class="nav-item nav-item-discover " href="/index/gk_discover/discover">极客发现</A></LI> -->
+
+						</ul>
+
+					</nav>
+
+
+
+					<div style="margin-top: 22px; float: right; width: 200px;">
+
+						<div style="height: 36px; margin-top:3px ;float: right;">
+
+ <form  name="formsearch" action="/dedecms/plus/search.php">
+	 <span style="float:left;">
+	<select name="searchtype" style="display:none" id="search-option">
+	               <option value="title" selected='1'>检索标题</option>
+	               <option value="titlekeyword">智能模糊</option>
+	           </select>
+		<input type="text"  id="search-keyword" autocomplete="off" value="" placeholder="搜索设备" class="default-search" name="q"  onfocus="if(this.value=='搜索设备'){this.value='';}"  onblur="if(this.value==''){this.value='搜索设备';}" > 
+	
+	</span>
+	<span style="position:absolute; margin:9px -25px">
+		<input type="submit" value="提交查询内容" class="search-icon">
+	</span>
+</form>
+
+
+						</div>
+
+					</div>
+
+				</div>
+
+			</div>
+
+			<div class="clear"></div>
+
+			
+
+		</header>
+
+	</div>
+
+
+<!-- /header -->
+
+<div class="w960 center clear mt1">
+	<div class="">
+		<div>
+			<ul>
+                    <li><a href='/dedecms/app/a1/' class='thisclass'>应用分类</a></li>
+					<li><a href='/dedecms/app/game/'>游戏分类</a></li>
+					<li><a href='/dedecms/app/yingyongpaixing/'>应用排行</a></li>
+					<li><a href='/dedecms/app/youxipaixing/'>游戏排行</a></li>
+			</ul>
+		</div>
+	
+		<div class="viewbox">
+			<div>
+				<div >
+					<div >
+						<img src='/dedecms/uploads/allimg/140911/103F02a7-0-lp.jpg' />
+					</div>
+					<h2>app下载test</h2>
+				</div><!-- /title -->
+				<small>下载次数：</small><span><script src="/dedecms/plus/disdls.php?aid=2" language="javascript"></script></span>
+				<small></small><span>★★★☆☆</span>
+				<div class="actbox">
+					<ul>
+						<li id="act-fav"><a href="/dedecms/plus/stow.php?aid=2" target="_blank">收藏</a></li>
+						<li id="act-err"><a href="/dedecms/plus/erraddsave.php?aid=2&title=app下载test" target="_blank">挑错</a></li>
+						<li id="act-pus"><a href="/dedecms/plus/recommend.php?aid=2" target="_blank">推荐</a></li>
+					</ul>
+				</div><!-- /actbox -->
+			</div>
+			<div class="infolist">
+				<small>软件类型：</small><span>国产软件</span>
+				<small>授权方式：</small><span>共享软件</span>
+				<small>界面语言：</small><span>简体中文</span>
+				<small>软件大小：</small><span>未知</span>
+				<small>文件类型：</small><span>.exe</span>
+				<small>运行环境：</small><span>Win2003WinXPWin2000Win9X</span>
+				<small>app简介：</small><span></span>
+				
+				<small>发布时间：</small><span>2014-09-10</span>
+				<small>官方网址：</small><span>http://</span>
+        <small>演示网址：</small><span>http://</span>
+        
+			</div><!-- /info -->
+			<div class="picview">
+				<img src='/dedecms/uploads/allimg/140911/103F02a7-0-lp.jpg' />
+			</div><!-- /info -->
+			<div class="labeltitle">
+				<strong>软件介绍</strong>
+			</div>
+			<div class="content">
+				EverNote是一款著名的笔记软件，界面与功能十分类似OneNote。它不仅具备强大的笔记捕捉功能，还采用了独特的分类方式，而且支持filter的自动整理、即时搜索。含中文界面。<br />
+1. To-Do选框：可以在任何笔记条目中通过右键选择&rdquo;Insert To-Do checkbox&rdquo;或者是使用Ctrl-Shift-C来快捷插入To-Do选框，允许标记完成，这样便能把笔记变成一个简易的待办事项，并且自动归类到 To-Do的类别列表中了。这个功能很实用，比如你从网上复制了一些自己需要阅读的文章，然后需要将来进行阅读，或者是引用等等，便可以加一个To-Do 的选框来提示你需要处理。<br />
+2. 截图板：一个系统托盘的小程序，可以快速的进行屏幕截图来添加到笔记或者其它程序中。<br />
+而且在这个小软件的 设置中我发现了一个&rdquo;MyEverNote Service&rdquo;，应该是可以把截图上传到Evernote的网站服务器中，然后便发现了这么一个网站&rdquo;MyEverNote&ldquo;，不过为邀请注册机制，我 已经提交了申请，但愿是能实现我期望已久的客户端软件加上网络在线同步笔的记功能！<br />
+3. Note List：加入了一个Note List的按钮，可以展示按时间排列的所有笔记条目。<br />
+4. Category Locator：点击左侧的Categories则可以显示分类的搜索栏，来快速查找类别。<br />
+5. Time Categories：添加了By Date的自动分类，用于快速查找相应时间段内的笔记。<br />
+6. Note Flag：可以为笔记添加标记Flag，同时在自动分类中也有Flag类别进行自动归类。<br />
+7. Category Stamp Dialog：点击笔记条目上面的分类按钮可以弹出类别设置窗口来进行类别调整。
+			</div>
+			<div class="labeltitle">
+				<strong>下载地址</strong>
+			</div>
+			<div class="content">
+				<ul class="downurllist">
+                	<li><a href="/dedecms/plus/download.php?open=2&id=2&uhash=faeb240f27509dd7041883cb" target="_blank">本地下载</a></li>
+                </ul>
+			</div>
+			<div class="labeltitle">
+				<strong>下载说明</strong>
+			</div>
+			<div class="intro">
+				<p>?推荐使用第三方专业下载工具下载本站软件，使用 WinRAR v3.10 以上版本解压本站软件。<br />	
+?如果这个软件总是不能下载的请点击报告错误,谢谢合作!!<br />	
+?下载本站资源，如果服务器暂不能下载请过一段时间重试！<br />	
+?如果遇到什么问题，请到本站论坛去咨寻，我们将在那里提供更多 、更好的资源！<br />	
+?本站提供的一些商业软件是供学习研究之用，如用于商业用途，请购买正版。</p>
+			</div>
+			<div class="newdigg" id="newdigg">
+				<div class="diggbox digg_good" onmousemove="this.style.backgroundPosition='left bottom';" onmouseout="this.style.backgroundPosition='left top';" onclick="javascript:postDigg('good',2)">
+					<div class="digg_act">顶一下</div>
+					<div class="digg_num">(2)</div>
+					<div class="digg_percent">
+						<div class="digg_percent_bar"><span style="width:100%"></span></div>
+						<div class="digg_percent_num">100%</div>
+					</div>
+				</div>
+				<div class="diggbox digg_bad" onmousemove="this.style.backgroundPosition='right bottom';" onmouseout="this.style.backgroundPosition='right top';" onclick="javascript:postDigg('bad',2)">
+					<div class="digg_act">踩一下</div>
+					<div class="digg_num">(0)</div>
+					<div class="digg_percent">
+						<div class="digg_percent_bar"><span style="width:0%"></span></div>
+						<div class="digg_percent_num">0%</div>
+					</div>
+				</div>
+			</div>
+			 <script language="javascript" type="text/javascript">getDigg(2);</script>
+			<div class="boxoff">
+				<strong>------分隔线----------------------------</strong>
+			</div>
+			<div class="handle">
+				<div class="context">
+					<ul>
+						<li>上一篇：没有了 </li>
+						<li>下一篇：没有了 </li>
+					</ul>
+				</div><!-- /context -->
+				
+			</div><!-- /handle -->
+		</div><!-- /viewbox -->
+
+<!-- //AJAX评论区 -->
+<div class='_DEDECY' style=''><div id='SOHUCS' sid='2'></div></div><script>(function(){var doc = document,s = doc.createElement('script'),h = doc.getElementsByTagName('head')[0] || doc.head || doc.documentElement;s.type = 'text/javascript';s.charset = 'utf-8';s.src='http://assets.changyan.sohu.com/upload/changyan.js?conf=prod_6d4b7e17e66a3883e0acda697bdfcb0c&appid=cyrmNqJCm';h.insertBefore(s,h.firstChild);window.SCS_NO_IFRAME = true;})()</script>
+
+	
+	</div><!-- /pleft -->
+
+</div>
+
+
+<footer style="">
+		<div class="container">
+			<ul class="footer-link-list">
+				<li><p style="font:bold">公司介绍</p></li>
+				<li><a target="_blank" href="http://www.geekview.cn/index/index/aboutus" class="footer-link">关于我们</a></li>
+				<li><a target="_blank" href="http://www.geekview.cn/index/index/privacy" class="footer-link">隐私条款</a></li>
+				<li><a target="_blank" href="http://www.geekview.cn/index/index/userpolicy" class="footer-link">用户政策</a></li>
+				<li><a target="_blank" href="http://www.geekview.cn/index/index/joinus" class="footer-link">加入我们</a></li>
+
+			</ul>
+			<ul class="footer-link-list">
+				<li><p style="font:bold">合作伙伴</p></li>
+				<li><a target="_blank" href="http://www.baidu.com" class="footer-link external">百度</a></li>
+				<li><a target="_blank" href="http://www.aliyun.com" class="footer-link external">阿里云</a></li>
+				<li><a target="_blank" href="http://www.geekview.cn/index/index/userpolicy" class="footer-link"></a></li>
+				<li><a target="_blank" href="http://www.geekview.cnindex/index/joinus" class="footer-link"></a></li>
+
+			</ul>
+			<ul class="footer-link-list">
+				<li><p style="font:bold">订阅信息</p></li>
+				<li><a target="_blank" href="/Public/Home/image/rss/geekviewRSS.xml" class="footer-link"><img src="http://www.geekview.cn/Public/Home/image/rss/rss.jpg" style="height:20px;"></a></li>
+
+			</ul>
+			<ul class="footer-link-list">
+				<li><p style="font:bold">&nbsp;</p></li>
+				<li>图片存储由&nbsp; <a href="http://www.aliyun.com/product/oss/?spm=5176.383338.201.7.IA7qhS" class="footer-link-ali external" target="_blank">阿里云存储</a> &nbsp;提供</li>
+
+			</ul>
+			<div class="clear"></div>		
+			<div class="copyright">
+				<span class="copyright-year">Copyright &copy;2013-2014 </span> <a href="#" class="footer-geekview">深圳市极客视界科技有限公司</a> <span class="company-number">粤ICP备14037549号-1</span>
+			</div>
+		</div>
+	</footer>
+<!-- /footer -->
+<script src="/dedecms/plus/count.php?aid=2&mid=1" language="javascript"></script>
+</body>
+</html>

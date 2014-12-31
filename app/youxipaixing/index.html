@@ -1,0 +1,268 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>PLAY  /  游戏排行_极客</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link href="/dedecms/templets/default/style/dedecms.css" rel="stylesheet" media="screen" type="text/css" />
+
+<link type="image/x-icon" rel="icon" href="http://www.geekview.cn/Public/Home/image/favicon.ico"/>
+<link href="http://www.geekview.cn/Public/Home/css/panel.css" rel="stylesheet" media="screen" type="text/css" />
+<link href="http://www.geekview.cn/Public/Home/css/normalize.css" rel="stylesheet" media="screen" type="text/css" />
+<link href="http://www.geekview.cn/Public/Home/css/base.css" rel="stylesheet" media="screen" type="text/css" />
+<link href="http://www.geekview.cn/Public/Home/css/responsive.css" rel="stylesheet" media="screen" type="text/css" />
+<link href="http://www.geekview.cn/Public/Home/css/listPage.css" rel="stylesheet" media="screen" type="text/css" />
+<link href="http://www.geekview.cn/Public/Home/css/login.css" rel="stylesheet" media="screen" type="text/css" />
+
+
+<link href="/dedecms/..//resource/plugins/boostrapv3/css/bootstrap.min.css"    rel="stylesheet" type="text/css" />
+<link href="/dedecms/..//resource/plugins/boostrapv3/css/bootstrap-theme.min.css"  rel="stylesheet" type="text/css" />
+<link href="/dedecms/..//resource/plugins/font-awesome/css/font-awesome.css"  rel="stylesheet" type="text/css" />
+<link href="/dedecms/..//resource/css/style.css" rel="stylesheet" type="text/css" />
+        <!-- 兼容IE8,IE9 -->
+<script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+<script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+</head>
+<body class="js downlist">
+
+<div class="viewblock animation">
+
+<div id="wrapper">
+
+		<header id="site_header">
+
+			<div style="height:85px" class="navbar">
+
+				<div id="nav_container" class="container visible">
+
+					<a href="/" class="logo"><img src="http://www.geekview.cn/Public/Home/image/new_logo.png" alt="极客视界" class="logo-img"></a>
+
+					<nav>
+
+						<ul id="nav">
+
+
+      	
+      	<li><a href='/dedecms/a/zhijian/'  rel='dropmenu2'  class="nav-item">智见</a></li>
+      	<li class='hover'><a class='nav-item active-nav-item' href='/dedecms/app/'  rel='dropmenu1'>PLAY</a></li>
+
+
+							<!-- <LI><A class="nav-item nav-item-discover " href="/index/gk_discover/discover">极客发现</A></LI> -->
+
+						</ul>
+
+					</nav>
+
+
+
+					<div style="margin-top: 22px; float: right; width: 200px;">
+
+						<div style="height: 36px; margin-top:3px ;float: right;">
+
+ <form  name="formsearch" action="/dedecms/plus/search.php">
+	 <span style="float:left;">
+	<select name="searchtype" style="display:none" id="search-option">
+	               <option value="title" selected='1'>检索标题</option>
+	               <option value="titlekeyword">智能模糊</option>
+	           </select>
+		<input type="text"  id="search-keyword" autocomplete="off" value="" placeholder="搜索设备" class="default-search" name="q"  onfocus="if(this.value=='搜索设备'){this.value='';}"  onblur="if(this.value==''){this.value='搜索设备';}" > 
+	
+	</span>
+	<span style="position:absolute; margin:9px -25px">
+		<input type="submit" value="提交查询内容" class="search-icon">
+	</span>
+</form>
+
+
+						</div>
+
+					</div>
+
+				</div>
+
+			</div>
+
+			<div class="clear"></div>
+
+			
+
+		</header>
+
+	</div>
+
+
+</div>
+<!-- /header -->
+<!-- 内容 begin -->
+<div class=" w960 center clear container page-content">
+        <!-- 子导航 -->
+        
+        
+        <div class="row">
+         <div class="dropdown pull-left app-category">
+            <button data-toggle="dropdown" id="dropdownMenu1" type="button" class="btn btn-default dropdown-toggle" href="/dedecms/app/a1/">
+            应用分类 <span class="caret"></span>
+            </button>
+            <ul aria-labelledby="dropdownMenu1" role="menu" class="dropdown-menu">
+             <li role="presentation"><a href="" tabindex="-1" role="menuitem" class="type34">通讯</a></li><li role="presentation"><a href="" tabindex="-1" role="menuitem" class="type33">社交</a></li>   
+            </ul>
+          </div><div class="dropdown pull-left app-category">
+            <button data-toggle="dropdown" id="dropdownMenu1" type="button" class="btn btn-default dropdown-toggle" href="/dedecms/app/game/">
+            游戏分类 <span class="caret"></span>
+            </button>
+            <ul aria-labelledby="dropdownMenu1" role="menu" class="dropdown-menu">
+             <li role="presentation"><a href="" tabindex="-1" role="menuitem" class="type36">动作</a></li><li role="presentation"><a href="" tabindex="-1" role="menuitem" class="type35">策略</a></li>   
+            </ul>
+          </div><div class="dropdown pull-left app-category">
+            <button data-toggle="dropdown" id="dropdownMenu1" type="button" class="btn btn-default dropdown-toggle" href="/dedecms/app/yingyongpaixing/">
+            应用排行 <span class="caret"></span>
+            </button>
+            <ul aria-labelledby="dropdownMenu1" role="menu" class="dropdown-menu">
+                
+            </ul>
+          </div><div class="dropdown pull-left app-category">
+            <button data-toggle="dropdown" id="dropdownMenu1" type="button" class="btn btn-default dropdown-toggle" href="/dedecms/app/youxipaixing/">
+            游戏排行 <span class="caret"></span>
+            </button>
+            <ul aria-labelledby="dropdownMenu1" role="menu" class="dropdown-menu">
+                
+            </ul>
+          </div><div class="dropdown pull-left app-category">
+            <button data-toggle="dropdown" id="dropdownMenu1" type="button" class="btn btn-default dropdown-toggle" href="/dedecms/app/zhuanti/">
+            专题 <span class="caret"></span>
+            </button>
+            <ul aria-labelledby="dropdownMenu1" role="menu" class="dropdown-menu">
+                
+            </ul>
+          </div>
+          <div class="dropdown pull-left app-category">
+            <button data-toggle="dropdown" id="dropdownMenu1" type="button" class="btn btn-default dropdown-toggle">
+            游戏 <span class="caret"></span>
+            </button>
+            <ul aria-labelledby="dropdownMenu1" role="menu" class="dropdown-menu">
+              <li role="presentation"><a href="#" tabindex="-1" role="menuitem">社交</a></li>
+              <li role="presentation"><a href="#" tabindex="-1" role="menuitem">通讯</a></li>
+            </ul>
+          </div>
+          <div class="dropdown pull-left app-category">
+            <button data-toggle="dropdown" id="dropdownMenu1" type="button" class="btn btn-default dropdown-toggle">
+            专题 <span class="caret"></span>
+            </button>
+            <ul aria-labelledby="dropdownMenu1" role="menu" class="dropdown-menu">
+              <li role="presentation"><a href="#" tabindex="-1" role="menuitem">社交</a></li>
+              <li role="presentation"><a href="#" tabindex="-1" role="menuitem">通讯</a></li>
+            </ul>
+          </div>
+          <div class="form-group pull-right">
+            <div>
+              <select class="form-control">
+                <option>更新</option>
+                <option>下载</option>
+                <option>评分</option>
+                <option>分类</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <!-- 子导航END -->
+        <!-- 正文 -->
+        <div class="row">
+          <h3>用于Android Wear</h3>
+          <div class="col-md-4 col-sm-6 col-xs-12 size-fix">
+          	<!-- app card list begin -->
+			
+            <!-- app card list end -->
+
+          </div>
+            
+          
+          
+          
+        </div>
+        <div class="row">
+          <h3>应用下载Top5</h3>
+          <div class="col-md-4 col-sm-6 col-xs-12 size-fix">
+            <div class="row app-card">
+              <div class="col-xs-3 app-icon">
+                <img width="68" height="68" alt="" src="resource/img/icon/icon.png">
+              </div>
+              <div class="col-xs-9 app-content">
+                <div class="row">
+                  <div class="app-title pull-left">
+                    <h4>陌陌</h4>
+                  </div>
+                  <div class="app-device-logo pull-left">
+                    <div class="android-logo active pull-left">
+                      <em class="fa fa-android"></em>
+                    </div>
+                    <div class="ios-logo active pull-left">
+                      <em class="fa fa-apple"></em>
+                    </div>
+                    <div class="windows-logo pull-left unsupport">
+                      <em class="fa fa-windows"></em>
+                    </div>
+                  </div>
+                  <div class="pull-right">
+                    <button class="btn btn-info">
+                    <li class="fa fa-download"></li>下载
+                    </button>
+                  </div>
+                </div>
+                <div class="row">
+                  <em class="fa fa-star"></em> <em class="fa fa-star"></em> <em class="fa fa-star"></em> <em class="fa fa-star"></em> <em class="fa fa-star-half-o"></em> 4.5
+                </div>
+                <div class="row">
+                  <p>颇具人气的社交应用，随时沟通附近的人，数以万计就在你周围的群总有几个能吸引你。</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          
+          
+          
+        </div>
+</div>
+<!-- 内容end -->
+
+
+
+<footer style="">
+		<div class="container">
+			<ul class="footer-link-list">
+				<li><p style="font:bold">公司介绍</p></li>
+				<li><a target="_blank" href="http://www.geekview.cn/index/index/aboutus" class="footer-link">关于我们</a></li>
+				<li><a target="_blank" href="http://www.geekview.cn/index/index/privacy" class="footer-link">隐私条款</a></li>
+				<li><a target="_blank" href="http://www.geekview.cn/index/index/userpolicy" class="footer-link">用户政策</a></li>
+				<li><a target="_blank" href="http://www.geekview.cn/index/index/joinus" class="footer-link">加入我们</a></li>
+
+			</ul>
+			<ul class="footer-link-list">
+				<li><p style="font:bold">合作伙伴</p></li>
+				<li><a target="_blank" href="http://www.baidu.com" class="footer-link external">百度</a></li>
+				<li><a target="_blank" href="http://www.aliyun.com" class="footer-link external">阿里云</a></li>
+				<li><a target="_blank" href="http://www.geekview.cn/index/index/userpolicy" class="footer-link"></a></li>
+				<li><a target="_blank" href="http://www.geekview.cnindex/index/joinus" class="footer-link"></a></li>
+
+			</ul>
+			<ul class="footer-link-list">
+				<li><p style="font:bold">订阅信息</p></li>
+				<li><a target="_blank" href="/Public/Home/image/rss/geekviewRSS.xml" class="footer-link"><img src="http://www.geekview.cn/Public/Home/image/rss/rss.jpg" style="height:20px;"></a></li>
+
+			</ul>
+			<ul class="footer-link-list">
+				<li><p style="font:bold">&nbsp;</p></li>
+				<li>图片存储由&nbsp; <a href="http://www.aliyun.com/product/oss/?spm=5176.383338.201.7.IA7qhS" class="footer-link-ali external" target="_blank">阿里云存储</a> &nbsp;提供</li>
+
+			</ul>
+			<div class="clear"></div>		
+			<div class="copyright">
+				<span class="copyright-year">Copyright &copy;2013-2014 </span> <a href="#" class="footer-geekview">深圳市极客视界科技有限公司</a> <span class="company-number">粤ICP备14037549号-1</span>
+			</div>
+		</div>
+	</footer>
+<!-- /footer -->
+
+</body>
+</html>
