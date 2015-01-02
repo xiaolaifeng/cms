@@ -2,22 +2,24 @@
         
         
         <div class="row">
-         {dede:channelartlist typeid='1'  currentstyle="<li><a href='~typelink~' class='thisclass'>~typename~</a></li>"}
+        {dede:type}
+        	<div class="dropdown pull-left app-category"><a  class="btn btn-default " href="[field:typeurl/]">全部[field:typename /]</a></div>
+        {/dede:type}
+         {dede:channelartlist typeid='1'  currentstyle="<div><a href='~typelink~' class='thisclass'>~typename~</a></div>"}
           <div class="dropdown pull-left app-category">
             <button data-toggle="dropdown" id="dropdownMenu1" type="button" class="btn btn-default dropdown-toggle" href="{dede:field.typeurl/}">
             {dede:field name='typename'/} <span class="caret"></span>
             </button>
             <ul aria-labelledby="dropdownMenu1" role="menu" class="dropdown-menu">
              {dede:sql sql='Select * from dede_arctype where reid =~id~'}  
-              <li role="presentation"><a href="[field:typeurl/]" tabindex="-1" role="menuitem" class="type[field:id/]">[field:typename /]</a></li>
+              <li role="presentation"><a href="[field:typedir function='GetTypeUrl(@me)'/]" tabindex="-1" role="menuitem" class="type[field:id/]">[field:typename /]</a></li>
                {/dede:sql}   
-              <li role="presentation"><a href="[field:typeurl/]" tabindex="-1" role="menuitem" class="type">专题</a></li>
             </ul>
           </div>
 		{/dede:channelartlist}
           <div class="  ">
            <a data-toggle=" " id=" " type="button" class="btn btn-default dropdown-toggle" href="/special-soft/index.html ">
-          		 专题 
+          		应用集
             </a>
           </div>
           <div class="form-group pull-right">
